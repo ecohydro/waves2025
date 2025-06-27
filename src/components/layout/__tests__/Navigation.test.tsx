@@ -568,4 +568,33 @@ describe('Navigation Component', () => {
       });
     });
   });
+
+  describe('3.2.2.1 - Active Page Highlighting', () => {
+    it('applies active classes and aria-current to the current page link (desktop)', () => {
+      // Set pathname to /people
+      jest.spyOn(require('next/navigation'), 'usePathname').mockReturnValue('/people');
+      render(<Navigation />);
+      const peopleLink = screen
+        .getAllByText('People')
+        .find((link) => link.className.includes('text-gray-700'));
+      expect(peopleLink).toHaveClass('text-blue-700', 'underline', 'font-bold');
+      expect(peopleLink).toHaveAttribute('aria-current', 'page');
+    });
+    it('applies active classes and aria-current to the current page link (mobile)', async () => {
+      jest.spyOn(require('next/navigation'), 'usePathname').mockReturnValue('/projects');
+      render(<Navigation />);
+      // Open mobile menu
+      const mobileButton = screen.getByLabelText('Open menu');
+      fireEvent.click(mobileButton);
+      await waitFor(() => {
+        const mobileMenu = screen.getByLabelText('Mobile menu');
+        expect(mobileMenu).toBeInTheDocument();
+      });
+      // Find the active link in the mobile menu
+      const mobileMenu = screen.getByLabelText('Mobile menu');
+      const projectsLink = within(mobileMenu).getByText('Projects');
+      expect(projectsLink).toHaveClass('text-blue-700', 'underline', 'font-bold');
+      expect(projectsLink).toHaveAttribute('aria-current', 'page');
+    });
+  });
 });

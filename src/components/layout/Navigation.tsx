@@ -1,7 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 // TODO: Replace with actual logo import
 // import Logo from 'public/images/site/waves_logo.svg';
@@ -18,6 +19,30 @@ const NAV_LINKS = [
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuAnimating, setMenuAnimating] = useState(false);
+  const pathname = usePathname();
+
+  // Open menu
+  const openMenu = () => {
+    setMobileOpen(true);
+  };
+
+  // Animate in when mobileOpen becomes true
+  useEffect(() => {
+    if (mobileOpen) {
+      // Wait for the menu to mount, then trigger animation
+      const id = requestAnimationFrame(() => setMenuAnimating(true));
+      return () => cancelAnimationFrame(id);
+    } else {
+      setMenuAnimating(false);
+    }
+  }, [mobileOpen]);
+
+  // Close menu with animation
+  const closeMenu = () => {
+    setMenuAnimating(false);
+    setTimeout(() => setMobileOpen(false), 300); // match transition duration
+  };
 
   return (
     <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -37,15 +62,22 @@ export default function Navigation() {
         </div>
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 items-center">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-gray-700 hover:text-blue-700 font-medium transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={
+                  `text-gray-700 hover:text-blue-700 font-medium transition-colors` +
+                  (isActive ? ' text-blue-700 underline underline-offset-4 font-bold' : '')
+                }
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           {/* Search Icon Stub */}
           <button
             type="button"
@@ -69,7 +101,7 @@ export default function Navigation() {
           <button
             type="button"
             aria-label="Open menu"
-            onClick={() => setMobileOpen(true)}
+            onClick={openMenu}
             className="p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <svg
@@ -85,14 +117,14 @@ export default function Navigation() {
         </div>
       </div>
       {/* Mobile Menu Overlay */}
-      {mobileOpen && (
+      {(mobileOpen || menuAnimating) && (
         <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-40"
-          onClick={() => setMobileOpen(false)}
+          className={`fixed inset-0 z-50 transition-colors duration-300 ease-in-out ${menuAnimating ? 'bg-black/60' : 'bg-black/0'}`}
+          onClick={closeMenu}
           aria-label="Close menu overlay"
         >
           <div
-            className="absolute top-0 right-0 w-64 h-full bg-white shadow-lg flex flex-col p-6"
+            className={`absolute top-0 right-0 w-64 h-full bg-white shadow-lg flex flex-col p-6 transform transition-transform duration-300 ease-in-out ${menuAnimating ? 'translate-x-0' : 'translate-x-full'}`}
             onClick={(e) => e.stopPropagation()}
             role="menu"
             aria-label="Mobile menu"
@@ -100,7 +132,7 @@ export default function Navigation() {
             <button
               type="button"
               aria-label="Close menu"
-              onClick={() => setMobileOpen(false)}
+              onClick={closeMenu}
               className="self-end mb-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <svg
@@ -113,17 +145,24 @@ export default function Navigation() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block py-2 text-lg text-gray-800 hover:text-blue-700 font-medium transition-colors"
-                onClick={() => setMobileOpen(false)}
-                role="menuitem"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={
+                    `block py-2 text-lg text-gray-800 hover:text-blue-700 font-medium transition-colors` +
+                    (isActive ? ' text-blue-700 underline underline-offset-4 font-bold' : '')
+                  }
+                  onClick={closeMenu}
+                  role="menuitem"
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
             {/* Search Icon Stub */}
             <button
               type="button"
