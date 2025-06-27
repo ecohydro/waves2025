@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 // TODO: Replace with actual logo import
 // import Logo from 'public/images/site/waves_logo.svg';
@@ -20,7 +20,10 @@ const NAV_LINKS = [
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [menuAnimating, setMenuAnimating] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [navigatingTo, setNavigatingTo] = useState<string | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Open menu
   const openMenu = () => {
@@ -44,6 +47,29 @@ export default function Navigation() {
     setTimeout(() => setMobileOpen(false), 300); // match transition duration
   };
 
+  // Handle navigation with loading state
+  const handleNavigation = (href: string) => {
+    setIsNavigating(true);
+    setNavigatingTo(href);
+    closeMenu();
+
+    // Simulate navigation delay (remove this when real navigation is implemented)
+    setTimeout(() => {
+      setIsNavigating(false);
+      setNavigatingTo(null);
+    }, 500);
+  };
+
+  // Loading spinner component
+  const LoadingSpinner = ({ size = 'sm' }: { size?: 'sm' | 'md' }) => (
+    <div
+      className={`inline-block animate-spin rounded-full border-2 border-solid border-current border-r-transparent ${size === 'sm' ? 'h-4 w-4' : 'h-6 w-6'}`}
+      role="status"
+    >
+      <span className="sr-only">Loading...</span>
+    </div>
+  );
+
   return (
     <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -64,17 +90,27 @@ export default function Navigation() {
         <div className="hidden md:flex space-x-6 items-center">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
+            const isLoading = isNavigating && navigatingTo === link.href;
             return (
               <Link
                 key={link.name}
                 href={link.href}
                 className={
-                  `text-gray-700 hover:text-blue-700 font-medium transition-colors` +
-                  (isActive ? ' text-blue-700 underline underline-offset-4 font-bold' : '')
+                  `text-gray-700 hover:text-blue-700 font-medium transition-colors flex items-center space-x-1` +
+                  (isActive ? ' text-blue-700 underline underline-offset-4 font-bold' : '') +
+                  (isLoading ? ' opacity-50 pointer-events-none' : '')
                 }
                 aria-current={isActive ? 'page' : undefined}
+                onClick={(e) => {
+                  if (isLoading) {
+                    e.preventDefault();
+                    return;
+                  }
+                  handleNavigation(link.href);
+                }}
               >
-                {link.name}
+                <span>{link.name}</span>
+                {isLoading && <LoadingSpinner size="sm" />}
               </Link>
             );
           })}
@@ -102,24 +138,29 @@ export default function Navigation() {
             type="button"
             aria-label="Open menu"
             onClick={openMenu}
-            className="p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={menuAnimating}
+            className={`p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-opacity ${menuAnimating ? 'opacity-50 pointer-events-none' : ''}`}
           >
-            <svg
-              className="h-6 w-6 text-gray-700"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            {menuAnimating ? (
+              <LoadingSpinner size="sm" />
+            ) : (
+              <svg
+                className="h-6 w-6 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
       {/* Mobile Menu Overlay */}
       {(mobileOpen || menuAnimating) && (
         <div
-          className={`fixed inset-0 z-50 transition-colors duration-300 ease-in-out ${menuAnimating ? 'bg-black/60' : 'bg-black/0'}`}
+          className={`fixed inset-0 z-50 bg-black transition-colors duration-300 ease-in-out ${menuAnimating ? 'bg-black/60' : 'bg-black/0'}`}
           onClick={closeMenu}
           aria-label="Close menu overlay"
         >
@@ -133,7 +174,8 @@ export default function Navigation() {
               type="button"
               aria-label="Close menu"
               onClick={closeMenu}
-              className="self-end mb-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={!menuAnimating}
+              className={`self-end mb-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-opacity ${!menuAnimating ? 'opacity-50 pointer-events-none' : ''}`}
             >
               <svg
                 className="h-6 w-6 text-gray-700"
@@ -147,19 +189,28 @@ export default function Navigation() {
             </button>
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
+              const isLoading = isNavigating && navigatingTo === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={
-                    `block py-2 text-lg text-gray-800 hover:text-blue-700 font-medium transition-colors` +
-                    (isActive ? ' text-blue-700 underline underline-offset-4 font-bold' : '')
+                    `block py-2 text-lg text-gray-800 hover:text-blue-700 font-medium transition-colors flex items-center justify-between` +
+                    (isActive ? ' text-blue-700 underline underline-offset-4 font-bold' : '') +
+                    (isLoading ? ' opacity-50 pointer-events-none' : '')
                   }
-                  onClick={closeMenu}
+                  onClick={(e) => {
+                    if (isLoading) {
+                      e.preventDefault();
+                      return;
+                    }
+                    handleNavigation(link.href);
+                  }}
                   role="menuitem"
                   aria-current={isActive ? 'page' : undefined}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {isLoading && <LoadingSpinner size="sm" />}
                 </Link>
               );
             })}
