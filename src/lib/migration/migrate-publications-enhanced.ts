@@ -37,6 +37,7 @@ interface CSVPublicationData {
   'PhD Committee Member': string;
   'Graduate Advisee': string;
   'Postdoctoral Advisee': string;
+  'PI Author': string;
   A1: string;
   A2: string;
   A3: string;
@@ -73,6 +74,7 @@ interface CSVPublicationData {
 interface AuthorRelationship {
   authorName: string;
   relationshipType:
+    | 'pi'
     | 'undergraduate'
     | 'visitor'
     | 'phd-committee'
@@ -186,41 +188,53 @@ function extractAuthorsFromCSV(csvRecord: CSVPublicationData): Author[] {
 }
 
 /**
- * Extract author relationships from CSV record (stable advisor-advisee data)
+ * Extract author relationships from CSV record using position codes
  */
 function extractAuthorRelationships(csvRecord: CSVPublicationData): AuthorRelationship[] {
   const relationships: AuthorRelationship[] = [];
 
-  // Parse relationship indicators and match to author positions
-  const relationshipFields = [
-    { field: 'Undergrad Author', type: 'undergraduate' as const },
-    { field: 'Visitor Author', type: 'visitor' as const },
-    { field: 'PhD Committee Member', type: 'phd-committee' as const },
-    { field: 'Graduate Advisee', type: 'graduate-advisee' as const },
-    { field: 'Postdoctoral Advisee', type: 'postdoctoral-advisee' as const },
-  ];
+  // Helper function to extract authors by position codes
+  function extractAuthorsByPositionCodes(
+    positionCodes: string,
+    relationshipType: AuthorRelationship['relationshipType'],
+  ): void {
+    if (!positionCodes || !positionCodes.trim()) return;
 
-  relationshipFields.forEach(({ field, type }) => {
-    const value = csvRecord[field as keyof CSVPublicationData];
-    if (value && value.trim()) {
-      // Parse author positions (e.g., "A1,A3,A5")
-      const positions = value
-        .split(',')
-        .map((pos) => pos.trim())
-        .filter((pos) => pos);
+    // Split by comma and handle each position code
+    const codes = positionCodes.split(',').map((code) => code.trim());
 
-      positions.forEach((position) => {
-        const authorName = csvRecord[position as keyof CSVPublicationData];
-        if (authorName && authorName.trim()) {
-          relationships.push({
-            authorName: authorName.trim().replace(/"/g, ''),
-            relationshipType: type,
-            authorPosition: position,
-          });
-        }
-      });
-    }
-  });
+    codes.forEach((code) => {
+      // Get the author at the specified position
+      const authorKey = code as keyof CSVPublicationData;
+      const authorName = csvRecord[authorKey];
+
+      if (authorName && authorName.trim()) {
+        relationships.push({
+          authorName: authorName.trim().replace(/"/g, ''), // Remove quotes
+          relationshipType,
+          authorPosition: code,
+        });
+      }
+    });
+  }
+
+  // Extract PI Authors
+  extractAuthorsByPositionCodes(csvRecord['PI Author'], 'pi');
+
+  // Extract Undergraduate Authors
+  extractAuthorsByPositionCodes(csvRecord['Undergrad Author'], 'undergraduate');
+
+  // Extract Visitor Authors
+  extractAuthorsByPositionCodes(csvRecord['Visitor Author'], 'visitor');
+
+  // Extract PhD Committee Members
+  extractAuthorsByPositionCodes(csvRecord['PhD Committee Member'], 'phd-committee');
+
+  // Extract Graduate Advisees
+  extractAuthorsByPositionCodes(csvRecord['Graduate Advisee'], 'graduate-advisee');
+
+  // Extract Postdoctoral Advisees
+  extractAuthorsByPositionCodes(csvRecord['Postdoctoral Advisee'], 'postdoctoral-advisee');
 
   return relationships;
 }

@@ -38,16 +38,6 @@ interface CSVPersonData {
   Title?: string;
 }
 
-interface CSVGrantsData {
-  Title: string;
-  Source: string;
-  'Total Amount': string;
-  Role: string;
-  'Start Year': string;
-  'End Year': string;
-  Affiliation: string;
-}
-
 interface EnhancedPersonFrontMatter extends NextJSPersonFrontMatter {
   currentPosition?: string;
   currentOrganization?: string;
@@ -59,6 +49,8 @@ interface EnhancedPersonFrontMatter extends NextJSPersonFrontMatter {
   advisoryRole?: string;
   associatedGrants?: string[];
   careerTrajectory?: CareerMilestone[];
+  isPI?: boolean;
+  piRole?: string;
 }
 
 interface CareerMilestone {
@@ -157,33 +149,6 @@ function loadAdditionalPeopleData(): {
   }
 
   return result;
-}
-
-/**
- * Load grants data for association with people
- */
-function loadCSVGrantsData(): CSVGrantsData[] {
-  try {
-    const csvPath = path.join(process.cwd(), 'csv_files', 'CV', 'Grants-Table.csv');
-
-    if (!fs.existsSync(csvPath)) {
-      logWarning('CSV grants file not found');
-      return [];
-    }
-
-    const csvContent = fs.readFileSync(csvPath, 'utf8');
-    const parsed = Papa.parse<CSVGrantsData>(csvContent, {
-      header: true,
-      skipEmptyLines: true,
-      transformHeader: (header) => header.trim(),
-    });
-
-    logProgress(`Loaded ${parsed.data.length} grants from CSV`, true);
-    return parsed.data;
-  } catch (error) {
-    logError(`Failed to load CSV grants data: ${error}`);
-    return [];
-  }
 }
 
 /**
@@ -296,6 +261,32 @@ function transformPersonFrontMatterEnhanced(
     ...baseTransformed,
   };
 
+  // Identify Kelly Caylor as PI and add PI-specific metadata
+  const isKellyCaylor =
+    jekyllFrontMatter.title.toLowerCase().includes('kelly caylor') ||
+    jekyllFrontMatter.title.toLowerCase().includes('caylor');
+
+  if (isKellyCaylor) {
+    enhanced.isPI = true;
+    enhanced.piRole = 'Principal Investigator';
+    enhanced.title = 'Kelly Caylor';
+    enhanced.role = 'Professor';
+    enhanced.excerpt =
+      'Professor at the Bren School of Environmental Science & Department of Geography. Director of the Earth Research Institute at UCSB';
+    enhanced.email = 'caylor@ucsb.edu';
+    enhanced.location = 'Santa Barbara, CA';
+    enhanced.website = 'http://caylor.eri.ucsb.edu';
+    enhanced.orcid = '0000-0002-6466-6448';
+    enhanced.googleScholar = 'VGaoB64AAAAJ&hl';
+    enhanced.researchGate = 'Kelly_Caylor';
+    enhanced.linkedin = 'kellycaylor';
+    enhanced.twitter = 'kcaylor';
+    enhanced.github = 'kcaylor';
+    enhanced.tags = [...(enhanced.tags || []), 'pi', 'faculty', 'current member'];
+
+    logProgress(`✓ Identified PI: ${jekyllFrontMatter.title}`, false);
+  }
+
   // Enhance with CSV data if found
   if (csvRecord) {
     enhanced.currentPosition = csvRecord.Position || undefined;
@@ -385,8 +376,13 @@ function processPersonFileEnhanced(
     if (jekyllData.header?.caption) {
       const education = parseEducationFromCaption(jekyllData.header.caption);
       if (education.length > 0) {
+        // Convert education objects to strings for compatibility
+        const educationStrings = education.map(
+          (edu) => `${edu.degree}, ${edu.field}, ${edu.institution}`,
+        );
         // Add education to the data for transformation
-        (jekyllData as JekyllPersonFrontMatter & { education: string[] }).education = education;
+        (jekyllData as JekyllPersonFrontMatter & { education: string[] }).education =
+          educationStrings;
       }
     }
 
