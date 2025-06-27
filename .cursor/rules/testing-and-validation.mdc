@@ -1,0 +1,165 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Ensuring code is tested and validated
+globs: ["*.ts"]
+---
+# Testing and Validation Rules
+
+## Core Principle: Test-First Development
+
+**NEVER mark a task as complete without comprehensive testing and validation.**
+
+## Pre-Completion Checklist
+
+Before marking any task as complete, you MUST:
+
+1. **Write and run tests** for the functionality
+2. **Validate the implementation** works as expected
+3. **Test edge cases** and error conditions
+4. **Verify integration** with existing systems
+5. **Document test results** and any issues found
+
+## Testing Requirements by Task Type
+
+### Infrastructure Tasks (URLs, Redirects, Config)
+- [ ] **Unit tests** for all utility functions
+- [ ] **Integration tests** with real data
+- [ ] **Validation scripts** that detect common issues
+- [ ] **Manual testing** in development environment
+- [ ] **Error scenario testing** (invalid inputs, edge cases)
+
+### Content Migration Tasks
+- [ ] **Sample data testing** with representative content
+- [ ] **Validation scripts** that check data integrity
+- [ ] **Cross-reference validation** (links, relationships)
+- [ ] **Performance testing** with full dataset
+- [ ] **Rollback testing** to ensure reversibility
+
+### UI/Component Tasks
+- [ ] **Component unit tests** with React Testing Library
+- [ ] **Visual regression testing** (if applicable)
+- [ ] **Accessibility testing** (WCAG compliance)
+- [ ] **Cross-browser testing** (Chrome, Firefox, Safari)
+- [ ] **Mobile responsiveness testing**
+
+### API/Integration Tasks
+- [ ] **API endpoint testing** with real requests
+- [ ] **Error handling testing** (network failures, timeouts)
+- [ ] **Rate limiting testing** (if applicable)
+- [ ] **Authentication testing** (if applicable)
+- [ ] **Integration testing** with dependent systems
+
+## Validation Scripts
+
+### For URL/Redirect Systems
+```bash
+# Always run before marking complete
+npm run validate:redirects
+npm run test:urls
+npm run test:integration
+```
+
+### For Content Migration
+```bash
+# Always run before marking complete
+npm run validate:migration
+npm run test:content-integrity
+npm run test:cross-references
+```
+
+### For Components
+```bash
+# Always run before marking complete
+npm run test
+npm run test:coverage
+npm run lint
+```
+
+## Error Detection Patterns
+
+### Redirect Loops
+- Check for source === destination
+- Detect circular redirect chains
+- Validate redirect depth limits
+
+### Data Integrity Issues
+- Missing required fields
+- Invalid data types
+- Broken cross-references
+- Duplicate entries
+
+### Performance Issues
+- Slow loading times
+- Memory leaks
+- Excessive API calls
+- Large bundle sizes
+
+## Documentation Requirements
+
+When marking a task complete, include:
+
+1. **Test results summary** with pass/fail counts
+2. **Validation report** with any warnings or errors
+3. **Performance metrics** (if applicable)
+4. **Known limitations** or edge cases
+5. **Rollback procedures** (if applicable)
+
+## Failure Scenarios
+
+If tests fail or validation shows issues:
+
+1. **DO NOT mark task complete**
+2. **Fix the issues** identified
+3. **Re-run all tests** after fixes
+4. **Document the fixes** made
+5. **Only then mark complete**
+
+## Testing Tools and Commands
+
+### Available Test Commands
+```bash
+npm run test                    # Run all tests
+npm run test:coverage          # Run tests with coverage
+npm run validate:redirects     # Validate redirect system
+npm run validate:migration     # Validate content migration
+npm run lint                   # Run linting
+npm run build                  # Test build process
+```
+
+### Manual Testing Checklist
+- [ ] Test in development environment
+- [ ] Test in production-like environment
+- [ ] Test with real data
+- [ ] Test error scenarios
+- [ ] Test user workflows
+
+## TDD Workflow
+
+For new features, follow this TDD workflow:
+
+1. **Write failing test** first
+2. **Write minimal code** to make test pass
+3. **Refactor** while keeping tests green
+4. **Add more tests** for edge cases
+5. **Repeat** until feature is complete
+
+## Quality Gates
+
+Before marking any task complete, ensure:
+
+- [ ] All tests pass (100% success rate)
+- [ ] No critical validation errors
+- [ ] Performance meets requirements
+- [ ] Code follows project standards
+- [ ] Documentation is updated
+- [ ] Manual testing completed
+
+## Remember
+
+**"Working code is not enough. Tested and validated code is complete."**
+
+If you're unsure about testing requirements for a specific task, ask for clarification before proceeding. It's better to spend extra time on testing than to have broken functionality in production.

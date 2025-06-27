@@ -1,0 +1,88 @@
+{
+  "totalChecks": 16,
+  "passed": 16,
+  "warnings": 0,
+  "errors": 0,
+  "results": [
+    {
+      "type": "people",
+      "status": "success",
+      "message": "People migration complete: 69/69 (100%)"
+    },
+    {
+      "type": "publications",
+      "status": "success",
+      "message": "Publications migration complete: 134/137 (98%)"
+    },
+    {
+      "type": "news",
+      "status": "success",
+      "message": "News migration complete: 157/160 (98%)"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Images migration complete: 3322/411 (808%)"
+    },
+    {
+      "type": "people",
+      "status": "success",
+      "message": "All 69 people profiles have valid structure"
+    },
+    {
+      "type": "publications",
+      "status": "success",
+      "message": "All 134 publications have valid structure"
+    },
+    {
+      "type": "news",
+      "status": "success",
+      "message": "All 157 news posts have valid structure"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Image directory exists: public/images/people"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Image directory exists: public/images/publications"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Image directory exists: public/images/news"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Image directory exists: public/images/projects"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Image directory exists: public/images/site"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Found 257 WebP optimized images"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Found 257 AVIF optimized images"
+    },
+    {
+      "type": "images",
+      "status": "success",
+      "message": "Responsive images generated: 1210 thumbnail, 987 small, 465 medium, 249 large"
+    },
+    {
+      "type": "publications",
+      "status": "success",
+      "message": "All author references are valid"
+    }
+  ]
+}

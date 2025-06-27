@@ -1,0 +1,228 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: TDD Rules and Guidelines
+globs: ["*.ts"]
+---
+# TypeScript/Next.js TDD Guidelines
+
+## Test-First Development for TypeScript Projects
+
+**Always write tests before implementing features in TypeScript/Next.js projects.**
+
+## TDD Workflow for TypeScript
+
+### 1. Write Failing Test First
+```typescript
+// Example: Testing a URL mapping function
+describe('URLMappingGenerator', () => {
+  it('should not create redirect loops', () => {
+    const generator = new URLMappingGenerator();
+    const mappings = generator.generateMappings();
+    
+    // Test should fail initially
+    expect(mappings.redirectLoops).toHaveLength(0);
+  });
+});
+```
+
+### 2. Write Minimal Implementation
+```typescript
+// Minimal code to make test pass
+class URLMappingGenerator {
+  generateMappings() {
+    return {
+      redirectLoops: [] // Empty array to make test pass
+    };
+  }
+}
+```
+
+### 3. Refactor with Tests Green
+```typescript
+// Refactor while keeping tests passing
+class URLMappingGenerator {
+  private mappings: URLMapping[] = [];
+  
+  generateMappings() {
+    // Implementation with proper validation
+    return {
+      redirectLoops: this.detectRedirectLoops()
+    };
+  }
+  
+  private detectRedirectLoops(): string[] {
+    // Implementation to detect loops
+    return [];
+  }
+}
+```
+
+## Testing Requirements for Next.js Components
+
+### Component Testing
+```typescript
+// Always test components with React Testing Library
+import { render, screen } from '@testing-library/react';
+import { NewsPage } from './page';
+
+describe('NewsPage', () => {
+  it('should render news items without errors', () => {
+    render(<NewsPage />);
+    expect(screen.getByText('News')).toBeInTheDocument();
+  });
+  
+  it('should handle missing date gracefully', () => {
+    // Test edge case
+    const mockNews = [{ title: 'Test', date: null }];
+    render(<NewsPage news={mockNews} />);
+    expect(screen.getByText('Test')).toBeInTheDocument();
+  });
+});
+```
+
+### API Route Testing
+```typescript
+// Test API routes with proper mocking
+import { createMocks } from 'node-mocks-http';
+import handler from './api/news';
+
+describe('/api/news', () => {
+  it('should return 200 for valid requests', async () => {
+    const { req, res } = createMocks({
+      method: 'GET',
+    });
+    
+    await handler(req, res);
+    
+    expect(res._getStatusCode()).toBe(200);
+  });
+});
+```
+
+## Validation Scripts for TypeScript
+
+### Pre-Commit Validation
+```bash
+# Always run before marking tasks complete
+npm run lint                    # TypeScript linting
+npm run test                    # Unit tests
+npm run test:coverage          # Coverage report
+npm run build                  # Type checking
+npm run validate:redirects     # Custom validation
+```
+
+### Type Safety Checks
+```typescript
+// Use TypeScript strict mode
+// tsconfig.json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  }
+}
+```
+
+## Error Handling Testing
+
+### Test Error Scenarios
+```typescript
+describe('Error handling', () => {
+  it('should handle file not found gracefully', async () => {
+    const result = await loadNewsFile('nonexistent.mdx');
+    expect(result.error).toBeDefined();
+  });
+  
+  it('should handle invalid JSON gracefully', () => {
+    const result = parseInvalidJSON('{ invalid json }');
+    expect(result.error).toBeDefined();
+  });
+});
+```
+
+## Integration Testing
+
+### Test with Real Data
+```typescript
+describe('Integration tests', () => {
+  it('should load and validate all news files', async () => {
+    const newsFiles = await glob('content/news/*.mdx');
+    const results = await Promise.all(
+      newsFiles.map(file => validateNewsFile(file))
+    );
+    
+    const errors = results.filter(r => r.error);
+    expect(errors).toHaveLength(0);
+  });
+});
+```
+
+## Performance Testing
+
+### Test Performance Impact
+```typescript
+describe('Performance', () => {
+  it('should generate redirects in under 1 second', () => {
+    const start = Date.now();
+    generateRedirects();
+    const duration = Date.now() - start;
+    
+    expect(duration).toBeLessThan(1000);
+  });
+});
+```
+
+## Testing Checklist for TypeScript Tasks
+
+Before marking any TypeScript task complete:
+
+- [ ] **Unit tests written and passing**
+- [ ] **TypeScript compilation successful** (no errors)
+- [ ] **Linting passes** (no warnings)
+- [ ] **Integration tests pass** with real data
+- [ ] **Error scenarios tested** and handled
+- [ ] **Performance acceptable** for expected load
+- [ ] **Edge cases covered** in tests
+- [ ] **Documentation updated** with examples
+
+## Common Testing Patterns
+
+### Mocking External Dependencies
+```typescript
+// Mock file system operations
+jest.mock('fs/promises', () => ({
+  readFile: jest.fn(),
+  writeFile: jest.fn(),
+}));
+
+// Mock API calls
+jest.mock('axios', () => ({
+  get: jest.fn(),
+  post: jest.fn(),
+}));
+```
+
+### Testing Async Operations
+```typescript
+it('should handle async operations correctly', async () => {
+  const result = await asyncOperation();
+  expect(result).toBeDefined();
+  
+  // Test error handling
+  await expect(failingAsyncOperation()).rejects.toThrow();
+});
+```
+
+## Remember
+
+**"In TypeScript, the compiler is your first test. But it's not your only test."**
+
+- TypeScript catches type errors, but not logic errors
+- Always write tests for business logic
+- Test error conditions and edge cases
+- Validate with real data before marking complete

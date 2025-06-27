@@ -1,6 +1,6 @@
 ---
 description: Managing task lists to track progress on completing a PRD
-globs:
+globs: 
 alwaysApply: false
 ---
 ---
@@ -21,6 +21,30 @@ Before starting any tasks that require terminal use, ensure that you have activa
   2. If **all** subtasks underneath a parent task are now `[x]`, also mark the **parent task** as completed.
 - **Automatic completion rule:** ALWAYS check if all child subtasks are complete and automatically mark parent tasks as complete. This applies recursively up the task hierarchy.
 - Stop after each sub‑task and wait for the user's go‑ahead.
+
+## CRITICAL: Testing and Validation Requirements
+
+**NEVER mark a task as complete without proper testing and validation.**
+
+### Before Marking Any Task Complete:
+1. **Run relevant tests** for the functionality implemented
+2. **Execute validation scripts** to check for common issues
+3. **Test in development environment** to ensure it works
+4. **Document test results** and any issues found
+5. **Only mark complete** if all tests pass and validation succeeds
+
+### Testing Requirements by Task Type:
+- **Infrastructure tasks:** Run validation scripts, test with real data
+- **Content migration:** Run integrity checks, validate cross-references
+- **UI/Components:** Run unit tests, test in browser, check accessibility
+- **API/Integration:** Test endpoints, error handling, performance
+
+### If Tests Fail:
+1. **DO NOT mark task complete**
+2. **Fix the issues** identified
+3. **Re-run all tests** after fixes
+4. **Document the fixes** made
+5. **Only then mark complete**
 
 ## Task List Maintenance
 
@@ -45,7 +69,11 @@ When working with task lists, the AI must:
    - If all subtasks under a parent are complete, automatically mark the parent task complete
    - This applies recursively - check parent tasks of parent tasks
    - Never leave a parent task unmarked when all its children are complete
-4. Add newly discovered tasks.
-5. Keep "Relevant Files" accurate and up to date.
-6. Before starting work, check which sub‑task is next.
-7. After implementing a sub‑task, update the file and then pause for user approval.
+4. **CRITICAL: Testing before completion:**
+   - Before marking any task complete, run appropriate tests and validation
+   - If tests fail, fix issues and re-test before marking complete
+   - Document test results and any fixes made
+5. Add newly discovered tasks.
+6. Keep "Relevant Files" accurate and up to date.
+7. Before starting work, check which sub‑task is next.
+8. After implementing a sub‑task, update the file and then pause for user approval.

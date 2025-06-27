@@ -1,4 +1,5 @@
-import type { NextConfig } from "next";
+import { redirects } from './src/lib/redirects';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
@@ -9,12 +10,8 @@ const nextConfig: NextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
-  // Placeholder for future redirects
   async redirects() {
-    return [
-      // Example:
-      // { source: '/old-url', destination: '/new-url', permanent: true },
-    ];
+    return redirects;
   },
   reactStrictMode: true, // Enable React strict mode for performance
   // Add more performance or experimental options as needed

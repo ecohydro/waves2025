@@ -1,0 +1,144 @@
+{
+  "timestamp": "2025-06-27T22:29:38.556Z",
+  "totalTests": 20,
+  "passed": 20,
+  "failed": 0,
+  "tests": [
+    {
+      "source": "/people/trenton-franz/",
+      "expectedDestination": "/people/trenton-franz",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/people/trenton-franz"
+    },
+    {
+      "source": "/people/trenton-franz",
+      "expectedDestination": "/people/trenton-franz",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/people/trenton-franz"
+    },
+    {
+      "source": "/people/taylor-morgan/",
+      "expectedDestination": "/people/taylor-morgan",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/people/taylor-morgan"
+    },
+    {
+      "source": "/people/taylor-morgan",
+      "expectedDestination": "/people/taylor-morgan",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/people/taylor-morgan"
+    },
+    {
+      "source": "/publications/zack-guido20201267/",
+      "expectedDestination": "/publications/zack-guido20201267",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/publications/zack-guido20201267"
+    },
+    {
+      "source": "/publications/zack-guido20201267",
+      "expectedDestination": "/publications/zack-guido20201267",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/publications/zack-guido20201267"
+    },
+    {
+      "source": "/publications/trenton-franz20121681/",
+      "expectedDestination": "/publications/trenton-franz20121681",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/publications/trenton-franz20121681"
+    },
+    {
+      "source": "/publications/trenton-franz20121681",
+      "expectedDestination": "/publications/trenton-franz20121681",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/publications/trenton-franz20121681"
+    },
+    {
+      "source": "/collaboration/where-does-water-go-when-it-doesn8217t-flow/",
+      "expectedDestination": "/news/where-does-water-go-when-it-doesn8217t-flow",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/news/where-does-water-go-when-it-doesn8217t-flow"
+    },
+    {
+      "source": "/collaboration/where-does-water-go-when-it-doesn8217t-flow",
+      "expectedDestination": "/news/where-does-water-go-when-it-doesn8217t-flow",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/news/where-does-water-go-when-it-doesn8217t-flow"
+    },
+    {
+      "source": "/2015/07/13/where-does-water-go-when-it-doesn8217t-flow/",
+      "expectedDestination": "/news/where-does-water-go-when-it-doesn8217t-flow",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/news/where-does-water-go-when-it-doesn8217t-flow"
+    },
+    {
+      "source": "/2015/07/13/where-does-water-go-when-it-doesn8217t-flow",
+      "expectedDestination": "/news/where-does-water-go-when-it-doesn8217t-flow",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/news/where-does-water-go-when-it-doesn8217t-flow"
+    },
+    {
+      "source": "/teaching/",
+      "expectedDestination": "/teaching",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/teaching"
+    },
+    {
+      "source": "/teaching",
+      "expectedDestination": "/teaching",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/teaching"
+    },
+    {
+      "source": "/opportunities/",
+      "expectedDestination": "/opportunities",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/opportunities"
+    },
+    {
+      "source": "/opportunities",
+      "expectedDestination": "/opportunities",
+      "success": true,
+      "statusCode": 301,
+      "actualDestination": "/opportunities"
+    },
+    {
+      "source": "/assets/images/people/:path*",
+      "expectedDestination": "/images/people/:path*",
+      "success": true,
+      "error": "Dynamic path - skipped"
+    },
+    {
+      "source": "/assets/images/publications/:path*",
+      "expectedDestination": "/images/publications/:path*",
+      "success": true,
+      "error": "Dynamic path - skipped"
+    },
+    {
+      "source": "/assets/images/:path*",
+      "expectedDestination": "/images/site/:path*",
+      "success": true,
+      "error": "Dynamic path - skipped"
+    },
+    {
+      "source": "/assets/files/:path*",
+      "expectedDestination": "/files/:path*",
+      "success": true,
+      "error": "Dynamic path - skipped"
+    }
+  ]
+}

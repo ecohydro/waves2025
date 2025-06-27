@@ -1,0 +1,1226 @@
+// Auto-generated redirects from URL mapping system
+// Generated on: 2025-06-27T22:42:05.509Z
+
+export const redirects = [
+  // Permanent redirects (301)
+  {
+    source: '/collaboration/where-does-water-go-when-it-doesn8217t-flow/',
+    destination: '/news/where-does-water-go-when-it-doesn8217t-flow',
+    permanent: true,
+  },
+  {
+    source: '/2015/07/13/where-does-water-go-when-it-doesn8217t-flow/',
+    destination: '/news/where-does-water-go-when-it-doesn8217t-flow',
+    permanent: true,
+  },
+  {
+    source: '/2017/09/20/waves-lab-researchers-participate-in-kenyan-national-science-week-exhibition/',
+    destination: '/news/waves-lab-researchers-participate-in-kenyan-national-science-week-exhibition',
+    permanent: true,
+  },
+  {
+    source: '/research/waves-lab-recieves-funding-for-riparian-ecohydrology-projects/',
+    destination: '/news/waves-lab-recieves-funding-for-riparian-ecohydrology-projects',
+    permanent: true,
+  },
+  {
+    source: '/2018/01/26/waves-lab-recieves-funding-for-riparian-ecohydrology-projects/',
+    destination: '/news/waves-lab-recieves-funding-for-riparian-ecohydrology-projects',
+    permanent: true,
+  },
+  {
+    source: '/2018/05/10/waves-lab-postdoctoral-positions-available/',
+    destination: '/news/waves-lab-postdoctoral-positions-available',
+    permanent: true,
+  },
+  {
+    source: '/policy/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report/',
+    destination: '/news/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report',
+    permanent: true,
+  },
+  {
+    source: '/2017/10/10/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report/',
+    destination: '/news/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report',
+    permanent: true,
+  },
+  {
+    source: '/conferences/waves-lab-at-the-agu-fall-meeting-2019/',
+    destination: '/news/waves-lab-at-the-agu-fall-meeting-2019',
+    permanent: true,
+  },
+  {
+    source: '/2019/10/06/waves-lab-at-the-agu-fall-meeting-2019/',
+    destination: '/news/waves-lab-at-the-agu-fall-meeting-2019',
+    permanent: true,
+  },
+  {
+    source: '/2008/07/01/water-vapor-isotope-observations-at-the-morgan-monroe-state-forest/',
+    destination: '/news/water-vapor-isotope-observations-at-the-morgan-monroe-state-forest',
+    permanent: true,
+  },
+  {
+    source: '/2008/06/13/water-in-africa-art-exhibit-opens/',
+    destination: '/news/water-in-africa-art-exhibit-opens',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert/',
+    destination: '/news/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert',
+    permanent: true,
+  },
+  {
+    source: '/2013/10/12/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert/',
+    destination: '/news/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert',
+    permanent: true,
+  },
+  {
+    source: '/funding/two-new-grants-awarded/',
+    destination: '/news/two-new-grants-awarded',
+    permanent: true,
+  },
+  {
+    source: '/2014/06/26/two-new-grants-awarded/',
+    destination: '/news/two-new-grants-awarded',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/two-jpl-surp-grants-received/',
+    destination: '/news/two-jpl-surp-grants-received',
+    permanent: true,
+  },
+  {
+    source: '/2013/10/12/two-jpl-surp-grants-received/',
+    destination: '/news/two-jpl-surp-grants-received',
+    permanent: true,
+  },
+  {
+    source: '/2012/06/25/two-articles-recently-accepted-in-hydrology-and-earth-system-sciences/',
+    destination: '/news/two-articles-recently-accepted-in-hydrology-and-earth-system-sciences',
+    permanent: true,
+  },
+  {
+    source: '/2013/04/19/two-articles-published-in-ecosphere/',
+    destination: '/news/two-articles-published-in-ecosphere',
+    permanent: true,
+  },
+  {
+    source: '/funding/trenton-recieves-ddep-award-from-nsf/',
+    destination: '/news/trenton-recieves-ddep-award-from-nsf',
+    permanent: true,
+  },
+  {
+    source: '/2009/05/20/trenton-recieves-ddep-award-from-nsf/',
+    destination: '/news/trenton-recieves-ddep-award-from-nsf',
+    permanent: true,
+  },
+  {
+    source: '/2009/03/26/trenton-receives-agu-student-paper-award/',
+    destination: '/news/trenton-receives-agu-student-paper-award',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/teaching-the-tbi-field-school-students/',
+    destination: '/news/teaching-the-tbi-field-school-students',
+    permanent: true,
+  },
+  {
+    source: '/2015/09/23/teaching-the-tbi-field-school-students/',
+    destination: '/news/teaching-the-tbi-field-school-students',
+    permanent: true,
+  },
+  {
+    source: '/2008/08/09/talks-038-abstracts-at-the-2008-esa-meeting/',
+    destination: '/news/talks-038-abstracts-at-the-2008-esa-meeting',
+    permanent: true,
+  },
+  {
+    source: '/labwork/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta/',
+    destination: '/news/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta',
+    permanent: true,
+  },
+  {
+    source: '/2014/09/20/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta/',
+    destination: '/news/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/summer-at-mpala-water-use-and-agriculture/',
+    destination: '/news/summer-at-mpala-water-use-and-agriculture',
+    permanent: true,
+  },
+  {
+    source: '/2015/09/23/summer-at-mpala-water-use-and-agriculture/',
+    destination: '/news/summer-at-mpala-water-use-and-agriculture',
+    permanent: true,
+  },
+  {
+    source: '/field-work/summer-at-mpala-plant-physiological-response-to-water-stress/',
+    destination: '/news/summer-at-mpala-plant-physiological-response-to-water-stress',
+    permanent: true,
+  },
+  {
+    source: '/2014/09/21/summer-at-mpala-plant-physiological-response-to-water-stress/',
+    destination: '/news/summer-at-mpala-plant-physiological-response-to-water-stress',
+    permanent: true,
+  },
+  {
+    source: '/2008/04/15/student-talks-at-the-2008-american-association-of-geographers-meeting/',
+    destination: '/news/student-talks-at-the-2008-american-association-of-geographers-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2008/09/01/stephen-good-joins-our-group/',
+    destination: '/news/stephen-good-joins-our-group',
+    permanent: true,
+  },
+  {
+    source: '/funding/stephanie-receives-pei-step-fellowship/',
+    destination: '/news/stephanie-receives-pei-step-fellowship',
+    permanent: true,
+  },
+  {
+    source: '/2013/04/30/stephanie-receives-pei-step-fellowship/',
+    destination: '/news/stephanie-receives-pei-step-fellowship',
+    permanent: true,
+  },
+  {
+    source: '/funding/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award/',
+    destination: '/news/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award',
+    permanent: true,
+  },
+  {
+    source: '/2014/08/03/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award/',
+    destination: '/news/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award',
+    permanent: true,
+  },
+  {
+    source: '/funding/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards/',
+    destination: '/news/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards',
+    permanent: true,
+  },
+  {
+    source: '/2014/06/26/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards/',
+    destination: '/news/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards',
+    permanent: true,
+  },
+  {
+    source: '/teaching/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry/',
+    destination: '/news/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry',
+    permanent: true,
+  },
+  {
+    source: '/2018/11/28/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry/',
+    destination: '/news/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry',
+    permanent: true,
+  },
+  {
+    source: '/conferences/session-co-chair-at-the-2005-agu-meeting/',
+    destination: '/news/session-co-chair-at-the-2005-agu-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2005/08/12/session-co-chair-at-the-2005-agu-meeting/',
+    destination: '/news/session-co-chair-at-the-2005-agu-meeting',
+    permanent: true,
+  },
+  {
+    source: '/research/scholarships-fellowships-and-grants-awarded-to-waves-lab-students/',
+    destination: '/news/scholarships-fellowships-and-grants-awarded-to-waves-lab-students',
+    permanent: true,
+  },
+  {
+    source: '/2019/05/13/scholarships-fellowships-and-grants-awarded-to-waves-lab-students/',
+    destination: '/news/scholarships-fellowships-and-grants-awarded-to-waves-lab-students',
+    permanent: true,
+  },
+  {
+    source: '/funding/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs/',
+    destination: '/news/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs',
+    permanent: true,
+  },
+  {
+    source: '/2018/06/28/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs/',
+    destination: '/news/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs',
+    permanent: true,
+  },
+  {
+    source: '/2007/02/01/rainfall-runoff-experiment-installed-at-the-mpala-research-center/',
+    destination: '/news/rainfall-runoff-experiment-installed-at-the-mpala-research-center',
+    permanent: true,
+  },
+  {
+    source: '/2011/09/02/rain-gauge-and-soil-moisture-probe-deployment-in-zambia/',
+    destination: '/news/rain-gauge-and-soil-moisture-probe-deployment-in-zambia',
+    permanent: true,
+  },
+  {
+    source: '/publications/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand/',
+    destination: '/news/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand',
+    permanent: true,
+  },
+  {
+    source: '/2011/01/09/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand/',
+    destination: '/news/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand',
+    permanent: true,
+  },
+  {
+    source: '/conferences/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum/',
+    destination: '/news/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum',
+    permanent: true,
+  },
+  {
+    source: '/2015/03/02/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum/',
+    destination: '/news/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum',
+    permanent: true,
+  },
+  {
+    source: '/field-work/pulselab-in-california-and-new-mexico/',
+    destination: '/news/pulselab-in-california-and-new-mexico',
+    permanent: true,
+  },
+  {
+    source: '/2014/07/25/pulselab-in-california-and-new-mexico/',
+    destination: '/news/pulselab-in-california-and-new-mexico',
+    permanent: true,
+  },
+  {
+    source: '/2011/09/10/professor-dave-breshears-visits-the-mpala-research-center/',
+    destination: '/news/professor-dave-breshears-visits-the-mpala-research-center',
+    permanent: true,
+  },
+  {
+    source: '/general/princeton-studies-food-new-class-launched/',
+    destination: '/news/princeton-studies-food-new-class-launched',
+    permanent: true,
+  },
+  {
+    source: '/2016/02/05/princeton-studies-food-new-class-launched/',
+    destination: '/news/princeton-studies-food-new-class-launched',
+    permanent: true,
+  },
+  {
+    source: '/funding/princeton-grand-challenge-interns-summer-2011/',
+    destination: '/news/princeton-grand-challenge-interns-summer-2011',
+    permanent: true,
+  },
+  {
+    source: '/2011/08/31/princeton-grand-challenge-interns-summer-2011/',
+    destination: '/news/princeton-grand-challenge-interns-summer-2011',
+    permanent: true,
+  },
+  {
+    source: '/funding/princeton-global-collaborative-network-fund-for-integrated-food-security-research/',
+    destination: '/news/princeton-global-collaborative-network-fund-for-integrated-food-security-research',
+    permanent: true,
+  },
+  {
+    source: '/2011/03/23/princeton-global-collaborative-network-fund-for-integrated-food-security-research/',
+    destination: '/news/princeton-global-collaborative-network-fund-for-integrated-food-security-research',
+    permanent: true,
+  },
+  {
+    source: '/2013/05/01/open-source-hardware-documentation-jam/',
+    destination: '/news/open-source-hardware-documentation-jam',
+    permanent: true,
+  },
+  {
+    source: '/2013/04/27/nyc-girls-computer-science-and-engineering-conference/',
+    destination: '/news/nyc-girls-computer-science-and-engineering-conference',
+    permanent: true,
+  },
+  {
+    source: '/funding/nsf-grant-awarded-for-resilience-research-in-zambia/',
+    destination: '/news/nsf-grant-awarded-for-resilience-research-in-zambia',
+    permanent: true,
+  },
+  {
+    source: '/2010/10/19/nsf-grant-awarded-for-resilience-research-in-zambia/',
+    destination: '/news/nsf-grant-awarded-for-resilience-research-in-zambia',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/new-paper-in-science/',
+    destination: '/news/new-paper-in-science',
+    permanent: true,
+  },
+  {
+    source: '/2015/02/09/new-paper-in-science/',
+    destination: '/news/new-paper-in-science',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/new-paper-in-nature-geoscience/',
+    destination: '/news/new-paper-in-nature-geoscience',
+    permanent: true,
+  },
+  {
+    source: '/2015/03/12/new-paper-in-nature-geoscience/',
+    destination: '/news/new-paper-in-nature-geoscience',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/new-paper-in-nature-climate-change/',
+    destination: '/news/new-paper-in-nature-climate-change',
+    permanent: true,
+  },
+  {
+    source: '/2015/03/16/new-paper-in-nature-climate-change/',
+    destination: '/news/new-paper-in-nature-climate-change',
+    permanent: true,
+  },
+  {
+    source: '/2014/10/02/new-paper-in-grl/',
+    destination: '/news/new-paper-in-grl',
+    permanent: true,
+  },
+  {
+    source: '/2014/08/06/new-paper-in-erl/',
+    destination: '/news/new-paper-in-erl',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/new-paper-in-ecosphere/',
+    destination: '/news/new-paper-in-ecosphere',
+    permanent: true,
+  },
+  {
+    source: '/2015/04/14/new-paper-in-ecosphere/',
+    destination: '/news/new-paper-in-ecosphere',
+    permanent: true,
+  },
+  {
+    source: '/2014/12/11/new-paper-in-biogeosciences/',
+    destination: '/news/new-paper-in-biogeosciences',
+    permanent: true,
+  },
+  {
+    source: '/funding/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas/',
+    destination: '/news/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas',
+    permanent: true,
+  },
+  {
+    source: '/2007/06/14/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas/',
+    destination: '/news/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas',
+    permanent: true,
+  },
+  {
+    source: '/2009/01/13/new-experiment-begun-on-subsurface-water-redistribution/',
+    destination: '/news/new-experiment-begun-on-subsurface-water-redistribution',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/new-article-in-science/',
+    destination: '/news/new-article-in-science',
+    permanent: true,
+  },
+  {
+    source: '/2015/08/03/new-article-in-science/',
+    destination: '/news/new-article-in-science',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/new-8220campus-as-a-lab8221-project/',
+    destination: '/news/new-8220campus-as-a-lab8221-project',
+    permanent: true,
+  },
+  {
+    source: '/2016/04/22/new-8220campus-as-a-lab8221-project/',
+    destination: '/news/new-8220campus-as-a-lab8221-project',
+    permanent: true,
+  },
+  {
+    source: '/2013/08/15/nature-comment-published/',
+    destination: '/news/nature-comment-published',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/national-socio-environmental-synthesis-center-sesync-workshop/',
+    destination: '/news/national-socio-environmental-synthesis-center-sesync-workshop',
+    permanent: true,
+  },
+  {
+    source: '/2014/01/10/national-socio-environmental-synthesis-center-sesync-workshop/',
+    destination: '/news/national-socio-environmental-synthesis-center-sesync-workshop',
+    permanent: true,
+  },
+  {
+    source: '/funding/natasha-krell-wins-fulbright-award-to-kenya/',
+    destination: '/news/natasha-krell-wins-fulbright-award-to-kenya',
+    permanent: true,
+  },
+  {
+    source: '/2017/04/16/natasha-krell-wins-fulbright-award-to-kenya/',
+    destination: '/news/natasha-krell-wins-fulbright-award-to-kenya',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/nasa-jet-propulsion-lab-surp-grant-received/',
+    destination: '/news/nasa-jet-propulsion-lab-surp-grant-received',
+    permanent: true,
+  },
+  {
+    source: '/2016/09/23/nasa-jet-propulsion-lab-surp-grant-received/',
+    destination: '/news/nasa-jet-propulsion-lab-surp-grant-received',
+    permanent: true,
+  },
+  {
+    source: '/2010/02/05/mpala-research-center-flux-tower-operational/',
+    destination: '/news/mpala-research-center-flux-tower-operational',
+    permanent: true,
+  },
+  {
+    source: '/media/mpala-live-website-launched/',
+    destination: '/news/mpala-live-website-launched',
+    permanent: true,
+  },
+  {
+    source: '/2014/06/26/mpala-live-website-launched/',
+    destination: '/news/mpala-live-website-launched',
+    permanent: true,
+  },
+  {
+    source: '/field-work/mpala-from-the-sky/',
+    destination: '/news/mpala-from-the-sky',
+    permanent: true,
+  },
+  {
+    source: '/2015/08/17/mpala-from-the-sky/',
+    destination: '/news/mpala-from-the-sky',
+    permanent: true,
+  },
+  {
+    source: '/2018/10/02/monitoring-crop-production-and-farmer-decision-making-in-central-kenya/',
+    destination: '/news/monitoring-crop-production-and-farmer-decision-making-in-central-kenya',
+    permanent: true,
+  },
+  {
+    source: '/2011/05/30/molly-o8217connor-receives-thesis-prize/',
+    destination: '/news/molly-o8217connor-receives-thesis-prize',
+    permanent: true,
+  },
+  {
+    source: '/field-work/marcus-spiegel-receives-smith-newton-scholarship/',
+    destination: '/news/marcus-spiegel-receives-smith-newton-scholarship',
+    permanent: true,
+  },
+  {
+    source: '/2015/03/28/marcus-spiegel-receives-smith-newton-scholarship/',
+    destination: '/news/marcus-spiegel-receives-smith-newton-scholarship',
+    permanent: true,
+  },
+  {
+    source: '/2011/06/24/lizzie-king-accepts-a-faculty-position-at-the-university-of-georgia/',
+    destination: '/news/lizzie-king-accepts-a-faculty-position-at-the-university-of-georgia',
+    permanent: true,
+  },
+  {
+    source: '/general/lixin-wang8217s-paper-in-nature-and-interview/',
+    destination: '/news/lixin-wang8217s-paper-in-nature-and-interview',
+    permanent: true,
+  },
+  {
+    source: '/2016/02/12/lixin-wang8217s-paper-in-nature-and-interview/',
+    destination: '/news/lixin-wang8217s-paper-in-nature-and-interview',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/lixin-wang8217s-interview-with-the-iupui-newsroom/',
+    destination: '/news/lixin-wang8217s-interview-with-the-iupui-newsroom',
+    permanent: true,
+  },
+  {
+    source: '/2015/06/11/lixin-wang8217s-interview-with-the-iupui-newsroom/',
+    destination: '/news/lixin-wang8217s-interview-with-the-iupui-newsroom',
+    permanent: true,
+  },
+  {
+    source: '/2010/11/21/lixin-wang-joining-ecohydrology-group-at-unsw/',
+    destination: '/news/lixin-wang-joining-ecohydrology-group-at-unsw',
+    permanent: true,
+  },
+  {
+    source: '/2009/03/26/lixin-to-present-at-the-egu-general-assembly/',
+    destination: '/news/lixin-to-present-at-the-egu-general-assembly',
+    permanent: true,
+  },
+  {
+    source: '/2009/02/06/lixin-brown-bag-seminar/',
+    destination: '/news/lixin-brown-bag-seminar',
+    permanent: true,
+  },
+  {
+    source: '/field-work/lab-summer-plans/',
+    destination: '/news/lab-summer-plans',
+    permanent: true,
+  },
+  {
+    source: '/2013/06/15/lab-summer-plans/',
+    destination: '/news/lab-summer-plans',
+    permanent: true,
+  },
+  {
+    source: '/funding/kelly-receives-nsf-career-award/',
+    destination: '/news/kelly-receives-nsf-career-award',
+    permanent: true,
+  },
+  {
+    source: '/2009/05/20/kelly-receives-nsf-career-award/',
+    destination: '/news/kelly-receives-nsf-career-award',
+    permanent: true,
+  },
+  {
+    source: '/funding/kelly-receives-faculty-advancement-award/',
+    destination: '/news/kelly-receives-faculty-advancement-award',
+    permanent: true,
+  },
+  {
+    source: '/2009/07/01/kelly-receives-faculty-advancement-award/',
+    destination: '/news/kelly-receives-faculty-advancement-award',
+    permanent: true,
+  },
+  {
+    source: '/2009/12/10/kelly-receives-early-career-award-from-the-american-geophysical-union/',
+    destination: '/news/kelly-receives-early-career-award-from-the-american-geophysical-union',
+    permanent: true,
+  },
+  {
+    source: '/2010/08/05/keir-soderberg-joins-our-group/',
+    destination: '/news/keir-soderberg-joins-our-group',
+    permanent: true,
+  },
+  {
+    source: '/field-work/jackie8217s-summer-featured-on-the-frontpage-of-pu-website/',
+    destination: '/news/jackie8217s-summer-featured-on-the-frontpage-of-pu-website',
+    permanent: true,
+  },
+  {
+    source: '/2013/08/30/jackie8217s-summer-featured-on-the-frontpage-of-pu-website/',
+    destination: '/news/jackie8217s-summer-featured-on-the-frontpage-of-pu-website',
+    permanent: true,
+  },
+  {
+    source: '/2008/10/06/invited-talk-at-the-2008-soil-science-society-of-america/',
+    destination: '/news/invited-talk-at-the-2008-soil-science-society-of-america',
+    permanent: true,
+  },
+  {
+    source: '/conferences/invited-talk-at-the-2007-agu-joint-assembly/',
+    destination: '/news/invited-talk-at-the-2007-agu-joint-assembly',
+    permanent: true,
+  },
+  {
+    source: '/2007/05/15/invited-talk-at-the-2007-agu-joint-assembly/',
+    destination: '/news/invited-talk-at-the-2007-agu-joint-assembly',
+    permanent: true,
+  },
+  {
+    source: '/conferences/interview-in-scientific-american/',
+    destination: '/news/interview-in-scientific-american',
+    permanent: true,
+  },
+  {
+    source: '/2015/04/14/interview-in-scientific-american/',
+    destination: '/news/interview-in-scientific-american',
+    permanent: true,
+  },
+  {
+    source: '/funding/interdisciplinary-science-award-from-nasa/',
+    destination: '/news/interdisciplinary-science-award-from-nasa',
+    permanent: true,
+  },
+  {
+    source: '/2011/07/08/interdisciplinary-science-award-from-nasa/',
+    destination: '/news/interdisciplinary-science-award-from-nasa',
+    permanent: true,
+  },
+  {
+    source: '/research/initial-research-visit-to-kenya/',
+    destination: '/news/initial-research-visit-to-kenya',
+    permanent: true,
+  },
+  {
+    source: '/2006/07/01/initial-research-visit-to-kenya/',
+    destination: '/news/initial-research-visit-to-kenya',
+    permanent: true,
+  },
+  {
+    source: '/2018/04/07/ifpri-researcher-dr-kwaw-andam-visits-waves-lab/',
+    destination: '/news/ifpri-researcher-dr-kwaw-andam-visits-waves-lab',
+    permanent: true,
+  },
+  {
+    source: '/2010/11/04/holden-caylor-joins-the-team/',
+    destination: '/news/holden-caylor-joins-the-team',
+    permanent: true,
+  },
+  {
+    source: '/2008/12/12/group-presentations-at-the-agu-2008-fall-meeting/',
+    destination: '/news/group-presentations-at-the-agu-2008-fall-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2007/12/20/group-activity-at-the-2007-fall-agu-meeting/',
+    destination: '/news/group-activity-at-the-2007-fall-agu-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2016/06/23/frances-o8217donnell-starting-as-assistant-professor-at-auburn-university/',
+    destination: '/news/frances-o8217donnell-starting-as-assistant-professor-at-auburn-university',
+    permanent: true,
+  },
+  {
+    source: '/field-work/first-successful-copter-flight-for-eric-principato/',
+    destination: '/news/first-successful-copter-flight-for-eric-principato',
+    permanent: true,
+  },
+  {
+    source: '/2014/04/27/first-successful-copter-flight-for-eric-principato/',
+    destination: '/news/first-successful-copter-flight-for-eric-principato',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes/',
+    destination: '/news/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes',
+    permanent: true,
+  },
+  {
+    source: '/2014/01/10/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes/',
+    destination: '/news/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes',
+    permanent: true,
+  },
+  {
+    source: '/conferences/first-international-conference-on-global-food-security/',
+    destination: '/news/first-international-conference-on-global-food-security',
+    permanent: true,
+  },
+  {
+    source: '/2013/10/09/first-international-conference-on-global-food-security/',
+    destination: '/news/first-international-conference-on-global-food-security',
+    permanent: true,
+  },
+  {
+    source: '/general/first-course-on-uas-for-environmental-monitoring/',
+    destination: '/news/first-course-on-uas-for-environmental-monitoring',
+    permanent: true,
+  },
+  {
+    source: '/2015/08/17/first-course-on-uas-for-environmental-monitoring/',
+    destination: '/news/first-course-on-uas-for-environmental-monitoring',
+    permanent: true,
+  },
+  {
+    source: '/general/finding-support-in-a-time-of-physical-distancing/',
+    destination: '/news/finding-support-in-a-time-of-physical-distancing',
+    permanent: true,
+  },
+  {
+    source: '/2020/05/06/finding-support-in-a-time-of-physical-distancing/',
+    destination: '/news/finding-support-in-a-time-of-physical-distancing',
+    permanent: true,
+  },
+  {
+    source: '/2014/06/26/field-ecohydrology-at-mpala/',
+    destination: '/news/field-ecohydrology-at-mpala',
+    permanent: true,
+  },
+  {
+    source: '/2008/07/01/ewaso-water-project-video/',
+    destination: '/news/ewaso-water-project-video',
+    permanent: true,
+  },
+  {
+    source: '/2009/09/18/evapotranspiration-experiment-at-the-biosphere-2-facility/',
+    destination: '/news/evapotranspiration-experiment-at-the-biosphere-2-facility',
+    permanent: true,
+  },
+  {
+    source: '/general/elliot-chang8217s-thesis-published-in-rcms/',
+    destination: '/news/elliot-chang8217s-thesis-published-in-rcms',
+    permanent: true,
+  },
+  {
+    source: '/2016/02/14/elliot-chang8217s-thesis-published-in-rcms/',
+    destination: '/news/elliot-chang8217s-thesis-published-in-rcms',
+    permanent: true,
+  },
+  {
+    source: '/funding/elliot-chang-receives-smith-newton-scholarship/',
+    destination: '/news/elliot-chang-receives-smith-newton-scholarship',
+    permanent: true,
+  },
+  {
+    source: '/2014/04/23/elliot-chang-receives-smith-newton-scholarship/',
+    destination: '/news/elliot-chang-receives-smith-newton-scholarship',
+    permanent: true,
+  },
+  {
+    source: '/2011/06/18/ecohydrology-sessions-at-the-2011-agu-fall-meeting/',
+    destination: '/news/ecohydrology-sessions-at-the-2011-agu-fall-meeting',
+    permanent: true,
+  },
+  {
+    source: '/conferences/ecohydrology-lab-at-the-agu-2014-fall-meeting/',
+    destination: '/news/ecohydrology-lab-at-the-agu-2014-fall-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2014/12/11/ecohydrology-lab-at-the-agu-2014-fall-meeting/',
+    destination: '/news/ecohydrology-lab-at-the-agu-2014-fall-meeting',
+    permanent: true,
+  },
+  {
+    source: '/conferences/ecohydrology-lab-at-agu-2015/',
+    destination: '/news/ecohydrology-lab-at-agu-2015',
+    permanent: true,
+  },
+  {
+    source: '/2015/12/01/ecohydrology-lab-at-agu-2015/',
+    destination: '/news/ecohydrology-lab-at-agu-2015',
+    permanent: true,
+  },
+  {
+    source: '/funding/drew-gower-receives-epa-star-fellowship/',
+    destination: '/news/drew-gower-receives-epa-star-fellowship',
+    permanent: true,
+  },
+  {
+    source: '/2014/09/02/drew-gower-receives-epa-star-fellowship/',
+    destination: '/news/drew-gower-receives-epa-star-fellowship',
+    permanent: true,
+  },
+  {
+    source: '/2009/02/02/david-robinson-visits-the-princeton-ecohydrology-lab/',
+    destination: '/news/david-robinson-visits-the-princeton-ecohydrology-lab',
+    permanent: true,
+  },
+  {
+    source: '/funding/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship/',
+    destination: '/news/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship',
+    permanent: true,
+  },
+  {
+    source: '/2014/05/28/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship/',
+    destination: '/news/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship',
+    permanent: true,
+  },
+  {
+    source: '/funding/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award/',
+    destination: '/news/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award',
+    permanent: true,
+  },
+  {
+    source: '/2016/07/14/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award/',
+    destination: '/news/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award',
+    permanent: true,
+  },
+  {
+    source: '/funding/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows/',
+    destination: '/news/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows',
+    permanent: true,
+  },
+  {
+    source: '/2017/05/15/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows/',
+    destination: '/news/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows',
+    permanent: true,
+  },
+  {
+    source: '/funding/coupled-natural-038-human-systems-award-from-the-national-science-foundation/',
+    destination: '/news/coupled-natural-038-human-systems-award-from-the-national-science-foundation',
+    permanent: true,
+  },
+  {
+    source: '/2011/06/29/coupled-natural-038-human-systems-award-from-the-national-science-foundation/',
+    destination: '/news/coupled-natural-038-human-systems-award-from-the-national-science-foundation',
+    permanent: true,
+  },
+  {
+    source: '/2011/09/08/cosmos-soil-moisture-probe-now-operational-at-the-mpala-research-center/',
+    destination: '/news/cosmos-soil-moisture-probe-now-operational-at-the-mpala-research-center',
+    permanent: true,
+  },
+  {
+    source: '/2013/09/09/congratulations-dr-guan/',
+    destination: '/news/congratulations-dr-guan',
+    permanent: true,
+  },
+  {
+    source: '/2011/06/10/commentary-to-be-published-in-ecohydrology/',
+    destination: '/news/commentary-to-be-published-in-ecohydrology',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/collaboration-with-textit-for-crop-failure-early-warning-system/',
+    destination: '/news/collaboration-with-textit-for-crop-failure-early-warning-system',
+    permanent: true,
+  },
+  {
+    source: '/2015/08/01/collaboration-with-textit-for-crop-failure-early-warning-system/',
+    destination: '/news/collaboration-with-textit-for-crop-failure-early-warning-system',
+    permanent: true,
+  },
+  {
+    source: '/field-work/climbing-trees/',
+    destination: '/news/climbing-trees',
+    permanent: true,
+  },
+  {
+    source: '/2013/05/28/climbing-trees/',
+    destination: '/news/climbing-trees',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/caylorlab-work-featured-in-new-short-film/',
+    destination: '/news/caylorlab-work-featured-in-new-short-film',
+    permanent: true,
+  },
+  {
+    source: '/2016/08/07/caylorlab-work-featured-in-new-short-film/',
+    destination: '/news/caylorlab-work-featured-in-new-short-film',
+    permanent: true,
+  },
+  {
+    source: '/funding/caylor-lab-receives-leef-iii-award/',
+    destination: '/news/caylor-lab-receives-leef-iii-award',
+    permanent: true,
+  },
+  {
+    source: '/2009/05/20/caylor-lab-receives-leef-iii-award/',
+    destination: '/news/caylor-lab-receives-leef-iii-award',
+    permanent: true,
+  },
+  {
+    source: '/conferences/caylor-lab-at-agu-2016-fall-meeting/',
+    destination: '/news/caylor-lab-at-agu-2016-fall-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2016/12/07/caylor-lab-at-agu-2016-fall-meeting/',
+    destination: '/news/caylor-lab-at-agu-2016-fall-meeting',
+    permanent: true,
+  },
+  {
+    source: '/2011/06/06/caylor-group8217s-research-highlighted-on-princeton-grand-challenges-website/',
+    destination: '/news/caylor-group8217s-research-highlighted-on-princeton-grand-challenges-website',
+    permanent: true,
+  },
+  {
+    source: '/2011/02/11/caylor-group8217s-research-highlighted-on-nbclearncom/',
+    destination: '/news/caylor-group8217s-research-highlighted-on-nbclearncom',
+    permanent: true,
+  },
+  {
+    source: '/funding/caylor-group-receives-princeton-grand-challenges-seed-grant/',
+    destination: '/news/caylor-group-receives-princeton-grand-challenges-seed-grant',
+    permanent: true,
+  },
+  {
+    source: '/2009/12/07/caylor-group-receives-princeton-grand-challenges-seed-grant/',
+    destination: '/news/caylor-group-receives-princeton-grand-challenges-seed-grant',
+    permanent: true,
+  },
+  {
+    source: '/general/cascade-tuholske-defends-disseration-via-zoom/',
+    destination: '/news/cascade-tuholske-defends-disseration-via-zoom',
+    permanent: true,
+  },
+  {
+    source: '/2020/05/09/cascade-tuholske-defends-disseration-via-zoom/',
+    destination: '/news/cascade-tuholske-defends-disseration-via-zoom',
+    permanent: true,
+  },
+  {
+    source: '/funding/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia/',
+    destination: '/news/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia',
+    permanent: true,
+  },
+  {
+    source: '/2017/06/04/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia/',
+    destination: '/news/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia',
+    permanent: true,
+  },
+  {
+    source: '/2009/02/09/articles-published-in-agricultural-and-forest-meteorology/',
+    destination: '/news/articles-published-in-agricultural-and-forest-meteorology',
+    permanent: true,
+  },
+  {
+    source: '/2011/09/09/article-to-be-published-in-ecohydrology/',
+    destination: '/news/article-to-be-published-in-ecohydrology',
+    permanent: true,
+  },
+  {
+    source: '/2009/03/13/article-published-in-water-resources-research/',
+    destination: '/news/article-published-in-water-resources-research',
+    permanent: true,
+  },
+  {
+    source: '/2011/01/19/article-published-in-vadose-zone-journal/',
+    destination: '/news/article-published-in-vadose-zone-journal',
+    permanent: true,
+  },
+  {
+    source: '/2016/04/11/article-published-in-remote-sensing-of-environment/',
+    destination: '/news/article-published-in-remote-sensing-of-environment',
+    permanent: true,
+  },
+  {
+    source: '/2013/05/08/article-published-in-proc-royal-soc-series-a/',
+    destination: '/news/article-published-in-proc-royal-soc-series-a',
+    permanent: true,
+  },
+  {
+    source: '/2011/06/04/article-published-in-pnas/',
+    destination: '/news/article-published-in-pnas',
+    permanent: true,
+  },
+  {
+    source: '/2009/07/07/article-published-in-plant-and-soil/',
+    destination: '/news/article-published-in-plant-and-soil',
+    permanent: true,
+  },
+  {
+    source: '/2010/06/04/article-published-in-new-phytologist/',
+    destination: '/news/article-published-in-new-phytologist',
+    permanent: true,
+  },
+  {
+    source: '/2007/09/13/article-published-in-nature/',
+    destination: '/news/article-published-in-nature',
+    permanent: true,
+  },
+  {
+    source: '/2009/11/11/article-published-in-journal-of-arid-environments/',
+    destination: '/news/article-published-in-journal-of-arid-environments',
+    permanent: true,
+  },
+  {
+    source: '/2007/12/07/article-published-in-jgr-biogeosciences/',
+    destination: '/news/article-published-in-jgr-biogeosciences',
+    permanent: true,
+  },
+  {
+    source: '/2013/08/05/article-published-in-global-change-biology/',
+    destination: '/news/article-published-in-global-change-biology',
+    permanent: true,
+  },
+  {
+    source: '/2010/05/07/article-published-in-geophysical-research-letters/',
+    destination: '/news/article-published-in-geophysical-research-letters',
+    permanent: true,
+  },
+  {
+    source: '/2009/02/15/article-published-in-geoderma/',
+    destination: '/news/article-published-in-geoderma',
+    permanent: true,
+  },
+  {
+    source: '/field-work/article-published-in-geochemica-et-cosmochimica-acta/',
+    destination: '/news/article-published-in-geochemica-et-cosmochimica-acta',
+    permanent: true,
+  },
+  {
+    source: '/2013/04/23/article-published-in-geochemica-et-cosmochimica-acta/',
+    destination: '/news/article-published-in-geochemica-et-cosmochimica-acta',
+    permanent: true,
+  },
+  {
+    source: '/2016/11/11/article-published-in-environmental-research-letters/',
+    destination: '/news/article-published-in-environmental-research-letters',
+    permanent: true,
+  },
+  {
+    source: '/2007/09/01/article-published-in-ecosystems/',
+    destination: '/news/article-published-in-ecosystems',
+    permanent: true,
+  },
+  {
+    source: '/2009/12/04/article-published-in-ecohydrology/',
+    destination: '/news/article-published-in-ecohydrology',
+    permanent: true,
+  },
+  {
+    source: '/field-work/article-on-patterns-of-soil-n-published-in-landscape-ecology/',
+    destination: '/news/article-on-patterns-of-soil-n-published-in-landscape-ecology',
+    permanent: true,
+  },
+  {
+    source: '/2013/04/23/article-on-patterns-of-soil-n-published-in-landscape-ecology/',
+    destination: '/news/article-on-patterns-of-soil-n-published-in-landscape-ecology',
+    permanent: true,
+  },
+  {
+    source: '/publications/article-in-new-phytologist/',
+    destination: '/news/article-in-new-phytologist',
+    permanent: true,
+  },
+  {
+    source: '/2007/05/08/article-in-new-phytologist/',
+    destination: '/news/article-in-new-phytologist',
+    permanent: true,
+  },
+  {
+    source: '/2012/01/02/article-accepted-in-water-resources-research/',
+    destination: '/news/article-accepted-in-water-resources-research',
+    permanent: true,
+  },
+  {
+    source: '/2012/04/12/article-accepted-in-vadose-zone-journal/',
+    destination: '/news/article-accepted-in-vadose-zone-journal',
+    permanent: true,
+  },
+  {
+    source: '/2008/12/31/article-accepted-in-rapid-communications-of-mass-spectrometry/',
+    destination: '/news/article-accepted-in-rapid-communications-of-mass-spectrometry',
+    permanent: true,
+  },
+  {
+    source: '/2012/03/28/article-accepted-in-plos-one/',
+    destination: '/news/article-accepted-in-plos-one',
+    permanent: true,
+  },
+  {
+    source: '/2012/06/25/article-accepted-in-jgr-atmospheres/',
+    destination: '/news/article-accepted-in-jgr-atmospheres',
+    permanent: true,
+  },
+  {
+    source: '/2010/11/10/article-accepted-in-ecohydrology/',
+    destination: '/news/article-accepted-in-ecohydrology',
+    permanent: true,
+  },
+  {
+    source: '/2011/11/01/article-accepted-in-agricultural-and-forest-meteorology/',
+    destination: '/news/article-accepted-in-agricultural-and-forest-meteorology',
+    permanent: true,
+  },
+  {
+    source: '/2010/01/06/article-accepted-in-advances-in-water-resources/',
+    destination: '/news/article-accepted-in-advances-in-water-resources',
+    permanent: true,
+  },
+  {
+    source: '/2017/09/26/arable-mark-deployments-in-zambias-southern-province/',
+    destination: '/news/arable-mark-deployments-in-zambias-southern-province',
+    permanent: true,
+  },
+  {
+    source: '/collaboration/arable-featured-in-paw/',
+    destination: '/news/arable-featured-in-paw',
+    permanent: true,
+  },
+  {
+    source: '/2016/03/14/arable-featured-in-paw/',
+    destination: '/news/arable-featured-in-paw',
+    permanent: true,
+  },
+  {
+    source: '/2014/01/23/anticipating-the-ecological-impacts-of-agricultural-adaptation-to-climate-change/',
+    destination: '/news/anticipating-the-ecological-impacts-of-agricultural-adaptation-to-climate-change',
+    permanent: true,
+  },
+  {
+    source: '/2009/02/13/alex-lester-brown-bag-seminar/',
+    destination: '/news/alex-lester-brown-bag-seminar',
+    permanent: true,
+  },
+  {
+    source: '/conferences/agu-meeting-of-the-americas-2013/',
+    destination: '/news/agu-meeting-of-the-americas-2013',
+    permanent: true,
+  },
+  {
+    source: '/2013/05/20/agu-meeting-of-the-americas-2013/',
+    destination: '/news/agu-meeting-of-the-americas-2013',
+    permanent: true,
+  },
+  {
+    source: '/general/agu-fellows-program/',
+    destination: '/news/agu-fellows-program',
+    permanent: true,
+  },
+  {
+    source: '/2015/03/12/agu-fellows-program/',
+    destination: '/news/agu-fellows-program',
+    permanent: true,
+  },
+  {
+    source: '/conferences/agu-fall-meeting-2020/',
+    destination: '/news/agu-fall-meeting-2020',
+    permanent: true,
+  },
+  {
+    source: '/2020/11/27/agu-fall-meeting-2020/',
+    destination: '/news/agu-fall-meeting-2020',
+    permanent: true,
+  },
+  {
+    source: '/2009/03/26/agu-chapman-conference-on-ecohydrology/',
+    destination: '/news/agu-chapman-conference-on-ecohydrology',
+    permanent: true,
+  },
+  {
+    source: '/general/adam8217s-interview-by-the-center-for-data-innovation/',
+    destination: '/news/adam8217s-interview-by-the-center-for-data-innovation',
+    permanent: true,
+  },
+  {
+    source: '/2013/10/23/adam8217s-interview-by-the-center-for-data-innovation/',
+    destination: '/news/adam8217s-interview-by-the-center-for-data-innovation',
+    permanent: true,
+  },
+  {
+    source: '/conferences/aaas-session-on-new-earth-observing-methods/',
+    destination: '/news/aaas-session-on-new-earth-observing-methods',
+    permanent: true,
+  },
+  {
+    source: '/2015/02/24/aaas-session-on-new-earth-observing-methods/',
+    destination: '/news/aaas-session-on-new-earth-observing-methods',
+    permanent: true,
+  },
+  {
+    source: '/2011/10/15/2nd-mpala-based-cosmos-probe-now-calibrated/',
+    destination: '/news/2nd-mpala-based-cosmos-probe-now-calibrated',
+    permanent: true,
+  },
+  {
+    source: '/2008/04/11/2008-princeton-colloquium-on-public-and-international-affairs/',
+    destination: '/news/2008-princeton-colloquium-on-public-and-international-affairs',
+    permanent: true,
+  },
+  {
+    source: '/assets/images/people/:path*',
+    destination: '/images/people/:path*',
+    permanent: true,
+  },
+  {
+    source: '/assets/images/publications/:path*',
+    destination: '/images/publications/:path*',
+    permanent: true,
+  },
+  {
+    source: '/assets/images/:path*',
+    destination: '/images/site/:path*',
+    permanent: true,
+  },
+  {
+    source: '/assets/files/:path*',
+    destination: '/files/:path*',
+    permanent: true,
+  },
+  {
+    source: '/uploads/:path*',
+    destination: '/files/:path*',
+    permanent: true,
+  },
+  {
+    source: '/wp-content/uploads/:path*',
+    destination: '/files/:path*',
+    permanent: true,
+  },
+
+  // Temporary redirects (302)
+
+];
+
+export default redirects;

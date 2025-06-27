@@ -24,17 +24,20 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 ## User Stories
 
 ### Primary Users: Lab Members (Non-Technical)
+
 - **As a lab member**, I want to update my profile information without using Git so that I can keep my information current
 - **As a lab member**, I want to add new publications to the website so that our research is properly documented
 - **As a lab member**, I want to create news/blog posts about our research so that we can share our work with the community
 - **As a lab member**, I want to upload and manage images so that our website stays visually current
 
 ### Secondary Users: Website Visitors
+
 - **As a researcher**, I want to find publications by the WAVES group so that I can cite their work
 - **As a potential student**, I want to learn about current research projects so that I can decide if I want to join the lab
 - **As a collaborator**, I want to find contact information for lab members so that I can reach out about partnerships
 
 ### Tertiary Users: Lab Leadership
+
 - **As the PI**, I want to approve content before it goes live so that quality is maintained
 - **As the PI**, I want to track website analytics so that I can measure our research impact
 
@@ -43,6 +46,7 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 ## Functional Requirements
 
 ### 1. Content Migration System
+
 1.1. The system must extract all people profiles from Hugo front matter and convert to Next.js-compatible format
 1.2. The system must migrate all publication metadata (authors, DOIs, abstracts, links) from Hugo to Next.js
 1.3. The system must preserve all existing images and media files with proper optimization
@@ -50,6 +54,7 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 1.5. The system must validate migrated content for completeness and accuracy
 
 ### 2. Content Management Interface
+
 2.1. The system must provide a web-based CMS interface accessible to all lab members
 2.2. The system must allow users to create and edit people profiles with rich text formatting
 2.3. The system must support publication entry with automatic DOI validation and metadata fetching
@@ -58,18 +63,21 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 2.6. The system must implement role-based access (editor vs. admin) for content approval workflows
 
 ### 3. Search and Discovery
+
 3.1. The system must provide full-text search across all content types
 3.2. The system must support filtering publications by year, author, and publication type
 3.3. The system must enable search result highlighting and relevance ranking
 3.4. The system must provide autocomplete suggestions for search queries
 
 ### 4. External Integrations
+
 4.1. The system must integrate with ORCID API to auto-populate researcher profiles
 4.2. The system must connect to Google Scholar for citation metrics
 4.3. The system must integrate with Altmetric for research impact tracking
 4.4. The system must support [ScholarAI](https://scholarai.io) integration for enhanced research discovery
 
 ### 5. Performance and SEO
+
 5.1. The system must achieve Lighthouse performance score > 90
 5.2. The system must implement proper meta tags and Open Graph data
 5.3. The system must generate XML sitemaps for search engine indexing
@@ -91,18 +99,21 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 ## Design Considerations
 
 ### Visual Design
+
 - **Brand Consistency**: Maintain existing WAVES branding, colors, and visual identity
 - **Modern Aesthetics**: Update to contemporary design patterns while preserving brand recognition
 - **Accessibility**: WCAG 2.1 AA compliance for inclusive design
 - **Typography**: Academic-appropriate font choices with good readability
 
 ### User Experience
+
 - **Intuitive Navigation**: Clear information architecture based on existing site structure
 - **Mobile-First**: Responsive design optimized for mobile devices
 - **Fast Loading**: Optimized images and code for quick page loads
 - **Error Handling**: Clear error messages and recovery paths
 
 ### Content Organization
+
 - **People Section**: Current members, alumni, and individual profile pages
 - **Publications**: Journal articles, conference papers, preprints with filtering
 - **Research Projects**: Current and past research areas with descriptions
@@ -113,6 +124,7 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 ## Technical Considerations
 
 ### Technology Stack
+
 - **Frontend**: Next.js 14 with TypeScript and App Router
 - **Styling**: Tailwind CSS with custom design system
 - **CMS**: Netlify CMS or Sanity for content management
@@ -120,13 +132,23 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 - **Search**: Algolia or similar search-as-a-service
 - **Image Optimization**: Next.js Image component with automatic optimization
 
+### Testing and Validation Requirements
+
+- **Test-First Development**: All features must follow TDD workflow (see `.cursor/rules/typescript-tdd.mdc`)
+- **Comprehensive Testing**: Unit tests, integration tests, and validation scripts required (see `.cursor/rules/testing-and-validation.mdc`)
+- **Quality Gates**: No task completion without passing tests and validation
+- **Error Detection**: Automated validation for common issues (redirect loops, data integrity, performance)
+- **Type Safety**: Strict TypeScript configuration with comprehensive type checking
+
 ### Data Architecture
+
 - **Content Storage**: Markdown/MDX files with YAML front matter
 - **Metadata Management**: Structured data for publications and people
 - **Media Management**: Optimized image storage with CDN delivery
 - **Backup Strategy**: Git-based version control with automated backups
 
 ### Integration Requirements
+
 - **ORCID API**: Researcher profile synchronization
 - **Google Scholar**: Citation metrics and profile linking
 - **Altmetric**: Research impact tracking
@@ -137,15 +159,18 @@ This PRD outlines the initial scaffolding and content migration for the WAVES Re
 ## Legacy Code Integration
 
 ### Hugo Content Analysis
+
 Based on examination of the legacy site, the following content structures need migration:
 
 **People Profiles** (60+ authors):
+
 - Location: `legacy/content/authors/[username]/_index.md`
 - Format: Hugo front matter with YAML metadata
 - Key fields: name, role, bio, education, social links, user groups
 - Migration approach: Convert to Next.js MDX with standardized front matter
 
 **Publications** (Multiple categories):
+
 - Location: `legacy/content/publication/[type]/`
 - Types: journal-article, conference-paper, preprint
 - Format: Hugo front matter with publication metadata
@@ -153,17 +178,20 @@ Based on examination of the legacy site, the following content structures need m
 - Migration approach: Standardize to consistent publication schema
 
 **Research Projects**:
+
 - Location: `legacy/content/project/[project-name]/`
 - Current projects: climate_resillience, ecohydrology, environmental_sensing
 - Format: Hugo landing pages with sections and blocks
 - Migration approach: Convert to Next.js pages with modern component structure
 
 **Media Assets**:
+
 - Location: `legacy/assets/media/`
 - Content: Research images, team photos, project visuals
 - Migration approach: Optimize and migrate to Next.js public directory
 
 ### Reusable Components
+
 - **Publication Cards**: Display publication metadata consistently
 - **People Cards**: Show researcher profiles with social links
 - **Search Components**: Unified search interface across content types
@@ -174,22 +202,26 @@ Based on examination of the legacy site, the following content structures need m
 ## Success Metrics
 
 ### Technical Performance
+
 - **Lighthouse Score**: > 90 for all pages
 - **Page Load Time**: < 3 seconds on mobile devices
 - **Core Web Vitals**: Pass all Google metrics
 - **Uptime**: 99.9% availability
 
 ### Content Management
+
 - **Content Update Time**: < 5 minutes for simple changes
 - **User Adoption**: 80% of lab members actively using CMS within 3 months
 - **Content Freshness**: Monthly updates maintained consistently
 
 ### User Experience
+
 - **Search Response Time**: < 1 second for search queries
 - **Mobile Usability**: 100% of pages mobile-optimized
 - **Accessibility**: WCAG 2.1 AA compliance achieved
 
 ### Research Impact
+
 - **SEO Performance**: Maintain or improve search rankings
 - **Citation Tracking**: Successful integration with ORCID and Google Scholar
 - **Research Visibility**: Increased traffic from academic search engines
@@ -212,24 +244,28 @@ Based on examination of the legacy site, the following content structures need m
 ## Implementation Phases
 
 ### Phase 1: Foundation (Week 1-2)
+
 - Set up Next.js project structure
 - Implement basic routing and navigation
 - Create design system and component library
 - Set up development and deployment pipeline
 
 ### Phase 2: Content Migration (Week 3-4)
+
 - Develop migration scripts for Hugo content
 - Migrate people profiles and publications
 - Optimize and migrate media assets
 - Validate migrated content integrity
 
 ### Phase 3: CMS Implementation (Week 5-6)
+
 - Implement content management interface
 - Set up user roles and permissions
 - Create content editing workflows
 - Test CMS functionality with lab members
 
 ### Phase 4: Integration & Optimization (Week 7-8)
+
 - Implement external API integrations
 - Optimize performance and SEO
 - Conduct user testing and feedback
@@ -240,15 +276,17 @@ Based on examination of the legacy site, the following content structures need m
 ## Risk Mitigation
 
 ### Technical Risks
+
 - **Migration Data Loss**: Implement comprehensive backup and validation procedures
 - **Performance Issues**: Establish performance monitoring from day one
 - **CMS Adoption**: Provide training and documentation for lab members
 - **Integration Failures**: Plan fallback options for external API dependencies
 
 ### Content Risks
+
 - **User Resistance**: Provide clear benefits and training for new CMS
 - **Content Quality**: Establish editorial guidelines and approval processes
 - **Data Consistency**: Implement validation rules and automated checks
 - **Version Control**: Maintain Git history for all content changes
 
-This PRD provides a comprehensive roadmap for modernizing the WAVES research lab website while preserving valuable research history and establishing a maintainable platform for future growth. 
+This PRD provides a comprehensive roadmap for modernizing the WAVES research lab website while preserving valuable research history and establishing a maintainable platform for future growth.
