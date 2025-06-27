@@ -1,0 +1,131 @@
+# Task List: Initial Website Scaffolding & Content Migration
+
+## Relevant Files
+
+- `src/app/layout.tsx` - Root layout component with navigation and global styles
+- `src/app/page.tsx` - Homepage component with hero section and featured content
+- `src/app/people/page.tsx` - People listing page with team member cards
+- `src/app/people/[slug]/page.tsx` - Individual person profile page
+- `src/app/publications/page.tsx` - Publications listing with filtering
+- `src/app/publications/[slug]/page.tsx` - Individual publication detail page
+- `src/app/projects/page.tsx` - Research projects overview page
+- `src/app/projects/[slug]/page.tsx` - Individual project detail page
+- `src/app/news/page.tsx` - News/blog listing page
+- `src/app/news/[slug]/page.tsx` - Individual news/blog post page
+- `src/components/ui/` - Base UI components (Button, Card, Input, etc.)
+- `src/components/layout/` - Layout components (Header, Footer, Navigation)
+- `src/components/content/` - Content-specific components (PersonCard, PublicationCard, etc.)
+- `src/lib/migration/` - Content migration utilities and scripts
+- `src/lib/cms/` - CMS integration and content management utilities
+- `src/lib/search/` - Search functionality and indexing
+- `src/lib/integrations/` - External API integrations (ORCID, Google Scholar, etc.)
+- `content/people/` - Markdown files for people profiles
+- `content/publications/` - Markdown files for publications
+- `content/projects/` - Markdown files for research projects
+- `content/news/` - Markdown files for news/blog posts
+- `public/images/` - Optimized images and media assets
+- `next.config.ts` - Next.js configuration for image optimization and redirects
+- `tailwind.config.js` - Tailwind CSS configuration with custom design system
+- `package.json` - Project dependencies and scripts
+- `.github/workflows/ci.yml` - GitHub Actions workflow for CI
+- `.gitignore` - Ignore rules for Git
+- `.prettierrc` - Prettier formatting configuration
+- `.vscode/settings.json` - Recommended editor settings
+- `jest.config.js` - Jest configuration for testing
+- `content-migration-schema.md` - Documentation of legacy Hugo content structure and mapping to Next.js/MDX
+
+### Notes
+
+- Unit tests should be placed in `__tests__/` directories alongside the components they test
+- Use `jest` and `@testing-library/react` for component testing
+- Use `@testing-library/jest-dom` for additional DOM matchers
+- Integration tests should be placed in `tests/integration/` directory
+- E2E tests should be placed in `tests/e2e/` directory using Playwright
+- Report test coverage when completing each task using `npm run test:coverage`
+
+## Tasks
+
+- [x] 1.0 Foundation Setup and Project Structure
+  - [x] 1.1 Set up Next.js project with TypeScript, Tailwind CSS, and ESLint configuration
+  - [x] 1.2 Create folder structure for components, lib utilities, and content directories
+  - [x] 1.3 Configure Tailwind CSS with custom design system based on existing WAVES branding
+  - [x] 1.4 Set up Next.js configuration for image optimization, redirects, and performance
+  - [x] 1.5 Install and configure testing framework (Jest, React Testing Library)
+  - [x] 1.6 Set up Git repository with proper branching strategy and CI/CD pipeline
+  - [x] 1.7 Configure development environment with proper linting and formatting rules
+
+- [x] 2.0 Content Migration System Development
+  - [x] 2.1 Analyze Jekyll content structure and create migration schema documentation
+  - [x] 2.2 Develop migration script for people profiles (60+ authors from legacy/\_people/)
+  - [x] 2.3 Develop migration script for publications (100+ publications from legacy/\_publications/)
+  - [ ] 2.4 Develop migration script for news posts (2011-2020 posts from legacy/\_posts/)
+  - [ ] 2.5 Create image optimization and migration script for media assets from legacy/assets/
+  - [ ] 2.6 Implement content validation system to ensure migration completeness and accuracy
+  - [ ] 2.7 Create URL mapping system to maintain existing links and implement redirects
+  - [ ] 2.8 Test migration scripts with sample data and validate output format
+
+- [ ] 3.0 Core Page Components and Routing
+  - [ ] 3.1 Create base UI components (Button, Card, Input, Modal, etc.) with Tailwind styling
+  - [ ] 3.2 Implement responsive navigation component with mobile menu
+  - [ ] 3.3 Create layout components (Header, Footer, Breadcrumbs) with WAVES branding
+  - [ ] 3.4 Build homepage with hero section, featured content, and team highlights
+  - [ ] 3.5 Implement people listing page with grid layout and filtering by user groups
+  - [ ] 3.6 Create individual person profile pages with bio, publications, and social links
+  - [ ] 3.7 Build publications listing page with filtering by year, author, and type
+  - [ ] 3.8 Implement individual publication pages with metadata, abstracts, and links
+  - [ ] 3.9 Create research projects overview and individual project detail pages
+  - [ ] 3.10 Build news/blog listing and individual post pages with markdown support
+
+- [ ] 4.0 Content Management Interface Implementation
+  - [ ] 4.1 Research and select CMS solution (Netlify CMS vs Sanity) based on requirements
+  - [ ] 4.2 Set up CMS configuration and authentication system
+  - [ ] 4.3 Create content editing interface for people profiles with rich text support
+  - [ ] 4.4 Implement publication entry form with DOI validation and metadata fetching
+  - [ ] 4.5 Build blog/news post editor with markdown support and image upload
+  - [ ] 4.6 Create image management system with upload, optimization, and organization
+  - [ ] 4.7 Implement role-based access control (editor vs admin) for content approval
+  - [ ] 4.8 Set up content preview functionality for draft review
+  - [ ] 4.9 Create content validation rules and error handling for CMS forms
+
+- [ ] 5.0 Search and Discovery Features
+  - [ ] 5.1 Research and select search solution (Algolia, Elasticsearch, or simpler option)
+  - [ ] 5.2 Implement full-text search across all content types (people, publications, projects, news)
+  - [ ] 5.3 Create search results page with highlighting and relevance ranking
+  - [ ] 5.4 Build advanced filtering system for publications (year, author, type, tags)
+  - [ ] 5.5 Implement autocomplete suggestions for search queries
+  - [ ] 5.6 Create search analytics to track popular queries and improve results
+  - [ ] 5.7 Optimize search performance for sub-second response times
+  - [ ] 5.8 Test search functionality with migrated content and real user scenarios
+
+- [ ] 6.0 External Integrations and API Connections
+  - [ ] 6.1 Research ORCID API integration for researcher profile synchronization
+  - [ ] 6.2 Implement Google Scholar integration for citation metrics and profile linking
+  - [ ] 6.3 Set up Altmetric integration for research impact tracking
+  - [ ] 6.4 Explore ScholarAI integration for enhanced research discovery features
+  - [ ] 6.5 Create API utility functions for external service connections
+  - [ ] 6.6 Implement error handling and fallback options for API failures
+  - [ ] 6.7 Set up API rate limiting and caching to optimize performance
+  - [ ] 6.8 Test all integrations with real data and validate functionality
+
+- [ ] 7.0 Performance Optimization and SEO Implementation
+  - [ ] 7.1 Implement Next.js Image component optimization for all images
+  - [ ] 7.2 Set up proper meta tags and Open Graph data for all pages
+  - [ ] 7.3 Create XML sitemap generation for search engine indexing
+  - [ ] 7.4 Implement structured data markup for publications and people profiles
+  - [ ] 7.5 Optimize Core Web Vitals (LCP, FID, CLS) to achieve Lighthouse score > 90
+  - [ ] 7.6 Set up performance monitoring and analytics tracking
+  - [ ] 7.7 Implement lazy loading and code splitting for optimal performance
+  - [ ] 7.8 Create robots.txt and security headers for SEO and security
+  - [ ] 7.9 Test performance across different devices and network conditions
+
+- [ ] 8.0 Testing, Validation, and Deployment
+  - [ ] 8.1 Write unit tests for all components and utility functions
+  - [ ] 8.2 Create integration tests for content migration and CMS functionality
+  - [ ] 8.3 Implement E2E tests for critical user journeys using Playwright
+  - [ ] 8.4 Conduct accessibility testing to ensure WCAG 2.1 AA compliance
+  - [ ] 8.5 Perform cross-browser testing on Chrome, Firefox, Safari, and Edge
+  - [ ] 8.6 Set up Vercel deployment with preview environments for each branch
+  - [ ] 8.7 Configure production environment with proper environment variables
+  - [ ] 8.8 Create deployment documentation and rollback procedures
+  - [ ] 8.9 Conduct user acceptance testing with lab members
+  - [ ] 8.10 Create training materials and documentation for CMS usage
