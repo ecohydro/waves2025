@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 // TODO: Replace with actual logo import
 // import Logo from 'public/images/site/waves_logo.svg';
@@ -25,7 +25,6 @@ export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
-  const router = useRouter();
 
   // Refs for focus management
   const mobileMenuRef = useRef<HTMLDivElement>(null);

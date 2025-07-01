@@ -52,6 +52,80 @@ playwright-report/
 # VSCode
 .vscode/
 
-# csv data
+# csv data (contains sensitive CV and personal data)
 csv_files/
+
+# Temporary and cache files
+*.log
+*.tmp
+*.temp
+.cache/
+.sass-cache/
+.jekyll-cache/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE and editor files
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Local development files
+.local/
+local/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# API keys and secrets (additional protection)
+*secret*
+*key*
+*token*
+*credential*
+
+# Large media files that should be optimized
+*.mov
+*.avi
+*.mp4
+*.wmv
+*.flv
+*.webm
+
+# Raw image files (keep only optimized versions)
+*.raw
+*.cr2
+*.nef
+*.arw
+*.dng
+
+# Temporary migration files
+migration-temp/
+temp-migration/
+
+# Local configuration overrides
+config.local.*
+settings.local.*
+
+# Performance monitoring
+.nyc_output/
+
+# Storybook
+storybook-static/
+
+# Sentry
+.sentryclirc
+
+# Turbo
+.turbo/
 

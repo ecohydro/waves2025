@@ -43,7 +43,7 @@ describe('Navigation Component', () => {
     });
     jest.useRealTimers();
     // Reset pathname mock to default
-    const { usePathname } = require('next/navigation');
+    const { usePathname } = jest.requireMock('next/navigation');
     usePathname.mockReturnValue('/');
   });
 
@@ -634,7 +634,7 @@ describe('Navigation Component', () => {
   describe('3.2.2.1 - Active Page Highlighting', () => {
     it.skip('applies active classes and aria-current to the current page link (desktop)', async () => {
       // Set pathname to /people
-      const { usePathname } = require('next/navigation');
+      const { usePathname } = jest.requireMock('next/navigation');
       usePathname.mockReturnValue('/people');
 
       render(<Navigation />);
@@ -649,7 +649,7 @@ describe('Navigation Component', () => {
 
     it.skip('applies active classes and aria-current to the current page link (mobile)', async () => {
       // Set pathname to /publications
-      const { usePathname } = require('next/navigation');
+      const { usePathname } = jest.requireMock('next/navigation');
       usePathname.mockReturnValue('/publications');
 
       render(<Navigation />);
@@ -674,7 +674,7 @@ describe('Navigation Component', () => {
 
     it.skip('only highlights one active link at a time', async () => {
       // Set pathname to /news
-      const { usePathname } = require('next/navigation');
+      const { usePathname } = jest.requireMock('next/navigation');
       usePathname.mockReturnValue('/news');
 
       render(<Navigation />);
@@ -692,7 +692,7 @@ describe('Navigation Component', () => {
 
     it.skip('handles root path correctly', async () => {
       // Set pathname to /
-      const { usePathname } = require('next/navigation');
+      const { usePathname } = jest.requireMock('next/navigation');
       usePathname.mockReturnValue('/');
 
       render(<Navigation />);
