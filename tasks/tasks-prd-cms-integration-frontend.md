@@ -1,0 +1,170 @@
+# Task List: CMS Integration - Frontend Migration from MDX to Sanity
+
+## Relevant Files
+
+- `src/app/people/page.tsx` - Main people listing page that needs Sanity integration
+- `src/app/people/[slug]/page.tsx` - Individual person detail page requiring Sanity data fetching
+- `src/app/publications/page.tsx` - Publications listing page for Sanity migration
+- `src/app/publications/[slug]/page.tsx` - Publication detail page requiring CMS integration
+- `src/app/news/page.tsx` - News listing page for Sanity data integration
+- `src/app/news/[slug]/page.tsx` - Individual news post page requiring CMS data
+- `src/lib/cms/client.ts` - Already exists, may need enhancements for new functionality
+- `src/lib/cms/migration/` - New directory for MDX to Sanity migration scripts
+- `src/lib/cms/api/` - New directory for API routes supporting automation
+- `src/lib/cms/hooks/` - New directory for custom React hooks for CMS data
+- `src/components/cms/` - New directory for CMS-specific UI components
+- `src/middleware.ts` - Middleware for API authentication and rate limiting
+- `src/app/api/cms/` - API routes for external automation tools
+- `tests/cms/` - Comprehensive test suite for CMS integration
+- `.env.example` - Updated environment variable documentation
+
+### Notes
+
+- Follow existing TDD patterns established in the project
+- All CMS integration must maintain current URL structures for SEO
+- Implement comprehensive error handling and fallback mechanisms
+- Use existing migration utilities as foundation for MDX→Sanity conversion
+- Maintain backwards compatibility during transition period
+
+## Tasks
+
+- [x] 1.0 **Content Migration Infrastructure**
+  - [x] 1.1 Create backup system for existing MDX files before migration
+    - [x] 1.1.1 **Testing & Validation**:
+      - ✅ Comprehensive backup system implemented (`src/lib/cms/migration/backup-system.ts`)
+      - ✅ Full test suite created (`src/lib/cms/migration/__tests__/backup-system.test.ts`)
+      - ✅ Validation script successful (`src/lib/cms/migration/validate-backup-system.ts`)
+      - ✅ Real backup test completed: 69 people + 134 publications + 157 news = 360 files backed up
+      - ✅ Checksum validation for data integrity implemented
+      - ✅ Restore functionality with dry-run capability
+      - ✅ CLI tools added to package.json for easy usage
+      - ✅ Backup manifest shows 822KB total content successfully backed up
+      - ✅ **Task 1.1 COMPLETE** - Ready for style changes and Task 1.2
+  - [ ] 1.2 Build migration script for people profiles (MDX → Sanity)
+    - [ ] 1.2.1 Parse existing people MDX files and extract metadata
+    - [ ] 1.2.2 Map MDX frontmatter to Sanity person schema
+    - [ ] 1.2.3 Handle image migration and asset references
+    - [ ] 1.2.4 Preserve academic relationships and metadata
+  - [ ] 1.3 Build migration script for publications (MDX → Sanity)
+    - [ ] 1.3.1 Parse publication MDX files with complex metadata
+    - [ ] 1.3.2 Map publication data to Sanity publication schema
+    - [ ] 1.3.3 Migrate DOI, ORCID, and citation data
+    - [ ] 1.3.4 Handle author relationships and external collaborators
+  - [ ] 1.4 Build migration script for news/blog posts (MDX → Sanity)
+    - [ ] 1.4.1 Parse news MDX files and extract content
+    - [ ] 1.4.2 Map to Sanity news schema with categories/tags
+    - [ ] 1.4.3 Migrate featured images and media galleries
+    - [ ] 1.4.4 Preserve publication dates and author information
+  - [ ] 1.5 Create data validation and integrity checking system
+    - [ ] 1.5.1 Validate all migrated content against Sanity schemas
+    - [ ] 1.5.2 Check for missing references and broken relationships
+    - [ ] 1.5.3 Generate migration report with success/failure statistics
+    - [ ] 1.5.4 Implement rollback mechanism for failed migrations
+
+- [ ] 2.0 **Frontend Data Integration**
+  - [ ] 2.1 Update people pages to use Sanity data
+    - [ ] 2.1.1 Replace MDX file reading with Sanity client in people listing page
+    - [ ] 2.1.2 Update individual person detail page to fetch from Sanity
+    - [ ] 2.1.3 Update generateStaticParams to use Sanity slugs
+    - [ ] 2.1.4 Implement error handling for missing person data
+  - [ ] 2.2 Update publications pages to use Sanity data
+    - [ ] 2.2.1 Replace MDX file reading with Sanity client in publications listing
+    - [ ] 2.2.2 Update publication detail page to fetch from Sanity
+    - [ ] 2.2.3 Update generateStaticParams for publication slugs
+    - [ ] 2.2.4 Handle complex publication metadata and relationships
+  - [ ] 2.3 Update news pages to use Sanity data
+    - [ ] 2.3.1 Replace MDX file reading with Sanity client in news listing
+    - [ ] 2.3.2 Update individual news post page to fetch from Sanity
+    - [ ] 2.3.3 Update generateStaticParams for news slugs
+    - [ ] 2.3.4 Implement category and tag filtering functionality
+  - [ ] 2.4 Implement preview mode support
+    - [ ] 2.4.1 Set up Next.js preview mode configuration
+    - [ ] 2.4.2 Create preview API routes for draft content
+    - [ ] 2.4.3 Add preview indicators to CMS-powered pages
+    - [ ] 2.4.4 Implement preview secret validation and security
+  - [ ] 2.5 Update image handling to use Sanity CDN
+    - [ ] 2.5.1 Replace static image imports with Sanity image URLs
+    - [ ] 2.5.2 Implement responsive image optimization with urlForImage
+    - [ ] 2.5.3 Add proper alt text and accessibility attributes
+    - [ ] 2.5.4 Handle image fallbacks for missing assets
+
+- [ ] 3.0 **API and Automation Layer**
+  - [ ] 3.1 Create REST API endpoints for content automation
+    - [ ] 3.1.1 Build people CRUD API routes (/api/cms/people)
+    - [ ] 3.1.2 Build publications CRUD API routes (/api/cms/publications)
+    - [ ] 3.1.3 Build news CRUD API routes (/api/cms/news)
+    - [ ] 3.1.4 Implement proper HTTP status codes and error responses
+  - [ ] 3.2 Implement API authentication and security
+    - [ ] 3.2.1 Create API key authentication system
+    - [ ] 3.2.2 Implement rate limiting middleware
+    - [ ] 3.2.3 Add request validation and sanitization
+    - [ ] 3.2.4 Set up CORS policies for external tool access
+  - [ ] 3.3 Build webhook system for real-time notifications
+    - [ ] 3.3.1 Create webhook registration and management API
+    - [ ] 3.3.2 Implement content change event triggers
+    - [ ] 3.3.3 Add webhook delivery retry mechanism
+    - [ ] 3.3.4 Create webhook payload validation and security
+  - [ ] 3.4 Create Slack integration endpoints
+    - [ ] 3.4.1 Build Slack slash command handlers for content creation
+    - [ ] 3.4.2 Implement Slack interactive message responses
+    - [ ] 3.4.3 Add content approval workflow through Slack
+    - [ ] 3.4.4 Create Slack notification system for content changes
+  - [ ] 3.5 Document API endpoints for external integrations
+    - [ ] 3.5.1 Create OpenAPI/Swagger documentation
+    - [ ] 3.5.2 Write integration guides for n8n workflows
+    - [ ] 3.5.3 Provide Cursor automation examples
+    - [ ] 3.5.4 Create Postman collection for API testing
+
+- [ ] 4.0 **Testing and Validation**
+  - [ ] 4.1 Create comprehensive unit tests for CMS integration
+    - [ ] 4.1.1 Test Sanity client data fetching functions
+    - [ ] 4.1.2 Test migration scripts with sample data
+    - [ ] 4.1.3 Test API endpoint functionality and error handling
+    - [ ] 4.1.4 Test React hooks for CMS data management
+  - [ ] 4.2 Build integration tests for end-to-end workflows
+    - [ ] 4.2.1 Test complete content creation and publishing workflow
+    - [ ] 4.2.2 Test preview mode functionality across all content types
+    - [ ] 4.2.3 Test API automation scenarios with realistic data
+    - [ ] 4.2.4 Test webhook delivery and retry mechanisms
+  - [ ] 4.3 Create validation scripts for content integrity
+    - [ ] 4.3.1 Build automated content validation suite
+    - [ ] 4.3.2 Create broken link detection and reporting
+    - [ ] 4.3.3 Implement missing asset detection system
+    - [ ] 4.3.4 Add schema validation for all content types
+  - [ ] 4.4 Performance testing and optimization validation
+    - [ ] 4.4.1 Test page load times with Sanity data
+    - [ ] 4.4.2 Validate API response times under load
+    - [ ] 4.4.3 Test image delivery and optimization performance
+    - [ ] 4.4.4 Measure and optimize GROQ query performance
+  - [ ] 4.5 Security testing for API and authentication
+    - [ ] 4.5.1 Test API authentication and authorization
+    - [ ] 4.5.2 Validate rate limiting effectiveness
+    - [ ] 4.5.3 Test input validation and sanitization
+    - [ ] 4.5.4 Perform security audit of webhook endpoints
+
+- [ ] 5.0 **Performance Optimization and Production Readiness**
+  - [ ] 5.1 Implement caching strategies for optimal performance
+    - [ ] 5.1.1 Set up GROQ query caching with appropriate TTL
+    - [ ] 5.1.2 Implement Next.js ISR (Incremental Static Regeneration)
+    - [ ] 5.1.3 Configure CDN caching for Sanity images
+    - [ ] 5.1.4 Add client-side caching for frequently accessed data
+  - [ ] 5.2 Create comprehensive error handling and monitoring
+    - [ ] 5.2.1 Implement error boundaries for CMS connectivity issues
+    - [ ] 5.2.2 Add comprehensive logging for debugging automation
+    - [ ] 5.2.3 Create health check endpoints for monitoring
+    - [ ] 5.2.4 Set up error alerting and notification system
+  - [ ] 5.3 Optimize build and deployment pipeline
+    - [ ] 5.3.1 Update build process to work with Sanity data
+    - [ ] 5.3.2 Implement environment-specific configurations
+    - [ ] 5.3.3 Add pre-deployment validation checks
+    - [ ] 5.3.4 Create rollback procedures for production issues
+  - [ ] 5.4 Create user documentation and training materials
+    - [ ] 5.4.1 Write CMS user guide for lab members
+    - [ ] 5.4.2 Create video tutorials for content editing workflows
+    - [ ] 5.4.3 Document API integration procedures for administrators
+    - [ ] 5.4.4 Prepare troubleshooting guide for common issues
+  - [ ] 5.5 Final migration and go-live preparation
+    - [ ] 5.5.1 Run complete migration in staging environment
+    - [ ] 5.5.2 Perform final content validation and integrity checks
+    - [ ] 5.5.3 Execute production migration with minimal downtime
+    - [ ] 5.5.4 Monitor post-migration performance and user feedback

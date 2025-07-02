@@ -1,0 +1,2899 @@
+{
+  "timestamp": "2025-07-02T17-53-20-265Z",
+  "version": "1.0.0",
+  "contentTypes": {
+    "people": 69,
+    "publications": 134,
+    "news": 157,
+    "pages": 0
+  },
+  "files": [
+    {
+      "originalPath": "content/people/abinash-bhattachan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/abinash-bhattachan.mdx",
+      "size": 1332,
+      "checksum": "fd50ab0873ffbe52ced90986b722837078bf641bdbad3013bfc9b4cf030078a9",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/adam-wolf.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/adam-wolf.mdx",
+      "size": 1634,
+      "checksum": "8bed0c64dcd8238f6f0e8c2fec4181ce0037542fcec105ddf46b6b864b71755e",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/alex-lester.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/alex-lester.mdx",
+      "size": 405,
+      "checksum": "633e288ceafb7b056b31d4f148c5aed8f58db5a7ac1abef7497b36b97bd34ed6",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/alice-suh.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/alice-suh.mdx",
+      "size": 475,
+      "checksum": "4f57d8b617892d68c5f02e3d483b0f8bbc451ce2e34134756b4191fbb753dd23",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/allison-ingram.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/allison-ingram.mdx",
+      "size": 369,
+      "checksum": "1cc53127350393060835cd4a61a6e1fd4250078234a505f48256a37b6d06da86",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/ben-siegfried.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/ben-siegfried.mdx",
+      "size": 1069,
+      "checksum": "7be4e28983416495e89e6c871bb438578646f3a4d19a17000163a2d929dfcf9b",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/boniface-mukoma.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/boniface-mukoma.mdx",
+      "size": 670,
+      "checksum": "f26f15ed2d0e47f9029200fc6e2e7adbb0fafb575ac5a74d5595b2821811b181",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/bryn-morgan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/bryn-morgan.mdx",
+      "size": 1756,
+      "checksum": "2821384b0284d4bd5f07073a339830340fa30ab8686d0e3c93177b03deee0443",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/caden-ohlwiler.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/caden-ohlwiler.mdx",
+      "size": 542,
+      "checksum": "7d0c51d582871545741cf5ff01eab507f03516e32f4de46aa573b073e35fcf7d",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/cascade-tuholske.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/cascade-tuholske.mdx",
+      "size": 1933,
+      "checksum": "611339a1de0ba3d32873841e76a3446bf480aa5c191e44e71f1b63eb47b1f583",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/connor-duwan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/connor-duwan.mdx",
+      "size": 895,
+      "checksum": "5d34f06c8325365039d7683c7e59e7bf54a3ceea0c506e7447fd0be7827ae032",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/craig-sinkler.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/craig-sinkler.mdx",
+      "size": 1146,
+      "checksum": "5fbd59fee45447b1f33d45e9728ee3e9452d27b8e79ea61fc9f9ffa600ab859a",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/cynthia-gerlein-safdi.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/cynthia-gerlein-safdi.mdx",
+      "size": 2312,
+      "checksum": "2c95a9eba955f66862ecad7c74cdf39e7c872dc3b4dfcda1399438fcab5cb890",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/daozhi-gong.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/daozhi-gong.mdx",
+      "size": 1274,
+      "checksum": "d4338d050dc0223cb05e88cfb254c728947937c6a89dcb68e362a76914691476",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/dee-luo.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/dee-luo.mdx",
+      "size": 362,
+      "checksum": "253c200e913d116526b3ebf0b667517707e6a80141f0bc8baefb81e0eadf5b3f",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/diana-chavarro-rincon.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/diana-chavarro-rincon.mdx",
+      "size": 1161,
+      "checksum": "c81f47ada713c6268825256776e2422ccc3c6fac99de38ac9f1bcc88bdd9aac9",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/drew-gower.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/drew-gower.mdx",
+      "size": 900,
+      "checksum": "a242541ccc9ffe2b61cbc5ee99cae30fd64058e8d1102611f7373057f9afc6f6",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/ekomwa-akuwam.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/ekomwa-akuwam.mdx",
+      "size": 644,
+      "checksum": "9ba292782dbf7f96e60e25750be7e466490910515825626399d40c8e0f9fd7e3",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/eliza-harkins.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/eliza-harkins.mdx",
+      "size": 333,
+      "checksum": "cbaf6960b3887cae91cd137f622ef1e086a5a6569573bd6e2adf286856ed9584",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/elliot-chang.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/elliot-chang.mdx",
+      "size": 2150,
+      "checksum": "c902353498f545f89fbc4079625c43cb452673e0474580d2e182abd254f0a175",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/eric-principato.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/eric-principato.mdx",
+      "size": 1182,
+      "checksum": "9c6ade3eda5c2b9e5414b3d93da6889a5bc4dae904d738fea657eb088030109f",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/feng-wang.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/feng-wang.mdx",
+      "size": 1635,
+      "checksum": "24eac645a69154a9a1864977b517b15f145017193fb06ab463cc91e6e6ad7fb7",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/frances-odonnell.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/frances-odonnell.mdx",
+      "size": 904,
+      "checksum": "753ed3fcc117aba8c0c22e3242754b69a8a1d7b09c4576675b0be52ee0c6d334",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/gabby-ragazzo.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/gabby-ragazzo.mdx",
+      "size": 295,
+      "checksum": "a0224daae4351e067e9c7a107621012c1b65949330b3443a264d27a38994b40a",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/garth-lindner.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/garth-lindner.mdx",
+      "size": 917,
+      "checksum": "79a1000811cb7564494fb03a872f6d8abe872781db1a1e06a327cb29e8a3508d",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/guiomar-ruiz-prez.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/guiomar-ruiz-prez.mdx",
+      "size": 1513,
+      "checksum": "8457c01362cd514859b9bcebbce2928adb107afb5a0dcd46a623d7d5b6ade36d",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/haley-lane.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/haley-lane.mdx",
+      "size": 337,
+      "checksum": "896f057ca76c8ee97d082fd1e0b00cf47ef2e18b86c3bef709a257f45fd735b0",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/hannah-safford.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/hannah-safford.mdx",
+      "size": 224,
+      "checksum": "991eea99364986120f3f7e4f3b524a9ce0c169a60598209d9de4b193b7f113bb",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/hilary-wayland.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/hilary-wayland.mdx",
+      "size": 1196,
+      "checksum": "a6f0da428438bb16756d11d0cec8e3dbb0af8f1dfc3c9c351795ec6626b7ede3",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/ida-posner.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/ida-posner.mdx",
+      "size": 540,
+      "checksum": "e42e030713f5e010c57754746d578077c73df24f2ed85bbedccc7513ad1fba43",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/jackie-jones.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/jackie-jones.mdx",
+      "size": 367,
+      "checksum": "0f38e08c3105f22908f98e442a01b9d6387bf6cafb5bd1a97492ae975f756424",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/james-odonnell.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/james-odonnell.mdx",
+      "size": 1187,
+      "checksum": "fa1dfd724febf57a90852cefce8486808e95dd21198d52328244634e76da24e0",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/jeremy-chen.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/jeremy-chen.mdx",
+      "size": 378,
+      "checksum": "995cc8e090e3c1f3a46d93beb5526cb6875f7c4fa3c47c281542616d94c9dfa9",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/john-gitonga.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/john-gitonga.mdx",
+      "size": 562,
+      "checksum": "b5ead97cab854ba23aca32b11b7781aaa6f4cea69190a06f21d446c03968203b",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/johnathan-choi.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/johnathan-choi.mdx",
+      "size": 325,
+      "checksum": "7fd2176c9a5fbe7d8f469a43289ef6178fd27e5383f1ff2c09985bf498103dd5",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/julia-signell.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/julia-signell.mdx",
+      "size": 1016,
+      "checksum": "29e08f4972735632fc735dc62fe9f2008c84a7c2ebb4910b173f2ed0ee284000",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/kaiyu-guan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/kaiyu-guan.mdx",
+      "size": 1351,
+      "checksum": "74472b4b6839ee1f28a2652fed039cac4343d16dd4100f6b1de1cef45e4167b0",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/kathleen-ryan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/kathleen-ryan.mdx",
+      "size": 218,
+      "checksum": "603d487f1876d2b736c5de7e184697c914b7ef8824a2642e26124fa4c37a3b84",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/kathy-zhao.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/kathy-zhao.mdx",
+      "size": 298,
+      "checksum": "fef11e8edf71c02b90a19fb96e7c9a71d52c45e3cc35ad0437b2b2426e089a36",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/katie-smith.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/katie-smith.mdx",
+      "size": 307,
+      "checksum": "d87f0c6f613ba48e1e5ce4633413a046966e4ea89ea40c02168ebbe6a3154f3e",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/keir-soderberg.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/keir-soderberg.mdx",
+      "size": 1143,
+      "checksum": "dfa281c9fd2688c04f1117efa65aa9a31527c53050cf4697ab7a6d6052a26266",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/keita-decarlo.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/keita-decarlo.mdx",
+      "size": 870,
+      "checksum": "e5383301396446d8bd67c18ca186b0f50df6f4dabaca9162629b105183a4d9f3",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/kelly-caylor.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/kelly-caylor.mdx",
+      "size": 2161,
+      "checksum": "fc925be69d477b66de8be9eb12dc912b692c87fb36cafb071a011fdd435e13e5",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/lixin-wang.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/lixin-wang.mdx",
+      "size": 1125,
+      "checksum": "84401fe757a4d29e7a53fc3fb2e8ac6edf4824bfcdaae836df6b3c38a1be8a4a",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/lizzie-king.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/lizzie-king.mdx",
+      "size": 646,
+      "checksum": "8b97020cd7bbf2e31104573d20ea4f64ea3c652e79125f071576754dc1a75d89",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/lyndon-estes.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/lyndon-estes.mdx",
+      "size": 774,
+      "checksum": "deae51f77c3acda2078c9f94a0baa9395b7cd7c064c1a49b325267bc6b6e23a8",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/marc-mayes.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/marc-mayes.mdx",
+      "size": 2306,
+      "checksum": "a38b1d3cad8089a73f275ae2c6a3a6ff464e6430a34ad353259bf4819b0e6c71",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/marcus-spiegel.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/marcus-spiegel.mdx",
+      "size": 1336,
+      "checksum": "9a4329fbf95f4258f58a2f83bfb774192149a89b50343b5eca5c56df0b0121f6",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/maria-fabiola-rodriguez.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/maria-fabiola-rodriguez.mdx",
+      "size": 401,
+      "checksum": "496adff41e323580cc009f9ababf30082b2949af3bfd268a178e8657a7f41dce",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/matteo-kruijssen.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/matteo-kruijssen.mdx",
+      "size": 717,
+      "checksum": "a428db1562adb64b38ae294044d4945c00bdbc610215be8665e3d1ef9cf20bfe",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/miranda-bernard.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/miranda-bernard.mdx",
+      "size": 720,
+      "checksum": "66d6d9777158147e1c3f1145007cd78bc46136001d1d0309a4dacfd364e100be",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/molly-oconnor.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/molly-oconnor.mdx",
+      "size": 1290,
+      "checksum": "3935c02619d733d22bd303afc9eeb562fa185a6d544e452f8da641cca97ce678",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/moses-kioko-musyoka.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/moses-kioko-musyoka.mdx",
+      "size": 788,
+      "checksum": "64a233d3ce0bc5e7c89ec00183eec4129e52969ba7523acbfa2d1c26d51c7bcb",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/natasha-krell.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/natasha-krell.mdx",
+      "size": 1184,
+      "checksum": "553240c41ae571f5f06b4e9effcbacd88e574967beeeee52bd49eb10bb01eb33",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/noah-spahn.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/noah-spahn.mdx",
+      "size": 611,
+      "checksum": "ca7b1ddcb119e5379f78cb312191997f9f03a402faec8ccee078a68f71c27f21",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/patrick-nadeau.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/patrick-nadeau.mdx",
+      "size": 903,
+      "checksum": "dba9ea884e49b0cb3b45f9978b35e4bf55aded2b02401dbc98b68459d2ea5acb",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/preston-kemeny.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/preston-kemeny.mdx",
+      "size": 223,
+      "checksum": "f3fe1fcb90323bb7da99656ec201f74edbe31fe8302873585e47ab481ec9bda7",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/rachel-green.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/rachel-green.mdx",
+      "size": 1061,
+      "checksum": "72432426aa5ee4b7e79fc32e78c8f16cde83e0c592a9b77d6c87db44718855f2",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/ray-grossman.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/ray-grossman.mdx",
+      "size": 285,
+      "checksum": "7f01c2adf4944f305585bf7b2d7143a7dedff134fb2c26f6f7a746ff9f99d110",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/rodrigo-munoz-rogers.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/rodrigo-munoz-rogers.mdx",
+      "size": 397,
+      "checksum": "05261ff7c7fb98b3cc06e6d28697316a67d084f4255203f299df9b0316403a20",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/ryan-avery.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/ryan-avery.mdx",
+      "size": 2155,
+      "checksum": "b81e8e465c4381b6ae756b4f399318f87f27775b2d622180be7d2d355e2bc112",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/sally-goodman.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/sally-goodman.mdx",
+      "size": 350,
+      "checksum": "f07cdd155889c8104cbab968f48b2536434c73c37f89f542a7ac69f5882b88ee",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/sara-guenther.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/sara-guenther.mdx",
+      "size": 309,
+      "checksum": "d412942239e7d86723ed3909285e8828a56a942eea4a2ff9ba4fa33135c0062e",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/sindiso-nyathi.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/sindiso-nyathi.mdx",
+      "size": 369,
+      "checksum": "b63c861b6bb4857e8ad65a16b77264d9ba5f02c89663a8d6c02bb28ea826ac0a",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/stephanie-debats.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/stephanie-debats.mdx",
+      "size": 1676,
+      "checksum": "cd6ccc72f1667bd93ffc5810a7fa0b445738848b8bbeb6a24d638cf200973007",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/stephen-good.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/stephen-good.mdx",
+      "size": 1397,
+      "checksum": "677986e8d64dc8dba489c3f90603f2843404c51325da0dd82aa61b58a6a0392b",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/steve-tuozzolo.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/steve-tuozzolo.mdx",
+      "size": 448,
+      "checksum": "2b97003e6c5570b9dfe76bbbe02639d0c35e91b5682c8bf318b21e79a2292ad2",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/taylor-morgan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/taylor-morgan.mdx",
+      "size": 301,
+      "checksum": "1814f1b460a54dfd02b8d5d13322f16f32c4f9533c9ac8a643e19efb2a6144b3",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/people/trenton-franz.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/people/trenton-franz.mdx",
+      "size": 716,
+      "checksum": "db7f94caed8b0c911bcd7f51106bdd9ada9ca2454e78927d87f1a05f9bd17698",
+      "contentType": "people"
+    },
+    {
+      "originalPath": "content/publications/abinash-bhattachan20122719.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/abinash-bhattachan20122719.mdx",
+      "size": 3683,
+      "checksum": "a91b1fd3d8f3bec77fb7a96dc8ec5fbe66e132283fd512c86c1f79078b8d4f65",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/adam-wolf20154420.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/adam-wolf20154420.mdx",
+      "size": 4623,
+      "checksum": "dfd5c8bf97fd94510f1df3683cdd8a649f84fad3ff00bae05fb5971b0bc86582",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20171987.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20171987.mdx",
+      "size": 2554,
+      "checksum": "d0f08afdd43da6dad68f7a99e89a0d3a4425e316e2ec657d42b0a88f3ee4a9cf",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20172001.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20172001.mdx",
+      "size": 1312,
+      "checksum": "06f4ec3343ceb8a134f93c4ccf95762eb22771196cc96405e1cc8adf4db4836b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20179991.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20179991.mdx",
+      "size": 2685,
+      "checksum": "000b3e7b231ea4990ded0fca08d3c4e24301fbe4e0d26f5b741964959f02c102",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20181111.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20181111.mdx",
+      "size": 2013,
+      "checksum": "d9322a685953099f15239d9b8b355e278a79c687342fe0c27e5b2dedfceaa747",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20195151.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20195151.mdx",
+      "size": 3459,
+      "checksum": "d5af09e452e4aa2c300b046a2247fd8922fb1ef36504b77cd210f1a7b9ecf57b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20205275.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20205275.mdx",
+      "size": 3455,
+      "checksum": "a5b5d3272bf90d6aee9546904d4b7af6aa19d742b1b49044918fb4c28d496886",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20211016.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20211016.mdx",
+      "size": 4198,
+      "checksum": "3f8b83ed366b1fb3cd07bdd940020733d58fe0ff74a654685a181fc14ffecb6d",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cascade-tuholske20211248.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cascade-tuholske20211248.mdx",
+      "size": 4079,
+      "checksum": "668e12ecb1b63ec310a4291e4495380d15e4a90895030fd3c9e538b709956554",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cynthia-gerlein-safdi20175203.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cynthia-gerlein-safdi20175203.mdx",
+      "size": 3299,
+      "checksum": "8e92fc9428fbdaff10cef9aeb6cbe876caa136e772230ea66db0180b528d6e69",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cynthia-gerlein-safdi20178613.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cynthia-gerlein-safdi20178613.mdx",
+      "size": 2902,
+      "checksum": "ed0fe60e40f3a4c6ee3eaf20131d57706aead1ebb4917e2aa1bb3ee927fdce57",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/cynthia-gerlein-safdi20182412.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/cynthia-gerlein-safdi20182412.mdx",
+      "size": 3246,
+      "checksum": "f7cdcde01398142400f1e172eb7c5678f1c1ece14d4a530993a206c5d4fa311d",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/drew-gower20164779.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/drew-gower20164779.mdx",
+      "size": 3155,
+      "checksum": "8308eb8651f10ec0d9a3285d5fadab92e7270214e14d75c7f0027661a492b924",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/drew-gower20176236.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/drew-gower20176236.mdx",
+      "size": 3475,
+      "checksum": "de3f09f277d4cdd144d303621aa61ba4ddcc9ebed9a7dcc1a46f234819dc4fb6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/drew-gower20176237.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/drew-gower20176237.mdx",
+      "size": 3858,
+      "checksum": "b0b909368356d084e198a1e874bbfa915dd818cf32953bf8227e649cd732b103",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/drew-gower20186238.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/drew-gower20186238.mdx",
+      "size": 3413,
+      "checksum": "2692d01bea1db680dda1b97fe4e5aba74c6d500c61f70ca895b14ce9794d5dd2",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/drew-gower20196239.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/drew-gower20196239.mdx",
+      "size": 3253,
+      "checksum": "7e48b170c5de471a2312bac1c6a5f62f9d7292168e26f46b79eefc47ad32b9d2",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/drew-gower20206240.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/drew-gower20206240.mdx",
+      "size": 3482,
+      "checksum": "15e04a1308e4d4b7f16530314e9523ac07807148f984c01614020d31721e3a94",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/elliot-chang20164648.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/elliot-chang20164648.mdx",
+      "size": 3597,
+      "checksum": "b48a538c86ac9cdaccd00324d0870a663de1c55eb34aced88f36f93c3ba0add4",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/frances-odonnell20122708.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/frances-odonnell20122708.mdx",
+      "size": 3461,
+      "checksum": "8628493ffbce436c81891455df212d397b3db76d9b3f2c91d64d94d0073e7492",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/frances-odonnell20154494.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/frances-odonnell20154494.mdx",
+      "size": 3467,
+      "checksum": "ea5dc235c1193343cbbd317d52a0b685d89febe786e5837ef5b38802d0e8e504",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kaiyu-guan20122756.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kaiyu-guan20122756.mdx",
+      "size": 4063,
+      "checksum": "1cc3cbd329fbe3ee7605572db47541ea16f5a5282530edd0e5f1da17e18b4dcf",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kaiyu-guan20132821.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kaiyu-guan20132821.mdx",
+      "size": 4394,
+      "checksum": "bdee915c874fef1887b873316d3558a7ac983260ba1d49ab0ea4f0ed0da5411b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kaiyu-guan20134078.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kaiyu-guan20134078.mdx",
+      "size": 3490,
+      "checksum": "d96a53b0563f4ee870c2c8de886fd347cacae41e9e4cef8a276a1bffa8d6dad0",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kaiyu-guan20144235.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kaiyu-guan20144235.mdx",
+      "size": 4275,
+      "checksum": "0d3feb93568ef187650d530b54dc856addbb0e2fae795bf322ebba8a8f5b511a",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kaiyu-guan20154287.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kaiyu-guan20154287.mdx",
+      "size": 3801,
+      "checksum": "735a67788d92721eeb8643e24ccb60bf2472079df1ca8f3d0a406b41ba7ab7ab",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kaiyu-guan20187362.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kaiyu-guan20187362.mdx",
+      "size": 4550,
+      "checksum": "c082699667fe0ccabb0f47d8657daa07d50b944fc5234af9fa934ab160102e65",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/keir-soderberg20122153.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/keir-soderberg20122153.mdx",
+      "size": 3211,
+      "checksum": "1bdee3eaf6b5ff7269ca96a076365fb2211217a1bbf19230281777063da51913",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/keir-soderberg20132828.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/keir-soderberg20132828.mdx",
+      "size": 4446,
+      "checksum": "6ee15b19ce4381a74817756cd95395fb1d89401aa2e7c09bd51c2db930cf8b9b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/keita-decarlo20193646.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/keita-decarlo20193646.mdx",
+      "size": 2745,
+      "checksum": "98130a6370aec4419f95deafbbe717e289ce7dca08316c54f6b5d45d3a9d9c37",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/keita-decarlo20232225.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/keita-decarlo20232225.mdx",
+      "size": 1700,
+      "checksum": "70e3129f4cefafeae7fb5606abc0aedc28239147b6a835b96d7d65564b10cd01",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20021378.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20021378.mdx",
+      "size": 4061,
+      "checksum": "6360107ec0cc499a58b2cf2aa4c785f346ab35dde4067002f056d4436f676dde",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20021384.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20021384.mdx",
+      "size": 3204,
+      "checksum": "90aef26b9aec1e11441c306c6475e3448da55f8d6f3cc569d26acfaa3202d20b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20021392.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20021392.mdx",
+      "size": 3276,
+      "checksum": "28776d636f3b8a94f19eb31ccdb258bcb3f4962e647f742e93c0a4ea09b5df96",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20031403.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20031403.mdx",
+      "size": 3571,
+      "checksum": "553b6efb8bd2e35fb4a3f32d3e6d25fea01006660c9dd0e1b2bbcfb48e0af4a2",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20031409.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20031409.mdx",
+      "size": 3127,
+      "checksum": "34a30ef6b52c3fc8b972be1ceb5017921fcb1e99f3f2a0aaf6cc628d124b76d9",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20031413.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20031413.mdx",
+      "size": 3643,
+      "checksum": "3fcf61da702bb063dcdd8d1b9d2d1ef6f35b512660baf5b59e42e3be53658d31",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20031420.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20031420.mdx",
+      "size": 2829,
+      "checksum": "a61eb8af7a6a76121b33fc849082fe6944f908dd8990b6f72cbcff9f70c2998f",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20041398.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20041398.mdx",
+      "size": 3324,
+      "checksum": "fdff0271a4184a68a9f91f27bbae976beffbda97f8cc6b67f16910be16bb08a0",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20041426.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20041426.mdx",
+      "size": 3473,
+      "checksum": "ca8f95b44a461ed14c7fe10e8a6a5b74bb0bcfd09be97acfb726ba15b09c31de",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20041435.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20041435.mdx",
+      "size": 3327,
+      "checksum": "54cc8d95f2a72c51bdba8575452b932f29e03195f9c19ff19ac3a587af54c97f",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20041444.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20041444.mdx",
+      "size": 2649,
+      "checksum": "34e20ea216be3f4cd5e98599bdbc8ab3c113630b4f6117ed456857fd48bdd525",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20041479.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20041479.mdx",
+      "size": 3452,
+      "checksum": "346d0484617b4d6b2fc7778b7d9e3c4c65a1476e0091623ab0822cdd6b692681",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20051451.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20051451.mdx",
+      "size": 3718,
+      "checksum": "feaf4a4d2a405c9ad90cce2bb5316b7b484aa45d5c2be14cfdce593c0fb080ea",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20051459.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20051459.mdx",
+      "size": 2862,
+      "checksum": "b3892600d056cf79ea6cd741f126c4a0805799da46178f7eebdb47a869c717b6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20051467.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20051467.mdx",
+      "size": 3336,
+      "checksum": "41b00b99a38f038814461bb7f174ac28a988e064de0f44b5a0dc7ebdde9aeaaf",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20051473.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20051473.mdx",
+      "size": 3071,
+      "checksum": "d2d66a8b7c3beac31903aa922933df890f3623cb554a2ebf29c6bc50bbd06c8a",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20061491.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20061491.mdx",
+      "size": 3374,
+      "checksum": "cd7045faca6dd16fd8ee29e7dfb73dba632dcf5a54ca71c929bd4e2f28aa6ecd",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20071499.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20071499.mdx",
+      "size": 2925,
+      "checksum": "727a84125ce26d75dbcd0a59077fad1e967dd5e666ce01374852a7e95e949467",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20071507.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20071507.mdx",
+      "size": 4015,
+      "checksum": "a8d87ad939818c08d6ee89b4f0f560054887e981dcb8fb8b895d390c5ffa7bd6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20071517.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20071517.mdx",
+      "size": 3156,
+      "checksum": "43999379ef2169a9bc5694b8dfd5eef2e095b6e57044c3bdf54fe3acb44fef03",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20071528.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20071528.mdx",
+      "size": 3738,
+      "checksum": "7107af63db5b0977936ccd95a9911a958a8e08c4407c6fa88effa381baa47bd3",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20071536.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20071536.mdx",
+      "size": 3783,
+      "checksum": "d72ffc16946df1a08a01cbb7688bf44dfc26b84ce2fbe473ca31808ec2db2012",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20081544.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20081544.mdx",
+      "size": 3650,
+      "checksum": "3fef792d6f0b21fc1cd98735d2d5dafbd66c17a57c7fae21fe9090e5b2134f22",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20091353.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20091353.mdx",
+      "size": 3759,
+      "checksum": "7637b3e941b228e8955198edc2a0fabd3b155b4e3440b41a99603d1d8f86fa2b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20091369.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20091369.mdx",
+      "size": 3173,
+      "checksum": "9f3edaed52635e6b353e6297174ec4a1fd934e982c5d1eb378b93e8e8de696fb",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20091572.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20091572.mdx",
+      "size": 3814,
+      "checksum": "317e05a274b4b7bb770efdf00acb60d8e9ab8eb0396641a165e505d746d32101",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20101600.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20101600.mdx",
+      "size": 3521,
+      "checksum": "a676957028ed52de1dfb691e1d0480cbf415b9c841359a7b810fa13493ae2c70",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20111655.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20111655.mdx",
+      "size": 3367,
+      "checksum": "070db89fb755bac4212eb0c965410a2f2dd36ebae262a51485a6061999fde299",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20111667.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20111667.mdx",
+      "size": 4638,
+      "checksum": "dfe9329545e753437140bfd92d2cf296dac0f343c099609463b517c1373769c3",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20133673.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20133673.mdx",
+      "size": 2764,
+      "checksum": "edf1bdf277985bce41411a41eaa28f0e4eccfe8b51f1d771c2139ff50af3f0ac",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20133674.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20133674.mdx",
+      "size": 2755,
+      "checksum": "36bfbfd6e319aae2ff2060256a8b54b27cf5a598161edec9fe1f9877d49746fa",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20133697.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20133697.mdx",
+      "size": 2794,
+      "checksum": "d931dbbde898a4858960760b834024a3fbc7daad19a8c9d288ac37de25249960",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20134068.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20134068.mdx",
+      "size": 4030,
+      "checksum": "0552b25503f48197609a5a253a93285f267de00a4c1dc97fe7c5129f36c97ed6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20154251.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20154251.mdx",
+      "size": 2821,
+      "checksum": "c1d6569cbd75ab65bf02327464c6e0e7ce156ce55ee4bf32f3d3fd3d09e3539f",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20154364.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20154364.mdx",
+      "size": 3431,
+      "checksum": "af7d9ab4614d8dd9aed0f9d050eeea107a7536b309c760dfa2b98df2e4c93015",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20172642.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20172642.mdx",
+      "size": 3105,
+      "checksum": "115e69ea3fdd2cc10410d52601a6dc2a3f5ceaa61e2ec20cf6a2d2b530aae26d",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20174320.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20174320.mdx",
+      "size": 3232,
+      "checksum": "5506a4ac99a085074dd0aa3046b2830fb7c9886d44d9e2f4a5109ae4d5dd5259",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20175432.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20175432.mdx",
+      "size": 3447,
+      "checksum": "5d499578a8212b9c66d75753ae3dd74d047c5904ed0c10d7894aa85ca2b95c9d",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20176231.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20176231.mdx",
+      "size": 3832,
+      "checksum": "7715d55ef1ab600395abb13bbfa481ee53e11dbb1876535a4c74ecd675cec36f",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20177323.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20177323.mdx",
+      "size": 2838,
+      "checksum": "9261930a28f698b5044726a90b331831100870a41eb416dac0585e127858e018",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20177502.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20177502.mdx",
+      "size": 3196,
+      "checksum": "0e056a381c8ec8454ead7c08076c7e6a191d461511842ba4bd32768a80715f10",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20179653.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20179653.mdx",
+      "size": 3436,
+      "checksum": "68897b3e5190ac09f98e49623b4f7a79b279f903acbd1e65e6d53455f9e714f6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20182573.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20182573.mdx",
+      "size": 5005,
+      "checksum": "a99be172167786de640c42844b34cc19e731e51d8dde993eca298f82e356e209",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20184284.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20184284.mdx",
+      "size": 3567,
+      "checksum": "66a1fe9c9baa7ed510c045baf7e73fa131eccaaa0ac4ee6fbe167a32832e153b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20185343.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20185343.mdx",
+      "size": 3983,
+      "checksum": "7458ed6e34702e24a66fc79ba26c66e1b5ce53eb1f767e07708b627eb8296667",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20193527.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20193527.mdx",
+      "size": 3238,
+      "checksum": "f3397da3a56b4969b3a77ab8d7c194d328cd81632927ede55642a0ba40d42318",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20194685.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20194685.mdx",
+      "size": 3316,
+      "checksum": "35f9fc5b0a7fb686ed74aff9661d7d4f276a69a81759b66e147e2701772ce041",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20196892.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20196892.mdx",
+      "size": 4740,
+      "checksum": "84dee0fedc3473caf8c8d58b4a96d3e8077c137e67448e1b6458f5a186dc1384",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20202896.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20202896.mdx",
+      "size": 2820,
+      "checksum": "913a3d72a8c007814d6b58347e3c2fe23f58541138b3049b64b116dfcf90e894",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20206379.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20206379.mdx",
+      "size": 3725,
+      "checksum": "acce5c4961612f1cbbb682738c59477f4a995a12deba54bee17e1c9fe3500dc0",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20206539.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20206539.mdx",
+      "size": 4087,
+      "checksum": "894e4d1a22ea37d27b03b9fe83e47997efd358c590a0eaff108e0a7b0318eaa2",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20208565.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20208565.mdx",
+      "size": 6241,
+      "checksum": "d989a60261df1da2c9355172c8cbfc007f3d007d59885ee2d18dcf7bf594a643",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20211664.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20211664.mdx",
+      "size": 4777,
+      "checksum": "dad538f06ab985acb04285e02209e7a1f293249abda0c17d70455d4b5f42595f",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20213250.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20213250.mdx",
+      "size": 4001,
+      "checksum": "7fdaefb03f098309fc8aac71027a3042a54ec3fc57015998aee8190a08272bae",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20216618.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20216618.mdx",
+      "size": 2670,
+      "checksum": "dc55e6a4517bdadc7fdcf8c7adc7c66927dfeedfeaa2d4034797ca71eaf05f18",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20226128.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20226128.mdx",
+      "size": 3950,
+      "checksum": "872d1403c0f76c0396bfb69394cb8c8be3262ec9f640bc8d35d1ccdcccd291b8",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20234247.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20234247.mdx",
+      "size": 5029,
+      "checksum": "7b1d5515dfb31fddd1e6112dffcdec635c887096eda77fd61cbff3c8f4cc7310",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20236934.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20236934.mdx",
+      "size": 2170,
+      "checksum": "904d48306b732086b65cec13bdf0b6aaa0180ddc719384c484da7e6ba654b95c",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20238656.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20238656.mdx",
+      "size": 1659,
+      "checksum": "e7140be6be23254ab3d92d805c2129e8f368579faa6bd686e1cde8342f3929be",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/kelly-caylor20239423.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/kelly-caylor20239423.mdx",
+      "size": 3941,
+      "checksum": "0a019ed52932915435fdd04089e1650d9ebaacb058be6b1ae8167c7fa7e2bc67",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20091553.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20091553.mdx",
+      "size": 3557,
+      "checksum": "7c636c4651d1d54cd769aaa28ec4a9916c15dcd000df2b33a578d56b48c81a64",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20091563.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20091563.mdx",
+      "size": 3224,
+      "checksum": "aafe2b6b9e8bf100fcda2b17862bde0a98e300032c738aab89c0f77a0f72d1b9",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20101581.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20101581.mdx",
+      "size": 3501,
+      "checksum": "7842845c7435b12f433735df205847bfea889523a1b19187a216d8093ea9d557",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20101591.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20101591.mdx",
+      "size": 3464,
+      "checksum": "0dddaa23bcaa8d156395a46c141d89b867a9b36ea02bfd4c0660dc39a834f7e0",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20101619.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20101619.mdx",
+      "size": 3300,
+      "checksum": "71de97cac8084822b25d0e53564385deeb5e099ebaf52af44024edf48d97e04e",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20121673.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20121673.mdx",
+      "size": 3937,
+      "checksum": "abf759d49481ce75946f927e0bab943df40a678a62565407150894069d17ea74",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20121690.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20121690.mdx",
+      "size": 2766,
+      "checksum": "bd6ed49723431b09bce628c0eb45912e67336069793c0045d59e71a715693fb8",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20122795.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20122795.mdx",
+      "size": 3292,
+      "checksum": "7d1f73c655f054e77157c08ba6dacbd050ec26a1fbf5774346c200321c07d27e",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20132864.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20132864.mdx",
+      "size": 4387,
+      "checksum": "d6cbe989f5566d3e7fe6af468b76bbac4d917bab441012858ccee56143310bdb",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20133672.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20133672.mdx",
+      "size": 3493,
+      "checksum": "fe3cdc398fa68024bd78485b92752f358ecc190db6d36ca50dcff088da7d9e76",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20144189.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20144189.mdx",
+      "size": 2569,
+      "checksum": "250987eeef317c69ecf56e0bee582bab5c33749f5cd8a171f4bd8ea07fa3fc81",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lixin-wang20154470.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lixin-wang20154470.mdx",
+      "size": 3690,
+      "checksum": "a3e0412fb6dbeba88c11f19d7053cd26d71cd52658f5dc7d946ec1f9874b33ab",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lizzie-king20101629.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lizzie-king20101629.mdx",
+      "size": 3092,
+      "checksum": "5952dba8453148b9512c2e36ac6d3353a90064b9a95779d10589f068cad4c74b",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lizzie-king20111662.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lizzie-king20111662.mdx",
+      "size": 2714,
+      "checksum": "20c2228ebc6e882d135532c27f607ad9263cf2886d5c4f09c8e95478355d08a6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lizzie-king20122803.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lizzie-king20122803.mdx",
+      "size": 2793,
+      "checksum": "c4c5f3dc50374f6902ac4da55cc07c033a2438c99901f3937c38946f221e1751",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20133415.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20133415.mdx",
+      "size": 4481,
+      "checksum": "de61cf41f5cc3c4b83d8386ddf99f21c43d563b0bf21b59c780e9cd58ca9edde",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20133826.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20133826.mdx",
+      "size": 4442,
+      "checksum": "c159b221d59a734c374fc0c0d804b950b26549be489b2ebed73e5abadf667079",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20154318.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20154318.mdx",
+      "size": 3759,
+      "checksum": "2bcb1357546cba3ac801a86d7199229851c0a20c76048d9428edb3094a46a890",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20162467.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20162467.mdx",
+      "size": 3564,
+      "checksum": "1b6a0ff163ed14bb79b7ebfd855e282c77fd185f5bc6e9ec026238c7d05251d6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20164736.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20164736.mdx",
+      "size": 4765,
+      "checksum": "101067fa2c808592c20323b9465cb7b5d324a22d71e9897ca670dbe2c9306c75",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20182325.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20182325.mdx",
+      "size": 3350,
+      "checksum": "6b04e90e72656e4b821276d2f4996f7ae9ce50dd4f0f75931c3b2a34baa9c607",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20185262.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20185262.mdx",
+      "size": 3167,
+      "checksum": "b11449044ef499e5d31a2035434fc2ab08110b2686cd8bb3a69c94727e1ccaa8",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20227895.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20227895.mdx",
+      "size": 4171,
+      "checksum": "e5c36e4b0507305f22dab122e25b1a33f573e7c84eba6b53bac71a5cbaedb5b0",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/lyndon-estes20231099.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/lyndon-estes20231099.mdx",
+      "size": 2995,
+      "checksum": "e9626a4143102d3aefb6c0ab3b42c1619ad70b86fca6fc3b44adaa74d1c28d3d",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/marc-mayes20202671.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/marc-mayes20202671.mdx",
+      "size": 4279,
+      "checksum": "50ce1e783358a6aab5439dbee410844e91e68fa349dc64914886d9de1e65b882",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/natahsa-krell20219534.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/natahsa-krell20219534.mdx",
+      "size": 3394,
+      "checksum": "f34dc0bc7ff73d702d8a81c3034bf8fa3c3883a32040e09d729b9313bf6d8edd",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/natasha-krell20206241.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/natasha-krell20206241.mdx",
+      "size": 3566,
+      "checksum": "67ddd212409d15d1c7953a5cd1975d7921823243548230aa2945866a7905cee7",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/natasha-krell20214258.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/natasha-krell20214258.mdx",
+      "size": 2378,
+      "checksum": "5bdce63c522994861669c661340199375ce3abc41f547f9aa98cb40e60dd5130",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/natasha-krell20216242.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/natasha-krell20216242.mdx",
+      "size": 3991,
+      "checksum": "b07e0d31c684ca48ae24ea9ddb2858b0991727a792e0646a0c2a494a51330a3f",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/natasha-krell20223948.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/natasha-krell20223948.mdx",
+      "size": 2343,
+      "checksum": "2f3ec16e8dfbe18e4a715f9ef294e4faf2e43b69b9d5e144e8346b74762566c2",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/natasha-krell20232456.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/natasha-krell20232456.mdx",
+      "size": 2459,
+      "checksum": "7cf1fb6500975ce1986d19c846aec98e17551f41b160564f37361b7319b18ba6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephanie-debats20164681.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephanie-debats20164681.mdx",
+      "size": 2827,
+      "checksum": "f736d07d7188c8315d4240af1654af65d4ad617a246efbee257b62e97b03de60",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephen-good20111645.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephen-good20111645.mdx",
+      "size": 3245,
+      "checksum": "9fb47422c979e69b2b8d32329ea107e46325d658e6695ac7455ea442d5196ca0",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephen-good20122738.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephen-good20122738.mdx",
+      "size": 3920,
+      "checksum": "61530ba7c4483cbdcb5def630962a585fa6eed3ea49479a642c6f94c2af83b19",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephen-good20133046.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephen-good20133046.mdx",
+      "size": 3245,
+      "checksum": "87ec7f31bba19d1cfff424e1e4ce97d7aeea8ab3ce0a7e8718237da230096fa6",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephen-good20144073.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephen-good20144073.mdx",
+      "size": 3759,
+      "checksum": "04235fd36d578ff5fb6df42a9bd4ad16d605bb567961ad632773e906725da2d8",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephen-good20168632.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephen-good20168632.mdx",
+      "size": 3359,
+      "checksum": "4dda8182c3498cc9b2aa22718f4ad2a0a7058cc3e9ffe4499c65bb24b1ee9690",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/stephen-good20221252.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/stephen-good20221252.mdx",
+      "size": 3351,
+      "checksum": "9a6f46c082fdc4cec310da24776f45fb100ce5587164313f8e4303024702e98c",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/trenton-franz20101611.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/trenton-franz20101611.mdx",
+      "size": 3903,
+      "checksum": "c5aa63e7f18bb303f062f1f1d86b69a626338b9fb381a9fb6a74186a8ae645ed",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/trenton-franz20111638.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/trenton-franz20111638.mdx",
+      "size": 3695,
+      "checksum": "1088805a941f59f007692a0dceeb4a10d0b4cddd6af383e0821b079b89a67ef3",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/trenton-franz20121681.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/trenton-franz20121681.mdx",
+      "size": 3603,
+      "checksum": "c241c3b69ced4f7de6ea0db37e112858c7c5f3dd5758c1207376f994267ec9f1",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/publications/zack-guido20201267.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/publications/zack-guido20201267.mdx",
+      "size": 4296,
+      "checksum": "68d56ade70a9413c3123abc9fc3765c72db792e3495bedeb69be416787dd6c53",
+      "contentType": "publications"
+    },
+    {
+      "originalPath": "content/news/2008-princeton-colloquium-on-public-and-international-affairs.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/2008-princeton-colloquium-on-public-and-international-affairs.mdx",
+      "size": 984,
+      "checksum": "9c6e1d8c0f19bed9b6645b0653929d478224390e142ec47efdc6c7659e779e6a",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/2nd-mpala-based-cosmos-probe-now-calibrated.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/2nd-mpala-based-cosmos-probe-now-calibrated.mdx",
+      "size": 1539,
+      "checksum": "1e159186266c02c11c81670b8be5241dd4983f82920c5d07eff4044085c5cc21",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/aaas-session-on-new-earth-observing-methods.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/aaas-session-on-new-earth-observing-methods.mdx",
+      "size": 1406,
+      "checksum": "abdfd56968ee4d23fe23e94e5f888574727c67b4c04d7e4ae0293c7420abd602",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/adam8217s-interview-by-the-center-for-data-innovation.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/adam8217s-interview-by-the-center-for-data-innovation.mdx",
+      "size": 1433,
+      "checksum": "410f5ae8295f3dd3328179ac4d958d29b130bbcb091b96409d98071712eec561",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/agu-chapman-conference-on-ecohydrology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/agu-chapman-conference-on-ecohydrology.mdx",
+      "size": 644,
+      "checksum": "a82093146c135a18dc7464d1e247099cf3c75d95077d51cce26bf71cbb6f0106",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/agu-fall-meeting-2020.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/agu-fall-meeting-2020.mdx",
+      "size": 2240,
+      "checksum": "7afcea9659fe9f0e819f91d755d8aa2ed10a87986bca5e747c7739f4ae634f21",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/agu-fellows-program.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/agu-fellows-program.mdx",
+      "size": 810,
+      "checksum": "3e44ff0b6ae3762d8dc01b814dcc954ac6a72fba1942896b033af24d3638ab1e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/agu-meeting-of-the-americas-2013.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/agu-meeting-of-the-americas-2013.mdx",
+      "size": 1755,
+      "checksum": "4f5bfec58b83f62a886e7f52dfebc391f55d6f517e7866af59ffd330141d3631",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/alex-lester-brown-bag-seminar.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/alex-lester-brown-bag-seminar.mdx",
+      "size": 717,
+      "checksum": "0fc8454783d16e6e24955608e27ed712d101c46388cf5a181458cade49fd6ed0",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/anticipating-the-ecological-impacts-of-agricultural-adaptation-to-climate-change.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/anticipating-the-ecological-impacts-of-agricultural-adaptation-to-climate-change.mdx",
+      "size": 2287,
+      "checksum": "38b7b049d066263a6c394bef608dacde075f1ebfbe1956c10106ad48b2abfe44",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/arable-featured-in-paw.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/arable-featured-in-paw.mdx",
+      "size": 1293,
+      "checksum": "7bee4e053d090ecb2802c5218690e185a5487d84e60e832b9f84d8c6d7205a4e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/arable-mark-deployments-in-zambias-southern-province.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/arable-mark-deployments-in-zambias-southern-province.mdx",
+      "size": 1445,
+      "checksum": "0355eeb5079c245c5867f1e1ea4e62de8ed9faedaa8e1cc6773dd41ab32cb21b",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-advances-in-water-resources.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-advances-in-water-resources.mdx",
+      "size": 1361,
+      "checksum": "e840fb91caddf58863adb0b66fb15b9e0f76a59ab590aa2c67cf4092df3646ab",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-agricultural-and-forest-meteorology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-agricultural-and-forest-meteorology.mdx",
+      "size": 2278,
+      "checksum": "d1c14f19562d614bf6e6693e406267f03309673080684bb41422305daa6190ce",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-ecohydrology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-ecohydrology.mdx",
+      "size": 1608,
+      "checksum": "750937226177b8549793e941ceb2e33f456906c8f3e5203319dc9ac1bd6508bf",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-jgr-atmospheres.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-jgr-atmospheres.mdx",
+      "size": 2039,
+      "checksum": "b524f9c0c59c31a376849fb409090dde5bfe8a74cbe93f8f1d3fc5d659bf9def",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-plos-one.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-plos-one.mdx",
+      "size": 1141,
+      "checksum": "99b1c3a39d421c438d671a4ec98bac1ee3468166e8e13a90f7aaef9b0d6e57c9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-rapid-communications-of-mass-spectrometry.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-rapid-communications-of-mass-spectrometry.mdx",
+      "size": 1241,
+      "checksum": "3cb8253d4a987b3b9fa93bec3c4cf1b7cbd2fd4b09410727ea511aa2f60c8cc6",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-vadose-zone-journal.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-vadose-zone-journal.mdx",
+      "size": 2309,
+      "checksum": "6d387429617addeb328d4c343d0c1061cbe16522d5e9183e41023acf765e1252",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-accepted-in-water-resources-research.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-accepted-in-water-resources-research.mdx",
+      "size": 2473,
+      "checksum": "f75dc9ded1f0f9598ef5c6d1ec1bb5f2dacf7ba2e088214cd74936cb889c7579",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-in-new-phytologist.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-in-new-phytologist.mdx",
+      "size": 938,
+      "checksum": "e8d9e4b2c93a2dec64bc6c7202cc38944f37abb8f4b5ec94c80fd21ef532df94",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-on-patterns-of-soil-n-published-in-landscape-ecology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-on-patterns-of-soil-n-published-in-landscape-ecology.mdx",
+      "size": 4199,
+      "checksum": "037a468ec2b343bafdb6256588cf51f053db8dcef3bb458a87c579765e2daff1",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-ecohydrology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-ecohydrology.mdx",
+      "size": 1375,
+      "checksum": "458018e5f5ee25f6eb51e8cd03da397d3a19751f7b4353bc3801621226848828",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-ecosystems.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-ecosystems.mdx",
+      "size": 1113,
+      "checksum": "4cedde8e3b9a4dcd1e215e79b7e71c5817f55dca247da2110654f7eaa87beba2",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-environmental-research-letters.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-environmental-research-letters.mdx",
+      "size": 1877,
+      "checksum": "f7aa014e4d8f1d1675faef27778eb042e91596e72cd355709b72aca9c0fc0e6e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-geochemica-et-cosmochimica-acta.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-geochemica-et-cosmochimica-acta.mdx",
+      "size": 3150,
+      "checksum": "ade82a34dcaa92dc238a3a4c2a38ec940650360268e901124c79db6976640209",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-geoderma.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-geoderma.mdx",
+      "size": 951,
+      "checksum": "54825cc2a3a34b573e7d6d54fc8d088bd955055cafe18a96888852324597d358",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-geophysical-research-letters.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-geophysical-research-letters.mdx",
+      "size": 786,
+      "checksum": "4e69034d2bd658b73350db6973b225a5c5814ef9a05bd65b932ae411e80499cc",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-global-change-biology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-global-change-biology.mdx",
+      "size": 2121,
+      "checksum": "e9f56db9aae51715c2d187241ad7d2d61884c4c8edddd9fc90fbbc8eeb22894c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-jgr-biogeosciences.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-jgr-biogeosciences.mdx",
+      "size": 930,
+      "checksum": "a10dd5e6a56c4bd308811de82f9e4546c463f98bac741b8195a992e470ecf585",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-journal-of-arid-environments.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-journal-of-arid-environments.mdx",
+      "size": 1561,
+      "checksum": "d1dd72a77e6a2d5ab35f75865ba40bc1fc81f21044d8745f924273fdb25f5657",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-nature.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-nature.mdx",
+      "size": 2373,
+      "checksum": "96cb3c8b8e27fbc7216f860cad906a3a33795ad7130e3ef170913186f3b7d28f",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-new-phytologist.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-new-phytologist.mdx",
+      "size": 1847,
+      "checksum": "413df00967aedaeeb4e9d109eca235d71e06615597b99eab5338d0acd380b177",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-plant-and-soil.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-plant-and-soil.mdx",
+      "size": 1189,
+      "checksum": "29b99afd1cfee5b2bd7f5fb92b5d30c7046878005f39a3cf7994b69a44d16142",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-pnas.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-pnas.mdx",
+      "size": 2050,
+      "checksum": "a4e54af534eb89d29f55c61d4c9fbcd424b818fe6e3ff2dcd854d2d391c138a0",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-proc-royal-soc-series-a.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-proc-royal-soc-series-a.mdx",
+      "size": 2182,
+      "checksum": "af0460b286fe085d1b4069210352cf009c07f369fdf58a4c6281ce3669c3d8d3",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-remote-sensing-of-environment.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-remote-sensing-of-environment.mdx",
+      "size": 1446,
+      "checksum": "58870395acb62adceb71bdb65c623d66114ffe621c9b4b104fbb7be3e84d3b58",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-vadose-zone-journal.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-vadose-zone-journal.mdx",
+      "size": 1476,
+      "checksum": "d52ea4b99ed07b2df0431f514be40717fc732a8387c1331da5ff6be21efbcf3e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-published-in-water-resources-research.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-published-in-water-resources-research.mdx",
+      "size": 1262,
+      "checksum": "1ebd925ce31faeae1fcfda7a4eb5b78714bab4242c88ff51c1290a96253ee80d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/article-to-be-published-in-ecohydrology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/article-to-be-published-in-ecohydrology.mdx",
+      "size": 2249,
+      "checksum": "f8ea59f39767027c98734993c31ad76cb050817d9152083a15a727cc8e511d14",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/articles-published-in-agricultural-and-forest-meteorology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/articles-published-in-agricultural-and-forest-meteorology.mdx",
+      "size": 1183,
+      "checksum": "dc4f779ee07179770ca6d3a76a64a1133e3cdf0a83617c81d8cf753cd1a09aa9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia.mdx",
+      "size": 1525,
+      "checksum": "675db3a250ae13cba58e064023dc721fcf70013c87d24f9442b16cf2f36d9bc4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/cascade-tuholske-defends-disseration-via-zoom.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/cascade-tuholske-defends-disseration-via-zoom.mdx",
+      "size": 1290,
+      "checksum": "800426d663462363b5e33c8daf9d20db3e54852fa1d90fd02983fe8191eb4a8e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/caylor-group-receives-princeton-grand-challenges-seed-grant.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/caylor-group-receives-princeton-grand-challenges-seed-grant.mdx",
+      "size": 3014,
+      "checksum": "48e2c11b86a535da6f4f6fe65561de4b753ff590129e6132d0dbaedbb346a0f3",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/caylor-group8217s-research-highlighted-on-nbclearncom.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/caylor-group8217s-research-highlighted-on-nbclearncom.mdx",
+      "size": 882,
+      "checksum": "16451d26f6d1754da6c25542f0eee93652d013964d22bf162e31acf3823abe25",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/caylor-group8217s-research-highlighted-on-princeton-grand-challenges-website.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/caylor-group8217s-research-highlighted-on-princeton-grand-challenges-website.mdx",
+      "size": 2588,
+      "checksum": "83157abdec8cdb1640e32b7dd37f51dbec72ea43d555f9ad7ee7ceb4a8a81f03",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/caylor-lab-at-agu-2016-fall-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/caylor-lab-at-agu-2016-fall-meeting.mdx",
+      "size": 6481,
+      "checksum": "2b01c24b129f948c94b42f9280041c142bd69d41a2c12eaaddcdbb014d229793",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/caylor-lab-receives-leef-iii-award.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/caylor-lab-receives-leef-iii-award.mdx",
+      "size": 1142,
+      "checksum": "d97f884a0c71f77fc55bc042cb4d3865c2a50fb990c72be81af50e7cf9954c26",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/caylorlab-work-featured-in-new-short-film.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/caylorlab-work-featured-in-new-short-film.mdx",
+      "size": 1708,
+      "checksum": "2ab5bbedf321e868def293bf71e13b2cfbc037f59656b2be64e5c7acc12b5a6b",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/climbing-trees.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/climbing-trees.mdx",
+      "size": 910,
+      "checksum": "aa78e174d80adfc4c2cf89f5fe0690661b925e50e9fb23221dcfc37a15c04055",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/collaboration-with-textit-for-crop-failure-early-warning-system.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/collaboration-with-textit-for-crop-failure-early-warning-system.mdx",
+      "size": 1826,
+      "checksum": "663a44aec7e161ff8403f8558d1de4609f3d2c88d1bfc167331a066687962427",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/commentary-to-be-published-in-ecohydrology.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/commentary-to-be-published-in-ecohydrology.mdx",
+      "size": 1857,
+      "checksum": "42860bdb3ec7fef64f61fa6fbd8dd25f7da8837c3c191a789e116528661050b4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/congratulations-dr-guan.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/congratulations-dr-guan.mdx",
+      "size": 931,
+      "checksum": "6e2d3f3eabe886fdb8c30ccba35594d5af4b6a7e53c51118d8846bb182924da6",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/cosmos-soil-moisture-probe-now-operational-at-the-mpala-research-center.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/cosmos-soil-moisture-probe-now-operational-at-the-mpala-research-center.mdx",
+      "size": 1276,
+      "checksum": "de4d9e1f477d6615e85f0585d6163e004917f39b5f8293da9eadc30227d8621d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/coupled-natural-038-human-systems-award-from-the-national-science-foundation.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/coupled-natural-038-human-systems-award-from-the-national-science-foundation.mdx",
+      "size": 4649,
+      "checksum": "6b6f93fd2cac577a585a432f7307cf57447c9d2a04b0a05592ddba5369b75b98",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows.mdx",
+      "size": 1342,
+      "checksum": "1073bcdfc28a485888be2b8e4078aa3e2bf2b8176bfb324e8b1a45941d44eaab",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award.mdx",
+      "size": 1605,
+      "checksum": "45e10f36ff7022363c1318d72a253c632916d0ec2f458a506cd644910fc5d1e9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship.mdx",
+      "size": 1011,
+      "checksum": "0e01790be5b07e1b45cb36a328cd7adf2807575fbb7de6399795e231d4f5932c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/david-robinson-visits-the-princeton-ecohydrology-lab.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/david-robinson-visits-the-princeton-ecohydrology-lab.mdx",
+      "size": 1187,
+      "checksum": "b3141831bb08361a9cafffc08f6f4c21eab56c270cee4e22c7254ef2fbfa915d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/drew-gower-receives-epa-star-fellowship.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/drew-gower-receives-epa-star-fellowship.mdx",
+      "size": 1033,
+      "checksum": "41fc13eb3c76113e2122fa5b4a61d2d598c817de5835006df012aa14523571af",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/ecohydrology-lab-at-agu-2015.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/ecohydrology-lab-at-agu-2015.mdx",
+      "size": 8765,
+      "checksum": "aecde1a1893712bb6e7d10a1340ba2da58e06501d7e2f681e46b9c7fbbe91440",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/ecohydrology-lab-at-the-agu-2014-fall-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/ecohydrology-lab-at-the-agu-2014-fall-meeting.mdx",
+      "size": 7014,
+      "checksum": "d69abba58335567f3418492d3dd4719777e1e7d7f7b0024f2158fa2cd8dee486",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/ecohydrology-sessions-at-the-2011-agu-fall-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/ecohydrology-sessions-at-the-2011-agu-fall-meeting.mdx",
+      "size": 1196,
+      "checksum": "06c980ab187283d3757c054eb11fc56adfcb30fe2f5b662eaa78da8809f96845",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/elliot-chang-receives-smith-newton-scholarship.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/elliot-chang-receives-smith-newton-scholarship.mdx",
+      "size": 2242,
+      "checksum": "f9c89dc29b226397522968a0564e6114e985efff06bb69159909cd02d0b99f6e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/elliot-chang8217s-thesis-published-in-rcms.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/elliot-chang8217s-thesis-published-in-rcms.mdx",
+      "size": 1428,
+      "checksum": "f675c084aec871fb46d23e637ad8013eb134510f311094d1fc5563aa0747f89f",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/evapotranspiration-experiment-at-the-biosphere-2-facility.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/evapotranspiration-experiment-at-the-biosphere-2-facility.mdx",
+      "size": 1241,
+      "checksum": "fbb3e3d350a67e7ef21e6fa9bd2b42e57938a7f7f865a0d4a9f6054caa26faa4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/ewaso-water-project-video.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/ewaso-water-project-video.mdx",
+      "size": 1741,
+      "checksum": "32199fa8d3c62b24795b0c0814aadbc50ce17a2709049e488a6993b3544410d4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/field-ecohydrology-at-mpala.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/field-ecohydrology-at-mpala.mdx",
+      "size": 1314,
+      "checksum": "40d7d9a8e6306e806c92bdebb5c13f6aa3bb4078fd1eaa384102b01fd1b0c668",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/finding-support-in-a-time-of-physical-distancing.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/finding-support-in-a-time-of-physical-distancing.mdx",
+      "size": 1365,
+      "checksum": "466d42b2f1d9356780612135d6f48d51c638a8665392c0617a304cb9de95d6e0",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/first-course-on-uas-for-environmental-monitoring.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/first-course-on-uas-for-environmental-monitoring.mdx",
+      "size": 2453,
+      "checksum": "1cb4045e01b7c9c4e0f956fa12fae6b4eae04c83383d8ee2b60788341178146c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/first-international-conference-on-global-food-security.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/first-international-conference-on-global-food-security.mdx",
+      "size": 2075,
+      "checksum": "2cc086f352e3f25a288ffcdcd4c422ff9be4654f95d8e5f425a7a561144bc6d2",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes.mdx",
+      "size": 2357,
+      "checksum": "c3f0a2bbe26393fc7ddd66ae6e70d8d4d4d38e2c4ea7c25fc612c1ae4831caff",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/first-successful-copter-flight-for-eric-principato.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/first-successful-copter-flight-for-eric-principato.mdx",
+      "size": 1161,
+      "checksum": "7e216896f8075574ad4d89739bd9bb23599b9f140564831f65e5c3cec4cf9251",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/frances-o8217donnell-starting-as-assistant-professor-at-auburn-university.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/frances-o8217donnell-starting-as-assistant-professor-at-auburn-university.mdx",
+      "size": 1792,
+      "checksum": "393e56ee36bcbba6b84ea9d8bcc19ed2c23d6beae299940960b125d5555204f9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/group-activity-at-the-2007-fall-agu-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/group-activity-at-the-2007-fall-agu-meeting.mdx",
+      "size": 1294,
+      "checksum": "4597d4f11ce4ede53941918517e0de781cdec7bd3d1371b317f259a2c10322ae",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/group-presentations-at-the-agu-2008-fall-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/group-presentations-at-the-agu-2008-fall-meeting.mdx",
+      "size": 956,
+      "checksum": "135edc6da2982f1bd3605a136a1449422f9d8686604859aacf358e956cd26f13",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/holden-caylor-joins-the-team.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/holden-caylor-joins-the-team.mdx",
+      "size": 835,
+      "checksum": "6d70ca3b8209d60036c7ad01e9fcaae38624ec61874cbec304f9ef17a6ce9a5d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/ifpri-researcher-dr-kwaw-andam-visits-waves-lab.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/ifpri-researcher-dr-kwaw-andam-visits-waves-lab.mdx",
+      "size": 1709,
+      "checksum": "27a53d9fa891a169c378dec4309d88547320f04f22f29797e32ca9f4f1aa322d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/initial-research-visit-to-kenya.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/initial-research-visit-to-kenya.mdx",
+      "size": 747,
+      "checksum": "16483896729e1e78f93006ec8e9bfa3c99e55194dd2503b81e74815dc42685ac",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/interdisciplinary-science-award-from-nasa.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/interdisciplinary-science-award-from-nasa.mdx",
+      "size": 2550,
+      "checksum": "9ebb6ce3867c8d9388a37fc7b26ac99ac61465f5d7fd9368a6d9f8cf9a2c5012",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/interview-in-scientific-american.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/interview-in-scientific-american.mdx",
+      "size": 9198,
+      "checksum": "12379ee76eb97a5360aafdcb42ee0ee37cff7073c30952031285a1fbde728129",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/invited-talk-at-the-2007-agu-joint-assembly.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/invited-talk-at-the-2007-agu-joint-assembly.mdx",
+      "size": 740,
+      "checksum": "3e3812832bac8904adf9819ed9a093c0cd7ff98303156d444884a15e44510604",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/invited-talk-at-the-2008-soil-science-society-of-america.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/invited-talk-at-the-2008-soil-science-society-of-america.mdx",
+      "size": 1118,
+      "checksum": "e3061be364289237de54a60b9f7c69583dd5208e46b21aceb537a9b0af4d9403",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/jackie8217s-summer-featured-on-the-frontpage-of-pu-website.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/jackie8217s-summer-featured-on-the-frontpage-of-pu-website.mdx",
+      "size": 970,
+      "checksum": "270794f892ded7289319eb177d069b80765a5930b87e94dd16596a1ef03deeec",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/keir-soderberg-joins-our-group.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/keir-soderberg-joins-our-group.mdx",
+      "size": 1535,
+      "checksum": "36e32a485d4403df3b05515ac8fe5f0144e98640419304c0c3787c4743b80fbc",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/kelly-receives-early-career-award-from-the-american-geophysical-union.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/kelly-receives-early-career-award-from-the-american-geophysical-union.mdx",
+      "size": 559,
+      "checksum": "48c952bd63fbd77588a62940b3258f20c076fb7fe8ae92e40e833a1f1e193fdf",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/kelly-receives-faculty-advancement-award.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/kelly-receives-faculty-advancement-award.mdx",
+      "size": 887,
+      "checksum": "680b23a27343405b41e2fc636eb54eb2d2fa990a1ffe4f87bcd2deb6fd7f23db",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/kelly-receives-nsf-career-award.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/kelly-receives-nsf-career-award.mdx",
+      "size": 696,
+      "checksum": "cd0ce2db55b161f42957fb3fb0acdf24a508e34f9f784bbea8131c63d4b7adaa",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lab-summer-plans.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lab-summer-plans.mdx",
+      "size": 2567,
+      "checksum": "25874bba4e9059e4382999d2e05a618692d3b6b925f9101f88eb0c4918d80b6c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lixin-brown-bag-seminar.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lixin-brown-bag-seminar.mdx",
+      "size": 597,
+      "checksum": "b4cf2fe83b0beadcd7ae6d9822173f790a9943ae8724f53971ad7342304b31e6",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lixin-to-present-at-the-egu-general-assembly.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lixin-to-present-at-the-egu-general-assembly.mdx",
+      "size": 726,
+      "checksum": "0745f05cf70307d330ae2a5eeecbb46219711594cf410757751564d212c5a808",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lixin-wang-joining-ecohydrology-group-at-unsw.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lixin-wang-joining-ecohydrology-group-at-unsw.mdx",
+      "size": 1529,
+      "checksum": "24047daf582475a5ab7cbe1614b011eb5c13ab47bda75330e60affa966a2aa1c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lixin-wang8217s-interview-with-the-iupui-newsroom.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lixin-wang8217s-interview-with-the-iupui-newsroom.mdx",
+      "size": 1265,
+      "checksum": "6616faa9b76ecb8ebb517921c7d37052afc70e3aec65b50eba3865f772ab0d22",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lixin-wang8217s-paper-in-nature-and-interview.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lixin-wang8217s-paper-in-nature-and-interview.mdx",
+      "size": 1214,
+      "checksum": "22389b8d1acea96c0a1d54e2ff6ecf520407ffd448255770bccb4a76863a5d65",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/lizzie-king-accepts-a-faculty-position-at-the-university-of-georgia.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/lizzie-king-accepts-a-faculty-position-at-the-university-of-georgia.mdx",
+      "size": 1163,
+      "checksum": "386b98897cbe09bfd8d14c018593dbcea3516f89e6b4c144e1429c9a7503d117",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/marcus-spiegel-receives-smith-newton-scholarship.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/marcus-spiegel-receives-smith-newton-scholarship.mdx",
+      "size": 2106,
+      "checksum": "cc009519aac247d408d155888ad014ca6236a68a3dcf6feaaae982fdd6f59b10",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/molly-o8217connor-receives-thesis-prize.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/molly-o8217connor-receives-thesis-prize.mdx",
+      "size": 2153,
+      "checksum": "79e4f4ffa8f7e46258f48d8e809573a568f5ab7bc17e1c6994fb9f0beceb1a00",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/monitoring-crop-production-and-farmer-decision-making-in-central-kenya.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/monitoring-crop-production-and-farmer-decision-making-in-central-kenya.mdx",
+      "size": 3039,
+      "checksum": "5509ae2d6ad1bc220a1bd7e0e8ffc91d554adecdadd4cd6e27907d9302b65ac1",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/mpala-from-the-sky.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/mpala-from-the-sky.mdx",
+      "size": 761,
+      "checksum": "b6dae90a12b8bf2c32ee2e9379450a21ee9605372f1336e8db903a2cb789da5e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/mpala-live-website-launched.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/mpala-live-website-launched.mdx",
+      "size": 1349,
+      "checksum": "8b5b650fb4761afa86b6b96df9a57b00b976dbc5354f76f143c4a749c16ac6eb",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/mpala-research-center-flux-tower-operational.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/mpala-research-center-flux-tower-operational.mdx",
+      "size": 1161,
+      "checksum": "75532a95f448be844757d731246ce6756beb2847885ac0103b88aac5f72898d2",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/nasa-jet-propulsion-lab-surp-grant-received.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/nasa-jet-propulsion-lab-surp-grant-received.mdx",
+      "size": 1422,
+      "checksum": "82c13fa9d2bece5e64018c2d733455b43f6b365a5cbc32033734918cdc945df5",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/natasha-krell-wins-fulbright-award-to-kenya.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/natasha-krell-wins-fulbright-award-to-kenya.mdx",
+      "size": 1369,
+      "checksum": "ee455759c09cfb584f77c08565580371c1f09ff6fbb8f617a66eecf7956a16b9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/national-socio-environmental-synthesis-center-sesync-workshop.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/national-socio-environmental-synthesis-center-sesync-workshop.mdx",
+      "size": 1582,
+      "checksum": "c924148baa887d81d2f06ca9cea03debc851be122ce607b446deba953a4d5a7b",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/nature-comment-published.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/nature-comment-published.mdx",
+      "size": 1554,
+      "checksum": "c008a6b6f2139d49d206dd9fc8d21100616604748a7240b0e74eb9a287e1399b",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-8220campus-as-a-lab8221-project.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-8220campus-as-a-lab8221-project.mdx",
+      "size": 1499,
+      "checksum": "3ffa6cf65be5ef974680f289bb9ef9f951361020c27f776efe85686b55677c54",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-article-in-science.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-article-in-science.mdx",
+      "size": 1996,
+      "checksum": "5faa21436478357799f61f6c2070dadbc4dee069e33e62666dfa2368c280ba3d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-experiment-begun-on-subsurface-water-redistribution.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-experiment-begun-on-subsurface-water-redistribution.mdx",
+      "size": 1434,
+      "checksum": "a25dc07a58fa3c4d5b3e55391721aa0e75a5859e44f9c5918fd97479b9294376",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas.mdx",
+      "size": 1783,
+      "checksum": "8fa6f983cd3f93a0546f1221f528c5432f66f41039c58834eef9aa597266f8db",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-biogeosciences.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-biogeosciences.mdx",
+      "size": 1488,
+      "checksum": "85942bc4def0077604efb9e6be0c6a05fde3705643c003466ec13817a1e9557b",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-ecosphere.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-ecosphere.mdx",
+      "size": 1106,
+      "checksum": "c28ff6f3af049e874da0dc90a54a8c86e75634e6871e9f8aa29b913d37e91443",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-erl.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-erl.mdx",
+      "size": 1485,
+      "checksum": "3cf5e1990bf4138a9de3cb4a0b8052761b6a33f04123aedc9c6b16c0f21accb2",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-grl.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-grl.mdx",
+      "size": 1339,
+      "checksum": "5e819b9cf7921a81646993a4fef77e02677b2194c84aace8e128cdbfd28f66ea",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-nature-climate-change.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-nature-climate-change.mdx",
+      "size": 1614,
+      "checksum": "d98d037777ee658226c31d755592c10aeb05a58c6972d7b6f252dbda914c1509",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-nature-geoscience.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-nature-geoscience.mdx",
+      "size": 1452,
+      "checksum": "9b0b07aa2284b05ab4f9ed7f24432aef64acebd92b713a0f635cc5a14731c88e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/new-paper-in-science.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/new-paper-in-science.mdx",
+      "size": 2637,
+      "checksum": "c9261ecf948b5f6fbc3ce34d1c037f5a1700fb9e67f8b277e4d59c373763593e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/nsf-grant-awarded-for-resilience-research-in-zambia.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/nsf-grant-awarded-for-resilience-research-in-zambia.mdx",
+      "size": 3923,
+      "checksum": "ffe0559fcc791492c41609c5d8ef55f67014ae75a8470a526fded47047eb2833",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/nyc-girls-computer-science-and-engineering-conference.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/nyc-girls-computer-science-and-engineering-conference.mdx",
+      "size": 920,
+      "checksum": "21f9c9c84427d7d4205f992f2f50bdc48f1c43ea0075d9a1d180237e1dd7c307",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/open-source-hardware-documentation-jam.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/open-source-hardware-documentation-jam.mdx",
+      "size": 782,
+      "checksum": "079c0bb5dbf85c408646cebeaa82ceb19405854ed1b1c2e4a460038b6a73e9f6",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/princeton-global-collaborative-network-fund-for-integrated-food-security-research.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/princeton-global-collaborative-network-fund-for-integrated-food-security-research.mdx",
+      "size": 3709,
+      "checksum": "9cefb5bdfc90643b514a0f4885f85bc1cdec729c62cbfab165dc7592c77100d6",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/princeton-grand-challenge-interns-summer-2011.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/princeton-grand-challenge-interns-summer-2011.mdx",
+      "size": 2581,
+      "checksum": "f27f737043d322b1d2349400fbab5aaa176e33700319a6ba5d9fd36b13349863",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/princeton-studies-food-new-class-launched.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/princeton-studies-food-new-class-launched.mdx",
+      "size": 1915,
+      "checksum": "4b3bf2465c5d02b58cc06950c023f4e1faf3dae860bd97aa74c9b8d0c970abd4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/professor-dave-breshears-visits-the-mpala-research-center.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/professor-dave-breshears-visits-the-mpala-research-center.mdx",
+      "size": 1233,
+      "checksum": "99f231eaf3242a756bcea073234724b9e01fabc40c60d3dd0526f689b9db6514",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/pulselab-in-california-and-new-mexico.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/pulselab-in-california-and-new-mexico.mdx",
+      "size": 1982,
+      "checksum": "d2064d4f7f627de1dd6b60231fe10f49a7c18652bf0bb647e0301672d4b61d77",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum.mdx",
+      "size": 2643,
+      "checksum": "0e9c05557fc25f55cbdacdc5d1f11ffbedd665c922a44a4642e79844dbc07fc4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand.mdx",
+      "size": 2573,
+      "checksum": "7b2fb7bc9e477d3d94df3b6a3251b80c6601b9a66a9e54a79fc37c0022421eaa",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/rain-gauge-and-soil-moisture-probe-deployment-in-zambia.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/rain-gauge-and-soil-moisture-probe-deployment-in-zambia.mdx",
+      "size": 1708,
+      "checksum": "3ef15837e8494fa8861ae932bb285b58e2440b3188e7ece0357dcc3b933b4c54",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/rainfall-runoff-experiment-installed-at-the-mpala-research-center.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/rainfall-runoff-experiment-installed-at-the-mpala-research-center.mdx",
+      "size": 1143,
+      "checksum": "7fde76c75fe125316283002343024d66f1725d988e7a5a9793e5c6ba8d5a5ccd",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs.mdx",
+      "size": 1957,
+      "checksum": "305d04dfd1a0c9dc344554726003c1452787cf89ce07e20d9f24344d1e7d596c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/scholarships-fellowships-and-grants-awarded-to-waves-lab-students.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/scholarships-fellowships-and-grants-awarded-to-waves-lab-students.mdx",
+      "size": 2563,
+      "checksum": "60c1091602beda157ef490d13f3d7f758664d688da2aa41acea9dcc3e434de48",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/session-co-chair-at-the-2005-agu-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/session-co-chair-at-the-2005-agu-meeting.mdx",
+      "size": 3624,
+      "checksum": "d14c33f4a68f87b0b9a8baee2f8d3ddf6551b10ac21779cdec84906e2cd498ff",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry.mdx",
+      "size": 2035,
+      "checksum": "ab3509d613afc3ffc43ffe4777f2ad486bc65512a0f3a10d64daf713b4cafbc4",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards.mdx",
+      "size": 2277,
+      "checksum": "d55d562c91bd7b91c8034d7d2de738bbccc6e462a36c7d1100660562cd026009",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award.mdx",
+      "size": 1518,
+      "checksum": "f3bc1b1fc7aff877e20734b29b3e99ea3e6c9f014b41aee5fd07231423bfed95",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/stephanie-receives-pei-step-fellowship.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/stephanie-receives-pei-step-fellowship.mdx",
+      "size": 1016,
+      "checksum": "4e2962ec7ca281c9f61ed784a4c35dd5e978c952763a035e654deca04a2933d2",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/stephen-good-joins-our-group.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/stephen-good-joins-our-group.mdx",
+      "size": 1037,
+      "checksum": "50112bca2aa90a51e61006e86cccc352a124affa7a565e516199587d0805e69d",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/student-talks-at-the-2008-american-association-of-geographers-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/student-talks-at-the-2008-american-association-of-geographers-meeting.mdx",
+      "size": 1288,
+      "checksum": "1d963e13216c744ea0cfe9be63675417779e54ccd5292abd386c3f692f4020e7",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/summer-at-mpala-plant-physiological-response-to-water-stress.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/summer-at-mpala-plant-physiological-response-to-water-stress.mdx",
+      "size": 1422,
+      "checksum": "f71f79e226a2f7313b716961f07b17978ace7de4158bc4f993c12bc5af9058fe",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/summer-at-mpala-water-use-and-agriculture.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/summer-at-mpala-water-use-and-agriculture.mdx",
+      "size": 2209,
+      "checksum": "a3ebe7bb0171be7f16f0978109e907d6196746e17f1ca5c3e436456504268ad9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta.mdx",
+      "size": 1863,
+      "checksum": "57c806e5a97d153756b55e13ab5fb2c7ecf38f3d155882770a1f3409485d8cd9",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/talks-038-abstracts-at-the-2008-esa-meeting.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/talks-038-abstracts-at-the-2008-esa-meeting.mdx",
+      "size": 1183,
+      "checksum": "afc6d98cd19495e258de5c18d967ae1f1c2652cb85a370046bf5f8aa41593da7",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/teaching-the-tbi-field-school-students.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/teaching-the-tbi-field-school-students.mdx",
+      "size": 1227,
+      "checksum": "ee03e2cffb58138f8433d502c35747a8c550cebe18f7744bd1ca3675044e414c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/trenton-receives-agu-student-paper-award.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/trenton-receives-agu-student-paper-award.mdx",
+      "size": 565,
+      "checksum": "49e54a8153a8bbebbab0d31afe9b6009ddfb1e72c0e228f0bdc6099bf549e71c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/trenton-recieves-ddep-award-from-nsf.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/trenton-recieves-ddep-award-from-nsf.mdx",
+      "size": 908,
+      "checksum": "8f57964a0d51267b9d2c1ac63f694f5a554716810df01fbfbeb0de45c074420f",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/two-articles-published-in-ecosphere.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/two-articles-published-in-ecosphere.mdx",
+      "size": 2502,
+      "checksum": "748b1641e41ae481da286badc530316e880d2c6bd291fdd83d49d9dbca96972c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/two-articles-recently-accepted-in-hydrology-and-earth-system-sciences.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/two-articles-recently-accepted-in-hydrology-and-earth-system-sciences.mdx",
+      "size": 1980,
+      "checksum": "0d9d9e40688fe5fdec3590c40bfa88a9878a69159d7ac61df17d2e20f0e8518c",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/two-jpl-surp-grants-received.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/two-jpl-surp-grants-received.mdx",
+      "size": 2776,
+      "checksum": "30be45c35640c47968b162811161af1e92e829b020c2a0c3db526f3baac92c6e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/two-new-grants-awarded.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/two-new-grants-awarded.mdx",
+      "size": 3189,
+      "checksum": "f079daa7b7ecfb2eef176accb7d18865db840fde5dc8c02dd7522ec27c3acc41",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert.mdx",
+      "size": 2419,
+      "checksum": "6a9986d691a0bda8b92b5b7b9a99dd0935bcea562c9788e0b3bd5013bcafb408",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/water-in-africa-art-exhibit-opens.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/water-in-africa-art-exhibit-opens.mdx",
+      "size": 916,
+      "checksum": "7815ca70775028f49a1c5ab822d5a18a54c90aea89ef832f3415a5dab8d7d0f6",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/water-vapor-isotope-observations-at-the-morgan-monroe-state-forest.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/water-vapor-isotope-observations-at-the-morgan-monroe-state-forest.mdx",
+      "size": 799,
+      "checksum": "b2730ff6590d47740184599da658d2b028f50c4ac0271df8616af0139ca7ba2f",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/waves-lab-at-the-agu-fall-meeting-2019.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/waves-lab-at-the-agu-fall-meeting-2019.mdx",
+      "size": 8875,
+      "checksum": "b82f27092406a0adee47a5eec283a79709e6bfb1387727299eaa710c19d26aea",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report.mdx",
+      "size": 1791,
+      "checksum": "025ae479c4c8c5258a4e4e1a6354ce44b040b08e4b546988b96e15cb80272a8e",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/waves-lab-postdoctoral-positions-available.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/waves-lab-postdoctoral-positions-available.mdx",
+      "size": 3460,
+      "checksum": "be3bb401acee489e94da6822a7344e8476625845db07d7685ce26bfc2a2ad5b1",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/waves-lab-recieves-funding-for-riparian-ecohydrology-projects.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/waves-lab-recieves-funding-for-riparian-ecohydrology-projects.mdx",
+      "size": 3059,
+      "checksum": "e4c1acf49c4c690889feaf1e40db92dea753d8f094e7323300b6e83e4a9c1776",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/waves-lab-researchers-participate-in-kenyan-national-science-week-exhibition.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/waves-lab-researchers-participate-in-kenyan-national-science-week-exhibition.mdx",
+      "size": 1600,
+      "checksum": "a6a3c0a487eb69f432e9ed16300c68c1b40dfc8e009e020f78b75c09a572ddef",
+      "contentType": "news"
+    },
+    {
+      "originalPath": "content/news/where-does-water-go-when-it-doesn8217t-flow.mdx",
+      "backupPath": "backups/mdx-backup-2025-07-02T17-53-20-265Z/content/news/where-does-water-go-when-it-doesn8217t-flow.mdx",
+      "size": 1941,
+      "checksum": "d0c68f767c12046a387d58d4e95ae3354e39dcd441af6f7854355677e3e0ab1e",
+      "contentType": "news"
+    }
+  ],
+  "checksums": {
+    "content/people/abinash-bhattachan.mdx": "fd50ab0873ffbe52ced90986b722837078bf641bdbad3013bfc9b4cf030078a9",
+    "content/people/adam-wolf.mdx": "8bed0c64dcd8238f6f0e8c2fec4181ce0037542fcec105ddf46b6b864b71755e",
+    "content/people/alex-lester.mdx": "633e288ceafb7b056b31d4f148c5aed8f58db5a7ac1abef7497b36b97bd34ed6",
+    "content/people/alice-suh.mdx": "4f57d8b617892d68c5f02e3d483b0f8bbc451ce2e34134756b4191fbb753dd23",
+    "content/people/allison-ingram.mdx": "1cc53127350393060835cd4a61a6e1fd4250078234a505f48256a37b6d06da86",
+    "content/people/ben-siegfried.mdx": "7be4e28983416495e89e6c871bb438578646f3a4d19a17000163a2d929dfcf9b",
+    "content/people/boniface-mukoma.mdx": "f26f15ed2d0e47f9029200fc6e2e7adbb0fafb575ac5a74d5595b2821811b181",
+    "content/people/bryn-morgan.mdx": "2821384b0284d4bd5f07073a339830340fa30ab8686d0e3c93177b03deee0443",
+    "content/people/caden-ohlwiler.mdx": "7d0c51d582871545741cf5ff01eab507f03516e32f4de46aa573b073e35fcf7d",
+    "content/people/cascade-tuholske.mdx": "611339a1de0ba3d32873841e76a3446bf480aa5c191e44e71f1b63eb47b1f583",
+    "content/people/connor-duwan.mdx": "5d34f06c8325365039d7683c7e59e7bf54a3ceea0c506e7447fd0be7827ae032",
+    "content/people/craig-sinkler.mdx": "5fbd59fee45447b1f33d45e9728ee3e9452d27b8e79ea61fc9f9ffa600ab859a",
+    "content/people/cynthia-gerlein-safdi.mdx": "2c95a9eba955f66862ecad7c74cdf39e7c872dc3b4dfcda1399438fcab5cb890",
+    "content/people/daozhi-gong.mdx": "d4338d050dc0223cb05e88cfb254c728947937c6a89dcb68e362a76914691476",
+    "content/people/dee-luo.mdx": "253c200e913d116526b3ebf0b667517707e6a80141f0bc8baefb81e0eadf5b3f",
+    "content/people/diana-chavarro-rincon.mdx": "c81f47ada713c6268825256776e2422ccc3c6fac99de38ac9f1bcc88bdd9aac9",
+    "content/people/drew-gower.mdx": "a242541ccc9ffe2b61cbc5ee99cae30fd64058e8d1102611f7373057f9afc6f6",
+    "content/people/ekomwa-akuwam.mdx": "9ba292782dbf7f96e60e25750be7e466490910515825626399d40c8e0f9fd7e3",
+    "content/people/eliza-harkins.mdx": "cbaf6960b3887cae91cd137f622ef1e086a5a6569573bd6e2adf286856ed9584",
+    "content/people/elliot-chang.mdx": "c902353498f545f89fbc4079625c43cb452673e0474580d2e182abd254f0a175",
+    "content/people/eric-principato.mdx": "9c6ade3eda5c2b9e5414b3d93da6889a5bc4dae904d738fea657eb088030109f",
+    "content/people/feng-wang.mdx": "24eac645a69154a9a1864977b517b15f145017193fb06ab463cc91e6e6ad7fb7",
+    "content/people/frances-odonnell.mdx": "753ed3fcc117aba8c0c22e3242754b69a8a1d7b09c4576675b0be52ee0c6d334",
+    "content/people/gabby-ragazzo.mdx": "a0224daae4351e067e9c7a107621012c1b65949330b3443a264d27a38994b40a",
+    "content/people/garth-lindner.mdx": "79a1000811cb7564494fb03a872f6d8abe872781db1a1e06a327cb29e8a3508d",
+    "content/people/guiomar-ruiz-prez.mdx": "8457c01362cd514859b9bcebbce2928adb107afb5a0dcd46a623d7d5b6ade36d",
+    "content/people/haley-lane.mdx": "896f057ca76c8ee97d082fd1e0b00cf47ef2e18b86c3bef709a257f45fd735b0",
+    "content/people/hannah-safford.mdx": "991eea99364986120f3f7e4f3b524a9ce0c169a60598209d9de4b193b7f113bb",
+    "content/people/hilary-wayland.mdx": "a6f0da428438bb16756d11d0cec8e3dbb0af8f1dfc3c9c351795ec6626b7ede3",
+    "content/people/ida-posner.mdx": "e42e030713f5e010c57754746d578077c73df24f2ed85bbedccc7513ad1fba43",
+    "content/people/jackie-jones.mdx": "0f38e08c3105f22908f98e442a01b9d6387bf6cafb5bd1a97492ae975f756424",
+    "content/people/james-odonnell.mdx": "fa1dfd724febf57a90852cefce8486808e95dd21198d52328244634e76da24e0",
+    "content/people/jeremy-chen.mdx": "995cc8e090e3c1f3a46d93beb5526cb6875f7c4fa3c47c281542616d94c9dfa9",
+    "content/people/john-gitonga.mdx": "b5ead97cab854ba23aca32b11b7781aaa6f4cea69190a06f21d446c03968203b",
+    "content/people/johnathan-choi.mdx": "7fd2176c9a5fbe7d8f469a43289ef6178fd27e5383f1ff2c09985bf498103dd5",
+    "content/people/julia-signell.mdx": "29e08f4972735632fc735dc62fe9f2008c84a7c2ebb4910b173f2ed0ee284000",
+    "content/people/kaiyu-guan.mdx": "74472b4b6839ee1f28a2652fed039cac4343d16dd4100f6b1de1cef45e4167b0",
+    "content/people/kathleen-ryan.mdx": "603d487f1876d2b736c5de7e184697c914b7ef8824a2642e26124fa4c37a3b84",
+    "content/people/kathy-zhao.mdx": "fef11e8edf71c02b90a19fb96e7c9a71d52c45e3cc35ad0437b2b2426e089a36",
+    "content/people/katie-smith.mdx": "d87f0c6f613ba48e1e5ce4633413a046966e4ea89ea40c02168ebbe6a3154f3e",
+    "content/people/keir-soderberg.mdx": "dfa281c9fd2688c04f1117efa65aa9a31527c53050cf4697ab7a6d6052a26266",
+    "content/people/keita-decarlo.mdx": "e5383301396446d8bd67c18ca186b0f50df6f4dabaca9162629b105183a4d9f3",
+    "content/people/kelly-caylor.mdx": "fc925be69d477b66de8be9eb12dc912b692c87fb36cafb071a011fdd435e13e5",
+    "content/people/lixin-wang.mdx": "84401fe757a4d29e7a53fc3fb2e8ac6edf4824bfcdaae836df6b3c38a1be8a4a",
+    "content/people/lizzie-king.mdx": "8b97020cd7bbf2e31104573d20ea4f64ea3c652e79125f071576754dc1a75d89",
+    "content/people/lyndon-estes.mdx": "deae51f77c3acda2078c9f94a0baa9395b7cd7c064c1a49b325267bc6b6e23a8",
+    "content/people/marc-mayes.mdx": "a38b1d3cad8089a73f275ae2c6a3a6ff464e6430a34ad353259bf4819b0e6c71",
+    "content/people/marcus-spiegel.mdx": "9a4329fbf95f4258f58a2f83bfb774192149a89b50343b5eca5c56df0b0121f6",
+    "content/people/maria-fabiola-rodriguez.mdx": "496adff41e323580cc009f9ababf30082b2949af3bfd268a178e8657a7f41dce",
+    "content/people/matteo-kruijssen.mdx": "a428db1562adb64b38ae294044d4945c00bdbc610215be8665e3d1ef9cf20bfe",
+    "content/people/miranda-bernard.mdx": "66d6d9777158147e1c3f1145007cd78bc46136001d1d0309a4dacfd364e100be",
+    "content/people/molly-oconnor.mdx": "3935c02619d733d22bd303afc9eeb562fa185a6d544e452f8da641cca97ce678",
+    "content/people/moses-kioko-musyoka.mdx": "64a233d3ce0bc5e7c89ec00183eec4129e52969ba7523acbfa2d1c26d51c7bcb",
+    "content/people/natasha-krell.mdx": "553240c41ae571f5f06b4e9effcbacd88e574967beeeee52bd49eb10bb01eb33",
+    "content/people/noah-spahn.mdx": "ca7b1ddcb119e5379f78cb312191997f9f03a402faec8ccee078a68f71c27f21",
+    "content/people/patrick-nadeau.mdx": "dba9ea884e49b0cb3b45f9978b35e4bf55aded2b02401dbc98b68459d2ea5acb",
+    "content/people/preston-kemeny.mdx": "f3fe1fcb90323bb7da99656ec201f74edbe31fe8302873585e47ab481ec9bda7",
+    "content/people/rachel-green.mdx": "72432426aa5ee4b7e79fc32e78c8f16cde83e0c592a9b77d6c87db44718855f2",
+    "content/people/ray-grossman.mdx": "7f01c2adf4944f305585bf7b2d7143a7dedff134fb2c26f6f7a746ff9f99d110",
+    "content/people/rodrigo-munoz-rogers.mdx": "05261ff7c7fb98b3cc06e6d28697316a67d084f4255203f299df9b0316403a20",
+    "content/people/ryan-avery.mdx": "b81e8e465c4381b6ae756b4f399318f87f27775b2d622180be7d2d355e2bc112",
+    "content/people/sally-goodman.mdx": "f07cdd155889c8104cbab968f48b2536434c73c37f89f542a7ac69f5882b88ee",
+    "content/people/sara-guenther.mdx": "d412942239e7d86723ed3909285e8828a56a942eea4a2ff9ba4fa33135c0062e",
+    "content/people/sindiso-nyathi.mdx": "b63c861b6bb4857e8ad65a16b77264d9ba5f02c89663a8d6c02bb28ea826ac0a",
+    "content/people/stephanie-debats.mdx": "cd6ccc72f1667bd93ffc5810a7fa0b445738848b8bbeb6a24d638cf200973007",
+    "content/people/stephen-good.mdx": "677986e8d64dc8dba489c3f90603f2843404c51325da0dd82aa61b58a6a0392b",
+    "content/people/steve-tuozzolo.mdx": "2b97003e6c5570b9dfe76bbbe02639d0c35e91b5682c8bf318b21e79a2292ad2",
+    "content/people/taylor-morgan.mdx": "1814f1b460a54dfd02b8d5d13322f16f32c4f9533c9ac8a643e19efb2a6144b3",
+    "content/people/trenton-franz.mdx": "db7f94caed8b0c911bcd7f51106bdd9ada9ca2454e78927d87f1a05f9bd17698",
+    "content/publications/abinash-bhattachan20122719.mdx": "a91b1fd3d8f3bec77fb7a96dc8ec5fbe66e132283fd512c86c1f79078b8d4f65",
+    "content/publications/adam-wolf20154420.mdx": "dfd5c8bf97fd94510f1df3683cdd8a649f84fad3ff00bae05fb5971b0bc86582",
+    "content/publications/cascade-tuholske20171987.mdx": "d0f08afdd43da6dad68f7a99e89a0d3a4425e316e2ec657d42b0a88f3ee4a9cf",
+    "content/publications/cascade-tuholske20172001.mdx": "06f4ec3343ceb8a134f93c4ccf95762eb22771196cc96405e1cc8adf4db4836b",
+    "content/publications/cascade-tuholske20179991.mdx": "000b3e7b231ea4990ded0fca08d3c4e24301fbe4e0d26f5b741964959f02c102",
+    "content/publications/cascade-tuholske20181111.mdx": "d9322a685953099f15239d9b8b355e278a79c687342fe0c27e5b2dedfceaa747",
+    "content/publications/cascade-tuholske20195151.mdx": "d5af09e452e4aa2c300b046a2247fd8922fb1ef36504b77cd210f1a7b9ecf57b",
+    "content/publications/cascade-tuholske20205275.mdx": "a5b5d3272bf90d6aee9546904d4b7af6aa19d742b1b49044918fb4c28d496886",
+    "content/publications/cascade-tuholske20211016.mdx": "3f8b83ed366b1fb3cd07bdd940020733d58fe0ff74a654685a181fc14ffecb6d",
+    "content/publications/cascade-tuholske20211248.mdx": "668e12ecb1b63ec310a4291e4495380d15e4a90895030fd3c9e538b709956554",
+    "content/publications/cynthia-gerlein-safdi20175203.mdx": "8e92fc9428fbdaff10cef9aeb6cbe876caa136e772230ea66db0180b528d6e69",
+    "content/publications/cynthia-gerlein-safdi20178613.mdx": "ed0fe60e40f3a4c6ee3eaf20131d57706aead1ebb4917e2aa1bb3ee927fdce57",
+    "content/publications/cynthia-gerlein-safdi20182412.mdx": "f7cdcde01398142400f1e172eb7c5678f1c1ece14d4a530993a206c5d4fa311d",
+    "content/publications/drew-gower20164779.mdx": "8308eb8651f10ec0d9a3285d5fadab92e7270214e14d75c7f0027661a492b924",
+    "content/publications/drew-gower20176236.mdx": "de3f09f277d4cdd144d303621aa61ba4ddcc9ebed9a7dcc1a46f234819dc4fb6",
+    "content/publications/drew-gower20176237.mdx": "b0b909368356d084e198a1e874bbfa915dd818cf32953bf8227e649cd732b103",
+    "content/publications/drew-gower20186238.mdx": "2692d01bea1db680dda1b97fe4e5aba74c6d500c61f70ca895b14ce9794d5dd2",
+    "content/publications/drew-gower20196239.mdx": "7e48b170c5de471a2312bac1c6a5f62f9d7292168e26f46b79eefc47ad32b9d2",
+    "content/publications/drew-gower20206240.mdx": "15e04a1308e4d4b7f16530314e9523ac07807148f984c01614020d31721e3a94",
+    "content/publications/elliot-chang20164648.mdx": "b48a538c86ac9cdaccd00324d0870a663de1c55eb34aced88f36f93c3ba0add4",
+    "content/publications/frances-odonnell20122708.mdx": "8628493ffbce436c81891455df212d397b3db76d9b3f2c91d64d94d0073e7492",
+    "content/publications/frances-odonnell20154494.mdx": "ea5dc235c1193343cbbd317d52a0b685d89febe786e5837ef5b38802d0e8e504",
+    "content/publications/kaiyu-guan20122756.mdx": "1cc3cbd329fbe3ee7605572db47541ea16f5a5282530edd0e5f1da17e18b4dcf",
+    "content/publications/kaiyu-guan20132821.mdx": "bdee915c874fef1887b873316d3558a7ac983260ba1d49ab0ea4f0ed0da5411b",
+    "content/publications/kaiyu-guan20134078.mdx": "d96a53b0563f4ee870c2c8de886fd347cacae41e9e4cef8a276a1bffa8d6dad0",
+    "content/publications/kaiyu-guan20144235.mdx": "0d3feb93568ef187650d530b54dc856addbb0e2fae795bf322ebba8a8f5b511a",
+    "content/publications/kaiyu-guan20154287.mdx": "735a67788d92721eeb8643e24ccb60bf2472079df1ca8f3d0a406b41ba7ab7ab",
+    "content/publications/kaiyu-guan20187362.mdx": "c082699667fe0ccabb0f47d8657daa07d50b944fc5234af9fa934ab160102e65",
+    "content/publications/keir-soderberg20122153.mdx": "1bdee3eaf6b5ff7269ca96a076365fb2211217a1bbf19230281777063da51913",
+    "content/publications/keir-soderberg20132828.mdx": "6ee15b19ce4381a74817756cd95395fb1d89401aa2e7c09bd51c2db930cf8b9b",
+    "content/publications/keita-decarlo20193646.mdx": "98130a6370aec4419f95deafbbe717e289ce7dca08316c54f6b5d45d3a9d9c37",
+    "content/publications/keita-decarlo20232225.mdx": "70e3129f4cefafeae7fb5606abc0aedc28239147b6a835b96d7d65564b10cd01",
+    "content/publications/kelly-caylor20021378.mdx": "6360107ec0cc499a58b2cf2aa4c785f346ab35dde4067002f056d4436f676dde",
+    "content/publications/kelly-caylor20021384.mdx": "90aef26b9aec1e11441c306c6475e3448da55f8d6f3cc569d26acfaa3202d20b",
+    "content/publications/kelly-caylor20021392.mdx": "28776d636f3b8a94f19eb31ccdb258bcb3f4962e647f742e93c0a4ea09b5df96",
+    "content/publications/kelly-caylor20031403.mdx": "553b6efb8bd2e35fb4a3f32d3e6d25fea01006660c9dd0e1b2bbcfb48e0af4a2",
+    "content/publications/kelly-caylor20031409.mdx": "34a30ef6b52c3fc8b972be1ceb5017921fcb1e99f3f2a0aaf6cc628d124b76d9",
+    "content/publications/kelly-caylor20031413.mdx": "3fcf61da702bb063dcdd8d1b9d2d1ef6f35b512660baf5b59e42e3be53658d31",
+    "content/publications/kelly-caylor20031420.mdx": "a61eb8af7a6a76121b33fc849082fe6944f908dd8990b6f72cbcff9f70c2998f",
+    "content/publications/kelly-caylor20041398.mdx": "fdff0271a4184a68a9f91f27bbae976beffbda97f8cc6b67f16910be16bb08a0",
+    "content/publications/kelly-caylor20041426.mdx": "ca8f95b44a461ed14c7fe10e8a6a5b74bb0bcfd09be97acfb726ba15b09c31de",
+    "content/publications/kelly-caylor20041435.mdx": "54cc8d95f2a72c51bdba8575452b932f29e03195f9c19ff19ac3a587af54c97f",
+    "content/publications/kelly-caylor20041444.mdx": "34e20ea216be3f4cd5e98599bdbc8ab3c113630b4f6117ed456857fd48bdd525",
+    "content/publications/kelly-caylor20041479.mdx": "346d0484617b4d6b2fc7778b7d9e3c4c65a1476e0091623ab0822cdd6b692681",
+    "content/publications/kelly-caylor20051451.mdx": "feaf4a4d2a405c9ad90cce2bb5316b7b484aa45d5c2be14cfdce593c0fb080ea",
+    "content/publications/kelly-caylor20051459.mdx": "b3892600d056cf79ea6cd741f126c4a0805799da46178f7eebdb47a869c717b6",
+    "content/publications/kelly-caylor20051467.mdx": "41b00b99a38f038814461bb7f174ac28a988e064de0f44b5a0dc7ebdde9aeaaf",
+    "content/publications/kelly-caylor20051473.mdx": "d2d66a8b7c3beac31903aa922933df890f3623cb554a2ebf29c6bc50bbd06c8a",
+    "content/publications/kelly-caylor20061491.mdx": "cd7045faca6dd16fd8ee29e7dfb73dba632dcf5a54ca71c929bd4e2f28aa6ecd",
+    "content/publications/kelly-caylor20071499.mdx": "727a84125ce26d75dbcd0a59077fad1e967dd5e666ce01374852a7e95e949467",
+    "content/publications/kelly-caylor20071507.mdx": "a8d87ad939818c08d6ee89b4f0f560054887e981dcb8fb8b895d390c5ffa7bd6",
+    "content/publications/kelly-caylor20071517.mdx": "43999379ef2169a9bc5694b8dfd5eef2e095b6e57044c3bdf54fe3acb44fef03",
+    "content/publications/kelly-caylor20071528.mdx": "7107af63db5b0977936ccd95a9911a958a8e08c4407c6fa88effa381baa47bd3",
+    "content/publications/kelly-caylor20071536.mdx": "d72ffc16946df1a08a01cbb7688bf44dfc26b84ce2fbe473ca31808ec2db2012",
+    "content/publications/kelly-caylor20081544.mdx": "3fef792d6f0b21fc1cd98735d2d5dafbd66c17a57c7fae21fe9090e5b2134f22",
+    "content/publications/kelly-caylor20091353.mdx": "7637b3e941b228e8955198edc2a0fabd3b155b4e3440b41a99603d1d8f86fa2b",
+    "content/publications/kelly-caylor20091369.mdx": "9f3edaed52635e6b353e6297174ec4a1fd934e982c5d1eb378b93e8e8de696fb",
+    "content/publications/kelly-caylor20091572.mdx": "317e05a274b4b7bb770efdf00acb60d8e9ab8eb0396641a165e505d746d32101",
+    "content/publications/kelly-caylor20101600.mdx": "a676957028ed52de1dfb691e1d0480cbf415b9c841359a7b810fa13493ae2c70",
+    "content/publications/kelly-caylor20111655.mdx": "070db89fb755bac4212eb0c965410a2f2dd36ebae262a51485a6061999fde299",
+    "content/publications/kelly-caylor20111667.mdx": "dfe9329545e753437140bfd92d2cf296dac0f343c099609463b517c1373769c3",
+    "content/publications/kelly-caylor20133673.mdx": "edf1bdf277985bce41411a41eaa28f0e4eccfe8b51f1d771c2139ff50af3f0ac",
+    "content/publications/kelly-caylor20133674.mdx": "36bfbfd6e319aae2ff2060256a8b54b27cf5a598161edec9fe1f9877d49746fa",
+    "content/publications/kelly-caylor20133697.mdx": "d931dbbde898a4858960760b834024a3fbc7daad19a8c9d288ac37de25249960",
+    "content/publications/kelly-caylor20134068.mdx": "0552b25503f48197609a5a253a93285f267de00a4c1dc97fe7c5129f36c97ed6",
+    "content/publications/kelly-caylor20154251.mdx": "c1d6569cbd75ab65bf02327464c6e0e7ce156ce55ee4bf32f3d3fd3d09e3539f",
+    "content/publications/kelly-caylor20154364.mdx": "af7d9ab4614d8dd9aed0f9d050eeea107a7536b309c760dfa2b98df2e4c93015",
+    "content/publications/kelly-caylor20172642.mdx": "115e69ea3fdd2cc10410d52601a6dc2a3f5ceaa61e2ec20cf6a2d2b530aae26d",
+    "content/publications/kelly-caylor20174320.mdx": "5506a4ac99a085074dd0aa3046b2830fb7c9886d44d9e2f4a5109ae4d5dd5259",
+    "content/publications/kelly-caylor20175432.mdx": "5d499578a8212b9c66d75753ae3dd74d047c5904ed0c10d7894aa85ca2b95c9d",
+    "content/publications/kelly-caylor20176231.mdx": "7715d55ef1ab600395abb13bbfa481ee53e11dbb1876535a4c74ecd675cec36f",
+    "content/publications/kelly-caylor20177323.mdx": "9261930a28f698b5044726a90b331831100870a41eb416dac0585e127858e018",
+    "content/publications/kelly-caylor20177502.mdx": "0e056a381c8ec8454ead7c08076c7e6a191d461511842ba4bd32768a80715f10",
+    "content/publications/kelly-caylor20179653.mdx": "68897b3e5190ac09f98e49623b4f7a79b279f903acbd1e65e6d53455f9e714f6",
+    "content/publications/kelly-caylor20182573.mdx": "a99be172167786de640c42844b34cc19e731e51d8dde993eca298f82e356e209",
+    "content/publications/kelly-caylor20184284.mdx": "66a1fe9c9baa7ed510c045baf7e73fa131eccaaa0ac4ee6fbe167a32832e153b",
+    "content/publications/kelly-caylor20185343.mdx": "7458ed6e34702e24a66fc79ba26c66e1b5ce53eb1f767e07708b627eb8296667",
+    "content/publications/kelly-caylor20193527.mdx": "f3397da3a56b4969b3a77ab8d7c194d328cd81632927ede55642a0ba40d42318",
+    "content/publications/kelly-caylor20194685.mdx": "35f9fc5b0a7fb686ed74aff9661d7d4f276a69a81759b66e147e2701772ce041",
+    "content/publications/kelly-caylor20196892.mdx": "84dee0fedc3473caf8c8d58b4a96d3e8077c137e67448e1b6458f5a186dc1384",
+    "content/publications/kelly-caylor20202896.mdx": "913a3d72a8c007814d6b58347e3c2fe23f58541138b3049b64b116dfcf90e894",
+    "content/publications/kelly-caylor20206379.mdx": "acce5c4961612f1cbbb682738c59477f4a995a12deba54bee17e1c9fe3500dc0",
+    "content/publications/kelly-caylor20206539.mdx": "894e4d1a22ea37d27b03b9fe83e47997efd358c590a0eaff108e0a7b0318eaa2",
+    "content/publications/kelly-caylor20208565.mdx": "d989a60261df1da2c9355172c8cbfc007f3d007d59885ee2d18dcf7bf594a643",
+    "content/publications/kelly-caylor20211664.mdx": "dad538f06ab985acb04285e02209e7a1f293249abda0c17d70455d4b5f42595f",
+    "content/publications/kelly-caylor20213250.mdx": "7fdaefb03f098309fc8aac71027a3042a54ec3fc57015998aee8190a08272bae",
+    "content/publications/kelly-caylor20216618.mdx": "dc55e6a4517bdadc7fdcf8c7adc7c66927dfeedfeaa2d4034797ca71eaf05f18",
+    "content/publications/kelly-caylor20226128.mdx": "872d1403c0f76c0396bfb69394cb8c8be3262ec9f640bc8d35d1ccdcccd291b8",
+    "content/publications/kelly-caylor20234247.mdx": "7b1d5515dfb31fddd1e6112dffcdec635c887096eda77fd61cbff3c8f4cc7310",
+    "content/publications/kelly-caylor20236934.mdx": "904d48306b732086b65cec13bdf0b6aaa0180ddc719384c484da7e6ba654b95c",
+    "content/publications/kelly-caylor20238656.mdx": "e7140be6be23254ab3d92d805c2129e8f368579faa6bd686e1cde8342f3929be",
+    "content/publications/kelly-caylor20239423.mdx": "0a019ed52932915435fdd04089e1650d9ebaacb058be6b1ae8167c7fa7e2bc67",
+    "content/publications/lixin-wang20091553.mdx": "7c636c4651d1d54cd769aaa28ec4a9916c15dcd000df2b33a578d56b48c81a64",
+    "content/publications/lixin-wang20091563.mdx": "aafe2b6b9e8bf100fcda2b17862bde0a98e300032c738aab89c0f77a0f72d1b9",
+    "content/publications/lixin-wang20101581.mdx": "7842845c7435b12f433735df205847bfea889523a1b19187a216d8093ea9d557",
+    "content/publications/lixin-wang20101591.mdx": "0dddaa23bcaa8d156395a46c141d89b867a9b36ea02bfd4c0660dc39a834f7e0",
+    "content/publications/lixin-wang20101619.mdx": "71de97cac8084822b25d0e53564385deeb5e099ebaf52af44024edf48d97e04e",
+    "content/publications/lixin-wang20121673.mdx": "abf759d49481ce75946f927e0bab943df40a678a62565407150894069d17ea74",
+    "content/publications/lixin-wang20121690.mdx": "bd6ed49723431b09bce628c0eb45912e67336069793c0045d59e71a715693fb8",
+    "content/publications/lixin-wang20122795.mdx": "7d1f73c655f054e77157c08ba6dacbd050ec26a1fbf5774346c200321c07d27e",
+    "content/publications/lixin-wang20132864.mdx": "d6cbe989f5566d3e7fe6af468b76bbac4d917bab441012858ccee56143310bdb",
+    "content/publications/lixin-wang20133672.mdx": "fe3cdc398fa68024bd78485b92752f358ecc190db6d36ca50dcff088da7d9e76",
+    "content/publications/lixin-wang20144189.mdx": "250987eeef317c69ecf56e0bee582bab5c33749f5cd8a171f4bd8ea07fa3fc81",
+    "content/publications/lixin-wang20154470.mdx": "a3e0412fb6dbeba88c11f19d7053cd26d71cd52658f5dc7d946ec1f9874b33ab",
+    "content/publications/lizzie-king20101629.mdx": "5952dba8453148b9512c2e36ac6d3353a90064b9a95779d10589f068cad4c74b",
+    "content/publications/lizzie-king20111662.mdx": "20c2228ebc6e882d135532c27f607ad9263cf2886d5c4f09c8e95478355d08a6",
+    "content/publications/lizzie-king20122803.mdx": "c4c5f3dc50374f6902ac4da55cc07c033a2438c99901f3937c38946f221e1751",
+    "content/publications/lyndon-estes20133415.mdx": "de61cf41f5cc3c4b83d8386ddf99f21c43d563b0bf21b59c780e9cd58ca9edde",
+    "content/publications/lyndon-estes20133826.mdx": "c159b221d59a734c374fc0c0d804b950b26549be489b2ebed73e5abadf667079",
+    "content/publications/lyndon-estes20154318.mdx": "2bcb1357546cba3ac801a86d7199229851c0a20c76048d9428edb3094a46a890",
+    "content/publications/lyndon-estes20162467.mdx": "1b6a0ff163ed14bb79b7ebfd855e282c77fd185f5bc6e9ec026238c7d05251d6",
+    "content/publications/lyndon-estes20164736.mdx": "101067fa2c808592c20323b9465cb7b5d324a22d71e9897ca670dbe2c9306c75",
+    "content/publications/lyndon-estes20182325.mdx": "6b04e90e72656e4b821276d2f4996f7ae9ce50dd4f0f75931c3b2a34baa9c607",
+    "content/publications/lyndon-estes20185262.mdx": "b11449044ef499e5d31a2035434fc2ab08110b2686cd8bb3a69c94727e1ccaa8",
+    "content/publications/lyndon-estes20227895.mdx": "e5c36e4b0507305f22dab122e25b1a33f573e7c84eba6b53bac71a5cbaedb5b0",
+    "content/publications/lyndon-estes20231099.mdx": "e9626a4143102d3aefb6c0ab3b42c1619ad70b86fca6fc3b44adaa74d1c28d3d",
+    "content/publications/marc-mayes20202671.mdx": "50ce1e783358a6aab5439dbee410844e91e68fa349dc64914886d9de1e65b882",
+    "content/publications/natahsa-krell20219534.mdx": "f34dc0bc7ff73d702d8a81c3034bf8fa3c3883a32040e09d729b9313bf6d8edd",
+    "content/publications/natasha-krell20206241.mdx": "67ddd212409d15d1c7953a5cd1975d7921823243548230aa2945866a7905cee7",
+    "content/publications/natasha-krell20214258.mdx": "5bdce63c522994861669c661340199375ce3abc41f547f9aa98cb40e60dd5130",
+    "content/publications/natasha-krell20216242.mdx": "b07e0d31c684ca48ae24ea9ddb2858b0991727a792e0646a0c2a494a51330a3f",
+    "content/publications/natasha-krell20223948.mdx": "2f3ec16e8dfbe18e4a715f9ef294e4faf2e43b69b9d5e144e8346b74762566c2",
+    "content/publications/natasha-krell20232456.mdx": "7cf1fb6500975ce1986d19c846aec98e17551f41b160564f37361b7319b18ba6",
+    "content/publications/stephanie-debats20164681.mdx": "f736d07d7188c8315d4240af1654af65d4ad617a246efbee257b62e97b03de60",
+    "content/publications/stephen-good20111645.mdx": "9fb47422c979e69b2b8d32329ea107e46325d658e6695ac7455ea442d5196ca0",
+    "content/publications/stephen-good20122738.mdx": "61530ba7c4483cbdcb5def630962a585fa6eed3ea49479a642c6f94c2af83b19",
+    "content/publications/stephen-good20133046.mdx": "87ec7f31bba19d1cfff424e1e4ce97d7aeea8ab3ce0a7e8718237da230096fa6",
+    "content/publications/stephen-good20144073.mdx": "04235fd36d578ff5fb6df42a9bd4ad16d605bb567961ad632773e906725da2d8",
+    "content/publications/stephen-good20168632.mdx": "4dda8182c3498cc9b2aa22718f4ad2a0a7058cc3e9ffe4499c65bb24b1ee9690",
+    "content/publications/stephen-good20221252.mdx": "9a6f46c082fdc4cec310da24776f45fb100ce5587164313f8e4303024702e98c",
+    "content/publications/trenton-franz20101611.mdx": "c5aa63e7f18bb303f062f1f1d86b69a626338b9fb381a9fb6a74186a8ae645ed",
+    "content/publications/trenton-franz20111638.mdx": "1088805a941f59f007692a0dceeb4a10d0b4cddd6af383e0821b079b89a67ef3",
+    "content/publications/trenton-franz20121681.mdx": "c241c3b69ced4f7de6ea0db37e112858c7c5f3dd5758c1207376f994267ec9f1",
+    "content/publications/zack-guido20201267.mdx": "68d56ade70a9413c3123abc9fc3765c72db792e3495bedeb69be416787dd6c53",
+    "content/news/2008-princeton-colloquium-on-public-and-international-affairs.mdx": "9c6e1d8c0f19bed9b6645b0653929d478224390e142ec47efdc6c7659e779e6a",
+    "content/news/2nd-mpala-based-cosmos-probe-now-calibrated.mdx": "1e159186266c02c11c81670b8be5241dd4983f82920c5d07eff4044085c5cc21",
+    "content/news/aaas-session-on-new-earth-observing-methods.mdx": "abdfd56968ee4d23fe23e94e5f888574727c67b4c04d7e4ae0293c7420abd602",
+    "content/news/adam8217s-interview-by-the-center-for-data-innovation.mdx": "410f5ae8295f3dd3328179ac4d958d29b130bbcb091b96409d98071712eec561",
+    "content/news/agu-chapman-conference-on-ecohydrology.mdx": "a82093146c135a18dc7464d1e247099cf3c75d95077d51cce26bf71cbb6f0106",
+    "content/news/agu-fall-meeting-2020.mdx": "7afcea9659fe9f0e819f91d755d8aa2ed10a87986bca5e747c7739f4ae634f21",
+    "content/news/agu-fellows-program.mdx": "3e44ff0b6ae3762d8dc01b814dcc954ac6a72fba1942896b033af24d3638ab1e",
+    "content/news/agu-meeting-of-the-americas-2013.mdx": "4f5bfec58b83f62a886e7f52dfebc391f55d6f517e7866af59ffd330141d3631",
+    "content/news/alex-lester-brown-bag-seminar.mdx": "0fc8454783d16e6e24955608e27ed712d101c46388cf5a181458cade49fd6ed0",
+    "content/news/anticipating-the-ecological-impacts-of-agricultural-adaptation-to-climate-change.mdx": "38b7b049d066263a6c394bef608dacde075f1ebfbe1956c10106ad48b2abfe44",
+    "content/news/arable-featured-in-paw.mdx": "7bee4e053d090ecb2802c5218690e185a5487d84e60e832b9f84d8c6d7205a4e",
+    "content/news/arable-mark-deployments-in-zambias-southern-province.mdx": "0355eeb5079c245c5867f1e1ea4e62de8ed9faedaa8e1cc6773dd41ab32cb21b",
+    "content/news/article-accepted-in-advances-in-water-resources.mdx": "e840fb91caddf58863adb0b66fb15b9e0f76a59ab590aa2c67cf4092df3646ab",
+    "content/news/article-accepted-in-agricultural-and-forest-meteorology.mdx": "d1c14f19562d614bf6e6693e406267f03309673080684bb41422305daa6190ce",
+    "content/news/article-accepted-in-ecohydrology.mdx": "750937226177b8549793e941ceb2e33f456906c8f3e5203319dc9ac1bd6508bf",
+    "content/news/article-accepted-in-jgr-atmospheres.mdx": "b524f9c0c59c31a376849fb409090dde5bfe8a74cbe93f8f1d3fc5d659bf9def",
+    "content/news/article-accepted-in-plos-one.mdx": "99b1c3a39d421c438d671a4ec98bac1ee3468166e8e13a90f7aaef9b0d6e57c9",
+    "content/news/article-accepted-in-rapid-communications-of-mass-spectrometry.mdx": "3cb8253d4a987b3b9fa93bec3c4cf1b7cbd2fd4b09410727ea511aa2f60c8cc6",
+    "content/news/article-accepted-in-vadose-zone-journal.mdx": "6d387429617addeb328d4c343d0c1061cbe16522d5e9183e41023acf765e1252",
+    "content/news/article-accepted-in-water-resources-research.mdx": "f75dc9ded1f0f9598ef5c6d1ec1bb5f2dacf7ba2e088214cd74936cb889c7579",
+    "content/news/article-in-new-phytologist.mdx": "e8d9e4b2c93a2dec64bc6c7202cc38944f37abb8f4b5ec94c80fd21ef532df94",
+    "content/news/article-on-patterns-of-soil-n-published-in-landscape-ecology.mdx": "037a468ec2b343bafdb6256588cf51f053db8dcef3bb458a87c579765e2daff1",
+    "content/news/article-published-in-ecohydrology.mdx": "458018e5f5ee25f6eb51e8cd03da397d3a19751f7b4353bc3801621226848828",
+    "content/news/article-published-in-ecosystems.mdx": "4cedde8e3b9a4dcd1e215e79b7e71c5817f55dca247da2110654f7eaa87beba2",
+    "content/news/article-published-in-environmental-research-letters.mdx": "f7aa014e4d8f1d1675faef27778eb042e91596e72cd355709b72aca9c0fc0e6e",
+    "content/news/article-published-in-geochemica-et-cosmochimica-acta.mdx": "ade82a34dcaa92dc238a3a4c2a38ec940650360268e901124c79db6976640209",
+    "content/news/article-published-in-geoderma.mdx": "54825cc2a3a34b573e7d6d54fc8d088bd955055cafe18a96888852324597d358",
+    "content/news/article-published-in-geophysical-research-letters.mdx": "4e69034d2bd658b73350db6973b225a5c5814ef9a05bd65b932ae411e80499cc",
+    "content/news/article-published-in-global-change-biology.mdx": "e9f56db9aae51715c2d187241ad7d2d61884c4c8edddd9fc90fbbc8eeb22894c",
+    "content/news/article-published-in-jgr-biogeosciences.mdx": "a10dd5e6a56c4bd308811de82f9e4546c463f98bac741b8195a992e470ecf585",
+    "content/news/article-published-in-journal-of-arid-environments.mdx": "d1dd72a77e6a2d5ab35f75865ba40bc1fc81f21044d8745f924273fdb25f5657",
+    "content/news/article-published-in-nature.mdx": "96cb3c8b8e27fbc7216f860cad906a3a33795ad7130e3ef170913186f3b7d28f",
+    "content/news/article-published-in-new-phytologist.mdx": "413df00967aedaeeb4e9d109eca235d71e06615597b99eab5338d0acd380b177",
+    "content/news/article-published-in-plant-and-soil.mdx": "29b99afd1cfee5b2bd7f5fb92b5d30c7046878005f39a3cf7994b69a44d16142",
+    "content/news/article-published-in-pnas.mdx": "a4e54af534eb89d29f55c61d4c9fbcd424b818fe6e3ff2dcd854d2d391c138a0",
+    "content/news/article-published-in-proc-royal-soc-series-a.mdx": "af0460b286fe085d1b4069210352cf009c07f369fdf58a4c6281ce3669c3d8d3",
+    "content/news/article-published-in-remote-sensing-of-environment.mdx": "58870395acb62adceb71bdb65c623d66114ffe621c9b4b104fbb7be3e84d3b58",
+    "content/news/article-published-in-vadose-zone-journal.mdx": "d52ea4b99ed07b2df0431f514be40717fc732a8387c1331da5ff6be21efbcf3e",
+    "content/news/article-published-in-water-resources-research.mdx": "1ebd925ce31faeae1fcfda7a4eb5b78714bab4242c88ff51c1290a96253ee80d",
+    "content/news/article-to-be-published-in-ecohydrology.mdx": "f8ea59f39767027c98734993c31ad76cb050817d9152083a15a727cc8e511d14",
+    "content/news/articles-published-in-agricultural-and-forest-meteorology.mdx": "dc4f779ee07179770ca6d3a76a64a1133e3cdf0a83617c81d8cf753cd1a09aa9",
+    "content/news/cascade-tuholske-awarded-borlaug-fellowship-to-research-urban-food-security-in-ghana-zambia.mdx": "675db3a250ae13cba58e064023dc721fcf70013c87d24f9442b16cf2f36d9bc4",
+    "content/news/cascade-tuholske-defends-disseration-via-zoom.mdx": "800426d663462363b5e33c8daf9d20db3e54852fa1d90fd02983fe8191eb4a8e",
+    "content/news/caylor-group-receives-princeton-grand-challenges-seed-grant.mdx": "48e2c11b86a535da6f4f6fe65561de4b753ff590129e6132d0dbaedbb346a0f3",
+    "content/news/caylor-group8217s-research-highlighted-on-nbclearncom.mdx": "16451d26f6d1754da6c25542f0eee93652d013964d22bf162e31acf3823abe25",
+    "content/news/caylor-group8217s-research-highlighted-on-princeton-grand-challenges-website.mdx": "83157abdec8cdb1640e32b7dd37f51dbec72ea43d555f9ad7ee7ceb4a8a81f03",
+    "content/news/caylor-lab-at-agu-2016-fall-meeting.mdx": "2b01c24b129f948c94b42f9280041c142bd69d41a2c12eaaddcdbb014d229793",
+    "content/news/caylor-lab-receives-leef-iii-award.mdx": "d97f884a0c71f77fc55bc042cb4d3865c2a50fb990c72be81af50e7cf9954c26",
+    "content/news/caylorlab-work-featured-in-new-short-film.mdx": "2ab5bbedf321e868def293bf71e13b2cfbc037f59656b2be64e5c7acc12b5a6b",
+    "content/news/climbing-trees.mdx": "aa78e174d80adfc4c2cf89f5fe0690661b925e50e9fb23221dcfc37a15c04055",
+    "content/news/collaboration-with-textit-for-crop-failure-early-warning-system.mdx": "663a44aec7e161ff8403f8558d1de4609f3d2c88d1bfc167331a066687962427",
+    "content/news/commentary-to-be-published-in-ecohydrology.mdx": "42860bdb3ec7fef64f61fa6fbd8dd25f7da8837c3c191a789e116528661050b4",
+    "content/news/congratulations-dr-guan.mdx": "6e2d3f3eabe886fdb8c30ccba35594d5af4b6a7e53c51118d8846bb182924da6",
+    "content/news/cosmos-soil-moisture-probe-now-operational-at-the-mpala-research-center.mdx": "de4d9e1f477d6615e85f0585d6163e004917f39b5f8293da9eadc30227d8621d",
+    "content/news/coupled-natural-038-human-systems-award-from-the-national-science-foundation.mdx": "6b6f93fd2cac577a585a432f7307cf57447c9d2a04b0a05592ddba5369b75b98",
+    "content/news/cynthia-gerlein-safdi-named-to-michigan-society-of-fellows.mdx": "1073bcdfc28a485888be2b8e4078aa3e2bf2b8176bfb324e8b1a45941d44eaab",
+    "content/news/cynthia-gerlein-safdi-receives-mary-and-randall-hack-69-graduate-award.mdx": "45e10f36ff7022363c1318d72a253c632916d0ec2f458a506cd644910fc5d1e9",
+    "content/news/cynthia-gerlein-safdi-receives-nasa-earth-and-space-science-fellowship.mdx": "0e01790be5b07e1b45cb36a328cd7adf2807575fbb7de6399795e231d4f5932c",
+    "content/news/david-robinson-visits-the-princeton-ecohydrology-lab.mdx": "b3141831bb08361a9cafffc08f6f4c21eab56c270cee4e22c7254ef2fbfa915d",
+    "content/news/drew-gower-receives-epa-star-fellowship.mdx": "41fc13eb3c76113e2122fa5b4a61d2d598c817de5835006df012aa14523571af",
+    "content/news/ecohydrology-lab-at-agu-2015.mdx": "aecde1a1893712bb6e7d10a1340ba2da58e06501d7e2f681e46b9c7fbbe91440",
+    "content/news/ecohydrology-lab-at-the-agu-2014-fall-meeting.mdx": "d69abba58335567f3418492d3dd4719777e1e7d7f7b0024f2158fa2cd8dee486",
+    "content/news/ecohydrology-sessions-at-the-2011-agu-fall-meeting.mdx": "06c980ab187283d3757c054eb11fc56adfcb30fe2f5b662eaa78da8809f96845",
+    "content/news/elliot-chang-receives-smith-newton-scholarship.mdx": "f9c89dc29b226397522968a0564e6114e985efff06bb69159909cd02d0b99f6e",
+    "content/news/elliot-chang8217s-thesis-published-in-rcms.mdx": "f675c084aec871fb46d23e637ad8013eb134510f311094d1fc5563aa0747f89f",
+    "content/news/evapotranspiration-experiment-at-the-biosphere-2-facility.mdx": "fbb3e3d350a67e7ef21e6fa9bd2b42e57938a7f7f865a0d4a9f6054caa26faa4",
+    "content/news/ewaso-water-project-video.mdx": "32199fa8d3c62b24795b0c0814aadbc50ce17a2709049e488a6993b3544410d4",
+    "content/news/field-ecohydrology-at-mpala.mdx": "40d7d9a8e6306e806c92bdebb5c13f6aa3bb4078fd1eaa384102b01fd1b0c668",
+    "content/news/finding-support-in-a-time-of-physical-distancing.mdx": "466d42b2f1d9356780612135d6f48d51c638a8665392c0617a304cb9de95d6e0",
+    "content/news/first-course-on-uas-for-environmental-monitoring.mdx": "1cb4045e01b7c9c4e0f956fa12fae6b4eae04c83383d8ee2b60788341178146c",
+    "content/news/first-international-conference-on-global-food-security.mdx": "2cc086f352e3f25a288ffcdcd4c422ff9be4654f95d8e5f425a7a561144bc6d2",
+    "content/news/first-international-workshop-on-advances-in-observations-models-and-measurements-techniques-of-atmospheric-water-vapor-isotopes.mdx": "c3f0a2bbe26393fc7ddd66ae6e70d8d4d4d38e2c4ea7c25fc612c1ae4831caff",
+    "content/news/first-successful-copter-flight-for-eric-principato.mdx": "7e216896f8075574ad4d89739bd9bb23599b9f140564831f65e5c3cec4cf9251",
+    "content/news/frances-o8217donnell-starting-as-assistant-professor-at-auburn-university.mdx": "393e56ee36bcbba6b84ea9d8bcc19ed2c23d6beae299940960b125d5555204f9",
+    "content/news/group-activity-at-the-2007-fall-agu-meeting.mdx": "4597d4f11ce4ede53941918517e0de781cdec7bd3d1371b317f259a2c10322ae",
+    "content/news/group-presentations-at-the-agu-2008-fall-meeting.mdx": "135edc6da2982f1bd3605a136a1449422f9d8686604859aacf358e956cd26f13",
+    "content/news/holden-caylor-joins-the-team.mdx": "6d70ca3b8209d60036c7ad01e9fcaae38624ec61874cbec304f9ef17a6ce9a5d",
+    "content/news/ifpri-researcher-dr-kwaw-andam-visits-waves-lab.mdx": "27a53d9fa891a169c378dec4309d88547320f04f22f29797e32ca9f4f1aa322d",
+    "content/news/initial-research-visit-to-kenya.mdx": "16483896729e1e78f93006ec8e9bfa3c99e55194dd2503b81e74815dc42685ac",
+    "content/news/interdisciplinary-science-award-from-nasa.mdx": "9ebb6ce3867c8d9388a37fc7b26ac99ac61465f5d7fd9368a6d9f8cf9a2c5012",
+    "content/news/interview-in-scientific-american.mdx": "12379ee76eb97a5360aafdcb42ee0ee37cff7073c30952031285a1fbde728129",
+    "content/news/invited-talk-at-the-2007-agu-joint-assembly.mdx": "3e3812832bac8904adf9819ed9a093c0cd7ff98303156d444884a15e44510604",
+    "content/news/invited-talk-at-the-2008-soil-science-society-of-america.mdx": "e3061be364289237de54a60b9f7c69583dd5208e46b21aceb537a9b0af4d9403",
+    "content/news/jackie8217s-summer-featured-on-the-frontpage-of-pu-website.mdx": "270794f892ded7289319eb177d069b80765a5930b87e94dd16596a1ef03deeec",
+    "content/news/keir-soderberg-joins-our-group.mdx": "36e32a485d4403df3b05515ac8fe5f0144e98640419304c0c3787c4743b80fbc",
+    "content/news/kelly-receives-early-career-award-from-the-american-geophysical-union.mdx": "48c952bd63fbd77588a62940b3258f20c076fb7fe8ae92e40e833a1f1e193fdf",
+    "content/news/kelly-receives-faculty-advancement-award.mdx": "680b23a27343405b41e2fc636eb54eb2d2fa990a1ffe4f87bcd2deb6fd7f23db",
+    "content/news/kelly-receives-nsf-career-award.mdx": "cd0ce2db55b161f42957fb3fb0acdf24a508e34f9f784bbea8131c63d4b7adaa",
+    "content/news/lab-summer-plans.mdx": "25874bba4e9059e4382999d2e05a618692d3b6b925f9101f88eb0c4918d80b6c",
+    "content/news/lixin-brown-bag-seminar.mdx": "b4cf2fe83b0beadcd7ae6d9822173f790a9943ae8724f53971ad7342304b31e6",
+    "content/news/lixin-to-present-at-the-egu-general-assembly.mdx": "0745f05cf70307d330ae2a5eeecbb46219711594cf410757751564d212c5a808",
+    "content/news/lixin-wang-joining-ecohydrology-group-at-unsw.mdx": "24047daf582475a5ab7cbe1614b011eb5c13ab47bda75330e60affa966a2aa1c",
+    "content/news/lixin-wang8217s-interview-with-the-iupui-newsroom.mdx": "6616faa9b76ecb8ebb517921c7d37052afc70e3aec65b50eba3865f772ab0d22",
+    "content/news/lixin-wang8217s-paper-in-nature-and-interview.mdx": "22389b8d1acea96c0a1d54e2ff6ecf520407ffd448255770bccb4a76863a5d65",
+    "content/news/lizzie-king-accepts-a-faculty-position-at-the-university-of-georgia.mdx": "386b98897cbe09bfd8d14c018593dbcea3516f89e6b4c144e1429c9a7503d117",
+    "content/news/marcus-spiegel-receives-smith-newton-scholarship.mdx": "cc009519aac247d408d155888ad014ca6236a68a3dcf6feaaae982fdd6f59b10",
+    "content/news/molly-o8217connor-receives-thesis-prize.mdx": "79e4f4ffa8f7e46258f48d8e809573a568f5ab7bc17e1c6994fb9f0beceb1a00",
+    "content/news/monitoring-crop-production-and-farmer-decision-making-in-central-kenya.mdx": "5509ae2d6ad1bc220a1bd7e0e8ffc91d554adecdadd4cd6e27907d9302b65ac1",
+    "content/news/mpala-from-the-sky.mdx": "b6dae90a12b8bf2c32ee2e9379450a21ee9605372f1336e8db903a2cb789da5e",
+    "content/news/mpala-live-website-launched.mdx": "8b5b650fb4761afa86b6b96df9a57b00b976dbc5354f76f143c4a749c16ac6eb",
+    "content/news/mpala-research-center-flux-tower-operational.mdx": "75532a95f448be844757d731246ce6756beb2847885ac0103b88aac5f72898d2",
+    "content/news/nasa-jet-propulsion-lab-surp-grant-received.mdx": "82c13fa9d2bece5e64018c2d733455b43f6b365a5cbc32033734918cdc945df5",
+    "content/news/natasha-krell-wins-fulbright-award-to-kenya.mdx": "ee455759c09cfb584f77c08565580371c1f09ff6fbb8f617a66eecf7956a16b9",
+    "content/news/national-socio-environmental-synthesis-center-sesync-workshop.mdx": "c924148baa887d81d2f06ca9cea03debc851be122ce607b446deba953a4d5a7b",
+    "content/news/nature-comment-published.mdx": "c008a6b6f2139d49d206dd9fc8d21100616604748a7240b0e74eb9a287e1399b",
+    "content/news/new-8220campus-as-a-lab8221-project.mdx": "3ffa6cf65be5ef974680f289bb9ef9f951361020c27f776efe85686b55677c54",
+    "content/news/new-article-in-science.mdx": "5faa21436478357799f61f6c2070dadbc4dee069e33e62666dfa2368c280ba3d",
+    "content/news/new-experiment-begun-on-subsurface-water-redistribution.mdx": "a25dc07a58fa3c4d5b3e55391721aa0e75a5859e44f9c5918fd97479b9294376",
+    "content/news/new-nsf-deb-grant-8211-distribution-and-dynamics-of-belowground-carbon-in-savannas.mdx": "8fa6f983cd3f93a0546f1221f528c5432f66f41039c58834eef9aa597266f8db",
+    "content/news/new-paper-in-biogeosciences.mdx": "85942bc4def0077604efb9e6be0c6a05fde3705643c003466ec13817a1e9557b",
+    "content/news/new-paper-in-ecosphere.mdx": "c28ff6f3af049e874da0dc90a54a8c86e75634e6871e9f8aa29b913d37e91443",
+    "content/news/new-paper-in-erl.mdx": "3cf5e1990bf4138a9de3cb4a0b8052761b6a33f04123aedc9c6b16c0f21accb2",
+    "content/news/new-paper-in-grl.mdx": "5e819b9cf7921a81646993a4fef77e02677b2194c84aace8e128cdbfd28f66ea",
+    "content/news/new-paper-in-nature-climate-change.mdx": "d98d037777ee658226c31d755592c10aeb05a58c6972d7b6f252dbda914c1509",
+    "content/news/new-paper-in-nature-geoscience.mdx": "9b0b07aa2284b05ab4f9ed7f24432aef64acebd92b713a0f635cc5a14731c88e",
+    "content/news/new-paper-in-science.mdx": "c9261ecf948b5f6fbc3ce34d1c037f5a1700fb9e67f8b277e4d59c373763593e",
+    "content/news/nsf-grant-awarded-for-resilience-research-in-zambia.mdx": "ffe0559fcc791492c41609c5d8ef55f67014ae75a8470a526fded47047eb2833",
+    "content/news/nyc-girls-computer-science-and-engineering-conference.mdx": "21f9c9c84427d7d4205f992f2f50bdc48f1c43ea0075d9a1d180237e1dd7c307",
+    "content/news/open-source-hardware-documentation-jam.mdx": "079c0bb5dbf85c408646cebeaa82ceb19405854ed1b1c2e4a460038b6a73e9f6",
+    "content/news/princeton-global-collaborative-network-fund-for-integrated-food-security-research.mdx": "9cefb5bdfc90643b514a0f4885f85bc1cdec729c62cbfab165dc7592c77100d6",
+    "content/news/princeton-grand-challenge-interns-summer-2011.mdx": "f27f737043d322b1d2349400fbab5aaa176e33700319a6ba5d9fd36b13349863",
+    "content/news/princeton-studies-food-new-class-launched.mdx": "4b3bf2465c5d02b58cc06950c023f4e1faf3dae860bd97aa74c9b8d0c970abd4",
+    "content/news/professor-dave-breshears-visits-the-mpala-research-center.mdx": "99f231eaf3242a756bcea073234724b9e01fabc40c60d3dd0526f689b9db6514",
+    "content/news/pulselab-in-california-and-new-mexico.mdx": "d2064d4f7f627de1dd6b60231fe10f49a7c18652bf0bb647e0301672d4b61d77",
+    "content/news/pulsepod-wins-third-place-at-the-keller-center8217s-10th-annual-innovation-forum.mdx": "0e9c05557fc25f55cbdacdc5d1f11ffbedd665c922a44a4642e79844dbc07fc4",
+    "content/news/quantifying-transient-soil-moisture-dynamics-using-multi-point-direct-current-resistivity-in-homogeneous-sand.mdx": "7b2fb7bc9e477d3d94df3b6a3251b80c6601b9a66a9e54a79fc37c0022421eaa",
+    "content/news/rain-gauge-and-soil-moisture-probe-deployment-in-zambia.mdx": "3ef15837e8494fa8861ae932bb285b58e2440b3188e7ece0357dcc3b933b4c54",
+    "content/news/rainfall-runoff-experiment-installed-at-the-mpala-research-center.mdx": "7fde76c75fe125316283002343024d66f1725d988e7a5a9793e5c6ba8d5a5ccd",
+    "content/news/ryan-avery-developing-ml-system-for-omidyar-network-at-clark-labs.mdx": "305d04dfd1a0c9dc344554726003c1452787cf89ce07e20d9f24344d1e7d596c",
+    "content/news/scholarships-fellowships-and-grants-awarded-to-waves-lab-students.mdx": "60c1091602beda157ef490d13f3d7f758664d688da2aa41acea9dcc3e434de48",
+    "content/news/session-co-chair-at-the-2005-agu-meeting.mdx": "d14c33f4a68f87b0b9a8baee2f8d3ddf6551b10ac21779cdec84906e2cd498ff",
+    "content/news/sharing-data-science-skills-with-the-dataup-program-and-software-carpentry.mdx": "ab3509d613afc3ffc43ffe4777f2ad486bc65512a0f3a10d64daf713b4cafbc4",
+    "content/news/stephanie-debats-and-cynthia-gerlein-safdi-receive-pei-awards.mdx": "d55d562c91bd7b91c8034d7d2de738bbccc6e462a36c7d1100660562cd026009",
+    "content/news/stephanie-debats-receives-mary-and-randall-hack-69-graduate-award.mdx": "f3bc1b1fc7aff877e20734b29b3e99ea3e6c9f014b41aee5fd07231423bfed95",
+    "content/news/stephanie-receives-pei-step-fellowship.mdx": "4e2962ec7ca281c9f61ed784a4c35dd5e978c952763a035e654deca04a2933d2",
+    "content/news/stephen-good-joins-our-group.mdx": "50112bca2aa90a51e61006e86cccc352a124affa7a565e516199587d0805e69d",
+    "content/news/student-talks-at-the-2008-american-association-of-geographers-meeting.mdx": "1d963e13216c744ea0cfe9be63675417779e54ccd5292abd386c3f692f4020e7",
+    "content/news/summer-at-mpala-plant-physiological-response-to-water-stress.mdx": "f71f79e226a2f7313b716961f07b17978ace7de4158bc4f993c12bc5af9058fe",
+    "content/news/summer-at-mpala-water-use-and-agriculture.mdx": "a3ebe7bb0171be7f16f0978109e907d6196746e17f1ca5c3e436456504268ad9",
+    "content/news/summer-in-the-lab-foliar-uptake-in-colocasia-esculenta.mdx": "57c806e5a97d153756b55e13ab5fb2c7ecf38f3d155882770a1f3409485d8cd9",
+    "content/news/talks-038-abstracts-at-the-2008-esa-meeting.mdx": "afc6d98cd19495e258de5c18d967ae1f1c2652cb85a370046bf5f8aa41593da7",
+    "content/news/teaching-the-tbi-field-school-students.mdx": "ee03e2cffb58138f8433d502c35747a8c550cebe18f7744bd1ca3675044e414c",
+    "content/news/trenton-receives-agu-student-paper-award.mdx": "49e54a8153a8bbebbab0d31afe9b6009ddfb1e72c0e228f0bdc6099bf549e71c",
+    "content/news/trenton-recieves-ddep-award-from-nsf.mdx": "8f57964a0d51267b9d2c1ac63f694f5a554716810df01fbfbeb0de45c074420f",
+    "content/news/two-articles-published-in-ecosphere.mdx": "748b1641e41ae481da286badc530316e880d2c6bd291fdd83d49d9dbca96972c",
+    "content/news/two-articles-recently-accepted-in-hydrology-and-earth-system-sciences.mdx": "0d9d9e40688fe5fdec3590c40bfa88a9878a69159d7ac61df17d2e20f0e8518c",
+    "content/news/two-jpl-surp-grants-received.mdx": "30be45c35640c47968b162811161af1e92e829b020c2a0c3db526f3baac92c6e",
+    "content/news/two-new-grants-awarded.mdx": "f079daa7b7ecfb2eef176accb7d18865db840fde5dc8c02dd7522ec27c3acc41",
+    "content/news/visit-by-dr-thomas-fuchs-jpl-machine-learning-expert.mdx": "6a9986d691a0bda8b92b5b7b9a99dd0935bcea562c9788e0b3bd5013bcafb408",
+    "content/news/water-in-africa-art-exhibit-opens.mdx": "7815ca70775028f49a1c5ab822d5a18a54c90aea89ef832f3415a5dab8d7d0f6",
+    "content/news/water-vapor-isotope-observations-at-the-morgan-monroe-state-forest.mdx": "b2730ff6590d47740184599da658d2b028f50c4ac0271df8616af0139ca7ba2f",
+    "content/news/waves-lab-at-the-agu-fall-meeting-2019.mdx": "b82f27092406a0adee47a5eec283a79709e6bfb1387727299eaa710c19d26aea",
+    "content/news/waves-lab-contributes-to-2017-fao-state-of-food-agriculture-report.mdx": "025ae479c4c8c5258a4e4e1a6354ce44b040b08e4b546988b96e15cb80272a8e",
+    "content/news/waves-lab-postdoctoral-positions-available.mdx": "be3bb401acee489e94da6822a7344e8476625845db07d7685ce26bfc2a2ad5b1",
+    "content/news/waves-lab-recieves-funding-for-riparian-ecohydrology-projects.mdx": "e4c1acf49c4c690889feaf1e40db92dea753d8f094e7323300b6e83e4a9c1776",
+    "content/news/waves-lab-researchers-participate-in-kenyan-national-science-week-exhibition.mdx": "a6a3c0a487eb69f432e9ed16300c68c1b40dfc8e009e020f78b75c09a572ddef",
+    "content/news/where-does-water-go-when-it-doesn8217t-flow.mdx": "d0c68f767c12046a387d58d4e95ae3354e39dcd441af6f7854355677e3e0ab1e"
+  },
+  "metadata": {
+    "nodeVersion": "v24.1.0",
+    "totalSize": 822599,
+    "backupDuration": 92
+  }
+}
