@@ -84,6 +84,28 @@ export default function Navigation() {
     }
   }, [mobileOpen, menuAnimating]);
 
+  // Open menu
+  const openMenu = useCallback(() => {
+    setMobileOpen(true);
+  }, []);
+
+  // Close menu with animation
+  const closeMenu = useCallback(() => {
+    setMenuAnimating(false);
+    setTimeout(() => setMobileOpen(false), 300); // match transition duration
+  }, []);
+
+  // Animate in when mobileOpen becomes true
+  useEffect(() => {
+    if (mobileOpen) {
+      // Wait for the menu to mount, then trigger animation
+      const id = requestAnimationFrame(() => setMenuAnimating(true));
+      return () => cancelAnimationFrame(id);
+    } else {
+      setMenuAnimating(false);
+    }
+  }, [mobileOpen]);
+
   // Keyboard navigation for mobile menu
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -115,30 +137,8 @@ export default function Navigation() {
           break;
       }
     },
-    [mobileOpen, menuAnimating],
+    [mobileOpen, menuAnimating, closeMenu],
   );
-
-  // Open menu
-  const openMenu = useCallback(() => {
-    setMobileOpen(true);
-  }, []);
-
-  // Animate in when mobileOpen becomes true
-  useEffect(() => {
-    if (mobileOpen) {
-      // Wait for the menu to mount, then trigger animation
-      const id = requestAnimationFrame(() => setMenuAnimating(true));
-      return () => cancelAnimationFrame(id);
-    } else {
-      setMenuAnimating(false);
-    }
-  }, [mobileOpen]);
-
-  // Close menu with animation
-  const closeMenu = useCallback(() => {
-    setMenuAnimating(false);
-    setTimeout(() => setMobileOpen(false), 300); // match transition duration
-  }, []);
 
   // Handle navigation with loading state
   const handleNavigation = useCallback(
