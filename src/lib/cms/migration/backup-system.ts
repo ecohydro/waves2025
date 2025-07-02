@@ -315,7 +315,7 @@ export class BackupSystem {
             result.invalidFiles.push(fileEntry);
             result.errors.push(`Checksum mismatch for ${fileEntry.backupPath}`);
           }
-        } catch (error) {
+        } catch {
           result.isValid = false;
           result.invalidFiles.push(fileEntry);
           result.errors.push(`File not found or unreadable: ${fileEntry.backupPath}`);
@@ -323,13 +323,13 @@ export class BackupSystem {
       }
 
       return result;
-    } catch (error) {
+    } catch {
       return {
         isValid: false,
         totalFiles: 0,
         validFiles: 0,
         invalidFiles: [],
-        errors: [`Failed to read backup manifest: ${error}`],
+        errors: [`Failed to read backup manifest.`],
       };
     }
   }
@@ -351,7 +351,7 @@ export class BackupSystem {
           const manifestContent = await fs.readFile(manifestPath, 'utf-8');
           const manifest: BackupManifest = JSON.parse(manifestContent);
           backups.push(manifest);
-        } catch (error) {
+        } catch {
           console.warn(`Warning: Could not read manifest for backup ${dir.name}`);
         }
       }
@@ -359,7 +359,7 @@ export class BackupSystem {
       return backups.sort(
         (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
       );
-    } catch (error) {
+    } catch {
       console.log(`No backups directory found at ${outputDir}`);
       return [];
     }
@@ -400,9 +400,9 @@ export class BackupSystem {
       } else {
         console.log(`✅ Restore completed. Restored ${contentFiles.length} files`);
       }
-    } catch (error) {
-      console.error(`❌ Restore failed:`, error);
-      throw error;
+    } catch {
+      console.error(`[31m[1mRestore failed:[0m`);
+      throw new Error('Restore failed');
     }
   }
 }

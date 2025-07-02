@@ -1,17 +1,22 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { createClient } from '@sanity/client';
 import { v4 as uuidv4 } from 'uuid';
 
-// Configuration
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  token: process.env.SANITY_API_TOKEN!,
-  apiVersion: '2023-12-19',
-  useCdn: false,
-});
+// Configuration - only create client when needed
+function getSanityClient() {
+  return createClient({
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+    token: process.env.SANITY_API_TOKEN!,
+    apiVersion: '2023-12-19',
+    useCdn: false,
+  });
+}
 
 interface MDXNewsData {
   title: string;
@@ -206,6 +211,7 @@ function determineNewsCategory(categories: string[] = []): SanityNewsDocument['c
  */
 async function findPersonByName(name: string): Promise<string | null> {
   try {
+    const client = getSanityClient();
     const query = `*[_type == "person" && name match $name][0]._id`;
     const result = await client.fetch(query, { name: `*${name}*` });
     return result || null;
@@ -220,6 +226,7 @@ async function findPersonByName(name: string): Promise<string | null> {
  */
 async function findPublicationByTitle(title: string): Promise<string | null> {
   try {
+    const client = getSanityClient();
     const query = `*[_type == "publication" && title match $title][0]._id`;
     const result = await client.fetch(query, { title: `*${title}*` });
     return result || null;
@@ -234,6 +241,7 @@ async function findPublicationByTitle(title: string): Promise<string | null> {
  */
 async function findProjectByTitle(title: string): Promise<string | null> {
   try {
+    const client = getSanityClient();
     const query = `*[_type == "project" && title match $title][0]._id`;
     const result = await client.fetch(query, { title: `*${title}*` });
     return result || null;
@@ -246,10 +254,8 @@ async function findProjectByTitle(title: string): Promise<string | null> {
 /**
  * Upload image to Sanity and return asset reference
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function uploadImageToSanity(
   imagePath: string,
-  _altText: string,
 ): Promise<{ _type: 'reference'; _ref: string } | null> {
   try {
     const publicImagePath = path.join(process.cwd(), 'public', imagePath.replace(/^\//, ''));
@@ -260,6 +266,7 @@ async function uploadImageToSanity(
     }
 
     const imageBuffer = fs.readFileSync(publicImagePath);
+    const client = getSanityClient();
     const asset = await client.assets.upload('image', imageBuffer, {
       filename: path.basename(imagePath),
     });
@@ -373,10 +380,7 @@ async function transformNewsToSanity(
   // Upload featured image if available
   let featuredImageAsset = null;
   if (mdxData.featuredImage) {
-    featuredImageAsset = await uploadImageToSanity(
-      mdxData.featuredImage,
-      `Featured image for ${mdxData.title}`,
-    );
+    featuredImageAsset = await uploadImageToSanity(mdxData.featuredImage);
     if (featuredImageAsset) imageUploads++;
   }
 
@@ -391,10 +395,7 @@ async function transformNewsToSanity(
 
   if (mdxData.gallery) {
     for (const [index, imagePath] of mdxData.gallery.entries()) {
-      const asset = await uploadImageToSanity(
-        imagePath,
-        `Gallery image ${index + 1} for ${mdxData.title}`,
-      );
+      const asset = await uploadImageToSanity(imagePath);
       if (asset) {
         galleryAssets.push({
           _type: 'image',
@@ -527,6 +528,7 @@ async function processNews(filePath: string): Promise<{
     } = await transformNewsToSanity(mdxData, content);
 
     // Create or update document in Sanity
+    const client = getSanityClient();
     const result = await client.createOrReplace(sanityDoc);
 
     console.log(`  ✓ Created/updated Sanity document: ${result._id}`);

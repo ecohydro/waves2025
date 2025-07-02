@@ -5,8 +5,8 @@ export { migrateNewsToSanity } from './migrate-news-to-sanity';
 export { validateSanityMigration } from './validate-sanity-migration';
 
 // Types
-export type { MigrationValidationReport } from './validate-sanity-migration';
-import type { MigrationValidationReport } from './validate-sanity-migration';
+// MigrationValidationReport type is not exported from validate-sanity-migration
+// import type { MigrationValidationReport } from './validate-sanity-migration';
 
 // Internal types for migration stats
 interface MigrationStats {
@@ -57,7 +57,7 @@ export async function runCompleteMigration(
     people?: MigrationStats;
     publications?: MigrationStats;
     news?: MigrationStats;
-    validation?: MigrationValidationReport;
+    validation?: any; // TODO: Define proper validation result type
   } = {};
 
   try {
@@ -97,10 +97,7 @@ export async function runCompleteMigration(
     // Step 4: Validate migration (only if not dry run)
     if (!dryRun) {
       console.log('\n🔍 Step 4: Validating migration...');
-      results.validation = await validateSanityMigration({
-        contentDir,
-        outputFile: `${outputDir}/migration-validation-report.json`,
-      });
+      results.validation = await validateSanityMigration();
     }
 
     // Print final summary

@@ -40,26 +40,28 @@
       - ✅ CLI tools added to package.json for easy usage
       - ✅ Backup manifest shows 822KB total content successfully backed up
       - ✅ **Task 1.1 COMPLETE** - Ready for style changes and Task 1.2
-  - [ ] 1.2 Build migration script for people profiles (MDX → Sanity)
-    - [ ] 1.2.1 Parse existing people MDX files and extract metadata
-    - [ ] 1.2.2 Map MDX frontmatter to Sanity person schema
-    - [ ] 1.2.3 Handle image migration and asset references
-    - [ ] 1.2.4 Preserve academic relationships and metadata
-  - [ ] 1.3 Build migration script for publications (MDX → Sanity)
-    - [ ] 1.3.1 Parse publication MDX files with complex metadata
-    - [ ] 1.3.2 Map publication data to Sanity publication schema
-    - [ ] 1.3.3 Migrate DOI, ORCID, and citation data
-    - [ ] 1.3.4 Handle author relationships and external collaborators
-  - [ ] 1.4 Build migration script for news/blog posts (MDX → Sanity)
-    - [ ] 1.4.1 Parse news MDX files and extract content
-    - [ ] 1.4.2 Map to Sanity news schema with categories/tags
-    - [ ] 1.4.3 Migrate featured images and media galleries
-    - [ ] 1.4.4 Preserve publication dates and author information
+  - [x] 1.2 Build migration script for people profiles (MDX → Sanity)
+    - [x] 1.2.1 Parse existing people MDX files and extract metadata
+    - [x] 1.2.2 Map MDX frontmatter to Sanity person schema
+    - [x] 1.2.3 Handle image migration and asset references
+    - [x] 1.2.4 Preserve academic relationships and metadata
+  - [x] 1.3 Build migration script for publications (MDX → Sanity)
+    - [x] 1.3.1 Parse publication MDX files with complex metadata
+    - [x] 1.3.2 Map publication data to Sanity publication schema
+    - [x] 1.3.3 Migrate DOI, ORCID, and citation data
+    - [x] 1.3.4 Handle author relationships and external collaborators
+  - [x] 1.4 Build migration script for news/blog posts (MDX → Sanity)
+    - [x] 1.4.1 Parse news MDX files and extract content
+    - [x] 1.4.2 Map to Sanity news schema with categories/tags
+    - [x] 1.4.3 Migrate featured images and media galleries
+    - [x] 1.4.4 Preserve publication dates and author information
   - [ ] 1.5 Create data validation and integrity checking system
     - [ ] 1.5.1 Validate all migrated content against Sanity schemas
     - [ ] 1.5.2 Check for missing references and broken relationships
     - [ ] 1.5.3 Generate migration report with success/failure statistics
     - [ ] 1.5.4 Implement rollback mechanism for failed migrations
+    - ⚠️ Validation code for MDX→Sanity migration needs to be implemented in `src/lib/cms/migration/validate-sanity-migration.ts`.
+    - ⚠️ CLI script `npm run validate:sanity-migration` will not work until this is complete.
 
 - [ ] 2.0 **Frontend Data Integration**
   - [ ] 2.1 Update people pages to use Sanity data

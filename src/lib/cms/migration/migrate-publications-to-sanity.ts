@@ -1,17 +1,22 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { createClient } from '@sanity/client';
 import { v4 as uuidv4 } from 'uuid';
 
-// Configuration
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  token: process.env.SANITY_API_TOKEN!,
-  apiVersion: '2023-12-19',
-  useCdn: false,
-});
+// Configuration - only create client when needed
+function getSanityClient() {
+  return createClient({
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+    token: process.env.SANITY_API_TOKEN!,
+    apiVersion: '2023-12-19',
+    useCdn: false,
+  });
+}
 
 interface MDXPublicationData {
   title: string;
@@ -222,6 +227,7 @@ function determinePublicationType(
  */
 async function findPersonByName(name: string): Promise<string | null> {
   try {
+    const client = getSanityClient();
     const query = `*[_type == "person" && name match $name][0]._id`;
     const result = await client.fetch(query, { name: `*${name}*` });
     return result || null;
@@ -246,6 +252,7 @@ async function uploadPDFToSanity(
     }
 
     const pdfBuffer = fs.readFileSync(publicPdfPath);
+    const client = getSanityClient();
     const asset = await client.assets.upload('file', pdfBuffer, {
       filename: path.basename(pdfPath),
     });
@@ -325,11 +332,7 @@ async function processAuthors(
 /**
  * Transform MDX publication data to Sanity format
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-async function transformPublicationToSanity(
-  mdxData: MDXPublicationData,
-  _content: string,
-): Promise<{
+async function transformPublicationToSanity(mdxData: MDXPublicationData): Promise<{
   document: SanityPublicationDocument;
   linksCreated: number;
   pdfUploaded: boolean;
@@ -447,7 +450,7 @@ async function processPublication(filePath: string): Promise<{
 
     // Read and parse MDX file
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data: frontMatter, content } = matter(fileContent);
+    const { data: frontMatter } = matter(fileContent);
 
     const mdxData = frontMatter as MDXPublicationData;
     mdxData.slug = fileName; // Ensure slug matches filename
@@ -471,9 +474,10 @@ async function processPublication(filePath: string): Promise<{
       document: sanityDoc,
       linksCreated,
       pdfUploaded,
-    } = await transformPublicationToSanity(mdxData, content);
+    } = await transformPublicationToSanity(mdxData);
 
     // Create or update document in Sanity
+    const client = getSanityClient();
     const result = await client.createOrReplace(sanityDoc);
 
     console.log(`  ✓ Created/updated Sanity document: ${result._id}`);
@@ -591,35 +595,5 @@ export async function migratePublicationsToSanity(
   console.log(`Skipped (dry run): ${stats.skipped}`);
   console.log(`PDFs uploaded: ${stats.pdfUploads}`);
   console.log(`Author links created: ${stats.authorLinksCreated}`);
-  console.log(
-    `Success rate: ${((stats.successful / (stats.total - stats.skipped)) * 100).toFixed(1)}%`,
-  );
-
-  if (stats.errors.length > 0) {
-    console.log('\nErrors:');
-    stats.errors.forEach(({ file, error }) => {
-      console.log(`  - ${file}: ${error}`);
-    });
-  }
-
   return stats;
-}
-
-// CLI support
-if (require.main === module) {
-  const dryRun = process.argv.includes('--dry-run');
-  const maxFiles = process.argv.includes('--max-files')
-    ? parseInt(process.argv[process.argv.indexOf('--max-files') + 1])
-    : undefined;
-  const skipPDFs = process.argv.includes('--skip-pdfs');
-
-  migratePublicationsToSanity({ dryRun, maxFiles, skipPDFs })
-    .then((stats) => {
-      console.log('\nMigration completed!');
-      process.exit(stats.failed > 0 ? 1 : 0);
-    })
-    .catch((error) => {
-      console.error('Migration failed:', error);
-      process.exit(1);
-    });
 }

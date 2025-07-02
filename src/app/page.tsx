@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
@@ -17,7 +18,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="relative z-20 flex flex-col items-center justify-center text-center w-full px-4 hero-banner">
           <div className="absolute left-1/2 -translate-x-1/2 w-full px-4" style={{ top: '20%' }}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 drop-shadow-[0_4px_24px_rgba(255,255,255,0.7)] mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] mb-4">
               Water, Vegetation, & Society
             </h1>
           </div>
@@ -122,7 +123,7 @@ export default function Home() {
                 </svg>
               </a>
             </p>
-            <a
+            <Link
               href="/news"
               className="cta-btn inline-flex items-center px-6 py-3 border-2 border-wavesBlue bg-white text-wavesBlue font-semibold rounded-lg hover:bg-blue-50 hover:scale-105 transition shadow-lg text-lg group drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] outline-none focus:ring-4 focus:ring-wavesBlue"
               style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
@@ -143,7 +144,7 @@ export default function Home() {
                 </svg>
               </span>
               Latest News
-            </a>
+            </Link>
           </div>
         </div>
       </section>

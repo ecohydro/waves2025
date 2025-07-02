@@ -1,17 +1,22 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { createClient } from '@sanity/client';
 import { v4 as uuidv4 } from 'uuid';
 
-// Configuration
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  token: process.env.SANITY_API_TOKEN!,
-  apiVersion: '2023-12-19',
-  useCdn: false,
-});
+// Configuration - only create client when needed
+function getSanityClient() {
+  return createClient({
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+    token: process.env.SANITY_API_TOKEN!,
+    apiVersion: '2023-12-19',
+    useCdn: false,
+  });
+}
 
 interface MDXPersonData {
   title: string;
@@ -187,10 +192,8 @@ function determineUserGroup(
 /**
  * Upload image to Sanity and return asset reference
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function uploadImageToSanity(
   imagePath: string,
-  _altText: string,
 ): Promise<{ _type: 'reference'; _ref: string } | null> {
   try {
     const publicImagePath = path.join(process.cwd(), 'public', imagePath.replace(/^\//, ''));
@@ -201,6 +204,7 @@ async function uploadImageToSanity(
     }
 
     const imageBuffer = fs.readFileSync(publicImagePath);
+    const client = getSanityClient();
     const asset = await client.assets.upload('image', imageBuffer, {
       filename: path.basename(imagePath),
     });
@@ -234,7 +238,7 @@ async function transformPersonToSanity(
   // Upload avatar image if available
   let avatarAsset = null;
   if (mdxData.avatar) {
-    avatarAsset = await uploadImageToSanity(mdxData.avatar, `Photo of ${mdxData.title}`);
+    avatarAsset = await uploadImageToSanity(mdxData.avatar);
   }
 
   const sanityDoc: SanityPersonDocument = {
@@ -329,6 +333,7 @@ async function processPerson(
     const sanityDoc = await transformPersonToSanity(mdxData, content);
 
     // Create or update document in Sanity
+    const client = getSanityClient();
     const result = await client.createOrReplace(sanityDoc);
 
     console.log(`  ✓ Created/updated Sanity document: ${result._id}`);
