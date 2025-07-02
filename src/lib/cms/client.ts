@@ -1,6 +1,8 @@
 import { createClient } from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
-import { apiVersion } from './sanity.config'
+
+// API version for Sanity queries
+const apiVersion = '2023-12-19'
 
 // Environment variables
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!

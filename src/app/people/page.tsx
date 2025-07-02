@@ -1,134 +1,131 @@
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
-import matter from 'gray-matter';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import { fetchCurrentMembers, fetchAlumni, fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
 
-interface PersonData {
-  title: string;
-  slug: string;
-  role?: string;
-  status?: string;
-  excerpt?: string;
-  avatar?: string;
-  location?: string;
-  tags?: string[];
-}
+export default async function PeoplePage() {
+  // Fetch data from Sanity instead of reading MDX files
+  const [currentMembers, alumni, allPeople] = await Promise.all([
+    fetchCurrentMembers(),
+    fetchAlumni(),
+    fetchPeople()
+  ]);
 
-export default function PeoplePage() {
-  const peopleDir = path.join(process.cwd(), 'content', 'people');
-  const files = fs.readdirSync(peopleDir).filter((f) => f.endsWith('.mdx'));
-  
-  const people: PersonData[] = files.map((filename) => {
-    const filePath = path.join(peopleDir, filename);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data } = matter(fileContent);
-    
-    return {
-      title: data.title || filename.replace(/\.mdx$/, ''),
-      slug: filename.replace(/\.mdx$/, ''),
-      role: data.role,
-      status: data.status,
-      excerpt: data.excerpt,
-      avatar: data.avatar,
-      location: data.location,
-      tags: data.tags || [],
-    };
-  });
-
-  // Categorize people based on their status/tags
-  const currentMembers = people.filter(person => 
-    person.tags?.includes('current member') || 
-    person.status === 'faculty' || 
-    person.status === 'postdoc' || 
-    person.status === 'graduate student'
+  // Get collaborators (people who are not current members or alumni)
+  const collaborators = allPeople.filter(person => 
+    person.userGroup === 'collaborator' || person.userGroup === 'visitor'
   );
 
-  const alumni = people.filter(person => 
-    person.tags?.includes('former member') || 
-    person.tags?.includes('alumni')
-  );
-
-  const collaborators = people.filter(person => 
-    person.tags?.includes('collaborator') ||
-    (!person.tags?.includes('current member') && !person.tags?.includes('former member'))
-  );
-
-  const renderPersonCard = (person: PersonData) => (
-    <Card key={person.slug} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <CardContent className="p-0">
-        <Link href={`/people/${person.slug}`} className="block">
-          <div className="relative">
-            {/* Avatar */}
-            <div className="aspect-square overflow-hidden rounded-t-lg bg-gray-100">
+  const renderPersonCard = (person: Person) => (
+    <Card key={person._id} className="group hover:shadow-lg transition-all duration-300 bg-white">
+      <CardContent className="p-6">
+        <Link href={`/people/${person.slug.current}`} className="block">
+          {/* Avatar */}
+          <div className="flex justify-center mb-4">
+            <div className="relative w-24 h-24 rounded-full overflow-hidden bg-gray-200 ring-4 ring-white shadow-lg group-hover:ring-wavesBlue/20 transition-all">
               {person.avatar ? (
                 <Image
-                  src={person.avatar}
-                  alt={person.title}
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  src={urlForImage(person.avatar).width(96).height(96).url()}
+                  alt={person.avatar.alt || person.name}
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-wavesBlue/20 to-wavesDarkBlue/20">
-                  <div className="w-16 h-16 rounded-full bg-wavesBlue/30 flex items-center justify-center">
-                    <svg className="w-8 h-8 text-wavesBlue" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              <div className="mb-3">
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">
-                  {person.title}
-                </h3>
-                {person.role && (
-                  <p className="text-sm text-wavesBlue font-medium mt-1">
-                    {person.role}
-                  </p>
-                )}
-                {person.location && (
-                  <p className="text-xs text-gray-500 mt-1 flex items-center">
-                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                    {person.location}
-                  </p>
-                )}
-              </div>
-
-              {person.excerpt && (
-                <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
-                  {person.excerpt}
-                </p>
-              )}
-
-              {/* Tags */}
-              {person.tags && person.tags.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-1">
-                  {person.tags.slice(0, 3).map((tag, index) => (
-                    <span 
-                      key={index}
-                      className="inline-block px-2 py-1 text-xs bg-wavesBlue/10 text-wavesBlue rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                  {person.tags.length > 3 && (
-                    <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full">
-                      +{person.tags.length - 3} more
-                    </span>
-                  )}
+                <div className="w-full h-full bg-gradient-to-br from-wavesBlue to-blue-600 flex items-center justify-center">
+                  <span className="text-white font-semibold text-xl">
+                    {person.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                  </span>
                 </div>
               )}
             </div>
           </div>
+
+          {/* Name and Title */}
+          <div className="text-center mb-4">
+            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors mb-1">
+              {person.name}
+            </h3>
+            {person.title && (
+              <p className="text-sm text-gray-600 mb-2">{person.title}</p>
+            )}
+          </div>
+
+          {/* Research Interests */}
+          {person.researchInterests && person.researchInterests.length > 0 && (
+            <div className="mb-4">
+              <div className="flex flex-wrap gap-1 justify-center">
+                {person.researchInterests.slice(0, 3).map((interest, index) => (
+                  <span 
+                    key={index}
+                    className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
+                  >
+                    {interest}
+                  </span>
+                ))}
+                {person.researchInterests.length > 3 && (
+                  <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full">
+                    +{person.researchInterests.length - 3} more
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Bio Preview */}
+          {person.bio && (
+            <p className="text-sm text-gray-600 leading-relaxed text-center line-clamp-3">
+              {person.bio}
+            </p>
+          )}
+
+          {/* Social Links */}
+          {person.socialMedia && (
+            <div className="flex justify-center gap-3 mt-4 pt-4 border-t border-gray-100">
+              {person.email && (
+                <a 
+                  href={`mailto:${person.email}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-gray-400 hover:text-wavesBlue transition-colors"
+                  title="Email"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                </a>
+              )}
+              {person.website && (
+                <a 
+                  href={person.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-gray-400 hover:text-wavesBlue transition-colors"
+                  title="Website"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clipRule="evenodd"/>
+                  </svg>
+                </a>
+              )}
+              {person.socialMedia.orcid && (
+                <a 
+                  href={`https://orcid.org/${person.socialMedia.orcid}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-gray-400 hover:text-green-600 transition-colors"
+                  title="ORCID"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.972-1.303 3.972-3.722 0-2.359-1.613-3.722-3.972-3.722h-2.297z"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          )}
         </Link>
       </CardContent>
     </Card>
@@ -216,9 +213,9 @@ export default function PeoplePage() {
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Alumni</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Lab Alumni</h2>
               <p className="text-lg text-gray-600">
-                Former lab members who have gone on to successful careers in academia, industry, and beyond.
+                Former lab members who have gone on to make significant contributions in their fields.
               </p>
             </div>
             
@@ -232,29 +229,27 @@ export default function PeoplePage() {
       {/* Join Our Team CTA */}
       <section className="py-16 bg-wavesBlue">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Interested in Joining Our Team?
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Interested in Joining Our Research?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            We welcome applications from motivated researchers at all career stages. 
-            Explore opportunities for graduate studies, postdoctoral research, and collaborations.
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            We're always looking for passionate researchers to join our interdisciplinary team. 
+            Explore opportunities for undergraduate research, graduate studies, and postdoctoral positions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              href="/opportunities" 
-              variant="outline"
-              size="lg"
-              className="bg-white text-wavesBlue border-white hover:bg-blue-50"
-            >
-              View Opportunities
-            </Button>
-            <Button 
               href="/contact" 
-              variant="ghost"
-              size="lg"
-              className="text-white border-white hover:bg-white/10"
+              variant="outline"
+              className="bg-white text-wavesBlue border-white hover:bg-gray-50"
             >
               Contact Us
+            </Button>
+            <Button 
+              href="/research" 
+              variant="outline"
+              className="text-white border-white hover:bg-white/10"
+            >
+              Learn About Our Research
             </Button>
           </div>
         </div>

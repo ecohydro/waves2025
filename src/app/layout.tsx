@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import { cookies } from 'next/headers';
 import './globals.css';
 import Navigation from '../components/layout/Navigation';
 import Footer from '../components/layout/Footer';
+import PreviewBanner from '../components/preview/PreviewBanner';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -33,17 +35,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Check for preview mode
+  const cookieStore = await cookies();
+  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
+
   return (
     <html lang="en">
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
-        <Navigation />
-        {children}
-        <Footer />
+        <PreviewBanner isPreview={isPreview} />
+        <div className={isPreview ? 'pt-16' : ''}>
+          <Navigation />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
