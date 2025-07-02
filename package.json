@@ -26,6 +26,15 @@
     "migrate:news:dry": "tsx src/lib/migration/migrate-news.ts --dry-run",
     "migrate:news:verbose": "tsx src/lib/migration/migrate-news.ts --verbose",
     "enhance:pdfs": "tsx src/lib/migration/enhance-publications-with-pdfs.ts",
+    "migrate:to-sanity:people": "tsx src/lib/cms/migration/migrate-people-to-sanity.ts",
+    "migrate:to-sanity:people:dry": "tsx src/lib/cms/migration/migrate-people-to-sanity.ts --dry-run",
+    "migrate:to-sanity:publications": "tsx src/lib/cms/migration/migrate-publications-to-sanity.ts",
+    "migrate:to-sanity:publications:dry": "tsx src/lib/cms/migration/migrate-publications-to-sanity.ts --dry-run",
+    "migrate:to-sanity:news": "tsx src/lib/cms/migration/migrate-news-to-sanity.ts",
+    "migrate:to-sanity:news:dry": "tsx src/lib/cms/migration/migrate-news-to-sanity.ts --dry-run",
+    "migrate:to-sanity:all": "tsx src/lib/cms/migration/index.ts",
+    "migrate:to-sanity:all:dry": "tsx src/lib/cms/migration/index.ts --dry-run",
+    "validate:sanity-migration": "tsx src/lib/cms/migration/validate-sanity-migration.ts",
     "sanity:dev": "sanity dev --port 3333",
     "sanity:build": "sanity build",
     "sanity:deploy": "sanity deploy",
@@ -39,6 +48,7 @@
     "@sanity/preview-url-secret": "^2.1.11",
     "@sanity/vision": "^3.95.0",
     "@types/papaparse": "^5.3.16",
+    "@types/uuid": "^10.0.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.0.0",
     "js-yaml": "^4.1.0",
@@ -51,7 +61,8 @@
     "react-dom": "^19.0.0",
     "sanity-plugin-media": "^3.0.3",
     "sanity-plugin-mux-input": "^2.8.0",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
