@@ -1,0 +1,12 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function GET(request: NextRequest) {
+  // Exit the current user from Preview Mode
+  const response = NextResponse.redirect(new URL('/', request.url));
+
+  // Clear the preview mode cookies
+  response.cookies.delete('__prerender_bypass');
+  response.cookies.delete('__next_preview_data');
+
+  return response;
+}

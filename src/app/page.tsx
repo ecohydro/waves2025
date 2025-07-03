@@ -163,26 +163,19 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="group hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
-                <div className="w-16 h-16 bg-wavesBlue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-wavesBlue/20 transition-colors">
-                  <svg
-                    className="w-8 h-8 text-wavesBlue"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
+                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/site/ecohydrology-home.png"
+                    alt="Dryland Ecohydrology"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Ecohydrology</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Dryland Ecohydrology</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed">
-                  Understanding water-vegetation interactions across scales, from leaf-level
+                  Understanding patterns and process in dryland landscapes, from leaf-level
                   processes to ecosystem-wide water cycles and their response to environmental
                   change.
                 </p>
@@ -191,54 +184,42 @@ export default function Home() {
 
             <Card className="group hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
-                <div className="w-16 h-16 bg-wavesBlue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-wavesBlue/20 transition-colors">
-                  <svg
-                    className="w-8 h-8 text-wavesBlue"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
-                    />
-                  </svg>
+                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/site/environmental-sensing-home.jpeg"
+                    alt="Environmental Sensing"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Agricultural Systems</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Environmental Sensing</h3>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed">
-                  Developing sustainable agricultural practices through precision agriculture,
-                  water-efficient irrigation, and climate-smart farming technologies.
+                  Developing novel approaches that illuminate ecohydrological patterns and processes
+                  through advanced remote sensing and monitoring technologies.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="group hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
-                <div className="w-16 h-16 bg-wavesBlue/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-wavesBlue/20 transition-colors">
-                  <svg
-                    className="w-8 h-8 text-wavesBlue"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"
-                    />
-                  </svg>
+                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/site/wsc-home.png"
+                    alt="Water, Sustainability, and Climate"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Environmental Sensing</h3>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Water, Sustainability, and Climate
+                </h3>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed">
-                  Advancing remote sensing technologies and in-situ monitoring systems to better
-                  understand environmental processes and their impacts.
+                  Resolving coupled social-environmental system dynamics in subsistence agriculture
+                  and developing sustainable water management strategies.
                 </p>
               </CardContent>
             </Card>

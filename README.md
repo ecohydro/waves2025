@@ -51,6 +51,35 @@ waves2025/
 - **Migration Status?** → [Enhanced Migration Results](./docs/migration/ENHANCED_MIGRATION_RESULTS.md)
 - **Project Overview?** → [Project Plan](./docs/planning/PROJECT_PLAN.md)
 
+## 🧪 Testing
+
+### Test Organization
+
+This project uses a multi-tier testing strategy to balance speed and coverage:
+
+- **Unit Tests** (`npm run test`, `npm run test:fast`): Fast tests for individual components and functions
+- **Integration Tests** (`npm run test:full-integration`): Comprehensive tests that start servers and test real data flows
+
+### Test Commands
+
+```bash
+# Fast tests (CI-friendly)
+npm run test            # Jest unit tests
+npm run test:fast       # Vitest unit tests (excludes integration)
+
+# Integration tests (manual only - slow)
+npm run test:full-integration  # Full CMS integration with real data
+npm run test:sanity-data       # Sanity data validation only
+```
+
+### CI Integration
+
+Integration tests are **excluded from CI by default** to maintain fast build times. They should only be run:
+
+- Manually when validating major changes
+- In staging environments before production deployments
+- When debugging CMS integration issues
+
 ## 🛠️ Development Commands
 
 ```bash
@@ -67,6 +96,12 @@ npm run migrate:people:enhanced          # Enhanced people migration
 # Code Quality
 npm run lint            # Run ESLint
 npm run type-check      # TypeScript validation
+
+# Testing
+npm run test            # Run Jest unit tests (fast)
+npm run test:fast       # Run Vitest unit tests (fast)
+npm run test:vitest     # Run all Vitest tests (excludes integration)
+npm run test:full-integration  # Run full CMS integration tests (slow, manual only)
 ```
 
 ## 📈 Migration Achievements

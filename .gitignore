@@ -13,6 +13,11 @@
 # testing
 /coverage
 
+# Integration test artifacts
+test-results/
+integration-test-results/
+*.integration.log
+
 # next.js
 /.next/
 /out/

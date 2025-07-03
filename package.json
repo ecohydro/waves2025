@@ -8,6 +8,17 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "test:unit": "jest",
+    "test:vitest": "vitest run",
+    "test:vitest:ui": "vitest --ui",
+    "test:fast": "vitest run --exclude=**/integration/**",
+    "test:fast:ui": "vitest --ui --exclude=**/integration/**",
+    "test:integration": "vitest run --config vitest.integration.config.ts tests/integration/cms-integration.test.ts",
+    "test:integration:ui": "vitest --ui --config vitest.integration.config.ts tests/integration/cms-integration.test.ts",
+    "test:sanity-data": "vitest run --config vitest.integration.config.ts tests/integration/sanity-data-validation.test.ts",
+    "test:sanity-data:ui": "vitest --ui --config vitest.integration.config.ts tests/integration/sanity-data-validation.test.ts",
+    "test:full-integration": "vitest run --config vitest.integration.config.ts tests/integration/full-cms-integration.test.ts",
+    "test:full-integration:ui": "vitest --ui --config vitest.integration.config.ts tests/integration/full-cms-integration.test.ts",
     "validate:redirects": "tsx src/lib/migration/validate-redirects.ts",
     "generate:redirects": "tsx src/lib/migration/generate-url-mappings.ts && tsx src/lib/migration/update-next-config.ts",
     "migrate:people": "tsx src/lib/migration/migrate-people.ts",
@@ -86,6 +97,7 @@
     "@types/pdf-parse": "^1.1.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/ui": "^3.2.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
@@ -100,6 +112,7 @@
     "tailwindcss": "^3.4.17",
     "ts-jest": "^29.4.0",
     "tsx": "^4.20.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   }
 }
