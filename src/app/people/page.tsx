@@ -49,9 +49,6 @@ export default function PeoplePage() {
   // Group people by userGroup
   const currentMembers = people.filter((person) => person.userGroup === 'current');
   const alumni = people.filter((person) => person.userGroup === 'alumni');
-  const collaborators = people.filter(
-    (person) => person.userGroup === 'collaborator' || person.userGroup === 'visitor',
-  );
 
   const renderPersonCard = (person: Person) => (
     <Card
@@ -188,8 +185,8 @@ export default function PeoplePage() {
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Research Team</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the interdisciplinary team of researchers, students, and collaborators advancing
-              our understanding of water, agriculture, and environmental systems.
+              Meet the interdisciplinary team of researchers, students, and staff advancing our
+              understanding of water, agriculture, and environmental systems.
             </p>
           </div>
         </div>
@@ -198,7 +195,7 @@ export default function PeoplePage() {
       {/* Stats Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{currentMembers.length}</div>
               <div className="text-sm text-gray-600">Current Members</div>
@@ -206,10 +203,6 @@ export default function PeoplePage() {
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{alumni.length}</div>
               <div className="text-sm text-gray-600">Alumni</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">{collaborators.length}</div>
-              <div className="text-sm text-gray-600">Collaborators</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">20+</div>
@@ -226,31 +219,12 @@ export default function PeoplePage() {
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Members</h2>
               <p className="text-lg text-gray-600">
-                Our current research team includes faculty, postdocs, graduate students, and
-                research staff.
+                Our current research team includes faculty, postdocs, graduate students, and staff.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {currentMembers.map(renderPersonCard)}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Collaborators */}
-      {collaborators.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Collaborators</h2>
-              <p className="text-lg text-gray-600">
-                Research partners and collaborators from institutions around the world.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {collaborators.map(renderPersonCard)}
             </div>
           </div>
         </section>
