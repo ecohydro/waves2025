@@ -161,68 +161,74 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/images/site/ecohydrology-home.png"
-                    alt="Dryland Ecohydrology"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Dryland Ecohydrology</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed">
-                  Understanding patterns and process in dryland landscapes, from leaf-level
-                  processes to ecosystem-wide water cycles and their response to environmental
-                  change.
-                </p>
-              </CardContent>
-            </Card>
+            <Link href="/research/ecohydrology" className="block">
+              <Card className="group hover:shadow-lg transition-shadow duration-300 h-full cursor-pointer">
+                <CardHeader>
+                  <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                    <Image
+                      src="/images/site/ecohydrology-home.png"
+                      alt="Dryland Ecohydrology"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">Ecohydrology</h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed">
+                    Understanding patterns and process in dryland landscapes, from leaf-level
+                    processes to ecosystem-wide water cycles and their response to environmental
+                    change.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="group hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/images/site/environmental-sensing-home.jpeg"
-                    alt="Environmental Sensing"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Environmental Sensing</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed">
-                  Developing novel approaches that illuminate ecohydrological patterns and processes
-                  through advanced remote sensing and monitoring technologies.
-                </p>
-              </CardContent>
-            </Card>
+            <Link href="/research/sensors" className="block">
+              <Card className="group hover:shadow-lg transition-shadow duration-300 h-full cursor-pointer">
+                <CardHeader>
+                  <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                    <Image
+                      src="/images/site/environmental-sensing-home.jpeg"
+                      alt="Environmental Sensing"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">Sensors, Measurements, and Software</h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed">
+                    Developing novel approaches that illuminate ecohydrological patterns and processes
+                    through advanced remote sensing and monitoring technologies.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="group hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
-                  <Image
-                    src="/images/site/wsc-home.png"
-                    alt="Water, Sustainability, and Climate"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Water, Sustainability, and Climate
-                </h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed">
-                  Resolving coupled social-environmental system dynamics in subsistence agriculture
-                  and developing sustainable water management strategies.
-                </p>
-              </CardContent>
-            </Card>
+            <Link href="/research/cnh" className="block">
+              <Card className="group hover:shadow-lg transition-shadow duration-300 h-full cursor-pointer">
+                <CardHeader>
+                  <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+                    <Image
+                      src="/images/site/wsc-home.png"
+                      alt="Water, Sustainability, and Climate"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">
+                    Coupled Natural-Human Systems
+                  </h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed">
+                    Resolving coupled social-environmental system dynamics in subsistence agriculture
+                    and developing sustainable water management strategies.
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>

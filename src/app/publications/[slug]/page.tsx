@@ -58,11 +58,6 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
           name = `${name}*`;
         }
 
-        // Make first author bold
-        if (index === 0) {
-          name = `**${name}**`;
-        }
-
         return name;
       })
       .join(', ');
@@ -320,8 +315,8 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 <Card>
                   <CardContent className="p-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Citation</h2>
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="text-sm text-gray-700 font-mono leading-relaxed">
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <p className="text-sm text-gray-800 leading-relaxed">
                         {formatAuthorsForCitation()}.
                         {publication.title && ` "${publication.title}".`}
                         {publication.venue?.name && ` ${publication.venue.name}`}

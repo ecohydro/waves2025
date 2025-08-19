@@ -4,8 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-// TODO: Replace with actual logo import
-// import Logo from 'public/images/site/waves_logo.svg';
+// Logo import resolved - using WAVES logo from images/site/WAVES_logo.png
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -177,13 +176,13 @@ export default function Navigation() {
             <div className="flex items-center">
               <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <Image
-                  src="/WAVES_logo.png"
+                  src="/images/site/WAVES_logo.png"
                   alt="WAVES Lab Logo"
                   width={40}
                   height={40}
                   className="mr-2"
                 />
-                <span className="text-xl font-bold text-gray-900 ml-2">WAVES</span>
+                <span className="text-xl font-bold text-gray-900 ml-2">WAVES @ UC Santa Barbara</span>
               </Link>
             </div>
             {/* Desktop Links */}
@@ -214,11 +213,11 @@ export default function Navigation() {
                   </Link>
                 );
               })}
-              {/* Search Icon Stub */}
-              <button
-                type="button"
+              {/* Search Icon */}
+              <Link
+                href="/search"
                 aria-label="Search"
-                className="ml-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="ml-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
               >
                 <svg
                   className="h-5 w-5 text-gray-500"
@@ -230,7 +229,7 @@ export default function Navigation() {
                   <circle cx="11" cy="11" r="8" />
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 </svg>
-              </button>
+              </Link>
             </div>
             {/* Mobile Hamburger */}
             <div className="md:hidden flex items-center">
@@ -330,11 +329,12 @@ export default function Navigation() {
                 </Link>
               );
             })}
-            {/* Search Icon Stub */}
-            <button
-              type="button"
+            {/* Search Icon */}
+            <Link
+              href="/search"
               aria-label="Search"
-              className="mt-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 self-start"
+              className="mt-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 self-start transition-colors"
+              onClick={closeMenu}
             >
               <svg
                 className="h-5 w-5 text-gray-500"
@@ -346,7 +346,7 @@ export default function Navigation() {
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       )}

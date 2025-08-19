@@ -1,0 +1,365 @@
+{
+  "people": {
+    "total": 69,
+    "fixed": 6,
+    "errors": 0,
+    "details": [
+      {
+        "name": "Abinash Bhattachan",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Adam Wolf",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Alex Lester",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Alice Suh",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Allison Ingram",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Ben Siegfried",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Boniface Mukoma",
+        "status": "fixed",
+        "message": "Updated avatar reference (dry run)"
+      },
+      {
+        "name": "Bryn Morgan",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Caden Ohlwiler",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Cascade Tuholske",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Connor Duwan",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Craig Sinkler",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Cynthia Gerlein Safdi",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Daozhi Gong",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Dee Luo",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Diana Chavarro Rincon",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Drew Gower",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Ekomwa Akuwam",
+        "status": "fixed",
+        "message": "Updated avatar reference (dry run)"
+      },
+      {
+        "name": "Eliza Harkins",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Elliot Chang",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Eric Principato",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Feng Wang",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Frances Odonnell",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Gabby Ragazzo",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Garth Lindner",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Guiomar Ruiz Prez",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Haley Lane",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Hannah Safford",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Hilary Wayland",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Ida Posner",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Jackie Jones",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "James Odonnell",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Jeremy Chen",
+        "status": "fixed",
+        "message": "Updated avatar reference (dry run)"
+      },
+      {
+        "name": "John Gitonga",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Johnathan Choi",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Julia Signell",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Kaiyu Guan",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Kathleen Ryan",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Kathy Zhao",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Katie Smith",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Keir Soderberg",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Keita Decarlo",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Kelly Caylor",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Lixin Wang",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Lizzie King",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Lyndon Estes",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Marc Mayes",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Marcus Spiegel",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Maria Fabiola Rodriguez",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Matteo Kruijssen",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Miranda Bernard",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Molly Oconnor",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Moses Kioko Musyoka",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Natasha Krell",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Noah Spahn",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Patrick Nadeau",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Preston Kemeny",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Rachel Green",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Ray Grossman",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Rodrigo Munoz Rogers",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Ryan Avery",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Sally Goodman",
+        "status": "fixed",
+        "message": "Updated avatar reference (dry run)"
+      },
+      {
+        "name": "Sara Guenther",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Sindiso Nyathi",
+        "status": "fixed",
+        "message": "Updated avatar reference (dry run)"
+      },
+      {
+        "name": "Stephanie Debats",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Stephen Good",
+        "status": "fixed",
+        "message": "Updated avatar reference (dry run)"
+      },
+      {
+        "name": "Steve Tuozzolo",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Taylor Morgan",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      },
+      {
+        "name": "Trenton Franz",
+        "status": "skipped",
+        "message": "Avatar reference is valid"
+      }
+    ]
+  },
+  "news": {
+    "total": 0,
+    "fixed": 0,
+    "errors": 0,
+    "details": []
+  },
+  "assets": {
+    "validated": 0,
+    "uploaded": 0,
+    "failed": 0
+  }
+}

@@ -48,6 +48,16 @@ export default async function PublicationsPage() {
       .join(', ');
   };
 
+  const formatCitation = (publication: Publication) => {
+    const authors = formatAuthors(publication.authors);
+    const title = publication.title ? `"${publication.title}"` : '';
+    const venue = publication.venue?.name || '';
+    const year = publication.publishedDate ? new Date(publication.publishedDate).getFullYear() : '';
+    const doi = publication.doi ? `doi:${publication.doi}` : '';
+    
+    return `${authors}. ${title} ${venue} (${year}). ${doi}`.replace(/\s+/g, ' ').trim();
+  };
+
   const renderPublicationCard = (publication: Publication, featured = false) => (
     <Card
       key={publication._id}
@@ -117,6 +127,13 @@ export default async function PublicationsPage() {
                 )}
               </div>
             )}
+
+            {/* Citation */}
+            <div className="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-wavesBlue">
+              <p className="text-xs text-gray-700 leading-relaxed">
+                {formatCitation(publication)}
+              </p>
+            </div>
 
             {/* Links */}
             <div className="flex flex-wrap gap-2">
