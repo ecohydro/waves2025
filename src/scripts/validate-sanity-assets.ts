@@ -20,7 +20,13 @@ async function validateAssetReferences() {
   console.log('🔍 Validating Sanity asset references...\n');
 
   // Get all people with avatar references
-  const people = await client.fetch(`
+  const people = await client.fetch<
+    Array<{
+      _id: string;
+      name: string;
+      avatarRef: string;
+    }>
+  >(`
     *[_type == "person" && defined(avatar.asset._ref)] {
       _id,
       name,
@@ -31,7 +37,7 @@ async function validateAssetReferences() {
   console.log(`Found ${people.length} people with avatar references`);
 
   // Get all unique asset references
-  const assetRefs = [...new Set(people.map(p => p.avatarRef))];
+  const assetRefs = [...new Set(people.map((p) => p.avatarRef))];
   console.log(`Checking ${assetRefs.length} unique asset references...\n`);
 
   let validAssets = 0;
@@ -41,10 +47,9 @@ async function validateAssetReferences() {
   for (const assetRef of assetRefs) {
     try {
       // Check if asset exists in Sanity
-      const asset = await client.fetch(
-        `*[_type == "sanity.imageAsset" && _id == $assetId][0]`,
-        { assetId: assetRef }
-      );
+      const asset = await client.fetch(`*[_type == "sanity.imageAsset" && _id == $assetId][0]`, {
+        assetId: assetRef,
+      });
 
       if (asset) {
         validAssets++;
@@ -70,15 +75,15 @@ async function validateAssetReferences() {
 
   if (invalidRefs.length > 0) {
     console.log('\n❌ Invalid asset references:');
-    invalidRefs.forEach(ref => console.log(`   ${ref}`));
+    invalidRefs.forEach((ref) => console.log(`   ${ref}`));
   }
 
   // Find people affected by invalid assets
-  const affectedPeople = people.filter(p => invalidRefs.includes(p.avatarRef));
-  
+  const affectedPeople = people.filter((p) => invalidRefs.includes(p.avatarRef));
+
   if (affectedPeople.length > 0) {
     console.log('\n👥 People with invalid asset references:');
-    affectedPeople.forEach(person => {
+    affectedPeople.forEach((person) => {
       console.log(`   ${person.name}: ${person.avatarRef}`);
     });
   }
@@ -88,7 +93,7 @@ async function validateAssetReferences() {
     validAssets,
     invalidAssets,
     invalidRefs,
-    affectedPeople
+    affectedPeople,
   };
 }
 
@@ -96,7 +101,14 @@ async function listAllSanityAssets() {
   console.log('\n🖼️ Listing all available Sanity image assets...\n');
 
   try {
-    const assets = await client.fetch(`
+    const assets = await client.fetch<
+      Array<{
+        _id: string;
+        originalFilename?: string;
+        url?: string;
+        metadata?: { dimensions?: { width?: number; height?: number } };
+      }>
+    >(`
       *[_type == "sanity.imageAsset"] | order(_createdAt desc) [0...20] {
         _id,
         originalFilename,
@@ -114,11 +126,12 @@ async function listAllSanityAssets() {
     assets.forEach((asset, index) => {
       console.log(`${index + 1}. ${asset.originalFilename || 'unnamed'}`);
       console.log(`   ID: ${asset._id}`);
-      console.log(`   Size: ${asset.metadata?.dimensions?.width}x${asset.metadata?.dimensions?.height}`);
+      console.log(
+        `   Size: ${asset.metadata?.dimensions?.width}x${asset.metadata?.dimensions?.height}`,
+      );
       console.log(`   URL: ${asset.url}`);
       console.log('');
     });
-
   } catch (error) {
     console.error('Error fetching Sanity assets:', error);
   }
@@ -127,7 +140,7 @@ async function listAllSanityAssets() {
 async function main() {
   try {
     const validationResult = await validateAssetReferences();
-    
+
     if (process.argv.includes('--list-assets')) {
       await listAllSanityAssets();
     }
@@ -136,7 +149,6 @@ async function main() {
     const reportPath = path.join(process.cwd(), 'asset-validation-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(validationResult, null, 2));
     console.log(`\n📝 Report saved to: asset-validation-report.json`);
-
   } catch (error) {
     console.error('Script failed:', error);
     process.exit(1);

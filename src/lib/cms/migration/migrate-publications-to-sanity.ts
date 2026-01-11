@@ -9,10 +9,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 // Configuration - only create client when needed
 function getSanityClient() {
+  const editorToken =
+    process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN || undefined;
   return createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-    token: process.env.SANITY_API_TOKEN!,
+    token: editorToken!,
     apiVersion: '2023-12-19',
     useCdn: false,
   });
@@ -27,6 +29,9 @@ interface MDXPublicationData {
         corresponding?: boolean;
       }>
     | string;
+  semanticScholar?: {
+    enhancedAuthors?: Array<{ name?: string; semanticScholarId?: string }>;
+  };
   publicationDate: string;
   journal?: string;
   doi?: string;
@@ -238,6 +243,21 @@ async function findPersonByName(name: string): Promise<string | null> {
 }
 
 /**
+ * Find person by Semantic Scholar author ID stored on the person document
+ */
+async function findPersonBySemanticScholarId(authorId: string): Promise<string | null> {
+  try {
+    const client = getSanityClient();
+    const query = `*[_type == "person" && socialMedia.semanticScholarId == $id][0]._id`;
+    const result = await client.fetch(query, { id: authorId });
+    return result || null;
+  } catch (error) {
+    console.warn(`  ! Failed to find person by Semantic Scholar ID "${authorId}":`, error);
+    return null;
+  }
+}
+
+/**
  * Upload PDF to Sanity and return asset reference
  */
 async function uploadPDFToSanity(
@@ -274,12 +294,52 @@ async function uploadPDFToSanity(
 async function processAuthors(
   authorsData: MDXPublicationData['authors'],
   authorRelationships?: MDXPublicationData['authorRelationships'],
+  enhancedAuthors?: Array<{ name?: string; semanticScholarId?: string }>,
 ): Promise<{
   authors: SanityPublicationDocument['authors'];
   linksCreated: number;
 }> {
   const authors: SanityPublicationDocument['authors'] = [];
   let linksCreated = 0;
+
+  // Build a quick lookup from normalized author name -> semanticScholarId
+  const normalizedNameToS2Id = new Map<string, string>();
+  for (const ea of enhancedAuthors || []) {
+    if (!ea?.name || !ea.semanticScholarId) continue;
+    const key = String(ea.name).toLowerCase().replace(/\s+/g, ' ').trim();
+    if (key) normalizedNameToS2Id.set(key, String(ea.semanticScholarId));
+  }
+
+  // Prefer Semantic Scholar enhanced authors (preserves canonical order and identity)
+  if (Array.isArray(enhancedAuthors) && enhancedAuthors.length > 0) {
+    for (const ea of enhancedAuthors) {
+      const canonicalName = ea?.name || '';
+      if (!canonicalName) continue;
+      const lower = canonicalName.toLowerCase().replace(/\s+/g, ' ').trim();
+      const s2Id = lower
+        ? normalizedNameToS2Id.get(lower) || ea?.semanticScholarId
+        : ea?.semanticScholarId;
+
+      let personRef: string | null = null;
+      if (s2Id) {
+        personRef = await findPersonBySemanticScholarId(String(s2Id));
+      }
+      // Fallback to name matching if S2 ID not found
+      if (!personRef) {
+        personRef = await findPersonByName(canonicalName);
+      }
+
+      authors.push({
+        _key: uuidv4(),
+        name: canonicalName,
+        ...(personRef ? { person: { _type: 'reference', _ref: personRef } } : {}),
+        isCorresponding: false,
+      });
+      if (personRef) linksCreated++;
+    }
+
+    return { authors, linksCreated };
+  }
 
   // Handle string format (legacy)
   if (typeof authorsData === 'string') {
@@ -288,11 +348,16 @@ async function processAuthors(
     for (const name of authorNames) {
       if (!name) continue;
 
-      const personRef = await findPersonByName(name);
+      // Try S2 ID based linking first
+      const s2Id = normalizedNameToS2Id.get(name.toLowerCase());
+      const personRef = s2Id
+        ? await findPersonBySemanticScholarId(s2Id)
+        : await findPersonByName(name);
 
       authors.push({
         _key: uuidv4(),
-        ...(personRef ? { person: { _type: 'reference', _ref: personRef } } : { name }),
+        name,
+        ...(personRef ? { person: { _type: 'reference', _ref: personRef } } : {}),
         affiliation: 'University of California, Santa Barbara', // Default affiliation
         isCorresponding: false,
       });
@@ -303,7 +368,11 @@ async function processAuthors(
   // Handle array format
   else if (Array.isArray(authorsData)) {
     for (const author of authorsData) {
-      const personRef = await findPersonByName(author.name);
+      const lower = author.name?.toLowerCase().replace(/\s+/g, ' ').trim() || '';
+      const s2Id = lower ? normalizedNameToS2Id.get(lower) : undefined;
+      const personRef = s2Id
+        ? await findPersonBySemanticScholarId(s2Id)
+        : await findPersonByName(author.name);
 
       // Find relationship data
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -315,9 +384,8 @@ async function processAuthors(
 
       authors.push({
         _key: uuidv4(),
-        ...(personRef
-          ? { person: { _type: 'reference', _ref: personRef } }
-          : { name: author.name }),
+        name: author.name,
+        ...(personRef ? { person: { _type: 'reference', _ref: personRef } } : {}),
         affiliation: author.affiliation || 'University of California, Santa Barbara',
         isCorresponding: author.corresponding || false,
       });
@@ -345,6 +413,7 @@ async function transformPublicationToSanity(mdxData: MDXPublicationData): Promis
   const { authors, linksCreated: authorLinks } = await processAuthors(
     mdxData.authors,
     mdxData.authorRelationships,
+    mdxData.semanticScholar?.enhancedAuthors,
   );
   linksCreated += authorLinks;
 
@@ -532,7 +601,10 @@ export async function migratePublicationsToSanity(
   console.log('');
 
   // Validate environment
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.SANITY_API_TOKEN) {
+  if (
+    !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ||
+    !(process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN)
+  ) {
     throw new Error('Missing required Sanity environment variables');
   }
 

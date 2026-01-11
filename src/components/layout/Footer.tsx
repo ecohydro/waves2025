@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                 alt="WAVES Lab Logo"
                 width={40}
                 height={40}
-                className="mr-3"
+                className="mr-3 mt-1.5"
               />
               <span className="text-2xl font-bold">WAVES Research Lab</span>
             </div>

@@ -50,6 +50,7 @@ waves2025/
 - **Environment Setup?** → [Node Environment Setup](./docs/setup/NODE_ENVIRONMENT_SETUP.md)
 - **Migration Status?** → [Enhanced Migration Results](./docs/migration/ENHANCED_MIGRATION_RESULTS.md)
 - **Project Overview?** → [Project Plan](./docs/planning/PROJECT_PLAN.md)
+- **Semantic Scholar Integration** → [Guide and Workflows](./docs/content-management/SEMANTIC_SCHOLAR_README.md)
 
 ## 🧪 Testing
 

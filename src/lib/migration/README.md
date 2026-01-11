@@ -44,9 +44,13 @@ This directory contains the working migration scripts for converting the Jekyll-
 ### API Integration
 
 - **`semantic-scholar-working.ts`** - Semantic Scholar API wrapper
-  - Working version without authentication issues
   - Rate limiting and error handling
   - DOI and title-based paper lookup
+
+- **`semantic-scholar-utils.ts`** - Focused utilities for the new workflow
+  - `fetchAuthorInfoById(authorId, fields?)`: uses the `author/batch` endpoint to retrieve author info (including paperIds)
+  - `fetchPaperById(paperId, fields?)`: retrieves a single paper by Semantic Scholar paperId
+  - Respects `SEMANTIC_SCHOLAR_API_KEY` automatically via `x-api-key`
 
 ### Utilities
 
@@ -58,6 +62,10 @@ This directory contains the working migration scripts for converting the Jekyll-
 - **`types.ts`** - TypeScript type definitions
   - Jekyll and Next.js content interfaces
   - Migration result types
+
+- **`author-info-cli.ts`** - Quick CLI to fetch an author and (optionally) their papers
+  - Usage: `npx tsx src/lib/migration/author-info-cli.ts --authorId <id> [--papers] [--limit N --offset N]`
+  - Respects `SEMANTIC_SCHOLAR_API_KEY`; pass `--no-auth` to disable auth
 
 ## 📋 Usage Examples
 
@@ -115,11 +123,32 @@ npx tsx migrate-news.ts legacy/_posts content/news
 5. **PDF Enhancement**: `enhance-publications-with-pdfs.ts`
    - Match and enhance with PDF metadata
 
+### Author-based Upsert Workflow (Semantic Scholar)
+
+This is the preferred strategy for comprehensive upserts:
+
+1. Retrieve author info with `author/batch` using `fetchAuthorInfoById(authorId, 'name,url,paperCount,hIndex,papers')`.
+2. Iterate the returned `papers` list and, for each `paperId`:
+   - Fetch the full paper with `fetchPaperById(paperId)`.
+   - Upsert into our publications dataset:
+     - If a matching record exists, update it and set `semanticScholar.status: 'updated'`.
+     - Otherwise, create a new record and set `semanticScholar.status: 'new'`.
+   - Always persist `semanticScholar.paperId` to support fast future updates and de-duplication.
+
+Notes:
+
+- The background and upsert scripts now tag `semanticScholar.status` and store `semanticScholar.paperId`.
+- You can still upsert by DOI or title, but paperId provides the most reliable identifier for future syncs.
+
 ## ⚙️ Configuration
 
 ### Environment Variables
 
-- `SEMANTIC_SCHOLAR_API_KEY` - API key for Semantic Scholar (optional, currently disabled)
+- `SEMANTIC_SCHOLAR_API_KEY` - API key for Semantic Scholar (enabled). Place in `.env.local`.
+- `SEMANTIC_SCHOLAR_DISABLE_API_KEY` - Set to `true` to temporarily disable the API key and use shared rate limits.
+- `SEMANTIC_SCHOLAR_USER_AGENT` - Optional custom user agent for API requests.
+
+All utilities and scripts will automatically use `SEMANTIC_SCHOLAR_API_KEY` via the `x-api-key` header when available.
 
 ### Command Line Options
 
@@ -174,9 +203,29 @@ All scripts provide detailed statistics:
 
 ### API Issues
 
-- Semantic Scholar API key currently disabled due to auth issues
-- Scripts work without authentication (with rate limits)
+- If you see 403 responses with an API key, try removing or regenerating the key.
+- Scripts work without authentication (shared rate limits apply).
 - Check network connectivity for API calls
+
+## 🧪 Testing
+
+### Unit Tests (fast)
+
+Run only our focused unit tests (mocks fetch):
+
+```
+npx vitest run src/lib/migration/__tests__/semantic-scholar-utils.test.ts
+```
+
+### Integration Test (live API)
+
+Validates response shape from the live API using `author_information.json` to resolve `authorId`:
+
+```
+npx vitest run --config vitest.integration.config.ts tests/integration/semantic-scholar-api.int.test.ts
+```
+
+This test does not assert on the entire payload (papers list may change over time), only on stable response shape and essential fields.
 
 ## 📁 File Structure After Migration
 

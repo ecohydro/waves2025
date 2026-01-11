@@ -180,9 +180,11 @@ export default function Navigation() {
                   alt="WAVES Lab Logo"
                   width={40}
                   height={40}
-                  className="mr-2"
+                  className="mr-2 mt-1.5"
                 />
-                <span className="text-xl font-bold text-gray-900 ml-2">WAVES @ UC Santa Barbara</span>
+                <span className="text-xl font-bold text-gray-900 ml-2">
+                  WAVES @ UC Santa Barbara
+                </span>
               </Link>
             </div>
             {/* Desktop Links */}

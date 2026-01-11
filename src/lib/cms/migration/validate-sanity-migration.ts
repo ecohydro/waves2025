@@ -6,12 +6,17 @@ import { glob } from 'glob';
 
 // Configuration - only create client when needed
 function getSanityClient() {
+  const viewerToken =
+    process.env.SANITY_API_VIEWER_TOKEN ||
+    process.env.SANITY_API_EDITOR_TOKEN ||
+    process.env.SANITY_API_TOKEN ||
+    undefined;
   return createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
     apiVersion: '2023-07-01',
     useCdn: false,
-    token: process.env.SANITY_API_TOKEN,
+    token: viewerToken,
   });
 }
 

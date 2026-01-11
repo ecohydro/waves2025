@@ -13,7 +13,11 @@ export async function GET(request: NextRequest) {
     const envStatus = {
       projectId: !!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
       dataset: !!process.env.NEXT_PUBLIC_SANITY_DATASET,
-      apiToken: !!process.env.SANITY_API_TOKEN,
+      apiToken: !!(
+        process.env.SANITY_API_VIEWER_TOKEN ||
+        process.env.SANITY_API_EDITOR_TOKEN ||
+        process.env.SANITY_API_TOKEN
+      ),
       cmsApiKey: !!process.env.CMS_API_KEY,
     };
 
@@ -47,7 +51,11 @@ export async function GET(request: NextRequest) {
       environment: {
         projectId: !!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
         dataset: !!process.env.NEXT_PUBLIC_SANITY_DATASET,
-        apiToken: !!process.env.SANITY_API_TOKEN,
+        apiToken: !!(
+          process.env.SANITY_API_VIEWER_TOKEN ||
+          process.env.SANITY_API_EDITOR_TOKEN ||
+          process.env.SANITY_API_TOKEN
+        ),
         cmsApiKey: !!process.env.CMS_API_KEY,
       },
       version: process.env.npm_package_version || '1.0.0',

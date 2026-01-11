@@ -39,7 +39,28 @@ async function auditPublications(): Promise<PublicationAuditReport> {
   console.log('🔍 Auditing publication metadata quality...\n');
 
   // Fetch all publications with relevant fields
-  const publications = await client.fetch(`
+  const publications = await client.fetch<
+    Array<{
+      _id: string;
+      title?: string;
+      slug?: { current?: string };
+      publicationType?: string;
+      authors?: Array<{ name?: string }>;
+      abstract?: string;
+      keywords?: string[];
+      venue?: { name?: string };
+      publishedDate?: string;
+      submittedDate?: string;
+      acceptedDate?: string;
+      doi?: string;
+      isbn?: string;
+      pmid?: string;
+      arxivId?: string;
+      status?: string;
+      isFeatured?: boolean;
+      isOpenAccess?: boolean;
+    }>
+  >(`
     *[_type == "publication"] {
       _id,
       title,
@@ -79,8 +100,25 @@ async function auditPublications(): Promise<PublicationAuditReport> {
     recommendations: [],
   };
 
-  const validStatuses = ['published', 'in-press', 'accepted', 'under-review', 'submitted', 'in-preparation', 'preprint'];
-  const validPublicationTypes = ['journal-article', 'conference-paper', 'book-chapter', 'preprint', 'thesis', 'report', 'book', 'other'];
+  const validStatuses = [
+    'published',
+    'in-press',
+    'accepted',
+    'under-review',
+    'submitted',
+    'in-preparation',
+    'preprint',
+  ];
+  const validPublicationTypes = [
+    'journal-article',
+    'conference-paper',
+    'book-chapter',
+    'preprint',
+    'thesis',
+    'report',
+    'book',
+    'other',
+  ];
 
   for (const pub of publications) {
     const pubIssues: string[] = [];
@@ -121,8 +159,9 @@ async function auditPublications(): Promise<PublicationAuditReport> {
       pubIssues.push('No authors listed');
     } else {
       // Check for author data quality
-      const authorIssues = pub.authors.filter(author => 
-        !author.name || author.name === 'None' || author.name === 'none'
+      const authorIssues = pub.authors.filter(
+        (author: { name?: string }) =>
+          !author.name || author.name === 'None' || author.name === 'none',
       );
       if (authorIssues.length > 0) {
         report.issues.authorIssues++;
@@ -153,23 +192,33 @@ async function auditPublications(): Promise<PublicationAuditReport> {
 
   // Generate recommendations
   if (report.issues.noneAbstracts > 0) {
-    report.recommendations.push(`Clean up ${report.issues.noneAbstracts} publications with "None" abstracts - either add proper abstracts or set to null`);
+    report.recommendations.push(
+      `Clean up ${report.issues.noneAbstracts} publications with "None" abstracts - either add proper abstracts or set to null`,
+    );
   }
-  
+
   if (report.issues.missingDOIs > 0) {
-    report.recommendations.push(`Research and add DOIs for ${report.issues.missingDOIs} publications where possible`);
+    report.recommendations.push(
+      `Research and add DOIs for ${report.issues.missingDOIs} publications where possible`,
+    );
   }
 
   if (report.issues.missingVenues > 0) {
-    report.recommendations.push(`Add proper venue information for ${report.issues.missingVenues} publications`);
+    report.recommendations.push(
+      `Add proper venue information for ${report.issues.missingVenues} publications`,
+    );
   }
 
   if (report.issues.invalidDates > 0) {
-    report.recommendations.push(`Fix date format issues for ${report.issues.invalidDates} publications (should be YYYY-MM-DD)`);
+    report.recommendations.push(
+      `Fix date format issues for ${report.issues.invalidDates} publications (should be YYYY-MM-DD)`,
+    );
   }
 
   if (report.issues.authorIssues > 0) {
-    report.recommendations.push(`Review and fix author data for ${report.issues.authorIssues} publications`);
+    report.recommendations.push(
+      `Review and fix author data for ${report.issues.authorIssues} publications`,
+    );
   }
 
   return report;
@@ -179,9 +228,9 @@ function printReport(report: PublicationAuditReport): void {
   console.log('='.repeat(60));
   console.log('📊 PUBLICATION METADATA AUDIT REPORT');
   console.log('='.repeat(60));
-  
+
   console.log(`\n📚 Total Publications: ${report.totalPublications}`);
-  
+
   console.log('\n🚨 Issues Found:');
   console.log(`   • Missing abstracts: ${report.issues.missingAbstracts}`);
   console.log(`   • "None" abstracts: ${report.issues.noneAbstracts}`);
@@ -192,9 +241,13 @@ function printReport(report: PublicationAuditReport): void {
   console.log(`   • Status issues: ${report.issues.statusIssues}`);
 
   const totalIssues = Object.values(report.issues).reduce((sum, count) => sum + count, 0);
-  const healthScore = Math.round(((report.totalPublications - report.detailedIssues.length) / report.totalPublications) * 100);
-  
-  console.log(`\n📈 Publication Health Score: ${healthScore}% (${report.totalPublications - report.detailedIssues.length}/${report.totalPublications} publications without issues)`);
+  const healthScore = Math.round(
+    ((report.totalPublications - report.detailedIssues.length) / report.totalPublications) * 100,
+  );
+
+  console.log(
+    `\n📈 Publication Health Score: ${healthScore}% (${report.totalPublications - report.detailedIssues.length}/${report.totalPublications} publications without issues)`,
+  );
 
   if (report.recommendations.length > 0) {
     console.log('\n💡 Recommendations:');
@@ -204,11 +257,13 @@ function printReport(report: PublicationAuditReport): void {
   }
 
   if (report.detailedIssues.length > 0) {
-    console.log(`\n🔍 Publications with Issues (showing first 10 of ${report.detailedIssues.length}):`);
+    console.log(
+      `\n🔍 Publications with Issues (showing first 10 of ${report.detailedIssues.length}):`,
+    );
     report.detailedIssues.slice(0, 10).forEach((pub, i) => {
       console.log(`\n${i + 1}. ${pub.title}`);
       console.log(`   ID: ${pub.id}`);
-      pub.issues.forEach(issue => {
+      pub.issues.forEach((issue) => {
         console.log(`   ❌ ${issue}`);
       });
     });
@@ -224,11 +279,18 @@ async function main() {
     const report = await auditPublications();
     printReport(report);
 
-    // Save detailed report to file
-    const reportPath = path.join(process.cwd(), 'publication-audit-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`\n📝 Detailed report saved to: publication-audit-report.json`);
-
+    // Save detailed report to file only if explicitly requested
+    const args = process.argv.slice(2);
+    const reportFlagIndex = args.indexOf('--report');
+    if (reportFlagIndex >= 0 && args[reportFlagIndex + 1]) {
+      const reportPath = path.isAbsolute(args[reportFlagIndex + 1])
+        ? args[reportFlagIndex + 1]
+        : path.join(process.cwd(), args[reportFlagIndex + 1]);
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      console.log(`\n📝 Detailed report saved to: ${path.basename(reportPath)}`);
+    } else {
+      console.log('\nℹ️ Skipping file output (pass --report <path> to write a JSON report)');
+    }
   } catch (error) {
     console.error('❌ Audit failed:', error);
     process.exit(1);

@@ -39,10 +39,15 @@ echo "⏱️  Estimated time: ~$ESTIMATED_MINUTES minutes"
 echo ""
 
 echo "🚀 Starting background processor..."
+echo "   Pass --no-skip-existing to re-process already enhanced files"
+echo "   Pass --delay <seconds> to change delay between requests"
+echo "   Pass --batch-size <n> to change progress print frequency"
+echo "   Pass --dry-run to simulate updates without modifying files"
+echo "   Pass --no-auth to disable API key usage (unauthenticated requests)"
 echo "   Press Ctrl+C to stop gracefully (progress will be saved)"
 echo "   You can resume later by running this script again"
 echo ""
 
 # Start the background processor
 cd "$(dirname "$0")/.." || exit 1
-npx tsx src/lib/migration/semantic-scholar-background.ts content/publications 
+npx tsx src/lib/migration/semantic-scholar-background.ts content/publications "$@"

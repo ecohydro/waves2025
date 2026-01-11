@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity'
-import { UserIcon } from '@sanity/icons'
+import { defineField, defineType } from 'sanity';
+import { UserIcon } from '@sanity/icons';
 
 export const person = defineType({
   name: 'person',
@@ -14,7 +14,7 @@ export const person = defineType({
       type: 'string',
       validation: (Rule) => Rule.required().min(2).max(100),
     }),
-    
+
     defineField({
       name: 'slug',
       title: 'URL Slug',
@@ -22,21 +22,22 @@ export const person = defineType({
       options: {
         source: 'name',
         maxLength: 96,
-        slugify: (input) => input
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^\w-]+/g, ''),
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w-]+/g, ''),
       },
       validation: (Rule) => Rule.required(),
     }),
-    
+
     defineField({
       name: 'title',
       title: 'Job Title/Position',
       type: 'string',
       description: 'e.g., PhD Student, Postdoctoral Researcher, Professor',
     }),
-    
+
     defineField({
       name: 'userGroup',
       title: 'User Group',
@@ -53,7 +54,28 @@ export const person = defineType({
       initialValue: 'current',
       validation: (Rule) => Rule.required(),
     }),
-    
+
+    defineField({
+      name: 'category',
+      title: 'Role Category',
+      type: 'string',
+      description:
+        'Standardized role category for organizing people lists (used for alumni sections and site navigation).',
+      options: {
+        list: [
+          { title: 'Principal Investigator', value: 'principal-investigator' },
+          { title: 'Graduate Student', value: 'graduate-student' },
+          { title: 'Postdoc', value: 'postdoc' },
+          { title: 'Research Staff', value: 'research-staff' },
+          { title: 'Research Intern', value: 'research-intern' },
+          { title: 'High School Student', value: 'high-school-student' },
+          { title: 'Visitor', value: 'visitor' },
+        ],
+        layout: 'radio',
+      },
+      group: 'content',
+    }),
+
     defineField({
       name: 'avatar',
       title: 'Profile Photo',
@@ -71,23 +93,24 @@ export const person = defineType({
         },
       ],
     }),
-    
+
     // Contact & Social
     defineField({
       name: 'email',
       title: 'Email Address',
       type: 'email',
     }),
-    
+
     defineField({
       name: 'website',
       title: 'Personal Website',
       type: 'url',
-      validation: (Rule) => Rule.uri({
-        scheme: ['http', 'https'],
-      }),
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+        }),
     }),
-    
+
     defineField({
       name: 'socialMedia',
       title: 'Social Media & Academic Profiles',
@@ -98,35 +121,44 @@ export const person = defineType({
           title: 'ORCID ID',
           type: 'string',
           description: 'Your ORCID identifier (e.g., 0000-0000-0000-0000)',
-          validation: (Rule) => 
+          validation: (Rule) =>
             Rule.regex(/^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]$/, {
               name: 'ORCID format',
               invert: false,
             }).warning('Please use the format: 0000-0000-0000-0000'),
         },
         {
+          name: 'semanticScholarId',
+          title: 'Semantic Scholar Author ID',
+          type: 'string',
+          description: 'Author ID from Semantic Scholar (e.g., 2277507)',
+        },
+        {
           name: 'googleScholar',
           title: 'Google Scholar Profile URL',
           type: 'url',
-          validation: (Rule) => Rule.uri({
-            scheme: ['http', 'https'],
-          }),
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ['http', 'https'],
+            }),
         },
         {
           name: 'researchGate',
           title: 'ResearchGate Profile URL',
           type: 'url',
-          validation: (Rule) => Rule.uri({
-            scheme: ['http', 'https'],
-          }),
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ['http', 'https'],
+            }),
         },
         {
           name: 'linkedin',
           title: 'LinkedIn Profile URL',
           type: 'url',
-          validation: (Rule) => Rule.uri({
-            scheme: ['http', 'https'],
-          }),
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ['http', 'https'],
+            }),
         },
         {
           name: 'twitter',
@@ -142,7 +174,7 @@ export const person = defineType({
         },
       ],
     }),
-    
+
     // Academic Information
     defineField({
       name: 'education',
@@ -187,13 +219,13 @@ export const person = defineType({
               return {
                 title: `${degree} in ${field}`,
                 subtitle: `${institution} (${year})`,
-              }
+              };
             },
           },
         },
       ],
     }),
-    
+
     defineField({
       name: 'researchInterests',
       title: 'Research Interests',
@@ -201,7 +233,7 @@ export const person = defineType({
       of: [{ type: 'string' }],
       description: 'List of research areas and interests',
     }),
-    
+
     // Biography
     defineField({
       name: 'bio',
@@ -210,7 +242,7 @@ export const person = defineType({
       description: 'Short biographical description',
       rows: 4,
     }),
-    
+
     defineField({
       name: 'bioLong',
       title: 'Detailed Biography',
@@ -218,7 +250,7 @@ export const person = defineType({
       description: 'Longer biographical information for full profile page',
       rows: 8,
     }),
-    
+
     // Status and Dates
     defineField({
       name: 'joinDate',
@@ -226,7 +258,7 @@ export const person = defineType({
       type: 'date',
       description: 'When did this person join the lab?',
     }),
-    
+
     defineField({
       name: 'leaveDate',
       title: 'Leave Date',
@@ -234,7 +266,7 @@ export const person = defineType({
       description: 'When did this person leave the lab? (for alumni)',
       hidden: ({ document }) => document?.userGroup !== 'alumni',
     }),
-    
+
     defineField({
       name: 'currentPosition',
       title: 'Current Position',
@@ -242,7 +274,7 @@ export const person = defineType({
       description: 'Current position for alumni',
       hidden: ({ document }) => document?.userGroup !== 'alumni',
     }),
-    
+
     defineField({
       name: 'isActive',
       title: 'Active Profile',
@@ -250,7 +282,7 @@ export const person = defineType({
       description: 'Whether this profile should be publicly visible',
       initialValue: true,
     }),
-    
+
     // SEO and Metadata
     defineField({
       name: 'seo',
@@ -283,7 +315,7 @@ export const person = defineType({
       group: 'seo',
     }),
   ],
-  
+
   groups: [
     {
       name: 'content',
@@ -295,7 +327,7 @@ export const person = defineType({
       title: 'SEO',
     },
   ],
-  
+
   preview: {
     select: {
       title: 'name',
@@ -308,10 +340,10 @@ export const person = defineType({
         title,
         subtitle: subtitle ? `${subtitle} (${userGroup})` : userGroup,
         media,
-      }
+      };
     },
   },
-  
+
   orderings: [
     {
       title: 'Name A-Z',
@@ -334,4 +366,4 @@ export const person = defineType({
       by: [{ field: 'joinDate', direction: 'asc' }],
     },
   ],
-})
+});

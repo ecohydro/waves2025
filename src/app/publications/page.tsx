@@ -1,23 +1,76 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import {
-  fetchPublications,
-  fetchFeaturedPublications,
-  urlForImage,
-  type Publication,
-} from '@/lib/cms/client';
+import { fetchPublications, type Publication } from '@/lib/cms/client';
 
-export default async function PublicationsPage() {
+// Always render this page dynamically so Sanity updates are reflected immediately
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export default async function PublicationsPage({
+  searchParams,
+}: {
+  searchParams?: { type?: string; area?: string };
+}) {
   // Fetch data from Sanity instead of reading MDX files
-  const [allPublications, featuredPublications] = await Promise.all([
-    fetchPublications(),
-    fetchFeaturedPublications(),
-  ]);
+  const [allPublications] = await Promise.all([fetchPublications()]);
+
+  // Determine current view from query params
+  const view: 'articles' | 'presentations' =
+    searchParams?.type === 'presentations' ? 'presentations' : 'articles';
+
+  // Normalize area filter from query params
+  const normalizeArea = (input: string): string | null => {
+    const v = input.trim().toLowerCase();
+    if (!v) return null;
+    if (v === 'ecohydrology') return 'Ecohydrology';
+    if (v === 'sensors' || v === 'sensor' || v === 'environmental sensing') return 'Sensors';
+    if (
+      v === 'cnh' ||
+      v === 'coupled natural-human systems' ||
+      v === 'coupled natural human systems'
+    )
+      return 'Coupled Natural-Human Systems';
+    // Fallback: title-case first letter for any direct match
+    return input;
+  };
+
+  const selectedAreaRaw = typeof searchParams?.area === 'string' ? searchParams?.area : undefined;
+  const selectedArea = selectedAreaRaw ? normalizeArea(selectedAreaRaw) : null;
+
+  // Filter based on selected view
+  let filteredPublications = allPublications.filter((p) => {
+    if (view === 'articles') {
+      // Default: peer-reviewed publications (journal articles + conference papers)
+      return (
+        p.publicationType === 'journal-article' ||
+        p.publicationType === 'conference-paper' ||
+        p.category === 'journal' ||
+        p.category === 'conference-proceedings'
+      );
+    }
+    // Presentations/Abstracts view: include abstracts only (with category fallback)
+    return p.publicationType === 'abstract' || p.category === 'conference-abstract';
+  });
+
+  if (selectedArea) {
+    filteredPublications = filteredPublications.filter(
+      (p) => Array.isArray(p.researchAreas) && p.researchAreas.some((a) => a === selectedArea),
+    );
+  }
+
+  // Compute featured publications: most recent up to 4 with > 30 citations
+  const featuredPublications = filteredPublications
+    .filter((p) => (p.metrics?.citations ?? 0) > 30)
+    .sort((a, b) => {
+      const aTime = a.publishedDate ? new Date(a.publishedDate).getTime() : 0;
+      const bTime = b.publishedDate ? new Date(b.publishedDate).getTime() : 0;
+      return bTime - aTime;
+    })
+    .slice(0, 4);
 
   // Group by year
-  const publicationsByYear = allPublications.reduce(
+  const publicationsByYear = filteredPublications.reduce(
     (acc, pub) => {
       const year = pub.publishedDate ? new Date(pub.publishedDate).getFullYear() : 'Unknown';
       if (!acc[year]) {
@@ -35,156 +88,103 @@ export default async function PublicationsPage() {
     return Number(b) - Number(a);
   });
 
-  const formatAuthors = (authors: Publication['authors']) => {
-    if (!authors || authors.length === 0) return '';
+  // Unique authors across filtered publications
+  const uniqueAuthors = new Set<string>();
+  for (const publication of filteredPublications) {
+    if (!publication.authors) continue;
+    for (const author of publication.authors) {
+      const name = author?.person?.name || author?.name || 'Unknown Author';
+      uniqueAuthors.add(name);
+    }
+  }
 
-    return authors
-      .map((author) => {
-        if (author.person) {
-          return author.person.name;
-        }
-        return author.name || 'Unknown Author';
-      })
-      .join(', ');
+  // Compute co-author count as unique authors minus 1 (primary author), floored at 0
+  const coAuthorCount = Math.max(0, uniqueAuthors.size - 1);
+
+  const renderAuthors = (authors: Publication['authors']) => {
+    if (!authors || authors.length === 0) return null;
+
+    const parts = authors.map((author, index) => {
+      const displayName = author.person?.name || author.name || 'Unknown Author';
+      const slug = author.person && (author.person as any).slug?.current;
+      const element = slug ? (
+        <Link key={`${slug}-${index}`} href={`/people/${slug}`} className="hover:underline">
+          {displayName}
+        </Link>
+      ) : (
+        <span key={`${displayName}-${index}`}>{displayName}</span>
+      );
+      return (
+        <span key={`author-${index}`}>
+          {element}
+          {index < authors.length - 1 ? ', ' : ''}
+        </span>
+      );
+    });
+
+    return <>{parts}</>;
   };
 
   const formatCitation = (publication: Publication) => {
-    const authors = formatAuthors(publication.authors);
+    const authors = publication.authors;
     const title = publication.title ? `"${publication.title}"` : '';
     const venue = publication.venue?.name || '';
     const year = publication.publishedDate ? new Date(publication.publishedDate).getFullYear() : '';
     const doi = publication.doi ? `doi:${publication.doi}` : '';
-    
-    return `${authors}. ${title} ${venue} (${year}). ${doi}`.replace(/\s+/g, ' ').trim();
+
+    const authorText = (authors || [])
+      .map((a) => a.person?.name || a.name || 'Unknown Author')
+      .join(', ');
+    return `${authorText}. ${title} ${venue} (${year}). ${doi}`.replace(/\s+/g, ' ').trim();
   };
 
   const renderPublicationCard = (publication: Publication, featured = false) => (
     <Card
       key={publication._id}
-      className={`group hover:shadow-lg transition-all duration-300 ${featured ? 'border-wavesBlue/30' : ''}`}
+      className={`group hover:shadow-lg transition-all duration-300 h-full ${featured ? 'border-wavesBlue/30' : ''}`}
     >
-      <CardContent className="p-6">
-        <div className="flex gap-4">
-          {/* Publication Image - using DOI-based image or placeholder */}
-          <div className="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg bg-gray-100">
-            <div className="w-full h-full bg-gradient-to-br from-wavesBlue/10 to-blue-100 flex items-center justify-center">
-              <svg className="w-8 h-8 text-wavesBlue" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7 3H4a1 1 0 00-1 1v16a1 1 0 001 1h16a1 1 0 001-1V8.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0014.586 2H7a1 1 0 000 1zM5 5h7v2a1 1 0 001 1h2v11H5V5zm10 1.414L16.586 8H15V6.414z" />
-              </svg>
-            </div>
-          </div>
+      <CardContent className="p-6 flex flex-col h-full">
+        {/* Title */}
+        <h3
+          className={`font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
+        >
+          <Link href={`/publications/${publication.slug.current}`} className="hover:underline">
+            {publication.title}
+          </Link>
+        </h3>
 
-          <div className="flex-1 min-w-0">
-            {/* Title */}
-            <h3
-              className={`font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors leading-snug mb-3 ${featured ? 'text-lg' : 'text-base'}`}
+        {/* Authors and Journal */}
+        <div className="mb-2">
+          {publication.authors && publication.authors.length > 0 && (
+            <p className="text-sm text-gray-700">{renderAuthors(publication.authors)}</p>
+          )}
+          {publication.venue?.name && (
+            <p className="text-sm text-wavesBlue font-medium mt-1.5">{publication.venue.name}</p>
+          )}
+        </div>
+
+        {/* Spacer to push footer to bottom */}
+        <div className="mt-2 flex-1" />
+
+        {/* Badges removed on list page for performance and to avoid third-party overlays */}
+
+        {/* Footer actions */}
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <Button href={`/publications/${publication.slug.current}`} variant="outline" size="sm">
+            View Details
+          </Button>
+
+          {publication.doi && (
+            <a
+              href={`https://doi.org/${publication.doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block max-w-full break-all px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+              title={`doi:${publication.doi}`}
             >
-              <Link href={`/publications/${publication.slug.current}`} className="hover:underline">
-                {publication.title}
-              </Link>
-            </h3>
-
-            {/* Authors and Journal */}
-            <div className="mb-3">
-              {publication.authors && publication.authors.length > 0 && (
-                <p className="text-sm text-gray-700 mb-1">{formatAuthors(publication.authors)}</p>
-              )}
-              {publication.venue?.name && (
-                <p className="text-sm text-wavesBlue font-medium">
-                  {publication.venue.name}
-                  {publication.publishedDate && (
-                    <span className="text-gray-500">
-                      {' '}
-                      ({new Date(publication.publishedDate).getFullYear()})
-                    </span>
-                  )}
-                </p>
-              )}
-            </div>
-
-            {/* Abstract */}
-            {publication.abstract && (
-              <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">
-                {publication.abstract}
-              </p>
-            )}
-
-            {/* Keywords */}
-            {publication.keywords && publication.keywords.length > 0 && (
-              <div className="flex flex-wrap gap-1 mb-4">
-                {publication.keywords.slice(0, 3).map((keyword, index) => (
-                  <span
-                    key={index}
-                    className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-                {publication.keywords.length > 3 && (
-                  <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full">
-                    +{publication.keywords.length - 3} more
-                  </span>
-                )}
-              </div>
-            )}
-
-            {/* Citation */}
-            <div className="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-wavesBlue">
-              <p className="text-xs text-gray-700 leading-relaxed">
-                {formatCitation(publication)}
-              </p>
-            </div>
-
-            {/* Links */}
-            <div className="flex flex-wrap gap-2">
-              <Button
-                href={`/publications/${publication.slug.current}`}
-                variant="outline"
-                size="sm"
-              >
-                View Details
-              </Button>
-
-              {publication.doi && (
-                <a
-                  href={`https://doi.org/${publication.doi}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
-                >
-                  DOI
-                </a>
-              )}
-
-              {publication.links?.publisher && (
-                <a
-                  href={publication.links.publisher}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-2 py-1 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors"
-                >
-                  Publisher
-                </a>
-              )}
-
-              {publication.links?.pdf && (
-                <a
-                  href={urlForImage(publication.links.pdf).url()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-2 py-1 text-xs bg-red-100 text-red-700 rounded hover:bg-red-200 transition-colors"
-                >
-                  PDF
-                </a>
-              )}
-
-              {publication.isOpenAccess && (
-                <span className="inline-flex items-center px-2 py-1 text-xs bg-yellow-100 text-yellow-800 rounded">
-                  Open Access
-                </span>
-              )}
-            </div>
-          </div>
+              {`doi:${publication.doi}`}
+            </a>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -196,12 +196,67 @@ export default async function PublicationsPage() {
       <section className="bg-white border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Publications</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Publications & Presentations
+            </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our research contributions to understanding water, agriculture, and
-              environmental systems through peer-reviewed publications, conference papers, and
-              technical reports.
+              Explore our peer-reviewed research outputs and conference presentations.
             </p>
+            {/* View Toggle */}
+            <div className="mt-6 inline-flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
+              <Link href="/publications" className="no-underline">
+                <button
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    view === 'articles'
+                      ? 'bg-wavesBlue text-white'
+                      : 'bg-transparent text-gray-700 hover:bg-white'
+                  }`}
+                >
+                  Publications
+                </button>
+              </Link>
+              <Link href="/publications?type=presentations" className="no-underline">
+                <button
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    view === 'presentations'
+                      ? 'bg-wavesBlue text-white'
+                      : 'bg-transparent text-gray-700 hover:bg-white'
+                  }`}
+                >
+                  Conference Presentations & Abstracts
+                </button>
+              </Link>
+            </div>
+
+            {/* Area Filter */}
+            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              {[
+                { label: 'All', value: '' },
+                { label: 'Ecohydrology', value: 'ecohydrology' },
+                { label: 'Sensors', value: 'sensors' },
+                { label: 'CNH', value: 'cnh' },
+              ].map((opt) => {
+                const href = opt.value
+                  ? `/publications?${view === 'presentations' ? 'type=presentations&' : ''}area=${opt.value}`
+                  : `/publications${view === 'presentations' ? '?type=presentations' : ''}`;
+                const isActive =
+                  (opt.value === '' && !selectedAreaRaw) ||
+                  (opt.value !== '' && selectedAreaRaw === opt.value);
+                return (
+                  <Link href={href} key={opt.value || 'all'} className="no-underline">
+                    <button
+                      className={`px-3 py-1.5 rounded-full text-sm font-medium border ${
+                        isActive
+                          ? 'bg-wavesBlue text-white border-wavesBlue'
+                          : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -209,28 +264,16 @@ export default async function PublicationsPage() {
       {/* Stats Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">{allPublications.length}</div>
+              <div className="text-3xl font-bold text-wavesBlue mb-2">
+                {filteredPublications.length}
+              </div>
               <div className="text-sm text-gray-600">Total Publications</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">
-                {years.filter((y) => y !== 'Unknown').length}
-              </div>
-              <div className="text-sm text-gray-600">Years of Research</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">
-                {featuredPublications.length}
-              </div>
-              <div className="text-sm text-gray-600">Featured Articles</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">
-                {new Set(allPublications.map((p) => p.venue?.name).filter(Boolean)).size}
-              </div>
-              <div className="text-sm text-gray-600">Journals</div>
+              <div className="text-3xl font-bold text-wavesBlue mb-2">{coAuthorCount}</div>
+              <div className="text-sm text-gray-600">Co-authors</div>
             </div>
           </div>
         </div>
@@ -247,7 +290,7 @@ export default async function PublicationsPage() {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredPublications.map((pub) => renderPublicationCard(pub, true))}
             </div>
           </div>
@@ -260,7 +303,9 @@ export default async function PublicationsPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">All Publications</h2>
             <p className="text-lg text-gray-600">
-              Complete list of research publications organized by year.
+              {view === 'articles'
+                ? 'Peer-reviewed publications (journal articles and conference papers) organized by year.'
+                : 'Conference presentations and abstracts organized by year.'}
             </p>
           </div>
 
@@ -278,7 +323,7 @@ export default async function PublicationsPage() {
                 </h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {publicationsByYear[year].map((pub) => renderPublicationCard(pub))}
               </div>
             </div>

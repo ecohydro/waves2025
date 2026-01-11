@@ -1,0 +1,493 @@
+{
+  "summary": {
+    "totalPeople": 69,
+    "indexedAuthors": 608,
+    "ok": 55,
+    "unchanged": 0,
+    "ambiguous": 1,
+    "missing": 13,
+    "willUpdate": 0
+  },
+  "rows": [
+    {
+      "personId": "person-abinash-bhattachan",
+      "name": "Abinash Bhattachan",
+      "proposedId": "94264990",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-adam-wolf",
+      "name": "Adam Wolf",
+      "proposedId": "2079871485",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-alex-lester",
+      "name": "Alex Lester",
+      "proposedId": "91878132",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-alice-suh",
+      "name": "Alice Suh",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-allison-ingram",
+      "name": "Allison Ingram",
+      "proposedId": "119120102",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-ben-siegfried",
+      "name": "Ben Siegfried",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-boniface-mukoma",
+      "name": "Boniface Mukoma",
+      "proposedId": "2316895455",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-bryn-morgan",
+      "name": "Bryn Morgan",
+      "proposedId": "79404662",
+      "candidates": [
+        "79404662"
+      ],
+      "status": "ok"
+    },
+    {
+      "personId": "person-caden-ohlwiler",
+      "name": "Caden Ohlwiler",
+      "proposedId": "101152058",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-cascade-tuholske",
+      "name": "Cascade Tuholske",
+      "proposedId": "11646599",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-connor-duwan",
+      "name": "Connor Duwan",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-craig-sinkler",
+      "name": "Craig Sinkler",
+      "proposedId": "1402792495",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-cynthia-gerlein-safdi",
+      "name": "Cynthia Gerlein Safdi",
+      "proposedId": "1402792485",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-daozhi-gong",
+      "name": "Daozhi Gong",
+      "proposedId": "2294389869",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-dee-luo",
+      "name": "Dee Luo",
+      "proposedId": "6789306",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-diana-chavarro-rincon",
+      "name": "Diana Chavarro Rincon",
+      "proposedId": "1429778284",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-drew-gower",
+      "name": "Drew Gower",
+      "proposedId": "123063902",
+      "candidates": [
+        "123063902"
+      ],
+      "status": "ok"
+    },
+    {
+      "personId": "person-ekomwa-akuwam",
+      "name": "Ekomwa Akuwam",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-eliza-harkins",
+      "name": "Eliza Harkins",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-elliot-chang",
+      "name": "Elliot Chang",
+      "proposedId": "2267280585",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-eric-principato",
+      "name": "Eric Principato",
+      "proposedId": "2258631850",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-feng-wang",
+      "name": "Feng Wang",
+      "proposedId": "2108636145",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-frances-odonnell",
+      "name": "Frances Odonnell",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-gabby-ragazzo",
+      "name": "Gabby Ragazzo",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-garth-lindner",
+      "name": "Garth Lindner",
+      "proposedId": "90194251",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-guiomar-ruiz-prez",
+      "name": "Guiomar Ruiz Prez",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-haley-lane",
+      "name": "Haley Lane",
+      "proposedId": "83315202",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-hannah-safford",
+      "name": "Hannah Safford",
+      "proposedId": "51257063",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-hilary-wayland",
+      "name": "Hilary Wayland",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-ida-posner",
+      "name": "Ida Posner",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-jackie-jones",
+      "name": "Jackie Jones",
+      "proposedId": "143892021",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-james-odonnell",
+      "name": "James Odonnell",
+      "proposedId": "2053069739",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-jeremy-chen",
+      "name": "Jeremy Chen",
+      "proposedId": "153426127",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-john-gitonga",
+      "name": "John Gitonga",
+      "proposedId": "67024262",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-johnathan-choi",
+      "name": "Johnathan Choi",
+      "proposedId": "49331201",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-julia-signell",
+      "name": "Julia Signell",
+      "proposedId": "1571867350",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-kaiyu-guan",
+      "name": "Kaiyu Guan",
+      "proposedId": "2278831879",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-kathleen-ryan",
+      "name": "Kathleen Ryan",
+      "proposedId": "2067900288",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-kathy-zhao",
+      "name": "Kathy Zhao",
+      "proposedId": "2359019804",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-katie-smith",
+      "name": "Katie Smith",
+      "proposedId": "2271304",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-keir-soderberg",
+      "name": "Keir Soderberg",
+      "proposedId": "2277047994",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-keita-decarlo",
+      "name": "Keita Decarlo",
+      "proposedId": "104999176",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-kelly-caylor",
+      "name": "Kelly Caylor",
+      "proposedId": "2302292192",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-lixin-wang",
+      "name": "Lixin Wang",
+      "candidates": [
+        "2108632064",
+        "2108631100"
+      ],
+      "status": "ambiguous"
+    },
+    {
+      "personId": "person-lizzie-king",
+      "name": "Lizzie King",
+      "proposedId": "2307812126",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-lyndon-estes",
+      "name": "Lyndon Estes",
+      "proposedId": "2259341803",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-marc-mayes",
+      "name": "Marc Mayes",
+      "proposedId": "2326604383",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-marcus-spiegel",
+      "name": "Marcus Spiegel",
+      "proposedId": "2100596608",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-maria-fabiola-rodriguez",
+      "name": "Maria Fabiola Rodriguez",
+      "proposedId": "2006339564",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-matteo-kruijssen",
+      "name": "Matteo Kruijssen",
+      "proposedId": "2238694292",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-miranda-bernard",
+      "name": "Miranda Bernard",
+      "proposedId": "144279733",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-molly-oconnor",
+      "name": "Molly Oconnor",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-moses-kioko-musyoka",
+      "name": "Moses Kioko Musyoka",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-natasha-krell",
+      "name": "Natasha Krell",
+      "proposedId": "2266469272",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-noah-spahn",
+      "name": "Noah Spahn",
+      "proposedId": "2098079519",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-patrick-nadeau",
+      "name": "Patrick Nadeau",
+      "proposedId": "49300200",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-preston-kemeny",
+      "name": "Preston Kemeny",
+      "proposedId": "108658164",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-rachel-green",
+      "name": "Rachel Green",
+      "proposedId": "2072877402",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-ray-grossman",
+      "name": "Ray Grossman",
+      "proposedId": "2067164077",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-rodrigo-munoz-rogers",
+      "name": "Rodrigo Munoz Rogers",
+      "proposedId": "1448846159",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-ryan-avery",
+      "name": "Ryan Avery",
+      "proposedId": "144701041",
+      "candidates": [
+        "144701041"
+      ],
+      "status": "ok"
+    },
+    {
+      "personId": "person-sally-goodman",
+      "name": "Sally Goodman",
+      "proposedId": "2263745013",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-sara-guenther",
+      "name": "Sara Guenther",
+      "proposedId": "2054040685",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-sindiso-nyathi",
+      "name": "Sindiso Nyathi",
+      "proposedId": "14482032",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-stephanie-debats",
+      "name": "Stephanie Debats",
+      "proposedId": "2243335286",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-stephen-good",
+      "name": "Stephen Good",
+      "proposedId": "150296431",
+      "candidates": [
+        "150296431"
+      ],
+      "status": "ok"
+    },
+    {
+      "personId": "person-steve-tuozzolo",
+      "name": "Steve Tuozzolo",
+      "candidates": [],
+      "status": "missing"
+    },
+    {
+      "personId": "person-taylor-morgan",
+      "name": "Taylor Morgan",
+      "proposedId": "46779370",
+      "candidates": [],
+      "status": "ok"
+    },
+    {
+      "personId": "person-trenton-franz",
+      "name": "Trenton Franz",
+      "proposedId": "2336195883",
+      "candidates": [],
+      "status": "ok"
+    }
+  ]
+}

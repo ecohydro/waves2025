@@ -17,7 +17,22 @@ async function auditPeopleProfiles() {
   console.log('📊 PEOPLE PROFILE DATA COMPLETENESS AUDIT');
   console.log('='.repeat(50));
 
-  const people = await client.fetch(`
+  const people = await client.fetch<
+    Array<{
+      _id: string;
+      name: string;
+      slug?: { current?: string };
+      title?: string;
+      userGroup?: string;
+      avatar?: { asset?: { _ref?: string } };
+      email?: string;
+      website?: string;
+      researchInterests?: string[];
+      bio?: string;
+      joinDate?: string;
+      isActive?: boolean;
+    }>
+  >(`
     *[_type == "person"] {
       _id,
       name,
@@ -36,14 +51,17 @@ async function auditPeopleProfiles() {
   `);
 
   console.log(`Total people: ${people.length}`);
-  
+
   const issues = {
-    missingEmails: people.filter(p => p.userGroup === 'current' && !p.email).length,
-    missingAvatars: people.filter(p => !p.avatar?.asset?._ref).length,
-    missingBios: people.filter(p => p.userGroup === 'current' && !p.bio).length,
-    missingTitles: people.filter(p => p.userGroup === 'current' && !p.title).length,
-    missingResearchInterests: people.filter(p => p.userGroup === 'current' && (!p.researchInterests || p.researchInterests.length === 0)).length,
-    missingSlugs: people.filter(p => !p.slug?.current).length,
+    missingEmails: people.filter((p) => p.userGroup === 'current' && !p.email).length,
+    missingAvatars: people.filter((p) => !p.avatar?.asset?._ref).length,
+    missingBios: people.filter((p) => p.userGroup === 'current' && !p.bio).length,
+    missingTitles: people.filter((p) => p.userGroup === 'current' && !p.title).length,
+    missingResearchInterests: people.filter(
+      (p) =>
+        p.userGroup === 'current' && (!p.researchInterests || p.researchInterests.length === 0),
+    ).length,
+    missingSlugs: people.filter((p) => !p.slug?.current).length,
   };
 
   console.log(`\nData Completeness Issues:`);
@@ -54,9 +72,9 @@ async function auditPeopleProfiles() {
   console.log(`• Missing research interests (current): ${issues.missingResearchInterests}`);
   console.log(`• Missing slugs (all): ${issues.missingSlugs}`);
 
-  const currentMembers = people.filter(p => p.userGroup === 'current');
-  const alumni = people.filter(p => p.userGroup === 'alumni');
-  
+  const currentMembers = people.filter((p) => p.userGroup === 'current');
+  const alumni = people.filter((p) => p.userGroup === 'alumni');
+
   console.log(`\nGroup Distribution:`);
   console.log(`• Current members: ${currentMembers.length}`);
   console.log(`• Alumni: ${alumni.length}`);
@@ -64,28 +82,36 @@ async function auditPeopleProfiles() {
 
   if (issues.missingEmails > 0) {
     console.log(`\n❌ Current members missing emails:`);
-    people.filter(p => p.userGroup === 'current' && !p.email)
-          .forEach(p => console.log(`   • ${p.name}`));
+    people
+      .filter((p) => p.userGroup === 'current' && !p.email)
+      .forEach((p) => console.log(`   • ${p.name}`));
   }
 
   if (issues.missingAvatars > 0) {
     console.log(`\n❌ People missing avatars (first 10):`);
-    people.filter(p => !p.avatar?.asset?._ref)
-          .slice(0, 10)
-          .forEach(p => console.log(`   • ${p.name} (${p.userGroup})`));
+    people
+      .filter((p) => !p.avatar?.asset?._ref)
+      .slice(0, 10)
+      .forEach((p) => console.log(`   • ${p.name} (${p.userGroup})`));
   }
 
   // Calculate completeness score
   const totalCurrentMembers = currentMembers.length;
-  const completeProfiles = currentMembers.filter(p => 
-    p.email && p.title && p.bio && p.researchInterests?.length > 0 && p.avatar?.asset?._ref
+  const completeProfiles = currentMembers.filter(
+    (p) =>
+      p.email &&
+      p.title &&
+      p.bio &&
+      (p.researchInterests?.length ?? 0) > 0 &&
+      p.avatar?.asset?._ref,
   ).length;
-  
-  const completenessScore = totalCurrentMembers > 0 
-    ? Math.round((completeProfiles / totalCurrentMembers) * 100)
-    : 0;
 
-  console.log(`\n📈 Profile Completeness Score: ${completenessScore}% (${completeProfiles}/${totalCurrentMembers} current members have complete profiles)`);
+  const completenessScore =
+    totalCurrentMembers > 0 ? Math.round((completeProfiles / totalCurrentMembers) * 100) : 0;
+
+  console.log(
+    `\n📈 Profile Completeness Score: ${completenessScore}% (${completeProfiles}/${totalCurrentMembers} current members have complete profiles)`,
+  );
 
   return {
     totalPeople: people.length,

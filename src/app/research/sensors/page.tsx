@@ -1,9 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
+import { fetchPublications, type Publication } from '@/lib/cms/client';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
-export default function SensorsResearch() {
+export default async function SensorsResearch() {
+  const publications = (await fetchPublications())
+    .filter(
+      (p: Publication) => Array.isArray(p.researchAreas) && p.researchAreas.includes('Sensors'),
+    )
+    .sort((a, b) => {
+      const aTime = a.publishedDate ? new Date(a.publishedDate).getTime() : 0;
+      const bTime = b.publishedDate ? new Date(b.publishedDate).getTime() : 0;
+      return bTime - aTime;
+    })
+    .slice(0, 3);
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -21,8 +33,8 @@ export default function SensorsResearch() {
             Sensors, Measurements, and Software
           </h1>
           <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
-            Developing novel approaches that illuminate ecohydrological patterns and 
-            processes through advanced remote sensing and monitoring technologies
+            Developing novel approaches that illuminate ecohydrological patterns and processes
+            through advanced remote sensing and monitoring technologies
           </p>
         </div>
       </section>
@@ -35,10 +47,10 @@ export default function SensorsResearch() {
               Environmental Sensing Research
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our sensors research focuses on creating innovative measurement techniques, 
-              developing open-source software tools, and advancing environmental monitoring 
-              capabilities. We design and deploy sensor networks, develop remote sensing 
-              applications, and create analytical tools that enable new scientific discoveries.
+              Our sensors research focuses on creating innovative measurement techniques, developing
+              open-source software tools, and advancing environmental monitoring capabilities. We
+              design and deploy sensor networks, develop remote sensing applications, and create
+              analytical tools that enable new scientific discoveries.
             </p>
           </div>
 
@@ -49,14 +61,14 @@ export default function SensorsResearch() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Environmental monitoring in remote and resource-limited settings requires 
-                  innovative technological solutions. We develop cost-effective, robust 
-                  sensor systems that can operate reliably in challenging field conditions.
+                  Environmental monitoring in remote and resource-limited settings requires
+                  innovative technological solutions. We develop cost-effective, robust sensor
+                  systems that can operate reliably in challenging field conditions.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Our work bridges the gap between technological innovation and scientific 
-                  application, creating tools that enable new research questions and 
-                  improve our understanding of environmental processes.
+                  Our work bridges the gap between technological innovation and scientific
+                  application, creating tools that enable new research questions and improve our
+                  understanding of environmental processes.
                 </p>
               </CardContent>
             </Card>
@@ -67,14 +79,14 @@ export default function SensorsResearch() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  We combine hardware development, software engineering, and data science 
-                  to create integrated monitoring solutions. Our approach emphasizes 
-                  open-source development and community-driven innovation.
+                  We combine hardware development, software engineering, and data science to create
+                  integrated monitoring solutions. Our approach emphasizes open-source development
+                  and community-driven innovation.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  From satellite-based remote sensing to ground-based sensor networks, 
-                  we work across scales to develop comprehensive monitoring systems 
-                  for environmental research and management.
+                  From satellite-based remote sensing to ground-based sensor networks, we work
+                  across scales to develop comprehensive monitoring systems for environmental
+                  research and management.
                 </p>
               </CardContent>
             </Card>
@@ -102,13 +114,10 @@ export default function SensorsResearch() {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Remote Sensing
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Remote Sensing</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Satellite and airborne remote sensing of vegetation dynamics, water 
-                  cycles, and land cover change, including hyperspectral and thermal 
-                  infrared applications.
+                  Satellite and airborne remote sensing of vegetation dynamics, water cycles, and
+                  land cover change, including hyperspectral and thermal infrared applications.
                 </p>
               </CardContent>
             </Card>
@@ -120,13 +129,10 @@ export default function SensorsResearch() {
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Sensor Networks
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Sensor Networks</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Wireless sensor networks for environmental monitoring, including 
-                  soil moisture, weather stations, and plant physiological measurements 
-                  in remote locations.
+                  Wireless sensor networks for environmental monitoring, including soil moisture,
+                  weather stations, and plant physiological measurements in remote locations.
                 </p>
               </CardContent>
             </Card>
@@ -138,13 +144,10 @@ export default function SensorsResearch() {
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  IoT Systems
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">IoT Systems</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Internet of Things (IoT) applications for agricultural monitoring, 
-                  including crop sensing, irrigation management, and real-time data 
-                  transmission from field sites.
+                  Internet of Things (IoT) applications for agricultural monitoring, including crop
+                  sensing, irrigation management, and real-time data transmission from field sites.
                 </p>
               </CardContent>
             </Card>
@@ -156,13 +159,11 @@ export default function SensorsResearch() {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Open-Source Software
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Open-Source Software</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Development of open-source software tools for environmental data 
-                  analysis, including R packages, Python libraries, and web-based 
-                  applications for the research community.
+                  Development of open-source software tools for environmental data analysis,
+                  including R packages, Python libraries, and web-based applications for the
+                  research community.
                 </p>
               </CardContent>
             </Card>
@@ -174,13 +175,11 @@ export default function SensorsResearch() {
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Machine Learning
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Machine Learning</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Machine learning applications for environmental monitoring, including 
-                  image classification, time series analysis, and predictive modeling 
-                  for agricultural and ecological systems.
+                  Machine learning applications for environmental monitoring, including image
+                  classification, time series analysis, and predictive modeling for agricultural and
+                  ecological systems.
                 </p>
               </CardContent>
             </Card>
@@ -192,13 +191,11 @@ export default function SensorsResearch() {
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Data Integration
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Data Integration</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Methods for integrating multi-source environmental data, including 
-                  sensor fusion, data quality assessment, and creating comprehensive 
-                  datasets from diverse monitoring systems.
+                  Methods for integrating multi-source environmental data, including sensor fusion,
+                  data quality assessment, and creating comprehensive datasets from diverse
+                  monitoring systems.
                 </p>
               </CardContent>
             </Card>
@@ -223,13 +220,13 @@ export default function SensorsResearch() {
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">PulsePod</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Low-cost, wireless sensor platform for environmental monitoring 
-                  in remote locations. Features solar power, cellular connectivity, 
-                  and modular sensor interfaces for customized deployments.
+                  Low-cost, wireless sensor platform for environmental monitoring in remote
+                  locations. Features solar power, cellular connectivity, and modular sensor
+                  interfaces for customized deployments.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Used extensively in our field sites across Africa for monitoring 
-                  soil moisture, weather conditions, and plant physiological responses.
+                  Used extensively in our field sites across Africa for monitoring soil moisture,
+                  weather conditions, and plant physiological responses.
                 </p>
               </div>
               <Card className="border-0 shadow-lg">
@@ -264,12 +261,11 @@ export default function SensorsResearch() {
               <div className="md:order-1">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">COSMOS Probes</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Cosmic-ray soil moisture sensing technology for large-scale, 
-                  non-invasive monitoring of soil water content across multiple 
-                  hectares with a single sensor.
+                  Cosmic-ray soil moisture sensing technology for large-scale, non-invasive
+                  monitoring of soil water content across multiple hectares with a single sensor.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Deployed at the Mpala Research Centre in Kenya, providing continuous 
+                  Deployed at the Mpala Research Centre in Kenya, providing continuous
                   landscape-scale soil moisture measurements for ecohydrological research.
                 </p>
               </div>
@@ -291,58 +287,32 @@ export default function SensorsResearch() {
           </div>
 
           <div className="space-y-6 mb-12">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  On the use of unmanned aerial systems for environmental monitoring
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">
-                  Recent Research • <span className="text-wavesBlue">Remote Sensing Applications</span>
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Comprehensive review of unmanned aerial systems (UAS) applications for 
-                  environmental monitoring, including best practices and future directions.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Validation of SMAP surface soil moisture products with core validation sites
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">
-                  Recent Research • <span className="text-wavesBlue">Remote Sensing of Environment</span>
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Validation of NASA's Soil Moisture Active Passive (SMAP) satellite products 
-                  using ground-based measurements from multiple validation sites.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  A platform for crowdsourcing the creation of representative, accurate landcover maps
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">
-                  Recent Research • <span className="text-wavesBlue">Scientific Reports</span>
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Development of a crowdsourcing platform for creating high-quality land cover 
-                  maps using citizen science and machine learning approaches.
-                </p>
-              </CardContent>
-            </Card>
+            {publications.map((pub) => (
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow" key={pub._id}>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{pub.title}</h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {(pub.authors || []).map((a, i) => (
+                      <span key={i}>
+                        {a.person?.name || a.name}
+                        {i < (pub.authors?.length || 0) - 1 ? ', ' : ''}
+                      </span>
+                    ))}
+                    {pub.publishedDate && ` (${new Date(pub.publishedDate).getFullYear()})`} •{' '}
+                    <span className="text-wavesBlue">{pub.venue?.name || ''}</span>
+                  </p>
+                  {pub.abstract && (
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      {pub.abstract}
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center">
-            <Button
-              href="/publications?area=sensors"
-              variant="outline"
-              size="lg"
-            >
+            <Button href="/publications?area=sensors" variant="outline" size="lg">
               View All Sensors Publications
             </Button>
           </div>
@@ -352,12 +322,10 @@ export default function SensorsResearch() {
       {/* Call to Action */}
       <section className="py-16 lg:py-24 bg-wavesBlue">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Explore Our Research
-          </h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Explore Our Research</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Learn more about our other research themes and discover how sensors and 
-            measurements connect with ecohydrology and human systems research.
+            Learn more about our other research themes and discover how sensors and measurements
+            connect with ecohydrology and human systems research.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

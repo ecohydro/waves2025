@@ -15,6 +15,8 @@ interface BackgroundProcessOptions {
   maxRetries: number;
   skipExisting: boolean;
   batchSize: number;
+  dryRun?: boolean;
+  api?: SemanticScholarAPI;
 }
 
 interface ProcessState {
@@ -40,6 +42,9 @@ class SemanticScholarBackgroundProcessor {
   private api: SemanticScholarAPI;
   private isRunning = false;
   private shouldStop = false;
+  private saveInterval?: NodeJS.Timeout;
+  private delayTimeout?: NodeJS.Timeout;
+  private delayResolve: (() => void) | null = null;
 
   constructor(options: Partial<BackgroundProcessOptions> = {}) {
     this.options = {
@@ -48,11 +53,13 @@ class SemanticScholarBackgroundProcessor {
       progressFile: options.progressFile || 'semantic-scholar-progress.json',
       delayBetweenRequests: options.delayBetweenRequests || 6000, // 6 seconds for unauthenticated requests
       maxRetries: options.maxRetries || 3,
-      skipExisting: options.skipExisting || true,
+      skipExisting: options.skipExisting !== undefined ? options.skipExisting : true,
       batchSize: options.batchSize || 10,
+      dryRun: options.dryRun ?? false,
+      api: options.api,
     };
 
-    this.api = new SemanticScholarAPI();
+    this.api = this.options.api || new SemanticScholarAPI();
     this.state = this.loadState();
     this.setupSignalHandlers();
   }
@@ -61,19 +68,58 @@ class SemanticScholarBackgroundProcessor {
     process.on('SIGINT', () => {
       console.log('\n🛑 Received SIGINT (Ctrl+C). Gracefully shutting down...');
       this.shouldStop = true;
+      this.cancelSleep();
+      this.cleanupTimers();
     });
 
     process.on('SIGTERM', () => {
       console.log('\n🛑 Received SIGTERM. Gracefully shutting down...');
       this.shouldStop = true;
+      this.cancelSleep();
+      this.cleanupTimers();
     });
 
     // Save progress periodically
-    setInterval(() => {
+    this.saveInterval = setInterval(() => {
       if (this.isRunning) {
         this.saveState();
       }
     }, 30000); // Save every 30 seconds
+  }
+
+  private cleanupTimers(): void {
+    if (this.saveInterval) {
+      clearInterval(this.saveInterval);
+      this.saveInterval = undefined;
+    }
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise<void>((resolve) => {
+      // If already stopping, resolve immediately
+      if (this.shouldStop) {
+        resolve();
+        return;
+      }
+      this.delayResolve = resolve;
+      this.delayTimeout = setTimeout(() => {
+        this.delayResolve = null;
+        resolve();
+      }, ms);
+    });
+  }
+
+  private cancelSleep(): void {
+    if (this.delayTimeout) {
+      clearTimeout(this.delayTimeout);
+      this.delayTimeout = undefined;
+    }
+    if (this.delayResolve) {
+      // Resolve the pending sleep early
+      const resolve = this.delayResolve;
+      this.delayResolve = null;
+      resolve();
+    }
   }
 
   private loadState(): ProcessState {
@@ -176,12 +222,20 @@ class SemanticScholarBackgroundProcessor {
         // Update frontmatter
         const updatedFrontMatter = {
           ...frontMatter,
-          semanticScholar: enhancement.semanticScholar,
+          semanticScholar: {
+            ...(enhancement.semanticScholar as Record<string, unknown>),
+            status: frontMatter.semanticScholar ? 'updated' : 'new',
+          },
         };
 
-        // Write updated file
-        const updatedContent = matter.stringify(mdxContent, updatedFrontMatter);
-        fs.writeFileSync(filePath, updatedContent);
+        if (this.options.dryRun) {
+          console.log(`🧪 [dry-run] Would enhance ${relativePath} (no file changes written)`);
+        } else {
+          // Write updated file
+          const safe = this.pruneUndefined(updatedFrontMatter);
+          const updatedContent = matter.stringify(mdxContent, safe);
+          fs.writeFileSync(filePath, updatedContent);
+        }
 
         console.log(`✅ Enhanced ${relativePath}`);
         console.log(`   Citations: ${enhancement.semanticScholar.citationCount || 'N/A'}`);
@@ -250,6 +304,7 @@ class SemanticScholarBackgroundProcessor {
     console.log(`📁 Target: ${this.options.targetDir}`);
     console.log(`⏱️  Delay: ${this.options.delayBetweenRequests}ms between requests`);
     console.log(`🔄 Skip existing: ${this.options.skipExisting}`);
+    console.log(`🧪 Dry-run mode: ${this.options.dryRun ? 'ON' : 'OFF'}`);
     console.log('');
 
     this.isRunning = true;
@@ -294,7 +349,7 @@ class SemanticScholarBackgroundProcessor {
           console.log(
             `⏳ Waiting ${this.options.delayBetweenRequests / 1000}s before next request...`,
           );
-          await new Promise((resolve) => setTimeout(resolve, this.options.delayBetweenRequests));
+          await this.sleep(this.options.delayBetweenRequests);
         }
       }
 
@@ -319,6 +374,8 @@ class SemanticScholarBackgroundProcessor {
       this.saveState();
     } finally {
       this.isRunning = false;
+      this.cleanupTimers();
+      this.cancelSleep();
     }
   }
 
@@ -328,6 +385,25 @@ class SemanticScholarBackgroundProcessor {
 
   getStatus(): ProcessState {
     return { ...this.state };
+  }
+
+  // Helper to remove undefineds before YAML dump
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private pruneUndefined<T = any>(value: T): T {
+    if (Array.isArray(value)) {
+      return value
+        .map((v) => this.pruneUndefined(v))
+        .filter((v) => v !== undefined) as unknown as T;
+    }
+    if (value && typeof value === 'object') {
+      const result: Record<string, unknown> = {};
+      for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+        if (v === undefined) continue;
+        result[k] = this.pruneUndefined(v as unknown as T) as unknown;
+      }
+      return result as unknown as T;
+    }
+    return value;
   }
 }
 
@@ -360,6 +436,15 @@ if (require.main === module) {
     if (!isNaN(batchValue)) {
       options.batchSize = batchValue;
     }
+  }
+
+  if (process.argv.includes('--dry-run')) {
+    options.dryRun = true;
+  }
+
+  if (process.argv.includes('--no-auth')) {
+    // Respect no-auth for this process
+    process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY = 'true';
   }
 
   const processor = new SemanticScholarBackgroundProcessor(options);

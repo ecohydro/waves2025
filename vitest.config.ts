@@ -6,8 +6,8 @@ export default defineConfig({
     environment: 'node',
     globals: true,
     setupFiles: ['./tests/setup.ts'],
-    // Exclude integration tests by default to keep CI fast
-    exclude: ['**/integration/**'],
+    // Exclude integration tests and external directories
+    exclude: ['**/integration/**', '**/node_modules/**', '**/dist/**', '**/.next/**'],
     // Include integration tests only when explicitly requested
     include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },

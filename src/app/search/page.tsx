@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { client } from '@/lib/cms/client';
+import { fetchData } from '@/lib/cms/client';
 
 interface SearchResult {
   _id: string;
@@ -20,6 +20,7 @@ interface SearchResult {
   publishedAt?: string;
   userGroup?: string;
   category?: string;
+  shortDescription?: string;
 }
 
 export default function SearchPage() {
@@ -45,7 +46,15 @@ export default function SearchPage() {
 
     try {
       // Search across multiple content types
-      const searchResults = await client.fetch(`
+      interface SearchResponse {
+        people: SearchResult[];
+        publications: SearchResult[];
+        news: SearchResult[];
+        projects: SearchResult[];
+      }
+
+      const searchResults = await fetchData<SearchResponse>(
+        `
         {
           "people": *[_type == "person" && (
             name match $query + "*" ||
@@ -110,7 +119,9 @@ export default function SearchPage() {
             startDate
           }
         }
-      `, { query: searchQuery });
+      `,
+        { query: searchQuery },
+      );
 
       // Flatten results and add type information
       const allResults: SearchResult[] = [
@@ -130,20 +141,23 @@ export default function SearchPage() {
   }, []);
 
   // Handle search submission
-  const handleSearch = useCallback((searchQuery: string) => {
-    const trimmedQuery = searchQuery.trim();
-    setQuery(trimmedQuery);
-    
-    // Update URL
-    const params = new URLSearchParams();
-    if (trimmedQuery) {
-      params.set('q', trimmedQuery);
-    }
-    router.push(`/search?${params.toString()}`);
-    
-    // Perform search
-    performSearch(trimmedQuery);
-  }, [router, performSearch]);
+  const handleSearch = useCallback(
+    (searchQuery: string) => {
+      const trimmedQuery = searchQuery.trim();
+      setQuery(trimmedQuery);
+
+      // Update URL
+      const params = new URLSearchParams();
+      if (trimmedQuery) {
+        params.set('q', trimmedQuery);
+      }
+      router.push(`/search?${params.toString()}`);
+
+      // Perform search
+      performSearch(trimmedQuery);
+    },
+    [router, performSearch],
+  );
 
   // Search on initial load if query parameter exists
   useEffect(() => {
@@ -164,7 +178,8 @@ export default function SearchPage() {
         if (result._type === 'publication') {
           const venue = (result as any).venue?.name || '';
           const year = result.publishedDate ? new Date(result.publishedDate).getFullYear() : '';
-          const authors = (result as any).authors?.map((a: any) => a.name || a.person?.name).join(', ') || '';
+          const authors =
+            (result as any).authors?.map((a: any) => a.name || a.person?.name).join(', ') || '';
           return `${authors}. ${venue} (${year})`.replace(/\s+/g, ' ').trim();
         }
         return result.abstract || '';
@@ -182,7 +197,7 @@ export default function SearchPage() {
     switch (result._type) {
       case 'person':
         return `/people/${result.slug.current}`;
-      case 'publication':  
+      case 'publication':
         return `/publications/${result.slug.current}`;
       case 'news':
         return `/news/${result.slug.current}`;
@@ -201,10 +216,12 @@ export default function SearchPage() {
       news: { text: 'News', color: 'bg-yellow-100 text-yellow-800' },
       project: { text: 'Project', color: 'bg-purple-100 text-purple-800' },
     };
-    
+
     const badge = badges[result._type];
     return (
-      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${badge.color}`}>
+      <span
+        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${badge.color}`}
+      >
         {badge.text}
       </span>
     );
@@ -222,9 +239,9 @@ export default function SearchPage() {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-2xl mx-auto">
             <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Search</h1>
-            
+
             {/* Search Form */}
-            <form 
+            <form
               onSubmit={(e) => {
                 e.preventDefault();
                 handleSearch(query);
@@ -240,11 +257,7 @@ export default function SearchPage() {
                   className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   disabled={loading}
                 />
-                <Button 
-                  type="submit" 
-                  disabled={loading || !query.trim()}
-                  className="px-6"
-                >
+                <Button type="submit" disabled={loading || !query.trim()} className="px-6">
                   {loading ? (
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -260,10 +273,9 @@ export default function SearchPage() {
             {/* Search Stats */}
             {hasSearched && !loading && (
               <p className="text-sm text-gray-600 mb-6">
-                {results.length === 0 
+                {results.length === 0
                   ? `No results found for "${query}"`
-                  : `Found ${results.length} result${results.length === 1 ? '' : 's'} for "${query}"`
-                }
+                  : `Found ${results.length} result${results.length === 1 ? '' : 's'} for "${query}"`}
               </p>
             )}
           </div>
@@ -279,7 +291,11 @@ export default function SearchPage() {
                 <div className="flex">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <div className="ml-3">
@@ -292,8 +308,18 @@ export default function SearchPage() {
 
           {!hasSearched && !loading && (
             <div className="max-w-2xl mx-auto text-center py-12">
-              <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg
+                className="mx-auto h-12 w-12 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
               <h3 className="mt-2 text-sm font-medium text-gray-900">Search our content</h3>
               <p className="mt-1 text-sm text-gray-500">
@@ -327,8 +353,8 @@ export default function SearchPage() {
                             </span>
                           )}
                         </div>
-                        
-                        <Link 
+
+                        <Link
                           href={getResultUrl(result)}
                           className="block hover:text-blue-600 transition-colors"
                         >
@@ -336,7 +362,7 @@ export default function SearchPage() {
                             {getResultTitle(result)}
                           </h3>
                         </Link>
-                        
+
                         {getResultDisplayText(result) && (
                           <p className="text-gray-600 line-clamp-3">
                             {getResultDisplayText(result)}
@@ -352,8 +378,18 @@ export default function SearchPage() {
 
           {hasSearched && results.length === 0 && !loading && !error && (
             <div className="max-w-2xl mx-auto text-center py-12">
-              <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8c0 2.152-.852 4.103-2.235 5.535L21 21l-1.414-1.414-2.351-2.351z" />
+              <svg
+                className="mx-auto h-12 w-12 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8c0 2.152-.852 4.103-2.235 5.535L21 21l-1.414-1.414-2.351-2.351z"
+                />
               </svg>
               <h3 className="mt-2 text-sm font-medium text-gray-900">No results found</h3>
               <p className="mt-1 text-sm text-gray-500">

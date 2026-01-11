@@ -20,7 +20,8 @@ export default function StudioPage() {
       try {
         const { NextStudio } = await import('next-sanity/studio');
         const config = await import('../../../../sanity.config');
-        setStudio(() => () => <NextStudio config={config.default} />);
+        // Explicitly set basePath so Sanity does not treat "studio" as a tool segment
+        setStudio(() => () => <NextStudio config={config.default} basePath="/studio" />);
       } catch (err) {
         console.error('Failed to load Sanity Studio:', err);
         setError(

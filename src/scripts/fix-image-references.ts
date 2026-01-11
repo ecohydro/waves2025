@@ -18,7 +18,7 @@ const client = createClient({
   dataset: 'production',
   apiVersion: '2023-12-19',
   useCdn: false,
-  token: process.env.SANITY_API_TOKEN, // We'll need write permissions
+  token: process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN, // We'll need write permissions
 });
 
 const readOnlyClient = createClient({
@@ -60,7 +60,7 @@ async function validateAssetReference(assetRef: string): Promise<boolean> {
     // Query Sanity to check if asset exists
     const asset = await readOnlyClient.fetch(
       `*[_type == "sanity.imageAsset" && _id == $assetId][0]`,
-      { assetId: assetRef.replace('image-', 'image-') }
+      { assetId: assetRef.replace('image-', 'image-') },
     );
 
     return !!asset;
@@ -111,16 +111,17 @@ function findMatchingImage(personName: string, publicDir: string): string | null
   const peopleDir = path.join(publicDir, 'images/people');
   if (fs.existsSync(peopleDir)) {
     const files = fs.readdirSync(peopleDir);
-    
+
     for (const variation of nameVariations) {
       if (!variation) continue;
-      
+
       // Look for any matching file (including optimized versions)
-      const matchingFile = files.find(file => 
-        file.toLowerCase().includes(variation.toLowerCase()) &&
-        /\.(jpg|jpeg|png|webp|avif)$/i.test(file)
+      const matchingFile = files.find(
+        (file) =>
+          file.toLowerCase().includes(variation.toLowerCase()) &&
+          /\.(jpg|jpeg|png|webp|avif)$/i.test(file),
       );
-      
+
       if (matchingFile) {
         return `images/people/${matchingFile}`;
       }
@@ -136,23 +137,25 @@ function findMatchingImage(personName: string, publicDir: string): string | null
 async function uploadImageToSanity(imagePath: string, publicDir: string): Promise<string | null> {
   try {
     const fullPath = path.join(publicDir, imagePath);
-    
+
     if (!fs.existsSync(fullPath)) {
       console.warn(`Image not found: ${fullPath}`);
       return null;
     }
 
     // Check if we have write permissions
-    if (!process.env.SANITY_API_TOKEN) {
-      console.warn('No SANITY_API_TOKEN found. Skipping upload, returning public path instead.');
+    if (!(process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN)) {
+      console.warn(
+        'No SANITY_API_EDITOR_TOKEN found. Skipping upload, returning public path instead.',
+      );
       return imagePath; // Return public path as fallback
     }
 
     const imageBuffer = fs.readFileSync(fullPath);
     const filename = path.basename(imagePath);
-    
+
     console.log(`📤 Uploading ${filename} to Sanity...`);
-    
+
     const asset = await client.assets.upload('image', imageBuffer, {
       filename: filename,
     });
@@ -170,7 +173,7 @@ async function uploadImageToSanity(imagePath: string, publicDir: string): Promis
  */
 async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['people']> {
   console.log('👥 Fixing people avatar references...');
-  
+
   const people = await readOnlyClient.fetch(`
     *[_type == "person"] {
       _id,
@@ -184,7 +187,7 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
     total: people.length,
     fixed: 0,
     errors: 0,
-    details: []
+    details: [],
   };
 
   const publicDir = path.join(process.cwd(), 'public');
@@ -205,7 +208,7 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
           report.details.push({
             name: person.name,
             status: 'skipped',
-            message: 'No matching image found'
+            message: 'No matching image found',
           });
           continue;
         }
@@ -214,7 +217,7 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
       else {
         const currentRef = person.avatar.asset._ref;
         const isValid = await validateAssetReference(currentRef);
-        
+
         if (!isValid) {
           console.log(`❌ Broken reference for ${person.name}: ${currentRef}`);
           const matchingImage = findMatchingImage(person.name, publicDir);
@@ -225,7 +228,7 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
             report.details.push({
               name: person.name,
               status: 'error',
-              message: 'Broken reference and no replacement found'
+              message: 'Broken reference and no replacement found',
             });
             report.errors++;
             continue;
@@ -234,7 +237,7 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
           report.details.push({
             name: person.name,
             status: 'skipped',
-            message: 'Avatar reference is valid'
+            message: 'Avatar reference is valid',
           });
           continue;
         }
@@ -252,9 +255,9 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
                   _type: 'image',
                   asset: {
                     _type: 'reference',
-                    _ref: newAvatarRef
-                  }
-                }
+                    _ref: newAvatarRef,
+                  },
+                },
               })
               .commit();
           } else {
@@ -267,19 +270,18 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
         report.details.push({
           name: person.name,
           status: 'fixed',
-          message: `Updated avatar reference${dryRun ? ' (dry run)' : ''}`
+          message: `Updated avatar reference${dryRun ? ' (dry run)' : ''}`,
         });
-        
+
         console.log(`✅ ${dryRun ? '[DRY RUN] ' : ''}Fixed avatar for ${person.name}`);
       }
-
     } catch (error) {
       console.error(`❌ Error processing ${person.name}:`, error);
       report.errors++;
       report.details.push({
         name: person.name,
         status: 'error',
-        message: `Processing error: ${error}`
+        message: `Processing error: ${error}`,
       });
     }
   }
@@ -292,7 +294,7 @@ async function fixPeopleAvatars(dryRun: boolean = true): Promise<FixReport['peop
  */
 async function fixNewsImages(dryRun: boolean = true): Promise<FixReport['news']> {
   console.log('📰 Fixing news featured images...');
-  
+
   const news = await readOnlyClient.fetch(`
     *[_type == "news"] {
       _id,
@@ -307,7 +309,7 @@ async function fixNewsImages(dryRun: boolean = true): Promise<FixReport['news']>
     total: news.length,
     fixed: 0,
     errors: 0,
-    details: []
+    details: [],
   };
 
   const publicDir = path.join(process.cwd(), 'public');
@@ -319,14 +321,14 @@ async function fixNewsImages(dryRun: boolean = true): Promise<FixReport['news']>
       report.details.push({
         title: article.title,
         status: 'skipped',
-        message: 'News image fixing not yet implemented'
+        message: 'News image fixing not yet implemented',
       });
     } catch (error) {
       report.errors++;
       report.details.push({
         title: article.title,
         status: 'error',
-        message: `Processing error: ${error}`
+        message: `Processing error: ${error}`,
       });
     }
   }
@@ -337,11 +339,13 @@ async function fixNewsImages(dryRun: boolean = true): Promise<FixReport['news']>
 /**
  * Main fixing function
  */
-async function fixImageReferences(options: {
-  dryRun?: boolean;
-  fixPeople?: boolean;
-  fixNews?: boolean;
-} = {}): Promise<FixReport> {
+async function fixImageReferences(
+  options: {
+    dryRun?: boolean;
+    fixPeople?: boolean;
+    fixNews?: boolean;
+  } = {},
+): Promise<FixReport> {
   const { dryRun = true, fixPeople = true, fixNews = false } = options;
 
   console.log('🔧 Starting image reference fixes...');
@@ -351,7 +355,7 @@ async function fixImageReferences(options: {
   const report: FixReport = {
     people: { total: 0, fixed: 0, errors: 0, details: [] },
     news: { total: 0, fixed: 0, errors: 0, details: [] },
-    assets: { validated: 0, uploaded: 0, failed: 0 }
+    assets: { validated: 0, uploaded: 0, failed: 0 },
   };
 
   try {
@@ -369,18 +373,20 @@ async function fixImageReferences(options: {
     console.log('\n' + '='.repeat(60));
     console.log('🔧 IMAGE FIX SUMMARY');
     console.log('='.repeat(60));
-    
+
     if (fixPeople) {
       console.log(`\n👥 PEOPLE (${report.people.total} total):`);
       console.log(`   • Fixed: ${report.people.fixed}`);
       console.log(`   • Errors: ${report.people.errors}`);
-      console.log(`   • Skipped: ${report.people.total - report.people.fixed - report.people.errors}`);
+      console.log(
+        `   • Skipped: ${report.people.total - report.people.fixed - report.people.errors}`,
+      );
     }
 
     if (fixNews) {
       console.log(`\n📰 NEWS (${report.news.total} total):`);
       console.log(`   • Fixed: ${report.news.fixed}`);
-      console.log(`   • Errors: ${report.news.errors}`); 
+      console.log(`   • Errors: ${report.news.errors}`);
       console.log(`   • Skipped: ${report.news.total - report.news.fixed - report.news.errors}`);
     }
 
@@ -396,7 +402,6 @@ async function fixImageReferences(options: {
     }
 
     return report;
-
   } catch (error) {
     console.error('❌ Image fixing failed:', error);
     throw error;
@@ -416,7 +421,7 @@ async function main() {
     await fixImageReferences({
       dryRun,
       fixPeople,
-      fixNews
+      fixNews,
     });
   } catch (error) {
     console.error('Script failed:', error);

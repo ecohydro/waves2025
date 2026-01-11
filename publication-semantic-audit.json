@@ -1,0 +1,1216 @@
+{
+  "totalFiles": 134,
+  "issuesFound": 134,
+  "missingSemanticScholarBlock": 134,
+  "missingAbstracts": 0,
+  "placeholderAbstracts": 134,
+  "missingKeywords": 0,
+  "report": [
+    {
+      "file": "abinash-bhattachan20122719.mdx",
+      "title": "Evaluating ecohydrological theories of woody root distribution in the Kalahari",
+      "doi": "10.1371/journal.pone.0033996",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "adam-wolf20154420.mdx",
+      "title": "Pervasive drought legacies in forest ecosystems and their implications for carbon cycle models",
+      "doi": "10.1126/science.aab1833",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20171987.mdx",
+      "title": "Thirty years of land use/cover change in the Caribbean&#58 Assessing the relationship between urbanization and mangrove loss in Roatán, Honduras",
+      "doi": "10.1016/j.apgeog.2017.08.018",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20172001.mdx",
+      "title": "Real-Time Evolution of Zika Virus Disease Outbreak, Roatán, Honduras",
+      "doi": "10.3201/eid2308.161944",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20179991.mdx",
+      "title": "Adaptive Governance and Market Heterogeneity: An Institutional Analysis of an Urban Food System in Sub-Saharan Africa",
+      "doi": "10.3390/su9122191",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20181111.mdx",
+      "title": "Zika Virus: Knowledge Assessment of Residents and Health-Care Providers in Roat´an, Honduras, following an Outbreak",
+      "doi": "10.4269/ajtmh.18-0014",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20195151.mdx",
+      "title": "Variability in urban population distributions across Africas",
+      "doi": "10.1088/1748-9326/ab2432",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20205275.mdx",
+      "title": "Comparing measures of urban food security in Accra, Ghana",
+      "doi": "10.1007/s12571-020-01011-4",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20211016.mdx",
+      "title": "Mapping global inputs and impacts from of human sewage in coastal ecosystems",
+      "doi": "10.1371/journal.pone.0258898",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cascade-tuholske20211248.mdx",
+      "title": "Global urban population exposure to extreme heat",
+      "doi": "10.1073/pnas.2024792118",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cynthia-gerlein-safdi20175203.mdx",
+      "title": "The influence of memory, sample size effects, and filter paper material on online laser-based plant and soil water isotope measurements",
+      "doi": "10.1002/rcm.7824",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cynthia-gerlein-safdi20178613.mdx",
+      "title": "Leaf water 18O and 2H maps show directional enrichment discrepancy in Colocasia esculenta",
+      "doi": "10.1111/pce.13002",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "cynthia-gerlein-safdi20182412.mdx",
+      "title": "Dew deposition suppresses transpiration and carbon uptake in leaves",
+      "doi": "10.1016/j.agrformet.2018.05.015",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "drew-gower20164779.mdx",
+      "title": "Modeling ecohydrological dynamics of smallholder strategies for food production in dryland agricultural systems",
+      "doi": "10.1088/1748-9326/11/11/115005",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "drew-gower20176236.mdx",
+      "title": "Household-level heterogeneity of water resources within common-pool resource systems",
+      "doi": "10.5751/ES-09156-220148",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "drew-gower20176237.mdx",
+      "title": "Drivers of farmer satisfaction with small-scale irrigation systems",
+      "doi": "10.1016/j.apgeog.2017.10.004",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "drew-gower20186238.mdx",
+      "title": "Accelerating forest loss in Southeast Asian Massif in the 21st century: A case study in Nan Province, Thailand",
+      "doi": "10.1111/gcb.14366",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "drew-gower20196239.mdx",
+      "title": "The salience of climate change in farmer decision-making within smallholder semi-arid agroecosystems",
+      "doi": "10.1007/s10584-019-02498-3",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "drew-gower20206240.mdx",
+      "title": "Environmental heterogeneity and commodity sharing in smallholder agroecosystems",
+      "doi": "10.1371/journal.pone.0228021",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "elliot-chang20164648.mdx",
+      "title": "Improved removal of volatile organic compounds for laser-based spectroscopy of water isotopes",
+      "doi": "10.1002/rcm.7497",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "frances-odonnell20122708.mdx",
+      "title": "A model-based evaluation of woody plant encroachment effects on coupled carbon and water cycles",
+      "doi": "10.1029/2011JG001899",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "frances-odonnell20154494.mdx",
+      "title": "A quantitative description of the interspecies diversity of belowground structure in savanna woody plants",
+      "doi": "10.1890/ES14-00310.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kaiyu-guan20122756.mdx",
+      "title": "Multi-sensor derivation of regional vegetation fractional cover in Africa",
+      "doi": "10.1016/j.rse.2012.06.005",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kaiyu-guan20132821.mdx",
+      "title": "Seasonal coupling of canopy structure and function in African tropical forests and its environmental controls",
+      "doi": "10.1890/ES12-00232.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kaiyu-guan20134078.mdx",
+      "title": "Deriving Vegetation Phenological Time and Trajectory Information Over Africa Using SEVIRI Daily LAI",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kaiyu-guan20144235.mdx",
+      "title": "Continental-scale impacts of intra-seasonal rainfall variability on simulated ecosystem responses in Africa",
+      "doi": "10.5194/bg-11-6939-2014",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kaiyu-guan20154287.mdx",
+      "title": "Photosynthetic seasonality of global tropical forests constrained by hydroclimate",
+      "doi": "10.1038/ngeo2382",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kaiyu-guan20187362.mdx",
+      "title": "Simulated sensitivity of African terrestrial ecosystem photosynthesis to rainfall frequency, intensity, and rainy season length",
+      "doi": "10.1088/1748-9326/aa9f30",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "keir-soderberg20122153.mdx",
+      "title": "Stable isotopes of water vapor in the vadose zone: A review of measurement and modeling techniques",
+      "doi": "10.2136/vzj2011.0165",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "keir-soderberg20132828.mdx",
+      "title": "Using atmospheric trajectories to model the isotopic composition of rainfall in central Kenya",
+      "doi": "10.1890/ES12-00160.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "keita-decarlo20193646.mdx",
+      "title": "Biophysical effects on soil crack morphology in a faunally active dryland vertisol",
+      "doi": "10.1016/j.geoderma.2018.07.042",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "keita-decarlo20232225.mdx",
+      "title": "Integrating fine root diameter and watershed mapping to characterize rhizosphere hydrology",
+      "doi": "10.1016/j.rhisph.2023.100738",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20021378.mdx",
+      "title": "Determining land surface fractional cover from NDVI and rainfall time series for a savanna ecosystem",
+      "doi": "10.1016/s0034-4257(02)00054-8",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20021384.mdx",
+      "title": "The Southern African Regional Science Initiative (SAFARI 2000): Wet season campaigns",
+      "doi": "-",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20021392.mdx",
+      "title": "Trends in savanna structure and composition on an aridity gradient in the Kalahari",
+      "doi": "10.1658/1100-9233(2002)013[0419:TISSAC]2.0.CO;2",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20031403.mdx",
+      "title": "Release of gaseous and particulate carbonaceous compounds from biomass burning during the SAFARI 2000 dry season field campagin",
+      "doi": "10.1029/2002jd002482",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20031409.mdx",
+      "title": "Soil moisture and plant stress dynamics along the Kalahari precipitation gradient",
+      "doi": "10.1029/2002jd002448",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20031413.mdx",
+      "title": "Regional fuel load for two climatically contrasting years in southern Africa",
+      "doi": "10.1029/2002jd002341",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20031420.mdx",
+      "title": "Tree spacing along the Kalahari Transect in southern Africa",
+      "doi": "10.1006/jare.2002.1090",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20041398.mdx",
+      "title": "Relationship between small-scale structural variability and simulated productivity across a regional moi sture gradient in southern Africa",
+      "doi": "10.1111/j.1365-2486.2003.00704.x",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20041426.mdx",
+      "title": "Vegetation structure characteristics and relationships of Kalahari woodlands and savannas",
+      "doi": "10.1111/j.1365-2486.2004.00740.x",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20041435.mdx",
+      "title": "A simulation analysis of the detectability of understory burns in miombo woodlands",
+      "doi": "10.1016/j.rse.2004.01.009",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20041444.mdx",
+      "title": "Feasible optimality of vegetation patterns in river basins",
+      "doi": "10.1029/2004GL020260",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20041479.mdx",
+      "title": "Simulated productivity of heterogeneous landscape patches in southern African savanna landscapes using a canopy productivity model",
+      "doi": "10.1023/B:LAND.0000030450.11302.c2",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20051451.mdx",
+      "title": "On the coupled geomorphological and ecohydrological organization of river basins",
+      "doi": "10.1016/j.advwatres.2004.08.013",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20051459.mdx",
+      "title": "Tree canopy effects on simulated water stress in southern African savannas",
+      "doi": "10.1007/s10021-004-0027-9",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20051467.mdx",
+      "title": "Dynamic response of grass cover to rainfall variability: Implications for the function and persistence of savanna ecosystems",
+      "doi": "10.1016/j.advwatres.2004.10.014",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20051473.mdx",
+      "title": "Determinants of woody cover in African savannnas: A continental scale analysis",
+      "doi": "10.1038/nature04070",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20061491.mdx",
+      "title": "On the ecohydrological organization of spatially heterogeneous semi-arid landscapes",
+      "doi": "10.1029/2005WR004683",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20071499.mdx",
+      "title": "When is breeding for drought tolerance optimal if drought is random?",
+      "doi": "10.1111/j.1469-8137.2007.02067.x",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20071507.mdx",
+      "title": "Spatial variation in vegetation structure coupled to plant available water at landscape scales in a Brazilian savanna",
+      "doi": "10.1007/s00442-007-0747-6",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20071517.mdx",
+      "title": "Positive feedbacks promote power-law clustering of Kalahari vegetation",
+      "doi": "10.1038/nature06060",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20071528.mdx",
+      "title": "A temporally explicit Production Efficiency Model for fuel load allocation in southern Africa",
+      "doi": "10.1007/s10021-007-9082-3",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20071536.mdx",
+      "title": "On soil moisture-vegetation feedbacks and their possible effects on the dynamics of dryland plant ecosystems",
+      "doi": "10.1029/2006JG000379",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20081544.mdx",
+      "title": "Spatial patterns of soil nutrients in two contrasting southern African savannas",
+      "doi": "10.1029/2007JG000584",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20091353.mdx",
+      "title": "Decoupling structural and environmental determinants of sap velocity: Part II, Observational application",
+      "doi": "10.1016/j.agrformet.2008.10.006",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20091369.mdx",
+      "title": "Decoupling structural and environmental determinants of sap velocity: Part I, Methodological development",
+      "doi": "10.17660/ActaHortic.2009.846.5",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20091572.mdx",
+      "title": "Ecohydrological optimization of pattern and processes in water-limited ecosystems: A tradeoff-based hypothesis",
+      "doi": "10.1029/2008WR007230",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20101600.mdx",
+      "title": "On the importance of accurate depiction of infiltration processes on modelled soil moisture and vegetation water stress",
+      "doi": "10.1002/eco.79",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20111655.mdx",
+      "title": "Metabolic principles of river basin organization",
+      "doi": "10.1073/pnas.1107561108",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20111667.mdx",
+      "title": "Understanding the role of ecohydrological feedbacks in ecosystem-state change in drylands",
+      "doi": "10.1002/eco.265",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20133673.mdx",
+      "title": "On the Vulnerability of Water Limited Ecosystems to Climate Change",
+      "doi": "10.3390/w5020819",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20133674.mdx",
+      "title": "Virtual water trade and development in Africa",
+      "doi": "10.5194/hess-17-3969-2013",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20133697.mdx",
+      "title": "Modelling Vegetation Patterns in Semiarid Environments",
+      "doi": "10.1016/j.proenv.2013.06.019",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20134068.mdx",
+      "title": "An analysis of structure: biomass structure relationships for characteristic species of the western Kalahari, Botswana",
+      "doi": "10.1111/aje.12086",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20154251.mdx",
+      "title": "Termite mounds can increase the robustness of dryland ecosystems to climatic change",
+      "doi": "10.1126/science.1261487",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20154364.mdx",
+      "title": "Carbon stable isotopes suggest that hippopotamus-vectored nutrients subsidize aquatic consumers in an East African river",
+      "doi": "10.1890/ES14-00514.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20172642.mdx",
+      "title": "Comparision of ET partitioning and crop coefficients between partial plastic mulched and non-mulched maize fields",
+      "doi": "10.1016/j.agwat.2016.11.016",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20174320.mdx",
+      "title": "Calibration of a parsimonious distributed ecohydrological daily model in a data-scarce basin by exclusively using the spatio-temporal variation of NDVI",
+      "doi": "10.5194/hess-21-6235-2017",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20175432.mdx",
+      "title": "Triple oxygen isotope composition of leaf waters in Mpala, central Kenya",
+      "doi": "10.1016/j.epsl.2017.02.015",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20176231.mdx",
+      "title": "Validation of SMAP surface soil moisture products with core validation sites",
+      "doi": "10.1016/j.rse.2017.01.021",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20177323.mdx",
+      "title": "An ecohydrological framework to explain shifts in vegetation organization across climatological gradients",
+      "doi": "10.1002/eco.1809",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20177502.mdx",
+      "title": "Dominant role of plant physiology in trend and variability of gross primary productivity in North America",
+      "doi": "10.1038/srep41366",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20179653.mdx",
+      "title": "Comparison of multi-level water use efficiency between plastic film, partially mulched, and non-mulched croplands at eastern Loess Plateau of China",
+      "doi": "10.1016/j.agwat.2016.06.006",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20182573.mdx",
+      "title": "Measurements and Observations in the XXI century (MOXXI): innovation and multi-disciplinarity to sense the hydrological cycle.",
+      "doi": "10.1080/02626667.2017.1420191",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20184284.mdx",
+      "title": "Comparing empirical and survey-based yield forecasts in a dryland agro-ecosystem",
+      "doi": "10.1016/j.agrformet.2018.06.024",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20185343.mdx",
+      "title": "On the Use of Unmanned Aerial Systems for Environmental Monitoring",
+      "doi": "10.3390/rs10040641",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20193527.mdx",
+      "title": "Cognitive Biases about Climate Variability in Smallholder Farming Systems in Zambia",
+      "doi": "10.1175/WCAS-D-18-0050.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20194685.mdx",
+      "title": "A high-frequency mobile phone data collection approach for research in social-environmental systems: Applications in climate variability and food security in sub-Saharan Africa",
+      "doi": "10.1016/j.envsoft.2019.05.011",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20196892.mdx",
+      "title": "A global database of water vapor isotopes measured with high temporal resolution infrared laser spectroscopy",
+      "doi": "10.1038/sdata.2018.302",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20202896.mdx",
+      "title": "Deforestation-induced warming over tropical mountain regions regulated by elevation",
+      "doi": "10.1038/s41561-020-00666-0",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20206379.mdx",
+      "title": "Dynamics of population growth in secondary cities across southern Africa.",
+      "doi": "10.1007/s10980-020-01086-6",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20206539.mdx",
+      "title": "Geographic Object-Based Image Analysis Framework for Mapping Vegetation Physiognomic Types at Fine Scales in Neotropical Savannas",
+      "doi": "10.3390/rs12111721",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20208565.mdx",
+      "title": "Accounting for training data error in machine learning applied to Earth observations",
+      "doi": "10.31223/osf.io/7zsyr",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20211664.mdx",
+      "title": "Drought onset and propagation into soil moisture and grassland vegetation responses during the 2012–2019 major drought in Southern California",
+      "doi": "10.5194/hess-25-3713-2021",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20213250.mdx",
+      "title": "Vegetation responses to climatic and geologic controls on water availability in Arizona",
+      "doi": "10.1088/1748-9326/abfe8c",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20216618.mdx",
+      "title": "Mapping research topics at multiple levels of detail",
+      "doi": "10.1016/j.patter.2021.100210",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20226128.mdx",
+      "title": "High resolution spatiotemporal patterns of flow at the landscape scale in montane non‐perennial streams",
+      "doi": "10.1002/rra.4076",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20234247.mdx",
+      "title": "Modeling seasonal vegetation phenology from hydroclimatic drivers for contrasting plant functional groups within drylands of the Southwestern USA",
+      "doi": "10.1088/2752-664X/acb9a0",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20236934.mdx",
+      "title": "Evapotranspiration regulates leaf temperature and respiration in dryland vegetation",
+      "doi": "10.1016/j.agrformet.2023.109560",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20238656.mdx",
+      "title": "Smallholder social networks: Advice seeking and adaptation in rural Kenya",
+      "doi": "10.1016/j.agsy.2022.103574",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "kelly-caylor20239423.mdx",
+      "title": "Fluxbots: A Method for Building, Deploying, Collecting and Analyzing Data From an Array of Inexpensive, Autonomous Soil Carbon Flux Chambers",
+      "doi": "10.1029/2023JG007451",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20091553.mdx",
+      "title": "On the calibration of continuous, high-precision δ18O and δ2H measurements using an off-axis integrated cavity output spectrometer",
+      "doi": "10.1002/rcm.3905",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20091563.mdx",
+      "title": "Spatial heterogeneity and sources of soil carbon in southern African savannas",
+      "doi": "10.1016/J.GEODERMA.2008.12.014",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20101581.mdx",
+      "title": "Combined effects of soil moisture and nitrogen availability on grass productivity in African savannas",
+      "doi": "10.1007/s11104-009- 0085-z",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20101591.mdx",
+      "title": "Nutrient limitation on above-ground grass production in four savanna types along the Kalahari Transect",
+      "doi": "10.1016/j.jaridenv.2009.08.012",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20101619.mdx",
+      "title": "Partitioning evapotranspiration across gradients of woody plant cover: Assessment of a stable isotope technique",
+      "doi": "10.1029/2010GL043228",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20121673.mdx",
+      "title": "Characterizing ecohydrological and biogeochemical connectivity across multiple scales: a new conceptual framework",
+      "doi": "10.1002/eco.187",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20121690.mdx",
+      "title": "Direct quantification of leaf transpiration isotopic composition",
+      "doi": "10.1016/j.agrformet.2011.10.018",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20122795.mdx",
+      "title": "Dryland ecohydrology and climate change: critical issues and technical advances",
+      "doi": "10.5194/hess-16-2585-2012",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20132864.mdx",
+      "title": "The effect of warming on grassland evapotranspiration partitioning using laser- based isotope monitoring techniques",
+      "doi": "10.1016/j.gca.2012.12.047",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20133672.mdx",
+      "title": "Ecosystem-scale spatial heterogeneity of stable isotopes of soil nitrogen in African savannas",
+      "doi": "10.1007/s10980-012-9776-6",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20144189.mdx",
+      "title": "Global synthesis of vegetation control on evapotranspiration partitioning",
+      "doi": "10.1002/2014GL061439",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lixin-wang20154470.mdx",
+      "title": "Dynamic interactions of ecohydrological and biogeochemical processes in water-limited systems",
+      "doi": "10.1890/ES15-00122.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lizzie-king20101629.mdx",
+      "title": "Herbivores and mutualistic ants interact to modify tree photosynthesis",
+      "doi": "10.1111/j.1469-8137.2010.03286.x",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lizzie-king20111662.mdx",
+      "title": "Ecohydrology in practice: Strengths, conveniences, and opportunities",
+      "doi": "10.1002/eco.248",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lizzie-king20122803.mdx",
+      "title": "Reframing hydrology education to solve coupled human and environmental problems",
+      "doi": "10.5194/hess-16-4023-2012",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20133415.mdx",
+      "title": "Projected climate impacts to South African maize and wheat production in 2055: A comparison of empirical and mechanistic modeling approaches",
+      "doi": "10.1111/gcb.12325",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20133826.mdx",
+      "title": "Using Changes in Agricultural Utility to Quantify Future Climate-Induced Risk to Conservation",
+      "doi": "10.1111/cobi.12205",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20154318.mdx",
+      "title": "High Carbon and Biodiversity Costs from Converting Africa&#8217;s Wet Savannas to Cropland",
+      "doi": "10.1038/nclimate2584",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20162467.mdx",
+      "title": "A platform for crowdsourcing the creation of representative, accurate landcover maps",
+      "doi": "10.1016/j.envsoft.2016.01.011",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20164736.mdx",
+      "title": "Reconciling agriculture, carbon and biodiversity in a savannah transformation frontier",
+      "doi": "10.1098/rstb.2015.0316",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20182325.mdx",
+      "title": "The spatial and temporal domains of modern ecology",
+      "doi": "10.1038/s41559-018-0524-4",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20185262.mdx",
+      "title": "A Large-Area, Spatially Continuous Assessment of Land Cover Map Error and Its Impact on Downstream Analyses",
+      "doi": "10.1111/gcb.13904",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20227895.mdx",
+      "title": "High Resolution, Annual Maps of Field Boundaries for Smallholder-Dominated Croplands at National Scales",
+      "doi": "10.3389/frai.2021.744863",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "lyndon-estes20231099.mdx",
+      "title": "Potential impacts of transportation infrastructure improvements to maize and cassava supply chains in Zambia",
+      "doi": "10.1088/2634-4505/ad04e4",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "marc-mayes20202671.mdx",
+      "title": "Climate sensitivity of water use by riparian woodlands at landscape scales",
+      "doi": "10.1002/hyp.13942",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "natahsa-krell20219534.mdx",
+      "title": "Consequences of dryland maize planting decisions under increased seasonal rainfall variability",
+      "doi": "10.1029/2020WR029362",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "natasha-krell20206241.mdx",
+      "title": "Smallholder farmers' use of mobile phone services in central Kenya",
+      "doi": "10.1080/17565529.2020.1748847",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "natasha-krell20214258.mdx",
+      "title": "Perceived links between climate change and weather forecast accuracy: new barriers to tools for agricultural decision-making",
+      "doi": "10.1007/s10584-021-03207-9",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "natasha-krell20216242.mdx",
+      "title": "Has the vision of a gender quota rule been realized for community-based water management committees in Kenya?",
+      "doi": "10.1016/j.worlddev.2020.105154",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "natasha-krell20223948.mdx",
+      "title": "Using real-time mobile phone data to characterize the relationships between small-scale farmers’ planting dates and socio-environmental factors",
+      "doi": "10.1016/j.crm.2022.100396",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "natasha-krell20232456.mdx",
+      "title": "How much control do smallholder maize farmers have over yield?",
+      "doi": "10.1016/j.fcr.2023.109014",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephanie-debats20164681.mdx",
+      "title": "A generalized computer vision approach to mapping crop fields in heterogeneous agricultural landscapes",
+      "doi": "10.1016/j.rse.2016.03.010",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephen-good20111645.mdx",
+      "title": "Climatological determinants of woody cover in Africa",
+      "doi": "10.1073/pnas.1013100108",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephen-good20122738.mdx",
+      "title": "Uncertainties in the assessment of the isotopic composition of surface fluxes: A direct comparison of techniques using laser-based water vapor isotope analyzers",
+      "doi": "10.1029/2011JD017168",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephen-good20133046.mdx",
+      "title": "Analytical expressions of variability in ecosystem structure and function obtained from three-dimensional stochastic vegetation modelling",
+      "doi": "10.1098/rspa.2013.0003",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephen-good20144073.mdx",
+      "title": "δ2H isotopic flux partitioning of evapotranspiration over a grass field following a water pulse and subsequent dry down",
+      "doi": "10.1002/2013WR014333",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephen-good20168632.mdx",
+      "title": "Global patterns of the contributions of storm frequency, intensity, and seasonality to interannual variability of precipitation",
+      "doi": "10.1175/JCLI-D-14-00653.1",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "stephen-good20221252.mdx",
+      "title": "Direct partitioning of eddy-covariance water and carbon dioxide fluxes into ground and plant components",
+      "doi": "10.1016/j.agrformet.2021.108790",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "trenton-franz20101611.mdx",
+      "title": "An ecohydrological approach to predicting regional species distribution patterns in dryland ecosystems",
+      "doi": "10.1016/j.advwatres.2009.12.003",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "trenton-franz20111638.mdx",
+      "title": "Quantifying transient soil moisture dynamics using multi-point direct-current resistivity in homogeneous sand",
+      "doi": "10.2136/vzj2010.0031",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "trenton-franz20121681.mdx",
+      "title": "An ecohydrological approach to predicting hillslope-scale vegetation patterns in dryland ecosystems",
+      "doi": "10.1029/2011WR010524",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    },
+    {
+      "file": "zack-guido20201267.mdx",
+      "title": "Farmer Forecasts: Impacts of Seasonal Rainfall Expectations on Agricultural Decision- Making in Sub-Saharan Africa",
+      "doi": "10.1016/j.crm.2020.100247",
+      "issues": [
+        "Missing semanticScholar block",
+        "Placeholder abstract (\"None\")"
+      ]
+    }
+  ],
+  "generatedAt": "2025-08-19T18:53:39.855Z"
+}

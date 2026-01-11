@@ -1,0 +1,131 @@
+{
+  "referencedCount": 619,
+  "peopleWithIds": 30,
+  "toRemove": [
+    {
+      "_id": "person-abinash-bhattachan",
+      "name": "Abinash Bhattachan",
+      "id": "94264990"
+    },
+    {
+      "_id": "person-adam-wolf",
+      "name": "Adam Wolf",
+      "id": "2079871485"
+    },
+    {
+      "_id": "person-alex-lester",
+      "name": "Alex Lester",
+      "id": "91878132"
+    },
+    {
+      "_id": "person-allison-ingram",
+      "name": "Allison Ingram",
+      "id": "119120102"
+    },
+    {
+      "_id": "person-boniface-mukoma",
+      "name": "Boniface Mukoma",
+      "id": "2316895455"
+    },
+    {
+      "_id": "person-caden-ohlwiler",
+      "name": "Caden Ohlwiler",
+      "id": "101152058"
+    },
+    {
+      "_id": "person-daozhi-gong",
+      "name": "Daozhi Gong",
+      "id": "2350206154"
+    },
+    {
+      "_id": "person-dee-luo",
+      "name": "Dee Luo",
+      "id": "6789306"
+    },
+    {
+      "_id": "person-diana-chavarro-rincon",
+      "name": "Diana Chavarro Rincon",
+      "id": "1429778284"
+    },
+    {
+      "_id": "person-elliot-chang",
+      "name": "Elliot Chang",
+      "id": "2267280585"
+    },
+    {
+      "_id": "person-eric-principato",
+      "name": "Eric Principato",
+      "id": "2258631850"
+    },
+    {
+      "_id": "person-feng-wang",
+      "name": "Feng Wang",
+      "id": "2108636145"
+    },
+    {
+      "_id": "person-garth-lindner",
+      "name": "Garth Lindner",
+      "id": "90194251"
+    },
+    {
+      "_id": "person-haley-lane",
+      "name": "Haley Lane",
+      "id": "83315202"
+    },
+    {
+      "_id": "person-hannah-safford",
+      "name": "Hannah Safford",
+      "id": "51257063"
+    },
+    {
+      "_id": "person-jackie-jones",
+      "name": "Jackie Jones",
+      "id": "143892021"
+    },
+    {
+      "_id": "person-james-odonnell",
+      "name": "James Odonnell",
+      "id": "2053069739"
+    },
+    {
+      "_id": "person-jeremy-chen",
+      "name": "Jeremy Chen",
+      "id": "153426127"
+    },
+    {
+      "_id": "person-john-gitonga",
+      "name": "John Gitonga",
+      "id": "67024262"
+    },
+    {
+      "_id": "person-johnathan-choi",
+      "name": "Johnathan Choi",
+      "id": "49331201"
+    },
+    {
+      "_id": "person-julia-signell",
+      "name": "Julia Signell",
+      "id": "1571867350"
+    },
+    {
+      "_id": "person-kaiyu-guan",
+      "name": "Kaiyu Guan",
+      "id": "2314813648"
+    },
+    {
+      "_id": "person-kathleen-ryan",
+      "name": "Kathleen Ryan",
+      "id": "2067900288"
+    },
+    {
+      "_id": "person-kathy-zhao",
+      "name": "Kathy Zhao",
+      "id": "2106757079"
+    },
+    {
+      "_id": "person-katie-smith",
+      "name": "Katie Smith",
+      "id": "2271304"
+    }
+  ]
+}

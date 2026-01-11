@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import PublicationBadges from '@/components/publications/Badges';
 import {
   fetchPublicationBySlug,
   fetchPublications,
@@ -69,6 +70,8 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
         return 'Journal Article';
       case 'conference-paper':
         return 'Conference Paper';
+      case 'abstract':
+        return 'Abstract';
       case 'book-chapter':
         return 'Book Chapter';
       case 'preprint':
@@ -203,6 +206,11 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
               </div>
             )}
 
+            {/* Badges */}
+            <div className="mb-8">
+              <PublicationBadges doi={publication.doi} />
+            </div>
+
             {/* Quick Actions */}
             <div className="flex flex-wrap gap-4 mb-8">
               {publication.doi && (
@@ -316,7 +324,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                   <CardContent className="p-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Citation</h2>
                     <div className="bg-gray-50 p-6 rounded-lg">
-                      <p className="text-sm text-gray-800 leading-relaxed">
+                      <p className="text-sm text-gray-800 leading-relaxed break-words break-all">
                         {formatAuthorsForCitation()}.
                         {publication.title && ` "${publication.title}".`}
                         {publication.venue?.name && ` ${publication.venue.name}`}

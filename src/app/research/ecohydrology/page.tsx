@@ -1,9 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
+import { Card as CardBase } from '@/components/ui/Card';
+import { fetchPublications, type Publication } from '@/lib/cms/client';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
-export default function EcohydrologyResearch() {
+export default async function EcohydrologyResearch() {
+  const publications = (await fetchPublications())
+    .filter(
+      (p: Publication) =>
+        Array.isArray(p.researchAreas) && p.researchAreas.includes('Ecohydrology'),
+    )
+    .sort((a, b) => {
+      const aTime = a.publishedDate ? new Date(a.publishedDate).getTime() : 0;
+      const bTime = b.publishedDate ? new Date(b.publishedDate).getTime() : 0;
+      return bTime - aTime;
+    })
+    .slice(0, 3);
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -21,8 +35,8 @@ export default function EcohydrologyResearch() {
             Ecohydrology
           </h1>
           <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
-            Understanding patterns and processes in dryland landscapes, from leaf-level 
-            processes to ecosystem-wide water cycles
+            Understanding patterns and processes in dryland landscapes, from leaf-level processes to
+            ecosystem-wide water cycles
           </p>
         </div>
       </section>
@@ -35,11 +49,10 @@ export default function EcohydrologyResearch() {
               Dryland Ecohydrology Research
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our ecohydrology research examines the complex interactions between water, 
-              vegetation, and climate in dryland ecosystems. We investigate how plants 
-              access, use, and respond to water across multiple scales, from individual 
-              leaves to entire landscapes, and how these processes are affected by 
-              environmental change.
+              Our ecohydrology research examines the complex interactions between water, vegetation,
+              and climate in dryland ecosystems. We investigate how plants access, use, and respond
+              to water across multiple scales, from individual leaves to entire landscapes, and how
+              these processes are affected by environmental change.
             </p>
           </div>
 
@@ -50,15 +63,14 @@ export default function EcohydrologyResearch() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Dryland ecosystems cover over 40% of Earth's land surface and support 
-                  more than 2 billion people. These systems are characterized by water 
-                  limitation and high climate variability, making them particularly 
-                  vulnerable to environmental change.
+                  Dryland ecosystems cover over 40% of Earth's land surface and support more than 2
+                  billion people. These systems are characterized by water limitation and high
+                  climate variability, making them particularly vulnerable to environmental change.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Our research helps understand how these critical ecosystems function 
-                  and respond to changing environmental conditions, informing conservation 
-                  and management strategies.
+                  Our research helps understand how these critical ecosystems function and respond
+                  to changing environmental conditions, informing conservation and management
+                  strategies.
                 </p>
               </CardContent>
             </Card>
@@ -69,15 +81,14 @@ export default function EcohydrologyResearch() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  We integrate field observations, remote sensing data, and mathematical 
-                  modeling to understand ecohydrological processes across scales. Our 
-                  work combines detailed physiological measurements with landscape-scale 
-                  analysis.
+                  We integrate field observations, remote sensing data, and mathematical modeling to
+                  understand ecohydrological processes across scales. Our work combines detailed
+                  physiological measurements with landscape-scale analysis.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Field sites span from the Kalahari Desert to East African savannas, 
-                  providing insights into how dryland ecosystems function across 
-                  different climatic and ecological contexts.
+                  Field sites span from the Kalahari Desert to East African savannas, providing
+                  insights into how dryland ecosystems function across different climatic and
+                  ecological contexts.
                 </p>
               </CardContent>
             </Card>
@@ -105,13 +116,10 @@ export default function EcohydrologyResearch() {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Water Stress Dynamics
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Water Stress Dynamics</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Plant physiological responses to water limitation, including stomatal 
-                  regulation, osmotic adjustment, and hydraulic failure mechanisms in 
-                  dryland species.
+                  Plant physiological responses to water limitation, including stomatal regulation,
+                  osmotic adjustment, and hydraulic failure mechanisms in dryland species.
                 </p>
               </CardContent>
             </Card>
@@ -123,13 +131,10 @@ export default function EcohydrologyResearch() {
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Vegetation Patterns
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Vegetation Patterns</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Spatial organization of vegetation in response to water availability, 
-                  including self-organized patterns, patch dynamics, and landscape-scale 
-                  heterogeneity.
+                  Spatial organization of vegetation in response to water availability, including
+                  self-organized patterns, patch dynamics, and landscape-scale heterogeneity.
                 </p>
               </CardContent>
             </Card>
@@ -141,13 +146,10 @@ export default function EcohydrologyResearch() {
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Tree-Grass Dynamics
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Tree-Grass Dynamics</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Competitive and facilitative interactions between woody and herbaceous 
-                  vegetation, including savanna stability, encroachment processes, and 
-                  coexistence mechanisms.
+                  Competitive and facilitative interactions between woody and herbaceous vegetation,
+                  including savanna stability, encroachment processes, and coexistence mechanisms.
                 </p>
               </CardContent>
             </Card>
@@ -159,13 +161,10 @@ export default function EcohydrologyResearch() {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Climate Variability
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Climate Variability</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Ecosystem responses to rainfall variability, drought events, and 
-                  long-term climate change, including thresholds, resilience, and 
-                  adaptation mechanisms.
+                  Ecosystem responses to rainfall variability, drought events, and long-term climate
+                  change, including thresholds, resilience, and adaptation mechanisms.
                 </p>
               </CardContent>
             </Card>
@@ -181,9 +180,8 @@ export default function EcohydrologyResearch() {
                   Soil-Plant Interactions
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Feedbacks between vegetation and soil properties, including nutrient 
-                  cycling, soil moisture dynamics, and rhizosphere processes in 
-                  water-limited environments.
+                  Feedbacks between vegetation and soil properties, including nutrient cycling, soil
+                  moisture dynamics, and rhizosphere processes in water-limited environments.
                 </p>
               </CardContent>
             </Card>
@@ -195,13 +193,10 @@ export default function EcohydrologyResearch() {
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  Ecosystem Services
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Ecosystem Services</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Quantification of ecosystem services provided by dryland systems, 
-                  including carbon sequestration, biodiversity support, and hydrological 
-                  regulation.
+                  Quantification of ecosystem services provided by dryland systems, including carbon
+                  sequestration, biodiversity support, and hydrological regulation.
                 </p>
               </CardContent>
             </Card>
@@ -222,64 +217,32 @@ export default function EcohydrologyResearch() {
           </div>
 
           <div className="space-y-6 mb-12">
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Tree canopy effects on simulated water stress in southern African savannas
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">
-                  Caylor, K.K., Shugart, H.H., Rodriguez-Iturbe, I. (2005) • 
-                  <span className="text-wavesBlue"> Ecosystems</span>
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Investigation of how tree canopies modify water stress patterns in savanna 
-                  ecosystems, revealing important feedbacks between vegetation structure and 
-                  hydrological processes.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Determinants of woody cover in African savannas: A continental scale analysis
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">
-                  Sankaran, M., Hanan, N., Scholes, B., et al. (2005) • 
-                  <span className="text-wavesBlue"> Nature</span>
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Continental-scale analysis identifying precipitation as the primary determinant 
-                  of maximum woody cover in African savannas, with fire and herbivory controlling 
-                  actual cover below this maximum.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  On the coupled ecohydrological and geomorphological organization of river basins
-                </h3>
-                <p className="text-sm text-gray-600 mb-3">
-                  Caylor, K.K., Manfreda, S., Rodriguez-Iturbe, I. (2005) • 
-                  <span className="text-wavesBlue"> Advances in Water Resources</span>
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Theoretical framework linking landscape geomorphology with vegetation patterns 
-                  and hydrological processes, demonstrating the co-evolution of physical and 
-                  biological landscape features.
-                </p>
-              </CardContent>
-            </Card>
+            {publications.map((pub) => (
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow" key={pub._id}>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{pub.title}</h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    {(pub.authors || []).map((a, i) => (
+                      <span key={i}>
+                        {a.person?.name || a.name}
+                        {i < (pub.authors?.length || 0) - 1 ? ', ' : ''}
+                      </span>
+                    ))}
+                    {pub.publishedDate && ` (${new Date(pub.publishedDate).getFullYear()})`} •{' '}
+                    <span className="text-wavesBlue">{pub.venue?.name || ''}</span>
+                  </p>
+                  {pub.abstract && (
+                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      {pub.abstract}
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center">
-            <Button
-              href="/publications?area=ecohydrology"
-              variant="outline"
-              size="lg"
-            >
+            <Button href="/publications?area=ecohydrology" variant="outline" size="lg">
               View All Ecohydrology Publications
             </Button>
           </div>
@@ -289,12 +252,10 @@ export default function EcohydrologyResearch() {
       {/* Call to Action */}
       <section className="py-16 lg:py-24 bg-wavesBlue">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Explore Our Research
-          </h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Explore Our Research</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Learn more about our other research themes and discover how ecohydrology 
-            connects with human systems and environmental sensing.
+            Learn more about our other research themes and discover how ecohydrology connects with
+            human systems and environmental sensing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

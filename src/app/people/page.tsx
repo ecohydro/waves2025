@@ -46,9 +46,29 @@ export default function PeoplePage() {
     );
   }
 
-  // Group people by userGroup
+  // Group people by userGroup and category
   const currentMembers = people.filter((person) => person.userGroup === 'current');
   const alumni = people.filter((person) => person.userGroup === 'alumni');
+
+  const categoryOrder: string[] = [
+    'postdoc',
+    'graduate-student',
+    'research-staff',
+    'research-intern',
+    'high-school-student',
+    'visitor',
+  ];
+
+  function sortByCategoryThenName(a: Person, b: Person) {
+    const ai = categoryOrder.indexOf(a.category || '');
+    const bi = categoryOrder.indexOf(b.category || '');
+    const aRank = ai === -1 ? Number.POSITIVE_INFINITY : ai;
+    const bRank = bi === -1 ? Number.POSITIVE_INFINITY : bi;
+    if (aRank !== bRank) return aRank - bRank;
+    return a.name.localeCompare(b.name);
+  }
+
+  const alumniSorted = [...alumni].sort(sortByCategoryThenName);
 
   const renderPersonCard = (person: Person) => (
     <Card
@@ -218,9 +238,7 @@ export default function PeoplePage() {
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Members</h2>
-              <p className="text-lg text-gray-600">
-                Our current research team includes faculty, postdocs, graduate students, and staff.
-              </p>
+              <p className="text-lg text-gray-600"></p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -230,21 +248,43 @@ export default function PeoplePage() {
         </section>
       )}
 
-      {/* Alumni */}
+      {/* Alumni (grouped by category) */}
       {alumni.length > 0 && (
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Lab Alumni</h2>
-              <p className="text-lg text-gray-600">
-                Former lab members who have gone on to make significant contributions in their
-                fields.
-              </p>
+              <p className="text-lg text-gray-600">.</p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {alumni.map(renderPersonCard)}
-            </div>
+            {/* Sections in desired order */}
+            {[
+              'postdoc',
+              'graduate-student',
+              'research-staff',
+              'research-intern',
+              'high-school-student',
+              'visitor',
+            ].map((cat) => {
+              const sectionPeople = alumniSorted.filter((p) => p.category === cat);
+              if (sectionPeople.length === 0) return null;
+              const headings: Record<string, string> = {
+                postdoc: 'Postdocs',
+                'graduate-student': 'Graduate Students',
+                'research-staff': 'Research Staff',
+                'research-intern': 'Undergraduates',
+                'high-school-student': 'High School Students',
+                visitor: 'Visitors',
+              };
+              return (
+                <div key={cat} className="mb-12">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">{headings[cat]}</h3>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {sectionPeople.map(renderPersonCard)}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       )}

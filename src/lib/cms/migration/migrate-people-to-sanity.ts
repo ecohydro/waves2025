@@ -9,10 +9,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 // Configuration - only create client when needed
 function getSanityClient() {
+  const editorToken =
+    process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN || undefined;
   return createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
-    token: process.env.SANITY_API_TOKEN!,
+    token: editorToken!,
     apiVersion: '2023-12-19',
     useCdn: false,
   });
@@ -383,7 +385,10 @@ export async function migratePeopleToSanity(
   console.log('');
 
   // Validate environment
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.SANITY_API_TOKEN) {
+  if (
+    !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ||
+    !(process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN)
+  ) {
     throw new Error('Missing required Sanity environment variables');
   }
 

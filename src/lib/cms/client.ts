@@ -7,7 +7,11 @@ const apiVersion = '2023-12-19';
 // Environment variables
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
-const token = process.env.SANITY_API_TOKEN;
+// Prefer viewer token for read operations; fallback to editor/legacy token on server
+const token =
+  process.env.SANITY_API_VIEWER_TOKEN ||
+  process.env.SANITY_API_EDITOR_TOKEN ||
+  process.env.SANITY_API_TOKEN;
 
 if (!projectId || !dataset) {
   throw new Error('Missing Sanity project configuration. Please check your environment variables.');
@@ -18,7 +22,7 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: process.env.NODE_ENV === 'production',
+  useCdn: false,
   token,
   perspective: 'published',
 });
@@ -53,6 +57,14 @@ export interface Person {
   name: string;
   slug: { current: string };
   title?: string;
+  category?:
+    | 'principal-investigator'
+    | 'graduate-student'
+    | 'postdoc'
+    | 'research-staff'
+    | 'research-intern'
+    | 'high-school-student'
+    | 'visitor';
   userGroup: 'current' | 'alumni' | 'collaborator' | 'visitor';
   avatar?: {
     asset: {
@@ -91,9 +103,12 @@ export interface Publication {
   _type: 'publication';
   title: string;
   slug: { current: string };
+  category?: string;
+  researchAreas?: string[];
   publicationType:
     | 'journal-article'
     | 'conference-paper'
+    | 'abstract'
     | 'book-chapter'
     | 'preprint'
     | 'thesis'
@@ -113,6 +128,7 @@ export interface Publication {
   venue?: {
     name: string;
     shortName?: string;
+    location?: string;
     volume?: string;
     issue?: string;
     pages?: string;
@@ -278,6 +294,7 @@ export const queries = {
     name,
     slug,
     title,
+    category,
     userGroup,
     avatar,
     email,
@@ -294,6 +311,7 @@ export const queries = {
     name,
     slug,
     title,
+    category,
     userGroup,
     avatar,
     email,
@@ -310,6 +328,7 @@ export const queries = {
     name,
     slug,
     title,
+    category,
     userGroup,
     avatar,
     email,
@@ -328,6 +347,7 @@ export const queries = {
     name,
     slug,
     title,
+    category,
     userGroup,
     avatar,
     email,
@@ -344,10 +364,12 @@ export const queries = {
   }`,
 
   // Publications queries
-  getAllPublications: `*[_type == "publication"] | order(publishedDate desc) {
+  getAllPublications: `*[_type == "publication" && defined(publicationType)] | order(publishedDate desc) {
     _id,
     title,
     slug,
+    category,
+    researchAreas,
     publicationType,
     authors[] {
       person-> {
@@ -374,6 +396,8 @@ export const queries = {
     _id,
     title,
     slug,
+    category,
+    researchAreas,
     publicationType,
     authors[] {
       person-> {
@@ -397,6 +421,8 @@ export const queries = {
     _id,
     title,
     slug,
+    category,
+    researchAreas,
     publicationType,
     authors[] {
       person-> {

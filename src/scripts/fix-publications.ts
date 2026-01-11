@@ -14,7 +14,7 @@ const client = createClient({
   dataset: 'production',
   apiVersion: '2023-12-19',
   useCdn: false,
-  token: process.env.SANITY_API_TOKEN,
+  token: process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN,
 });
 
 const readOnlyClient = createClient({
@@ -45,11 +45,14 @@ interface FixReport {
  * Clean up "None" values and replace with null
  */
 function cleanNoneValues(value: any): any {
-  if (typeof value === 'string' && (value === 'None' || value === 'none' || value === 'N/A' || value === 'n/a')) {
+  if (
+    typeof value === 'string' &&
+    (value === 'None' || value === 'none' || value === 'N/A' || value === 'n/a')
+  ) {
     return null;
   }
   if (Array.isArray(value)) {
-    return value.map(cleanNoneValues).filter(v => v !== null);
+    return value.map(cleanNoneValues).filter((v) => v !== null);
   }
   if (value && typeof value === 'object') {
     const cleaned: any = {};
@@ -69,10 +72,10 @@ function cleanNoneValues(value: any): any {
  */
 function fixAuthors(authors: any[]): any[] {
   if (!authors) return [];
-  
+
   return authors
-    .filter(author => author.name && author.name !== 'None' && author.name !== 'none')
-    .map(author => ({
+    .filter((author) => author.name && author.name !== 'None' && author.name !== 'none')
+    .map((author) => ({
       ...author,
       name: author.name?.trim(),
       affiliation: cleanNoneValues(author.affiliation),
@@ -87,8 +90,8 @@ async function fixPublications(dryRun: boolean = true): Promise<FixReport> {
   console.log('🔧 Starting publication metadata fixes...');
   console.log(`Mode: ${dryRun ? 'DRY RUN' : 'LIVE UPDATE'}\n`);
 
-  if (!dryRun && !process.env.SANITY_API_TOKEN) {
-    throw new Error('SANITY_API_TOKEN required for live updates');
+  if (!dryRun && !(process.env.SANITY_API_EDITOR_TOKEN || process.env.SANITY_API_TOKEN)) {
+    throw new Error('SANITY_API_EDITOR_TOKEN (or SANITY_API_TOKEN) required for live updates');
   }
 
   // Fetch all publications
@@ -163,11 +166,15 @@ async function fixPublications(dryRun: boolean = true): Promise<FixReport> {
       if (pub.authors && pub.authors.length > 0) {
         const originalCount = pub.authors.length;
         const fixedAuthors = fixAuthors(pub.authors);
-        
-        if (fixedAuthors.length !== originalCount || 
-            JSON.stringify(fixedAuthors) !== JSON.stringify(pub.authors)) {
+
+        if (
+          fixedAuthors.length !== originalCount ||
+          JSON.stringify(fixedAuthors) !== JSON.stringify(pub.authors)
+        ) {
           updates.authors = fixedAuthors;
-          fixes.push(`Fixed authors: cleaned ${originalCount - fixedAuthors.length} invalid entries`);
+          fixes.push(
+            `Fixed authors: cleaned ${originalCount - fixedAuthors.length} invalid entries`,
+          );
           report.fixed.authors++;
           needsUpdate = true;
         }
@@ -175,10 +182,7 @@ async function fixPublications(dryRun: boolean = true): Promise<FixReport> {
 
       // Apply updates
       if (needsUpdate && !dryRun) {
-        await client
-          .patch(pub._id)
-          .set(updates)
-          .commit();
+        await client.patch(pub._id).set(updates).commit();
       }
 
       if (fixes.length > 0) {
@@ -189,7 +193,6 @@ async function fixPublications(dryRun: boolean = true): Promise<FixReport> {
           errors: errors.length > 0 ? errors : undefined,
         });
       }
-
     } catch (error) {
       report.errors++;
       errors.push(`Update failed: ${error}`);
@@ -210,19 +213,19 @@ function printReport(report: FixReport, dryRun: boolean): void {
   console.log('\n' + '='.repeat(60));
   console.log('🔧 PUBLICATION CLEANUP REPORT');
   console.log('='.repeat(60));
-  
+
   console.log(`\n📚 Total Publications: ${report.totalPublications}`);
   console.log(`🎯 Mode: ${dryRun ? 'DRY RUN' : 'LIVE UPDATE'}`);
-  
+
   console.log('\n✅ Fixes Applied:');
   console.log(`   • Abstracts cleaned: ${report.fixed.abstracts}`);
   console.log(`   • Authors fixed: ${report.fixed.authors}`);
   console.log(`   • Venues cleaned: ${report.fixed.venues}`);
   console.log(`   • DOIs cleaned: ${report.fixed.dois}`);
-  
+
   const totalFixes = Object.values(report.fixed).reduce((sum, count) => sum + count, 0);
   console.log(`   • Total fixes: ${totalFixes}`);
-  
+
   if (report.errors > 0) {
     console.log(`\n❌ Errors: ${report.errors}`);
   }
@@ -231,11 +234,11 @@ function printReport(report: FixReport, dryRun: boolean): void {
     console.log(`\n📝 Publications Modified (showing first 10 of ${report.details.length}):`);
     report.details.slice(0, 10).forEach((pub, i) => {
       console.log(`\n${i + 1}. ${pub.title}`);
-      pub.fixes.forEach(fix => {
+      pub.fixes.forEach((fix) => {
         console.log(`   ✅ ${fix}`);
       });
       if (pub.errors) {
-        pub.errors.forEach(error => {
+        pub.errors.forEach((error) => {
           console.log(`   ❌ ${error}`);
         });
       }
@@ -261,11 +264,18 @@ async function main() {
     const report = await fixPublications(dryRun);
     printReport(report, dryRun);
 
-    // Save detailed report
-    const reportPath = path.join(process.cwd(), 'publication-fix-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`\n📝 Detailed report saved to: publication-fix-report.json`);
-
+    // Save detailed report only if explicitly requested
+    const args = process.argv.slice(2);
+    const reportFlagIndex = args.indexOf('--report');
+    if (reportFlagIndex >= 0 && args[reportFlagIndex + 1]) {
+      const reportPath = path.isAbsolute(args[reportFlagIndex + 1])
+        ? args[reportFlagIndex + 1]
+        : path.join(process.cwd(), args[reportFlagIndex + 1]);
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      console.log(`\n📝 Detailed report saved to: ${path.basename(reportPath)}`);
+    } else {
+      console.log('\nℹ️ Skipping file output (pass --report <path> to write a JSON report)');
+    }
   } catch (error) {
     console.error('❌ Publication fix failed:', error);
     process.exit(1);

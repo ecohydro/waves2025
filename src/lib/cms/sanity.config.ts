@@ -84,6 +84,13 @@ export default defineConfig({
                           .filter('_type == "publication" && publicationType == "preprint"'),
                       ),
                     S.listItem()
+                      .title('Abstracts')
+                      .child(
+                        S.documentTypeList('publication')
+                          .title('Abstracts')
+                          .filter('_type == "publication" && publicationType == "abstract"'),
+                      ),
+                    S.listItem()
                       .title('All Publications')
                       .child(S.documentTypeList('publication').title('All Publications')),
                   ]),
