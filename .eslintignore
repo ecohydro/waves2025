@@ -58,6 +58,12 @@ pids
 tmp/
 temp/
 
+# Legacy migration/testing scripts not enforced by app lint gate
+tests/
+src/scripts/
+src/lib/migration/
+src/lib/cms/migration/
+
 # OS generated files
 .DS_Store
 .DS_Store?

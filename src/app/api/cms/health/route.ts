@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { client } from '@/lib/cms/client';
+import { webhookRegistry } from '@/lib/cms/api/webhooks';
 
 export async function GET(request: NextRequest) {
   try {
@@ -20,6 +21,7 @@ export async function GET(request: NextRequest) {
       ),
       cmsApiKey: !!process.env.CMS_API_KEY,
     };
+    const webhookStorage = await webhookRegistry.healthInfo();
 
     const healthStatus = {
       status: 'healthy',
@@ -32,12 +34,20 @@ export async function GET(request: NextRequest) {
         personCount,
       },
       environment: envStatus,
+      webhooks: {
+        storageMode: webhookStorage.mode,
+        persistent: webhookStorage.persistent,
+        available: webhookStorage.available,
+        recordCount: webhookStorage.recordCount,
+        error: webhookStorage.error,
+      },
       version: process.env.npm_package_version || '1.0.0',
     };
 
     return NextResponse.json(healthStatus);
   } catch (error) {
     console.error('Health check failed:', error);
+    const webhookStorage = await webhookRegistry.healthInfo();
 
     const healthStatus = {
       status: 'unhealthy',
@@ -57,6 +67,13 @@ export async function GET(request: NextRequest) {
           process.env.SANITY_API_TOKEN
         ),
         cmsApiKey: !!process.env.CMS_API_KEY,
+      },
+      webhooks: {
+        storageMode: webhookStorage.mode,
+        persistent: webhookStorage.persistent,
+        available: webhookStorage.available,
+        recordCount: webhookStorage.recordCount,
+        error: webhookStorage.error,
       },
       version: process.env.npm_package_version || '1.0.0',
     };

@@ -7,7 +7,16 @@ export async function POST(request: NextRequest) {
   const event = request.headers.get('x-waves-event');
   const webhookId = request.headers.get('x-waves-webhook-id');
 
-  const body = await request.text();
+  const rawBody = await request.text();
+  let parsedBody: unknown = null;
+
+  if (rawBody) {
+    try {
+      parsedBody = JSON.parse(rawBody);
+    } catch {
+      return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+    }
+  }
 
   return new NextResponse(
     JSON.stringify({
@@ -18,7 +27,7 @@ export async function POST(request: NextRequest) {
         event,
         webhookId,
       },
-      body: body ? JSON.parse(body) : null,
+      body: parsedBody,
     }),
     {
       headers: { 'Content-Type': 'application/json' },

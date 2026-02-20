@@ -5,6 +5,11 @@ on:
     branches: [main, develop]
   pull_request:
     branches: [main, develop]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+  schedule:
+    # Nightly integration run at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
   test:
@@ -34,10 +39,21 @@ jobs:
       - name: Build application
         run: npm run build
 
-  # Integration tests - only run on main branch or manual trigger
+  # Integration tests run on main, manual trigger, nightly schedule,
+  # or PRs explicitly labeled "run-integration" (non-fork PRs only).
   integration-test:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    if: >-
+      ${{
+        github.event_name == 'workflow_dispatch' ||
+        github.event_name == 'schedule' ||
+        github.ref == 'refs/heads/main' ||
+        (
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.head.repo.fork == false &&
+          contains(github.event.pull_request.labels.*.name, 'run-integration')
+        )
+      }}
 
     steps:
       - uses: actions/checkout@v4

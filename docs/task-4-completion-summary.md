@@ -1,5 +1,7 @@
 # Task 4.0 Completion Summary
 
+> Historical note: this document reflects a December 2024 milestone snapshot and is not the live source of truth for current repository health. Use `docs/planning/PROJECT_STATUS.md` for current status.
+
 ## Overview
 Task 4.0 "Content Management Interface Implementation" has been **successfully completed** on December 19, 2024. All 9 subtasks have been implemented, tested, and validated according to the project's testing and validation requirements.
 

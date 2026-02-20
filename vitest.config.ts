@@ -4,6 +4,7 @@ import path from 'path';
 export default defineConfig({
   test: {
     environment: 'node',
+    maxWorkers: 1,
     globals: true,
     setupFiles: ['./tests/setup.ts'],
     // Exclude integration tests and external directories

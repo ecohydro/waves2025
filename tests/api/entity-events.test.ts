@@ -3,9 +3,10 @@ import { emitEntityEvent } from '@/lib/cms/api/entities-events';
 import { webhookRegistry } from '@/lib/cms/api/webhooks';
 
 describe('Entity event triggering', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
+    await webhookRegistry.clear();
     // Register a test webhook targeting our local echo endpoint
-    webhookRegistry.register({
+    await webhookRegistry.register({
       url: 'http://localhost:3000/api/cms/webhooks/test-delivery',
       events: ['people.created'],
       isActive: true,

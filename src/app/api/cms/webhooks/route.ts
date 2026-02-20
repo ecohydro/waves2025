@@ -12,16 +12,20 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const url = new URL(request.url);
-  const id = url.searchParams.get('id');
-  if (id) {
-    const wh = webhookRegistry.get(id);
-    if (!wh) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-    return NextResponse.json({ data: sanitize(wh) }, { status: 200 });
-  }
+  try {
+    const url = new URL(request.url);
+    const id = url.searchParams.get('id');
+    if (id) {
+      const wh = await webhookRegistry.get(id);
+      if (!wh) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+      return NextResponse.json({ data: sanitize(wh) }, { status: 200 });
+    }
 
-  const items = webhookRegistry.list().map(sanitize);
-  return NextResponse.json({ data: items }, { status: 200 });
+    const items = (await webhookRegistry.list()).map(sanitize);
+    return NextResponse.json({ data: items }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error: 'Webhook storage unavailable' }, { status: 503 });
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -35,13 +39,16 @@ export async function POST(request: NextRequest) {
     if (!url || !Array.isArray(events) || events.length === 0) {
       return NextResponse.json({ error: 'url and events[] are required' }, { status: 400 });
     }
-    const created = webhookRegistry.register({ url, events, isActive, description });
+    const created = await webhookRegistry.register({ url, events, isActive, description });
     return NextResponse.json(
       { message: 'Webhook registered', data: sanitize(created) },
       { status: 201 },
     );
-  } catch (err) {
-    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+    }
+    return NextResponse.json({ error: 'Webhook storage unavailable' }, { status: 503 });
   }
 }
 
@@ -55,12 +62,16 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json({ error: 'id is required' }, { status: 400 });
   }
 
-  const updated = webhookRegistry.update(body.id, body);
-  if (!updated) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  return NextResponse.json(
-    { message: 'Webhook updated', data: sanitize(updated) },
-    { status: 200 },
-  );
+  try {
+    const updated = await webhookRegistry.update(body.id, body);
+    if (!updated) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    return NextResponse.json(
+      { message: 'Webhook updated', data: sanitize(updated) },
+      { status: 200 },
+    );
+  } catch (error) {
+    return NextResponse.json({ error: 'Webhook storage unavailable' }, { status: 503 });
+  }
 }
 
 export async function DELETE(request: NextRequest) {
@@ -71,9 +82,14 @@ export async function DELETE(request: NextRequest) {
   const url = new URL(request.url);
   const id = url.searchParams.get('id');
   if (!id) return NextResponse.json({ error: 'id is required' }, { status: 400 });
-  const ok = webhookRegistry.delete(id);
-  if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  return NextResponse.json({ message: 'Webhook deleted' }, { status: 200 });
+
+  try {
+    const ok = await webhookRegistry.delete(id);
+    if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    return NextResponse.json({ message: 'Webhook deleted' }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error: 'Webhook storage unavailable' }, { status: 503 });
+  }
 }
 
 function sanitize(wh: RegisteredWebhook) {

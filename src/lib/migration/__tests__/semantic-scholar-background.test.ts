@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { describe, beforeEach, afterEach, it, expect, jest } from '@jest/globals';
+import { describe, beforeEach, afterEach, it, expect } from 'vitest';
 import { SemanticScholarBackgroundProcessor } from '../semantic-scholar-background';
 
 class MockAPI {

@@ -1,3 +1,6 @@
+// @vitest-environment jsdom
+import React from 'react';
+import { vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Modal, ModalHeader, ModalContent, ModalFooter } from '../Modal';
 
@@ -21,7 +24,7 @@ describe('Modal', () => {
   });
 
   it('should call onClose when backdrop is clicked', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     render(
       <Modal open={true} onClose={handleClose}>
         <div>Modal content</div>
@@ -34,7 +37,7 @@ describe('Modal', () => {
   });
 
   it('should call onClose when escape key is pressed', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     render(
       <Modal open={true} onClose={handleClose}>
         <div>Modal content</div>
@@ -46,7 +49,7 @@ describe('Modal', () => {
   });
 
   it('should not call onClose when modal content is clicked', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     render(
       <Modal open={true} onClose={handleClose}>
         <div>Modal content</div>
@@ -103,7 +106,7 @@ describe('ModalHeader', () => {
   });
 
   it('should render with close button', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
     render(
       <Modal open={true} onClose={handleClose}>
         <ModalHeader title="Title" showCloseButton />

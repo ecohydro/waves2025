@@ -11,6 +11,7 @@ Strategic planning, project management, and task tracking documents.
 - **[Project Plan](./planning/PROJECT_PLAN.md)** - Comprehensive project roadmap and milestones
 - **[MVP Tasks](./planning/MVP_TASKS.md)** - Detailed task breakdown for MVP delivery
 - **[Project Status](./planning/PROJECT_STATUS.md)** - Current project status and progress tracking
+- **[CMS API Scope Plan](./planning/CMS_API_SCOPE_PLAN.md)** - Auth and route roadmap for admin/API evolution
 
 ### 🔧 [Setup](./setup/)
 
@@ -33,6 +34,12 @@ Content migration documentation, schemas, and results.
 Technical decisions, architecture documentation, and development guides.
 
 - **[Technology Comparison](./development/TECHNOLOGY_COMPARISON.md)** - Framework evaluation and technology choices
+
+### 🚀 [Deployment](./deployment/)
+
+Deployment and production operations runbooks.
+
+- **[Webhook Postgres Cutover](./deployment/WEBHOOK_POSTGRES_CUTOVER.md)** - Shared webhook storage rollout and rollback steps
 
 ## 🚀 Quick Start
 
@@ -90,4 +97,4 @@ For questions about this documentation or the project:
 
 ---
 
-_Last updated: December 2024_
+_Last updated: February 20, 2026_

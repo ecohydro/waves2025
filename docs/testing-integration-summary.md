@@ -1,5 +1,7 @@
 # Testing and Validation Integration Summary
 
+> Historical note: command references in this file may reflect earlier phases. Current command behavior is documented in `README.md`.
+
 ## Overview
 
 This document summarizes how testing and validation requirements have been integrated into the WAVES Research Lab website project to prevent issues like the redirect loop problem we encountered.

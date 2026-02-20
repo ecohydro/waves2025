@@ -1,3 +1,6 @@
+// @vitest-environment jsdom
+import React from 'react';
+import { vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Input } from '../Input';
 
@@ -32,7 +35,7 @@ describe('Input', () => {
   });
 
   it('should handle value changes', () => {
-    const handleChange = jest.fn();
+    const handleChange = vi.fn();
     render(<Input onChange={handleChange} placeholder="Test" />);
 
     const input = screen.getByPlaceholderText('Test');

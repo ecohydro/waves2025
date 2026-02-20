@@ -1,49 +1,19 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import {
-  fetchCurrentMembers,
-  fetchAlumni,
-  fetchPeople,
-  urlForImage,
-  type Person,
-} from '@/lib/cms/client';
+import { fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
 
-export default function PeoplePage() {
-  const [people, setPeople] = useState<Person[]>([]);
-  const [loading, setLoading] = useState(true);
+// Keep this page dynamic so new Sanity content appears without a full rebuild.
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
-  // Fetch data on component mount
-  useEffect(() => {
-    const loadPeople = async () => {
-      try {
-        const peopleData = await fetchPeople();
-        setPeople(peopleData);
-      } catch (error) {
-        console.error('Error fetching people:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+export default async function PeoplePage() {
+  let people: Person[] = [];
 
-    loadPeople();
-  }, []);
-
-  if (loading) {
-    return (
-      <main className="min-h-screen bg-gray-50">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-wavesBlue mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading team members...</p>
-          </div>
-        </div>
-      </main>
-    );
+  try {
+    people = await fetchPeople();
+  } catch (error) {
+    console.error('Error fetching people:', error);
   }
 
   // Group people by userGroup and category

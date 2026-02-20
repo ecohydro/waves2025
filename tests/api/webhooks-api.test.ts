@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { NextRequest } from 'next/server';
 
 // Import route handlers
@@ -8,13 +8,9 @@ import { webhookRegistry, computeSignature } from '@/lib/cms/api/webhooks';
 describe('Webhooks API', () => {
   const ADMIN_KEY = 'admin-key';
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    await webhookRegistry.clear();
     process.env.CMS_API_KEY = ADMIN_KEY as any;
-  });
-
-  afterEach(() => {
-    // Try to clear internal registry by deleting and recreating environment (simple approach)
-    // Note: webhookRegistry is in-memory singleton; ensure tests do not depend on ordering
   });
 
   it('registers, lists, updates, and deletes webhooks', async () => {
