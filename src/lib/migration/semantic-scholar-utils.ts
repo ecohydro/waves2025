@@ -4,7 +4,6 @@ import { config } from 'dotenv';
 config({ path: '.env.local' });
 
 const BASE_URL = 'https://api.semanticscholar.org/graph/v1';
-const SEMANTIC_SCHOLAR_API_KEY = process.env.SEMANTIC_SCHOLAR_API_KEY;
 
 export interface AuthorBatchItem {
   authorId: string;
@@ -42,9 +41,10 @@ function buildHeaders(): Record<string, string> {
     Accept: 'application/json',
     'User-Agent': process.env.SEMANTIC_SCHOLAR_USER_AGENT || 'waves2025/1.0 (utils)',
   };
+  const apiKey = process.env.SEMANTIC_SCHOLAR_API_KEY;
   const disableApiKey = process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY === 'true';
-  if (SEMANTIC_SCHOLAR_API_KEY && !disableApiKey) {
-    headers['x-api-key'] = SEMANTIC_SCHOLAR_API_KEY as string;
+  if (apiKey && !disableApiKey) {
+    headers['x-api-key'] = apiKey;
   }
   return headers;
 }

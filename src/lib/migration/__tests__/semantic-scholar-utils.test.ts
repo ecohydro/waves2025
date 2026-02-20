@@ -1,11 +1,30 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { fetchAuthorInfoById, fetchPaperById } from '../semantic-scholar-utils';
 
 declare const global: any;
 
 describe('semantic-scholar-utils', () => {
+  const originalApiKey = process.env.SEMANTIC_SCHOLAR_API_KEY;
+  const originalDisableApiKey = process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY;
+
   beforeEach(() => {
     vi.restoreAllMocks();
+    delete process.env.SEMANTIC_SCHOLAR_API_KEY;
+    delete process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY;
+  });
+
+  afterEach(() => {
+    if (originalApiKey === undefined) {
+      delete process.env.SEMANTIC_SCHOLAR_API_KEY;
+    } else {
+      process.env.SEMANTIC_SCHOLAR_API_KEY = originalApiKey;
+    }
+
+    if (originalDisableApiKey === undefined) {
+      delete process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY;
+    } else {
+      process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY = originalDisableApiKey;
+    }
   });
 
   it('fetchAuthorInfoById returns first author from batch', async () => {
@@ -24,6 +43,9 @@ describe('semantic-scholar-utils', () => {
   });
 
   it('fetchAuthorInfoById retries without API key on 403', async () => {
+    process.env.SEMANTIC_SCHOLAR_API_KEY = 'test-api-key';
+    delete process.env.SEMANTIC_SCHOLAR_DISABLE_API_KEY;
+
     const retryJson = vi
       .fn()
       .mockResolvedValue([
