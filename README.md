@@ -68,3 +68,4 @@ waves2025/
 ├── scripts/    # one-off migration/maintenance utilities
 └── legacy/     # source legacy site data
 ```
+# News images migrated from Jekyll site
