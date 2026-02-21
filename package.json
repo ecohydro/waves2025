@@ -105,6 +105,7 @@
     "framer-motion": "^12.23.0",
     "js-yaml": "^4.1.0",
     "jsonwebtoken": "^9.0.2",
+    "markdown-it": "^14.1.1",
     "next": "14.2.30",
     "next-auth": "^4.24.11",
     "next-sanity": "^10.0.13",

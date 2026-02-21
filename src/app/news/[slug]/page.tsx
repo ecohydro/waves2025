@@ -5,6 +5,7 @@ import { cookies } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchNewsBySlug, fetchNews, urlForImage, type News } from '@/lib/cms/client';
+import { parseMarkdown } from '@/lib/utils/markdown';
 
 interface NewsDetailProps {
   params: Promise<{ slug: string }>;
@@ -205,7 +206,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                   <div className="prose prose-lg max-w-none">
                     <div
                       className="text-gray-700 leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: article.content }}
+                      dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content) }}
                     />
                   </div>
                 </CardContent>
