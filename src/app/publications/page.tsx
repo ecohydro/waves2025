@@ -23,16 +23,19 @@ export default async function PublicationsPage({
   const normalizeArea = (input: string): string | null => {
     const v = input.trim().toLowerCase();
     if (!v) return null;
-    if (v === 'ecohydrology') return 'Ecohydrology';
-    if (v === 'sensors' || v === 'sensor' || v === 'environmental sensing') return 'Sensors';
-    if (
-      v === 'cnh' ||
-      v === 'coupled natural-human systems' ||
-      v === 'coupled natural human systems'
-    )
-      return 'Coupled Natural-Human Systems';
-    // Fallback: title-case first letter for any direct match
-    return input;
+    // Map URL-friendly keys to display names
+    const areaMap: Record<string, string> = {
+      'ecohydrology': 'Ecohydrology',
+      'sensors': 'Sensors',
+      'cnh': 'Coupled Natural-Human Systems',
+      'coupled-natural-human-systems': 'Coupled Natural-Human Systems',
+      'coupled natural-human systems': 'Coupled Natural-Human Systems',
+      'remote-sensing': 'Remote Sensing',
+      'ecology': 'Ecology',
+      'misc': 'Misc',
+    };
+    const mapped = areaMap[v];
+    return mapped || null;
   };
 
   const selectedAreaRaw = typeof searchParams?.area === 'string' ? searchParams?.area : undefined;
@@ -54,9 +57,16 @@ export default async function PublicationsPage({
   });
 
   if (selectedArea) {
-    filteredPublications = filteredPublications.filter(
-      (p) => Array.isArray(p.researchAreas) && p.researchAreas.some((a) => a === selectedArea),
-    );
+    filteredPublications = filteredPublications.filter((p) => {
+      if (Array.isArray(p.researchAreas)) {
+        return p.researchAreas.some((a) => a === selectedArea);
+      }
+      // Fallback to keywords if researchAreas not set
+      if (Array.isArray(p.keywords)) {
+        return p.keywords.some((k) => k === selectedArea);
+      }
+      return false;
+    });
   }
 
   // Compute featured publications: most recent up to 4 with > 30 citations
@@ -228,13 +238,14 @@ export default async function PublicationsPage({
               </Link>
             </div>
 
-            {/* Area Filter */}
+            {/* Research Area Filter */}
             <div className="mt-4 flex flex-wrap gap-2 justify-center">
               {[
                 { label: 'All', value: '' },
                 { label: 'Ecohydrology', value: 'ecohydrology' },
+                { label: 'Coupled Natural-Human Systems', value: 'cnh' },
                 { label: 'Sensors', value: 'sensors' },
-                { label: 'CNH', value: 'cnh' },
+                { label: 'Remote Sensing', value: 'remote-sensing' },
               ].map((opt) => {
                 const href = opt.value
                   ? `/publications?${view === 'presentations' ? 'type=presentations&' : ''}area=${opt.value}`
