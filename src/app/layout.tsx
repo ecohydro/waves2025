@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'WAVES Lab - Water, Agriculture, and Environmental Systems',
-  description: 'Research lab focused on water, agriculture, and environmental systems at UCSB',
+  title: 'WAVES Lab - Water, Vegetation, and Society',
+  description: 'Research lab focused on water, vegetation, and society at UCSB',
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon', sizes: '16x16' },

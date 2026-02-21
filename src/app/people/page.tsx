@@ -176,7 +176,7 @@ export default async function PeoplePage() {
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Research Team</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Meet the interdisciplinary team of researchers, students, and staff advancing our
-              understanding of water, agriculture, and environmental systems.
+              understanding of water, vegetation, and society.
             </p>
           </div>
         </div>
