@@ -198,32 +198,6 @@ export default async function NewsPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">{allNews.length}</div>
-              <div className="text-sm text-gray-600">Total Articles</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">{featuredNews.length}</div>
-              <div className="text-sm text-gray-600">Featured Stories</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">{allCategories.length}</div>
-              <div className="text-sm text-gray-600">Categories</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">
-                {new Date().getFullYear() - 2007}+
-              </div>
-              <div className="text-sm text-gray-600">Years of Updates</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Articles */}
       {featuredNews.length > 0 && (
         <section className="py-16">
