@@ -109,6 +109,7 @@
     "next": "14.2.30",
     "next-auth": "^4.24.11",
     "next-sanity": "^10.0.13",
+    "node-fetch": "^3.3.2",
     "papaparse": "^5.5.3",
     "pdf-parse": "^1.1.1",
     "pdf2pic": "^3.2.0",
