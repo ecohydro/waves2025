@@ -16,11 +16,12 @@ export default async function PeoplePage() {
     console.error('Error fetching people:', error);
   }
 
-  // Group people by userGroup and category
+  // Separate current members and alumni
   const currentMembers = people.filter((person) => person.userGroup === 'current');
   const alumni = people.filter((person) => person.userGroup === 'alumni');
 
   const categoryOrder: string[] = [
+    'principal-investigator',
     'postdoc',
     'graduate-student',
     'research-staff',
@@ -29,7 +30,7 @@ export default async function PeoplePage() {
     'visitor',
   ];
 
-  function sortByCategoryThenName(a: Person, b: Person) {
+  function sortByCategory(a: Person, b: Person) {
     const ai = categoryOrder.indexOf(a.category || '');
     const bi = categoryOrder.indexOf(b.category || '');
     const aRank = ai === -1 ? Number.POSITIVE_INFINITY : ai;
@@ -38,7 +39,8 @@ export default async function PeoplePage() {
     return a.name.localeCompare(b.name);
   }
 
-  const alumniSorted = [...alumni].sort(sortByCategoryThenName);
+  const currentMembersSorted = [...currentMembers].sort(sortByCategory);
+  const alumniSorted = [...alumni].sort(sortByCategory);
 
   const renderPersonCard = (person: Person) => (
     <Card
@@ -202,17 +204,19 @@ export default async function PeoplePage() {
         </div>
       </section>
 
-      {/* Current Members */}
+      {/* Current Members (no subsections) */}
       {currentMembers.length > 0 && (
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Members</h2>
-              <p className="text-lg text-gray-600"></p>
+              <p className="text-lg text-gray-600">
+                Our interdisciplinary team of researchers, students, and staff.
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {currentMembers.map(renderPersonCard)}
+              {currentMembersSorted.map(renderPersonCard)}
             </div>
           </div>
         </section>
@@ -224,7 +228,9 @@ export default async function PeoplePage() {
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Lab Alumni</h2>
-              <p className="text-lg text-gray-600">.</p>
+              <p className="text-lg text-gray-600">
+                Former members who contributed to our research mission.
+              </p>
             </div>
 
             {/* Sections in desired order */}
