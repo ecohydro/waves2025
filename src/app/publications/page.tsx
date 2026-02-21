@@ -30,9 +30,6 @@ export default async function PublicationsPage({
       'cnh': 'Coupled Natural-Human Systems',
       'coupled-natural-human-systems': 'Coupled Natural-Human Systems',
       'coupled natural-human systems': 'Coupled Natural-Human Systems',
-      'remote-sensing': 'Remote Sensing',
-      'ecology': 'Ecology',
-      'misc': 'Misc',
     };
     const mapped = areaMap[v];
     return mapped || null;
@@ -245,7 +242,6 @@ export default async function PublicationsPage({
                 { label: 'Ecohydrology', value: 'ecohydrology' },
                 { label: 'Coupled Natural-Human Systems', value: 'cnh' },
                 { label: 'Sensors', value: 'sensors' },
-                { label: 'Remote Sensing', value: 'remote-sensing' },
               ].map((opt) => {
                 const href = opt.value
                   ? `/publications?${view === 'presentations' ? 'type=presentations&' : ''}area=${opt.value}`
