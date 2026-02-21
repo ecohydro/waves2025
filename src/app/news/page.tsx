@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchNews, fetchFeaturedNews, urlForImage, type News } from '@/lib/cms/client';
 
+export const revalidate = 10; // Revalidate every 10 seconds to pick up new images from Sanity
+
 export default async function NewsPage() {
   // Fetch data from Sanity instead of reading MDX files
   const [allNews, featuredNews] = await Promise.all([fetchNews(), fetchFeaturedNews()]);
