@@ -134,7 +134,9 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.title && <p className="text-xl text-gray-600 mb-4">{person.title}</p>}
 
                 {person.bio && (
-                  <div className="text-lg text-gray-700 leading-relaxed mb-6 prose prose-lg" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bio) }} />
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    {person.bio.split('.')[0] + '.'}
+                  </p>
                 )}
 
                 {/* Contact & Social Links */}
@@ -224,6 +226,18 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                             {interest}
                           </span>
                         ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Biography */}
+                {person.bioLong && (
+                  <Card>
+                    <CardContent className="p-8">
+                      <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
+                      <div className="prose prose-lg max-w-none text-gray-700">
+                        <div className="leading-relaxed" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bioLong) }} />
                       </div>
                     </CardContent>
                   </Card>
