@@ -1,3 +1,4 @@
+import { renderMarkdown } from "@/lib/render-markdown";
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -133,7 +134,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.title && <p className="text-xl text-gray-600 mb-4">{person.title}</p>}
 
                 {person.bio && (
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">{person.bio}</p>
+                  <div className="text-lg text-gray-700 leading-relaxed mb-6 prose prose-lg" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bio) }} />
                 )}
 
                 {/* Contact & Social Links */}
@@ -215,7 +216,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                     <CardContent className="p-8">
                       <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
                       <div className="prose prose-lg max-w-none text-gray-700">
-                        <p className="leading-relaxed whitespace-pre-line">{person.bioLong}</p>
+                        <div className="leading-relaxed" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bioLong) }} />
                       </div>
                     </CardContent>
                   </Card>
