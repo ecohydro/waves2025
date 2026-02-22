@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { cookies } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPersonBySlug, fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
@@ -12,7 +13,11 @@ interface PersonDetailProps {
 export default async function PersonDetail({ params }: PersonDetailProps) {
   const { slug } = await params;
 
-  const person = await fetchPersonBySlug(slug, false);
+  // Check for preview mode
+  const cookieStore = await cookies();
+  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
+
+  const person = await fetchPersonBySlug(slug, isPreview);
 
   if (!person) {
     notFound();
@@ -128,22 +133,17 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.title && <p className="text-xl text-gray-600 mb-4">{person.title}</p>}
 
                 {person.bio && (
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    {person.bio}
-                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">{person.bio}</p>
                 )}
 
                 {/* Contact & Social Links */}
                 <div className="flex flex-wrap gap-4">
                   {person.email && (
                     <Button
-                      onClick={() => {
-                        window.location.href = `mailto:${person.email}`;
-                      }}
+                      href={`mailto:${person.email}`}
                       variant="outline"
                       size="sm"
                       className="flex items-center gap-2"
-                      type="button"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -214,8 +214,8 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                   <Card>
                     <CardContent className="p-8">
                       <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
-                      <div className="prose prose-lg max-w-none text-gray-700 whitespace-pre-wrap">
-                        {person.bioLong}
+                      <div className="prose prose-lg max-w-none text-gray-700">
+                        <p className="leading-relaxed whitespace-pre-line">{person.bioLong}</p>
                       </div>
                     </CardContent>
                   </Card>

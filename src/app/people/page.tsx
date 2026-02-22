@@ -120,19 +120,16 @@ export default async function PeoplePage() {
             {person.socialMedia && (
               <div className="flex justify-center gap-3 mt-4 pt-4 border-t border-gray-100">
                 {person.email && (
-                  <button
-                    onClick={() => {
-                      window.location.href = `mailto:${person.email}`;
-                    }}
+                  <a
+                    href={`mailto:${person.email}`}
                     className="text-gray-400 hover:text-wavesBlue transition-colors"
                     title="Email"
-                    type="button"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
-                  </button>
+                  </a>
                 )}
                 {person.website && (
                   <a
@@ -190,7 +187,7 @@ export default async function PeoplePage() {
       {/* Stats Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{currentMembers.length}</div>
               <div className="text-sm text-gray-600">Current Members</div>
@@ -198,6 +195,10 @@ export default async function PeoplePage() {
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{alumni.length}</div>
               <div className="text-sm text-gray-600">Alumni</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-wavesBlue mb-2">20+</div>
+              <div className="text-sm text-gray-600">Years of Research</div>
             </div>
           </div>
         </div>
