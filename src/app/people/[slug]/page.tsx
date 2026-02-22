@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPersonBySlug, fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
@@ -10,29 +9,14 @@ interface PersonDetailProps {
   params: Promise<{ slug: string }>;
 }
 
-// Simple markdown link converter
-function markdownToHtml(text: string): string {
-  if (!text) return '';
-  // Convert [text](url) to <a href="url">text</a>
-  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-}
-
 export default async function PersonDetail({ params }: PersonDetailProps) {
   const { slug } = await params;
 
-  // Check for preview mode
-  const cookieStore = await cookies();
-  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
-
-  const person = await fetchPersonBySlug(slug, isPreview);
+  const person = await fetchPersonBySlug(slug, false);
 
   if (!person) {
     notFound();
   }
-
-  // Pre-render markdown to HTML
-  const bioHtml = person.bio ? markdownToHtml(person.bio) : '';
-  const bioLongHtml = person.bioLong ? markdownToHtml(person.bioLong) : '';
 
   const formatDate = (dateString?: string) => {
     if (!dateString) return '';
@@ -144,10 +128,9 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.title && <p className="text-xl text-gray-600 mb-4">{person.title}</p>}
 
                 {person.bio && (
-                  <div
-                    className="text-lg text-gray-700 leading-relaxed mb-6 prose prose-sm max-w-none"
-                    dangerouslySetInnerHTML={{ __html: bioHtml }}
-                  />
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    {person.bio}
+                  </p>
                 )}
 
                 {/* Contact & Social Links */}
@@ -231,8 +214,8 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                   <Card>
                     <CardContent className="p-8">
                       <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
-                      <div className="prose prose-lg max-w-none text-gray-700">
-                        <div dangerouslySetInnerHTML={{ __html: bioLongHtml }} />
+                      <div className="prose prose-lg max-w-none text-gray-700 whitespace-pre-wrap">
+                        {person.bioLong}
                       </div>
                     </CardContent>
                   </Card>
