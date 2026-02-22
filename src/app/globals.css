@@ -73,6 +73,12 @@ p {
   color: #64748b;
 }
 
+@media (prefers-color-scheme: dark) {
+  p {
+    color: #cbd5e1;
+  }
+}
+
 /* Academic content styling */
 blockquote {
   border-left: 4px solid #0077b6;
@@ -80,6 +86,13 @@ blockquote {
   margin: 1.5rem 0;
   font-style: italic;
   color: #475569;
+}
+
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    color: #a1a5b1;
+    border-left-color: #00b4d8;
+  }
 }
 
 /* Links */
@@ -92,6 +105,16 @@ a {
 a:hover {
   color: #023e8a;
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #00b4d8;
+  }
+  
+  a:hover {
+    color: #7dd3fc;
+  }
 }
 
 /* Custom utilities */
@@ -239,6 +262,15 @@ a:focus {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   border: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .citation {
+    background: #1e293b;
+    border-color: #334155;
+    color: #cbd5e1;
+  }
 }
 
 /* DOI and link styling */
@@ -293,6 +325,13 @@ a:focus {
   font-weight: 500;
 }
 
+@media (prefers-color-scheme: dark) {
+  .metric-badge {
+    background: #1e293b;
+    color: #cbd5e1;
+  }
+}
+
 /* Responsive images */
 img {
   max-width: 100%;
@@ -342,12 +381,27 @@ img {
   padding: 1.5rem;
   margin: 1.5rem 0;
   border-radius: 0 0.5rem 0.5rem 0;
+  color: #1e293b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .paper-abstract {
+    background: #1e293b;
+    border-left-color: #00b4d8;
+    color: #cbd5e1;
+  }
 }
 
 .author-list {
   font-size: 0.9em;
   color: #64748b;
   margin-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .author-list {
+    color: #94a3b8;
+  }
 }
 
 .journal-info {

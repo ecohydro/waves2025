@@ -6,6 +6,7 @@ module.exports = {
     './content/**/*.{md,mdx}',
     './public/**/*.html',
   ],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
