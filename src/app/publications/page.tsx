@@ -201,7 +201,7 @@ export default async function PublicationsPage({
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Hero Section */}
       <section className="bg-white dark:bg-slate-950 border-b">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Publications & Presentations
@@ -236,7 +236,7 @@ export default async function PublicationsPage({
             </div>
 
             {/* Research Area Filter */}
-            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+            <div className="mt-6 mb-2 flex flex-wrap gap-2 justify-center">
               {[
                 { label: 'All', value: '' },
                 { label: 'Ecohydrology', value: 'ecohydrology' },
@@ -269,7 +269,7 @@ export default async function PublicationsPage({
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-white dark:bg-slate-950">
+      <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-2 gap-8 text-center">
             <div>
