@@ -210,18 +210,6 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
-                {/* Long Bio */}
-                {person.bioLong && (
-                  <Card>
-                    <CardContent className="p-8">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
-                      <div className="prose prose-lg max-w-none text-gray-700">
-                        <div className="leading-relaxed" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bioLong) }} />
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
                 {/* Research Interests */}
                 {person.researchInterests && person.researchInterests.length > 0 && (
                   <Card>
