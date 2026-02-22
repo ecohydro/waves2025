@@ -10,15 +10,15 @@ interface PersonDetailProps {
   params: Promise<{ slug: string }>;
 }
 
+// Simple markdown link converter
+function markdownToHtml(text: string): string {
+  if (!text) return '';
+  // Convert [text](url) to <a href="url">text</a>
+  return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+}
+
 export default async function PersonDetail({ params }: PersonDetailProps) {
   const { slug } = await params;
-  
-  // Initialize markdown parser
-  const MarkdownIt = (await import('markdown-it')).default;
-  const md = new MarkdownIt({
-    linkify: false,
-    html: false,
-  });
 
   // Check for preview mode
   const cookieStore = await cookies();
@@ -31,8 +31,8 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
   }
 
   // Pre-render markdown to HTML
-  const bioHtml = person.bio ? md.render(person.bio) : '';
-  const bioLongHtml = person.bioLong ? md.render(person.bioLong) : '';
+  const bioHtml = person.bio ? markdownToHtml(person.bio) : '';
+  const bioLongHtml = person.bioLong ? markdownToHtml(person.bioLong) : '';
 
   const formatDate = (dateString?: string) => {
     if (!dateString) return '';
