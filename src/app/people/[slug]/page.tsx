@@ -2,9 +2,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
+import MarkdownIt from 'markdown-it';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPersonBySlug, fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
+
+const md = new MarkdownIt({
+  linkify: false,
+  html: false,
+});
 
 interface PersonDetailProps {
   params: Promise<{ slug: string }>;
@@ -135,7 +141,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.bio && (
                   <div
                     className="text-lg text-gray-700 leading-relaxed mb-6 prose prose-sm max-w-none"
-                    dangerouslySetInnerHTML={{ __html: person.bio }}
+                    dangerouslySetInnerHTML={{ __html: md.render(person.bio) }}
                   />
                 )}
 
@@ -221,7 +227,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                     <CardContent className="p-8">
                       <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
                       <div className="prose prose-lg max-w-none text-gray-700">
-                        <div dangerouslySetInnerHTML={{ __html: person.bioLong }} />
+                        <div dangerouslySetInnerHTML={{ __html: md.render(person.bioLong) }} />
                       </div>
                     </CardContent>
                   </Card>
