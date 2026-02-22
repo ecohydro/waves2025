@@ -2,15 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
-import MarkdownIt from 'markdown-it';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPersonBySlug, fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
-
-const md = new MarkdownIt({
-  linkify: false,
-  html: false,
-});
 
 interface PersonDetailProps {
   params: Promise<{ slug: string }>;
@@ -18,6 +12,13 @@ interface PersonDetailProps {
 
 export default async function PersonDetail({ params }: PersonDetailProps) {
   const { slug } = await params;
+  
+  // Initialize markdown parser
+  const MarkdownIt = (await import('markdown-it')).default;
+  const md = new MarkdownIt({
+    linkify: false,
+    html: false,
+  });
 
   // Check for preview mode
   const cookieStore = await cookies();
