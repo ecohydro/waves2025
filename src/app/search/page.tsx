@@ -233,12 +233,12 @@ export default function SearchPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Header */}
-      <section className="bg-white border-b">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Search</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-6 text-center">Search</h1>
 
             {/* Search Form */}
             <form
@@ -272,7 +272,7 @@ export default function SearchPage() {
 
             {/* Search Stats */}
             {hasSearched && !loading && (
-              <p className="text-sm text-gray-600 mb-6">
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
                 {results.length === 0
                   ? `No results found for "${query}"`
                   : `Found ${results.length} result${results.length === 1 ? '' : 's'} for "${query}"`}
@@ -321,8 +321,8 @@ export default function SearchPage() {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900">Search our content</h3>
-              <p className="mt-1 text-sm text-gray-500">
+              <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-50">Search our content</h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Enter a search term to find people, publications, news articles, and projects.
               </p>
             </div>
@@ -338,17 +338,17 @@ export default function SearchPage() {
                         <div className="flex items-center gap-2 mb-2">
                           {getTypeBadge(result)}
                           {result._type === 'person' && result.userGroup && (
-                            <span className="text-xs text-gray-500 capitalize">
+                            <span className="text-xs text-gray-500 dark:text-gray-400 capitalize">
                               {result.userGroup}
                             </span>
                           )}
                           {result._type === 'publication' && result.publishedDate && (
-                            <span className="text-xs text-gray-500">
+                            <span className="text-xs text-gray-500 dark:text-gray-400">
                               {new Date(result.publishedDate).getFullYear()}
                             </span>
                           )}
                           {result._type === 'news' && result.publishedAt && (
-                            <span className="text-xs text-gray-500">
+                            <span className="text-xs text-gray-500 dark:text-gray-400">
                               {new Date(result.publishedAt).toLocaleDateString()}
                             </span>
                           )}
@@ -358,13 +358,13 @@ export default function SearchPage() {
                           href={getResultUrl(result)}
                           className="block hover:text-blue-600 transition-colors"
                         >
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">
                             {getResultTitle(result)}
                           </h3>
                         </Link>
 
                         {getResultDisplayText(result) && (
-                          <p className="text-gray-600 line-clamp-3">
+                          <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
                             {getResultDisplayText(result)}
                           </p>
                         )}
@@ -391,8 +391,8 @@ export default function SearchPage() {
                   d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8c0 2.152-.852 4.103-2.235 5.535L21 21l-1.414-1.414-2.351-2.351z"
                 />
               </svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900">No results found</h3>
-              <p className="mt-1 text-sm text-gray-500">
+              <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-50">No results found</h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Try different keywords or check your spelling.
               </p>
             </div>

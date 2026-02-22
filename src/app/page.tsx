@@ -136,7 +136,7 @@ export default async function Home() {
             </p>
             <Link
               href="/news"
-              className="cta-btn inline-flex items-center px-6 py-3 border-2 border-wavesBlue bg-white text-wavesBlue font-semibold rounded-lg hover:bg-blue-50 hover:scale-105 transition shadow-lg text-lg group drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] outline-none focus:ring-4 focus:ring-wavesBlue"
+              className="cta-btn inline-flex items-center px-6 py-3 border-2 border-wavesBlue bg-white dark:bg-slate-950 text-wavesBlue font-semibold rounded-lg hover:bg-blue-50 hover:scale-105 transition shadow-lg text-lg group drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] outline-none focus:ring-4 focus:ring-wavesBlue"
               style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
             >
               <span className="mr-2">
@@ -161,11 +161,11 @@ export default async function Home() {
       </section>
 
       {/* Research Areas Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-900">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Research Areas</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">Research Areas</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Our interdisciplinary research spans multiple domains, addressing critical challenges
               in water resources, agricultural sustainability, and environmental systems.
             </p>
@@ -183,10 +183,10 @@ export default async function Home() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">Ecohydrology</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors">Ecohydrology</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Understanding patterns and process in dryland landscapes, from leaf-level
                     processes to ecosystem-wide water cycles and their response to environmental
                     change.
@@ -206,10 +206,10 @@ export default async function Home() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">Sensors, Measurements, and Software</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors">Sensors, Measurements, and Software</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Developing novel approaches that illuminate ecohydrological patterns and processes
                     through advanced remote sensing and monitoring technologies.
                   </p>
@@ -228,12 +228,12 @@ export default async function Home() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors">
                     Coupled Natural-Human Systems
                   </h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                     Resolving coupled social-environmental system dynamics in subsistence agriculture
                     and developing sustainable water management strategies.
                   </p>
@@ -251,7 +251,7 @@ export default async function Home() {
             {/* Latest News */}
             <div>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Latest News</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-50">Latest News</h2>
                 <Button href="/news" variant="outline">
                   View All
                 </Button>
@@ -265,13 +265,13 @@ export default async function Home() {
                           <div className="flex items-start gap-4">
                             <div className="flex-shrink-0 w-2 h-2 bg-wavesBlue rounded-full mt-3"></div>
                             <div>
-                              <h3 className="font-semibold text-gray-900 mb-2">
+                              <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-2">
                                 {item.title}
                               </h3>
-                              <p className="text-sm text-gray-500 mb-2">
+                              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                                 {item.publishedAt ? new Date(item.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : 'Recent'}
                               </p>
-                              <p className="text-gray-600 text-sm line-clamp-2">
+                              <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
                                 {item.excerpt || 'Read more...'}
                               </p>
                             </div>
@@ -281,7 +281,7 @@ export default async function Home() {
                     </Link>
                   ))
                 ) : (
-                  <p className="text-gray-600">No recent news available.</p>
+                  <p className="text-gray-600 dark:text-gray-300">No recent news available.</p>
                 )}
               </div>
             </div>
@@ -289,7 +289,7 @@ export default async function Home() {
             {/* Recent Publications */}
             <div>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
+                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-50">
                   Recent Publications
                 </h2>
                 <Button href="/publications" variant="outline">
@@ -302,10 +302,10 @@ export default async function Home() {
                     <Link key={pub._id} href={`/publications/${pub.slug.current}`}>
                       <Card className="hover:shadow-md transition-shadow cursor-pointer">
                         <CardContent className="p-6">
-                          <h3 className="font-semibold text-gray-900 mb-2 leading-snug line-clamp-2">
+                          <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-2 leading-snug line-clamp-2">
                             {pub.title}
                           </h3>
-                          <p className="text-sm text-gray-600 mb-3">
+                          <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
                             {pub.authors && pub.authors.length > 0 && (
                               <>
                                 {pub.authors.slice(0, 2).map((a, i) => (
@@ -320,7 +320,7 @@ export default async function Home() {
                             {pub.publishedDate && ` (${new Date(pub.publishedDate).getFullYear()})`} •{' '}
                             <span className="text-wavesBlue">{pub.venue?.name || 'Published'}</span>
                           </p>
-                          <p className="text-gray-600 text-sm line-clamp-2">
+                          <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
                             {pub.abstract || 'Recent publication'}
                           </p>
                         </CardContent>
@@ -328,7 +328,7 @@ export default async function Home() {
                     </Link>
                   ))
                 ) : (
-                  <p className="text-gray-600">No recent publications available.</p>
+                  <p className="text-gray-600 dark:text-gray-300">No recent publications available.</p>
                 )}
               </div>
             </div>
@@ -351,7 +351,7 @@ export default async function Home() {
               href="/people"
               variant="outline"
               size="lg"
-              className="bg-white text-wavesBlue border-white hover:bg-blue-50"
+              className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-blue-50"
             >
               Meet Our Team
             </Button>
@@ -359,7 +359,7 @@ export default async function Home() {
               href="/contact"
               variant="ghost"
               size="lg"
-              className="text-white border-white hover:bg-white/10"
+              className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
               Contact Us
             </Button>

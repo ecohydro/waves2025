@@ -24,8 +24,8 @@ export default function Research() {
       <section className="py-16 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Our Research</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">Our Research</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               The WAVES Lab conducts research across three interconnected themes that span 
               from fundamental ecohydrological processes to applied solutions for sustainable 
               development. Our work integrates field observations, remote sensing technologies, 
@@ -40,8 +40,8 @@ export default function Research() {
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Field-Based</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Field-Based</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Extensive field campaigns in dryland regions, particularly sub-Saharan Africa
               </p>
             </div>
@@ -52,8 +52,8 @@ export default function Research() {
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Technology-Driven</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Technology-Driven</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Advanced remote sensing, environmental sensors, and data analysis methods
               </p>
             </div>
@@ -64,8 +64,8 @@ export default function Research() {
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Impact-Oriented</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Impact-Oriented</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Research that informs sustainable development and climate adaptation
               </p>
             </div>
@@ -74,11 +74,11 @@ export default function Research() {
       </section>
 
       {/* Research Themes */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-900">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Research Themes</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">Research Themes</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Our research is organized around three core themes, each addressing different 
               aspects of coupled natural-human systems in dryland environments.
             </p>
@@ -98,10 +98,10 @@ export default function Research() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">
                   Ecohydrology
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   Understanding patterns and processes in dryland landscapes, from leaf-level 
                   processes to ecosystem-wide water cycles and their response to environmental 
                   change. Our ecohydrology research examines water-vegetation interactions, 
@@ -109,8 +109,8 @@ export default function Research() {
                   spatial and temporal scales.
                 </p>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Key Research Areas:</h4>
-                  <ul className="space-y-2 text-gray-600">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Key Research Areas:</h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-wavesBlue rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       Water stress dynamics and plant physiological responses
@@ -148,10 +148,10 @@ export default function Research() {
                 </div>
               </div>
               <div className="lg:order-1">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">
                   Coupled Natural-Human Systems
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   Resolving coupled social-environmental system dynamics in subsistence 
                   agriculture and developing sustainable water management strategies. Our CNH 
                   research examines the complex interactions between human activities and 
@@ -159,8 +159,8 @@ export default function Research() {
                   and livelihood resilience.
                 </p>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Key Research Areas:</h4>
-                  <ul className="space-y-2 text-gray-600">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Key Research Areas:</h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-wavesBlue rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       Agricultural adaptation to climate variability
@@ -198,10 +198,10 @@ export default function Research() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">
                   Sensors, Measurements, and Software
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   Developing novel approaches that illuminate ecohydrological patterns and 
                   processes through advanced remote sensing and monitoring technologies. Our 
                   sensors research focuses on creating innovative measurement techniques, 
@@ -209,8 +209,8 @@ export default function Research() {
                   monitoring capabilities.
                 </p>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Key Research Areas:</h4>
-                  <ul className="space-y-2 text-gray-600">
+                  <h4 className="font-semibold text-gray-900 dark:text-gray-50 mb-3">Key Research Areas:</h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-wavesBlue rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       Remote sensing of vegetation and water cycles
@@ -242,8 +242,8 @@ export default function Research() {
       <section className="py-16 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Research Impact</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">Research Impact</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               Our research contributes to global understanding of dryland systems and informs 
               sustainable development practices worldwide.
             </p>
@@ -254,9 +254,9 @@ export default function Research() {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <div className="text-3xl font-bold text-wavesBlue mb-2">200+</div>
-                  <div className="text-gray-600">Publications</div>
+                  <div className="text-gray-600 dark:text-gray-300">Publications</div>
                 </div>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 dark:text-gray-300 text-center">
                   Peer-reviewed articles in leading journals across multiple disciplines
                 </p>
               </CardContent>
@@ -266,9 +266,9 @@ export default function Research() {
               <CardContent className="p-8">
                 <div className="text-center mb-6">
                   <div className="text-3xl font-bold text-wavesBlue mb-2">15+</div>
-                  <div className="text-gray-600">Countries</div>
+                  <div className="text-gray-600 dark:text-gray-300">Countries</div>
                 </div>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 dark:text-gray-300 text-center">
                   Research collaborations spanning Africa, North America, and beyond
                 </p>
               </CardContent>
@@ -292,7 +292,7 @@ export default function Research() {
               href="/publications"
               variant="outline"
               size="lg"
-              className="bg-white text-wavesBlue border-white hover:bg-blue-50"
+              className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-blue-50"
             >
               View Publications
             </Button>
@@ -300,7 +300,7 @@ export default function Research() {
               href="/contact"
               variant="ghost"
               size="lg"
-              className="text-white border-white hover:bg-white/10"
+              className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
               Contact Us
             </Button>

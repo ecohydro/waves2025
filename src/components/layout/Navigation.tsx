@@ -167,7 +167,7 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`w-full bg-white border-b border-gray-200 sticky top-0 z-50 transform transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`w-full bg-white dark:bg-slate-950 border-b border-gray-200 sticky top-0 z-50 transform transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -181,7 +181,7 @@ export default function Navigation() {
                   height={40}
                   className="mr-2 mt-1.5"
                 />
-                <span className="text-xl font-bold text-gray-900 ml-2">
+                <span className="text-xl font-bold text-gray-900 dark:text-gray-50 ml-2">
                   WAVES @ UC Santa Barbara
                 </span>
               </Link>
@@ -196,7 +196,7 @@ export default function Navigation() {
                     key={link.name}
                     href={link.href}
                     className={
-                      `text-gray-700 hover:text-blue-700 font-medium transition-colors` +
+                      `text-gray-700 dark:text-gray-200 hover:text-blue-700 font-medium transition-colors` +
                       (isActive ? ' text-blue-700 border-b-2 border-blue-700' : '') +
                       (isLoading ? ' opacity-50 pointer-events-none' : '')
                     }
@@ -221,7 +221,7 @@ export default function Navigation() {
                 className="ml-2 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
               >
                 <svg
-                  className="h-5 w-5 text-gray-500"
+                  className="h-5 w-5 text-gray-500 dark:text-gray-400"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -246,7 +246,7 @@ export default function Navigation() {
                   <LoadingSpinner size="sm" />
                 ) : (
                   <svg
-                    className="h-6 w-6 text-gray-700"
+                    className="h-6 w-6 text-gray-700 dark:text-gray-200"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -275,7 +275,7 @@ export default function Navigation() {
         >
           <div
             ref={mobileMenuRef}
-            className={`absolute top-0 right-0 w-64 h-full bg-white shadow-lg flex flex-col p-6 transform transition-transform duration-300 ease-in-out ${menuAnimating ? 'translate-x-0' : 'translate-x-full'}`}
+            className={`absolute top-0 right-0 w-64 h-full bg-white dark:bg-slate-950 shadow-lg flex flex-col p-6 transform transition-transform duration-300 ease-in-out ${menuAnimating ? 'translate-x-0' : 'translate-x-full'}`}
             onClick={(e) => e.stopPropagation()}
             onKeyDown={handleKeyDown}
             role="menu"
@@ -290,7 +290,7 @@ export default function Navigation() {
               className={`self-end mb-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-opacity ${!menuAnimating ? 'opacity-50 pointer-events-none' : ''}`}
             >
               <svg
-                className="h-6 w-6 text-gray-700"
+                className="h-6 w-6 text-gray-700 dark:text-gray-200"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -338,7 +338,7 @@ export default function Navigation() {
               onClick={closeMenu}
             >
               <svg
-                className="h-5 w-5 text-gray-500"
+                className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"

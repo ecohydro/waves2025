@@ -63,14 +63,14 @@ export default async function ProjectsPage() {
   const activeProjects = projects.filter((project) => project.status === 'active');
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <section className="bg-white border-b">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-6">
               Research Projects
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Explore current and past projects across ecohydrology, coupled natural-human systems,
               and environmental sensing.
             </p>
@@ -78,22 +78,22 @@ export default async function ProjectsPage() {
         </div>
       </section>
 
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-1">{projects.length}</div>
-              <div className="text-sm text-gray-600">Total Projects</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Total Projects</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-1">{activeProjects.length}</div>
-              <div className="text-sm text-gray-600">Active Projects</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Active Projects</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-1">
                 {featuredProjects.length}
               </div>
-              <div className="text-sm text-gray-600">Featured Projects</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Featured Projects</div>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default async function ProjectsPage() {
           {projects.length === 0 ? (
             <Card>
               <CardContent className="p-8 text-center">
-                <p className="text-gray-600 mb-4">No public projects are available right now.</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">No public projects are available right now.</p>
                 <Button href="/research" variant="outline">
                   View Research Themes
                 </Button>
@@ -132,13 +132,13 @@ export default async function ProjectsPage() {
                         ) : null}
                       </div>
 
-                      <h2 className="text-xl font-semibold text-gray-900 mb-3">{project.title}</h2>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
+                      <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">{project.title}</h2>
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                         {project.shortDescription || 'No summary available.'}
                       </p>
 
                       {(start || end) && (
-                        <p className="text-sm text-gray-500 mb-4">
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                           {start || 'Unknown start'}
                           {end ? ` - ${end}` : project.status === 'active' ? ' - Present' : ''}
                         </p>

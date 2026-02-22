@@ -139,14 +139,14 @@ export default async function NewsPage() {
 
                 {/* Title */}
                 <h3
-                  className={`font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors mb-3 leading-snug ${featured ? 'text-xl' : 'text-lg'}`}
+                  className={`font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors mb-3 leading-snug ${featured ? 'text-xl' : 'text-lg'}`}
                 >
                   {article.title}
                 </h3>
 
                 {/* Excerpt */}
                 <p
-                  className={`text-gray-600 leading-relaxed mb-4 ${featured ? 'text-base line-clamp-4' : 'text-sm line-clamp-3'}`}
+                  className={`text-gray-600 dark:text-gray-300 leading-relaxed mb-4 ${featured ? 'text-base line-clamp-4' : 'text-sm line-clamp-3'}`}
                 >
                   {article.excerpt}
                 </p>
@@ -157,13 +157,13 @@ export default async function NewsPage() {
                     {article.tags.slice(0, featured ? 4 : 3).map((tag, index) => (
                       <span
                         key={index}
-                        className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
+                        className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full"
                       >
                         {tag}
                       </span>
                     ))}
                     {article.tags.length > (featured ? 4 : 3) && (
-                      <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full">
+                      <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full">
                         +{article.tags.length - (featured ? 4 : 3)} more
                       </span>
                     )}
@@ -172,7 +172,7 @@ export default async function NewsPage() {
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-between text-sm text-gray-500">
+              <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                 <div className="flex items-center gap-2">
                   {article.author.name && <span>By {article.author.name}</span>}
                 </div>
@@ -186,13 +186,13 @@ export default async function NewsPage() {
   );
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Hero Section */}
-      <section className="bg-white border-b">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">News & Updates</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-6">News & Updates</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Stay up to date with the latest research findings, field work updates, publications,
               and lab announcements from the WAVES Research Team.
             </p>
@@ -205,8 +205,8 @@ export default async function NewsPage() {
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Stories</h2>
-              <p className="text-lg text-gray-600">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Featured Stories</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
                 Highlighting our most important research updates and major announcements.
               </p>
             </div>
@@ -219,11 +219,11 @@ export default async function NewsPage() {
       )}
 
       {/* Recent News */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recent Updates</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Recent Updates</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Latest news from our research activities, publications, and lab developments.
             </p>
           </div>
@@ -248,8 +248,8 @@ export default async function NewsPage() {
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Browse by Category</h2>
-              <p className="text-lg text-gray-600">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Browse by Category</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
                 Explore news articles organized by research area and content type.
               </p>
             </div>
@@ -268,10 +268,10 @@ export default async function NewsPage() {
                       >
                         {getCategoryLabel(category)}
                       </div>
-                      <h3 className="font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors mb-2">
+                      <h3 className="font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors mb-2">
                         {getCategoryLabel(category)}
                       </h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
                         {categoryCount} article{categoryCount !== 1 ? 's' : ''}
                       </p>
                     </CardContent>
@@ -295,14 +295,14 @@ export default async function NewsPage() {
             <Button
               href="/contact"
               variant="outline"
-              className="bg-white text-wavesBlue border-white hover:bg-gray-50"
+              className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-gray-50 dark:bg-slate-900"
             >
               Contact Us
             </Button>
             <Button
               href="/people"
               variant="outline"
-              className="text-white border-white hover:bg-white/10"
+              className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
               Meet Our Team
             </Button>

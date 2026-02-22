@@ -153,7 +153,7 @@ export default async function PublicationsPage({
       <CardContent className="p-6 flex flex-col h-full">
         {/* Title */}
         <h3
-          className={`font-semibold text-gray-900 group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
+          className={`font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
         >
           <Link href={`/publications/${publication.slug.current}`} className="hover:underline">
             {publication.title}
@@ -163,7 +163,7 @@ export default async function PublicationsPage({
         {/* Authors and Journal */}
         <div className="mb-2">
           {publication.authors && publication.authors.length > 0 && (
-            <p className="text-sm text-gray-700">{renderAuthors(publication.authors)}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-200">{renderAuthors(publication.authors)}</p>
           )}
           {publication.venue?.name && (
             <p className="text-sm text-wavesBlue font-medium mt-1.5">{publication.venue.name}</p>
@@ -198,15 +198,15 @@ export default async function PublicationsPage({
   );
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Hero Section */}
-      <section className="bg-white border-b">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-6">
               Publications & Presentations
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Explore our peer-reviewed research outputs and conference presentations.
             </p>
             {/* View Toggle */}
@@ -216,7 +216,7 @@ export default async function PublicationsPage({
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     view === 'articles'
                       ? 'bg-wavesBlue text-white'
-                      : 'bg-transparent text-gray-700 hover:bg-white'
+                      : 'bg-transparent text-gray-700 dark:text-gray-200 hover:bg-white dark:bg-slate-950'
                   }`}
                 >
                   Publications
@@ -227,7 +227,7 @@ export default async function PublicationsPage({
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     view === 'presentations'
                       ? 'bg-wavesBlue text-white'
-                      : 'bg-transparent text-gray-700 hover:bg-white'
+                      : 'bg-transparent text-gray-700 dark:text-gray-200 hover:bg-white dark:bg-slate-950'
                   }`}
                 >
                   Conference Presentations & Abstracts
@@ -255,7 +255,7 @@ export default async function PublicationsPage({
                       className={`px-3 py-1.5 rounded-full text-sm font-medium border ${
                         isActive
                           ? 'bg-wavesBlue text-white border-wavesBlue'
-                          : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                          : 'bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-200 border-gray-300 hover:bg-gray-50 dark:bg-slate-900'
                       }`}
                     >
                       {opt.label}
@@ -269,18 +269,18 @@ export default async function PublicationsPage({
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-2 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">
                 {filteredPublications.length}
               </div>
-              <div className="text-sm text-gray-600">Total Publications</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Total Publications</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{coAuthorCount}</div>
-              <div className="text-sm text-gray-600">Co-authors</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Co-authors</div>
             </div>
           </div>
         </div>
@@ -291,8 +291,8 @@ export default async function PublicationsPage({
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Publications</h2>
-              <p className="text-lg text-gray-600">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Featured Publications</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
                 Highlighting our most impactful research contributions and recent breakthroughs.
               </p>
             </div>
@@ -305,11 +305,11 @@ export default async function PublicationsPage({
       )}
 
       {/* All Publications by Year */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">All Publications</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">All Publications</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               {view === 'articles'
                 ? 'Peer-reviewed publications (journal articles and conference papers) organized by year.'
                 : 'Conference presentations and abstracts organized by year.'}
@@ -318,12 +318,12 @@ export default async function PublicationsPage({
 
           {years.map((year) => (
             <div key={year} className="mb-16">
-              <div className="sticky top-20 bg-white/95 backdrop-blur-sm z-10 py-4 mb-8 border-b">
-                <h3 className="text-2xl font-bold text-gray-900 flex items-center">
+              <div className="sticky top-20 bg-white dark:bg-slate-950/95 backdrop-blur-sm z-10 py-4 mb-8 border-b">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-50 flex items-center">
                   <span className="bg-wavesBlue text-white px-4 py-2 rounded-lg text-lg mr-4">
                     {year}
                   </span>
-                  <span className="text-gray-500 text-sm font-normal">
+                  <span className="text-gray-500 dark:text-gray-400 text-sm font-normal">
                     {publicationsByYear[year].length} publication
                     {publicationsByYear[year].length !== 1 ? 's' : ''}
                   </span>
@@ -350,14 +350,14 @@ export default async function PublicationsPage({
             <Button
               href="/contact"
               variant="outline"
-              className="bg-white text-wavesBlue border-white hover:bg-gray-50"
+              className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-gray-50 dark:bg-slate-900"
             >
               Contact Us
             </Button>
             <Button
               href="/people"
               variant="outline"
-              className="text-white border-white hover:bg-white/10"
+              className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
               Meet Our Team
             </Button>

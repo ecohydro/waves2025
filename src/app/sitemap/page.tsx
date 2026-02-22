@@ -42,11 +42,11 @@ const sections: Array<{ title: string; links: Array<{ href: string; label: strin
 
 export default function SitemapPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <section className="bg-white border-b">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Sitemap</h1>
-          <p className="text-lg text-gray-600">Browse all major sections of the WAVES Lab site.</p>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">Sitemap</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">Browse all major sections of the WAVES Lab site.</p>
         </div>
       </section>
 
@@ -54,8 +54,8 @@ export default function SitemapPage() {
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {sections.map((section) => (
-              <div key={section.title} className="bg-white border rounded-lg p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">{section.title}</h2>
+              <div key={section.title} className="bg-white dark:bg-slate-950 border rounded-lg p-6">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">{section.title}</h2>
                 <ul className="space-y-2">
                   {section.links.map((link) => (
                     <li key={link.href}>

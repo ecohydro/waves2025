@@ -25,8 +25,8 @@ export interface CardFooterProps {
 }
 
 const variantStyles = {
-  default: 'bg-white shadow-md',
-  outlined: 'border border-gray-200 bg-white',
+  default: 'bg-white dark:bg-slate-950 shadow-md',
+  outlined: 'border border-gray-200 bg-white dark:bg-slate-950',
 };
 
 export const Card: React.FC<CardProps> = ({ children, variant = 'default', className }) => {
@@ -36,8 +36,8 @@ export const Card: React.FC<CardProps> = ({ children, variant = 'default', class
 export const CardHeader: React.FC<CardHeaderProps> = ({ title, subtitle, children, className }) => {
   return (
     <div className={cn('mb-4', className)}>
-      {title && <h3 className="text-lg font-semibold text-gray-900">{title}</h3>}
-      {subtitle && <p className="text-sm text-gray-600 mt-1">{subtitle}</p>}
+      {title && <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">{title}</h3>}
+      {subtitle && <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{subtitle}</p>}
       {children}
     </div>
   );

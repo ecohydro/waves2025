@@ -38,8 +38,8 @@ export default function StudioPage() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Sanity Studio Unavailable</h1>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{error}</p>
+          <p className="text-gray-600 dark:text-gray-300">
             Please use the standalone Studio:{' '}
             <a
               href="http://localhost:3333"
@@ -60,7 +60,7 @@ export default function StudioPage() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Loading Sanity Studio...</h1>
-          <p className="text-gray-600">Please wait while the studio loads.</p>
+          <p className="text-gray-600 dark:text-gray-300">Please wait while the studio loads.</p>
         </div>
       </div>
     );

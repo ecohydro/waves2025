@@ -79,12 +79,12 @@ export default async function PeoplePage() {
           <div className="p-6">
             {/* Name and Title */}
             <div className="text-center mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-wavesBlue transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-1 group-hover:text-wavesBlue transition-colors">
                 {person.name}
               </h3>
-              {person.title && <p className="text-sm text-gray-600 mb-2">{person.title}</p>}
+              {person.title && <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{person.title}</p>}
               {person.currentPosition && (
-                <p className="text-xs text-gray-500">{person.currentPosition}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">{person.currentPosition}</p>
               )}
             </div>
 
@@ -101,7 +101,7 @@ export default async function PeoplePage() {
                     </span>
                   ))}
                   {person.researchInterests.length > 3 && (
-                    <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full">
+                    <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full">
                       +{person.researchInterests.length - 3} more
                     </span>
                   )}
@@ -111,7 +111,7 @@ export default async function PeoplePage() {
 
             {/* Bio Preview */}
             {person.bio && (
-              <p className="text-sm text-gray-600 leading-relaxed text-center line-clamp-3">
+              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed text-center line-clamp-3">
                 {person.bio}
               </p>
             )}
@@ -170,13 +170,13 @@ export default async function PeoplePage() {
   );
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Hero Section */}
-      <section className="bg-white border-b">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Research Team</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-6">Our Research Team</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Meet the interdisciplinary team of researchers, students, and staff advancing our
               understanding of water, vegetation, and society.
             </p>
@@ -185,20 +185,20 @@ export default async function PeoplePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{currentMembers.length}</div>
-              <div className="text-sm text-gray-600">Current Members</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Current Members</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{alumni.length}</div>
-              <div className="text-sm text-gray-600">Alumni</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Alumni</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">20+</div>
-              <div className="text-sm text-gray-600">Years of Research</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Years of Research</div>
             </div>
           </div>
         </div>
@@ -209,8 +209,8 @@ export default async function PeoplePage() {
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Members</h2>
-              <p className="text-lg text-gray-600">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Current Members</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
                 Our interdisciplinary team of researchers, students, and staff.
               </p>
             </div>
@@ -227,8 +227,8 @@ export default async function PeoplePage() {
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Lab Alumni</h2>
-              <p className="text-lg text-gray-600">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Lab Alumni</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
                 Former members who contributed to our research mission.
               </p>
             </div>
@@ -254,7 +254,7 @@ export default async function PeoplePage() {
               };
               return (
                 <div key={cat} className="mb-12">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">{headings[cat]}</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-6">{headings[cat]}</h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {sectionPeople.map(renderPersonCard)}
                   </div>
@@ -280,14 +280,14 @@ export default async function PeoplePage() {
             <Button
               href="/contact"
               variant="outline"
-              className="bg-white text-wavesBlue border-white hover:bg-gray-50"
+              className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-gray-50 dark:bg-slate-900"
             >
               Contact Us
             </Button>
             <Button
               href="/research"
               variant="outline"
-              className="text-white border-white hover:bg-white/10"
+              className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
               Learn About Our Research
             </Button>

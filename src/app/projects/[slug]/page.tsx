@@ -30,8 +30,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const end = formatDate(project.endDate);
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="bg-white border-b">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
+      <div className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link href="/projects" className="text-wavesBlue hover:text-blue-800 font-medium">
             ← Back to Projects
@@ -39,14 +39,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </div>
       </div>
 
-      <section className="py-14 bg-white border-b">
+      <section className="py-14 bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{project.title}</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">{project.title}</h1>
           {project.shortDescription ? (
-            <p className="text-xl text-gray-600 mb-4">{project.shortDescription}</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">{project.shortDescription}</p>
           ) : null}
           {(start || end) && (
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-400">
               {start || 'Unknown start'}
               {end ? ` - ${end}` : project.status === 'active' ? ' - Present' : ''}
             </p>
@@ -58,8 +58,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <Card>
             <CardContent className="p-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Overview</h2>
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+              <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Overview</h2>
+              <p className="text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">
                 {project.description || project.shortDescription || 'No overview available.'}
               </p>
             </CardContent>
@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           {project.researchAreas && project.researchAreas.length > 0 && (
             <Card>
               <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Research Areas</h2>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Research Areas</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.researchAreas.map((area) => (
                     <span
@@ -86,8 +86,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           {project.participants && project.participants.length > 0 && (
             <Card>
               <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Team</h2>
-                <ul className="space-y-2 text-gray-700">
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Team</h2>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-200">
                   {project.participants.map((participant, index) => (
                     <li key={`${participant.person?._id || participant.externalName || index}`}>
                       {participant.person?.name || participant.externalName || 'Unknown'}
@@ -102,7 +102,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           {project.links && (
             <Card>
               <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Resources</h2>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Resources</h2>
                 <div className="flex flex-wrap gap-3">
                   {project.links.website && (
                     <Button href={project.links.website} variant="outline">

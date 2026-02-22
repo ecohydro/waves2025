@@ -49,7 +49,7 @@ export const Input: React.FC<InputProps> = ({
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
           {label}
         </label>
       )}
@@ -61,7 +61,7 @@ export const Input: React.FC<InputProps> = ({
         )}
         <input id={inputId} className={inputStyles} disabled={disabled} {...props} />
       </div>
-      {helperText && !hasError && <p className="mt-1 text-sm text-gray-500">{helperText}</p>}
+      {helperText && !hasError && <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{helperText}</p>}
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
   );

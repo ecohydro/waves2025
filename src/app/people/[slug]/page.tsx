@@ -63,9 +63,9 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
       {/* Navigation */}
-      <div className="bg-white border-b">
+      <div className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link
             href="/people"
@@ -85,7 +85,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 items-start">
@@ -123,18 +123,18 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                     {getUserGroupLabel(person.userGroup)}
                   </span>
                   {!person.isActive && (
-                    <span className="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-600">
+                    <span className="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-600 dark:text-gray-300">
                       Inactive
                     </span>
                   )}
                 </div>
 
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">{person.name}</h1>
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-2">{person.name}</h1>
 
-                {person.title && <p className="text-xl text-gray-600 mb-4">{person.title}</p>}
+                {person.title && <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">{person.title}</p>}
 
                 {person.bio && (
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
                     {person.bio.split('.')[0] + '.'}
                   </p>
                 )}
@@ -161,7 +161,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                       href={person.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:bg-slate-900 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path
@@ -179,7 +179,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                       href={`https://orcid.org/${person.socialMedia.orcid}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:bg-slate-900 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.972-1.303 3.972-3.722 0-2.359-1.613-3.722-3.972-3.722h-2.297z" />
@@ -193,7 +193,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                       href={person.socialMedia.googleScholar}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:bg-slate-900 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
                     >
                       Google Scholar
                     </a>
@@ -216,7 +216,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.researchInterests && person.researchInterests.length > 0 && (
                   <Card>
                     <CardContent className="p-8">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-6">Research Interests</h2>
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Research Interests</h2>
                       <div className="flex flex-wrap gap-2">
                         {person.researchInterests.map((interest, index) => (
                           <span
@@ -235,8 +235,8 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.bioLong && (
                   <Card>
                     <CardContent className="p-8">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
-                      <div className="prose prose-lg max-w-none text-gray-700">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Biography</h2>
+                      <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-200">
                         <div className="leading-relaxed" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bioLong) }} />
                       </div>
                     </CardContent>
@@ -247,15 +247,15 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.education && person.education.length > 0 && (
                   <Card>
                     <CardContent className="p-8">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-6">Education</h2>
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Education</h2>
                       <div className="space-y-4">
                         {person.education.map((edu, index) => (
                           <div key={index} className="border-l-4 border-wavesBlue pl-4">
-                            <h3 className="font-semibold text-gray-900">
+                            <h3 className="font-semibold text-gray-900 dark:text-gray-50">
                               {edu.degree} in {edu.field}
                             </h3>
-                            <p className="text-gray-600">{edu.institution}</p>
-                            <p className="text-sm text-gray-500">{edu.year}</p>
+                            <p className="text-gray-600 dark:text-gray-300">{edu.institution}</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{edu.year}</p>
                           </div>
                         ))}
                       </div>
@@ -269,35 +269,35 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {/* Quick Info */}
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Info</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">Quick Info</h3>
                     <dl className="space-y-3">
                       <div>
-                        <dt className="text-sm font-medium text-gray-500">Status</dt>
-                        <dd className="text-sm text-gray-900">
+                        <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Status</dt>
+                        <dd className="text-sm text-gray-900 dark:text-gray-50">
                           {getUserGroupLabel(person.userGroup)}
                         </dd>
                       </div>
 
                       {person.joinDate && (
                         <div>
-                          <dt className="text-sm font-medium text-gray-500">
+                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">
                             {person.userGroup === 'alumni' ? 'Joined' : 'Member Since'}
                           </dt>
-                          <dd className="text-sm text-gray-900">{formatDate(person.joinDate)}</dd>
+                          <dd className="text-sm text-gray-900 dark:text-gray-50">{formatDate(person.joinDate)}</dd>
                         </div>
                       )}
 
                       {person.leaveDate && (
                         <div>
-                          <dt className="text-sm font-medium text-gray-500">Left</dt>
-                          <dd className="text-sm text-gray-900">{formatDate(person.leaveDate)}</dd>
+                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Left</dt>
+                          <dd className="text-sm text-gray-900 dark:text-gray-50">{formatDate(person.leaveDate)}</dd>
                         </div>
                       )}
 
                       {person.currentPosition && (
                         <div>
-                          <dt className="text-sm font-medium text-gray-500">Current Position</dt>
-                          <dd className="text-sm text-gray-900">{person.currentPosition}</dd>
+                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Current Position</dt>
+                          <dd className="text-sm text-gray-900 dark:text-gray-50">{person.currentPosition}</dd>
                         </div>
                       )}
                     </dl>
@@ -308,14 +308,14 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.socialMedia && (
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Connect</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">Connect</h3>
                       <div className="space-y-3">
                         {person.socialMedia.linkedin && (
                           <a
                             href={person.socialMedia.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:bg-slate-900 transition-colors group"
                           >
                             <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
                               <svg
@@ -326,7 +326,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                               </svg>
                             </div>
-                            <span className="text-sm text-gray-700 group-hover:text-gray-900">
+                            <span className="text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-gray-50">
                               LinkedIn
                             </span>
                           </a>
@@ -337,7 +337,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                             href={person.socialMedia.twitter}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:bg-slate-900 transition-colors group"
                           >
                             <div className="w-8 h-8 bg-sky-500 rounded flex items-center justify-center">
                               <svg
@@ -348,7 +348,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                               </svg>
                             </div>
-                            <span className="text-sm text-gray-700 group-hover:text-gray-900">
+                            <span className="text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-gray-50">
                               Twitter
                             </span>
                           </a>
@@ -359,7 +359,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                             href={person.socialMedia.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:bg-slate-900 transition-colors group"
                           >
                             <div className="w-8 h-8 bg-gray-900 rounded flex items-center justify-center">
                               <svg
@@ -370,7 +370,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                               </svg>
                             </div>
-                            <span className="text-sm text-gray-700 group-hover:text-gray-900">
+                            <span className="text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-gray-50">
                               GitHub
                             </span>
                           </a>
@@ -381,12 +381,12 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                             href={person.socialMedia.researchGate}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:bg-slate-900 transition-colors group"
                           >
                             <div className="w-8 h-8 bg-teal-600 rounded flex items-center justify-center">
                               <span className="text-white font-bold text-xs">RG</span>
                             </div>
-                            <span className="text-sm text-gray-700 group-hover:text-gray-900">
+                            <span className="text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-gray-50">
                               ResearchGate
                             </span>
                           </a>

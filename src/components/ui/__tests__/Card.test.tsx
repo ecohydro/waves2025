@@ -8,7 +8,7 @@ describe('Card', () => {
     render(<Card>Card content</Card>);
     const card = screen.getByText('Card content').closest('div');
     expect(card).toBeInTheDocument();
-    expect(card).toHaveClass('bg-white', 'rounded-lg', 'shadow-md');
+    expect(card).toHaveClass('bg-white dark:bg-slate-950', 'rounded-lg', 'shadow-md');
   });
 
   it('should render with custom className', () => {
@@ -20,7 +20,7 @@ describe('Card', () => {
   it('should render with different variants', () => {
     const { rerender } = render(<Card variant="default">Default</Card>);
     const card = screen.getByText('Default').closest('div');
-    expect(card).toHaveClass('bg-white');
+    expect(card).toHaveClass('bg-white dark:bg-slate-950');
 
     rerender(<Card variant="outlined">Outlined</Card>);
     const outlinedCard = screen.getByText('Outlined').closest('div');

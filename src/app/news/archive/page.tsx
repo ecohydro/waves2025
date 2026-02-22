@@ -19,11 +19,11 @@ export default async function NewsArchivePage() {
   });
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <section className="bg-white border-b">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
+      <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">News Archive</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">News Archive</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
             Complete archive of lab announcements, field updates, and research news.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default async function NewsArchivePage() {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {sorted.length === 0 ? (
             <Card>
-              <CardContent className="p-8 text-gray-600">
+              <CardContent className="p-8 text-gray-600 dark:text-gray-300">
                 No archived news is available right now.
               </CardContent>
             </Card>
@@ -46,13 +46,13 @@ export default async function NewsArchivePage() {
                       <div>
                         <Link
                           href={`/news/${item.slug.current}`}
-                          className="text-lg font-semibold text-gray-900 hover:text-wavesBlue"
+                          className="text-lg font-semibold text-gray-900 dark:text-gray-50 hover:text-wavesBlue"
                         >
                           {item.title}
                         </Link>
-                        {item.excerpt ? <p className="text-gray-600 mt-1">{item.excerpt}</p> : null}
+                        {item.excerpt ? <p className="text-gray-600 dark:text-gray-300 mt-1">{item.excerpt}</p> : null}
                       </div>
-                      <div className="text-sm text-gray-500 shrink-0">
+                      <div className="text-sm text-gray-500 dark:text-gray-400 shrink-0">
                         {new Date(item.publishedAt).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'short',
