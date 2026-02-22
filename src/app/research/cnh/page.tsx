@@ -51,7 +51,8 @@ export default async function CNHResearch() {
               Our CNH research examines the complex interactions between human activities and
               natural systems, with a focus on agricultural sustainability, food security, and
               livelihood resilience. We investigate how social and environmental factors interact to
-              shape outcomes for people and ecosystems in dryland regions.
+              shape outcomes for people and ecosystems in dryland regions. This work is conducted
+              through <span className="font-semibold">collaborative partnerships with researchers who bring complementary expertise in social science, biophysical systems, and remote sensing</span>.
             </p>
           </div>
 
@@ -80,14 +81,10 @@ export default async function CNHResearch() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  We combine household surveys, participatory methods, and quantitative analysis
-                  with biophysical measurements and remote sensing data. Our work integrates social
-                  science methods with natural science approaches.
+                  Our research is fundamentally <span className="font-semibold">team-based and collaborative</span>. We work with interdisciplinary teams of collaborators who integrate diverse methodological expertise: social science methods (household surveys, participatory approaches, institutional analysis), biophysical measurements (soil moisture, vegetation monitoring, hydrology), and remote sensing data (satellite imagery, geospatial analysis).
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Field sites include smallholder farming systems in Kenya, Zambia, and Ghana,
-                  providing insights into diverse agricultural and livelihood contexts across
-                  sub-Saharan Africa.
+                  This collaborative approach brings together researchers with deep knowledge in sociology, economics, environmental science, and engineering. Field sites in Kenya, Zambia, and Ghana provide opportunities for integrated research across diverse agricultural and livelihood contexts in sub-Saharan Africa.
                 </p>
               </CardContent>
             </Card>
