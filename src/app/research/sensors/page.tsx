@@ -218,27 +218,24 @@ export default async function SensorsResearch() {
           <div className="space-y-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">PulsePod</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Arable Crop Intelligence Systems</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Low-cost, wireless sensor platform for environmental monitoring in remote
-                  locations. Features solar power, cellular connectivity, and modular sensor
-                  interfaces for customized deployments.
+                  Integrated crop monitoring platforms (Arable Mark 3) that capture weather, plant, soil, and irrigation data along with daily crop imagery. These systems provide comprehensive environmental sensing at the field scale, combining multiple measurement modalities in a single integrated device.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Used extensively in our field sites across Africa for monitoring soil moisture,
-                  weather conditions, and plant physiological responses.
+                  Used across our field research sites to monitor soil moisture, temperature, weather conditions, and vegetation status. The integrated camera enables visual crop phenology monitoring alongside precise environmental measurements.
                 </p>
               </div>
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-wavesBlue/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-wavesBlue" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Award Winner</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Multi-Modal Sensing</h4>
                   <p className="text-gray-600 text-sm">
-                    Third place winner at Princeton's Keller Center Innovation Forum
+                    Combines soil, weather, plant, and imagery data in integrated platforms
                   </p>
                 </CardContent>
               </Card>
@@ -252,23 +249,46 @@ export default async function SensorsResearch() {
                       <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Open Source</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Autonomous Robotics</h4>
                   <p className="text-gray-600 text-sm">
-                    All software tools available on GitHub for community use and development
+                    Robotic systems for automated, high-frequency spatial measurements
                   </p>
                 </CardContent>
               </Card>
               <div className="md:order-1">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">COSMOS Probes</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Fluxbot: Automated Soil Carbon Flux Measurement</h3>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Cosmic-ray soil moisture sensing technology for large-scale, non-invasive
-                  monitoring of soil water content across multiple hectares with a single sensor.
+                  Autonomous robotic soil carbon flux chambers that enable high-frequency, spatially distributed measurement of soil respiration and carbon cycling. Fluxbots can be deployed as arrays to capture soil process heterogeneity at centimeter to meter scales.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Deployed at the Mpala Research Centre in Kenya, providing continuous
-                  landscape-scale soil moisture measurements for ecohydrological research.
+                  Our fluxbot arrays deployed in East African savanna ecosystems enable novel insights into ecosystem carbon dynamics and heterogeneity. The open-source, wireless design makes this technology accessible for collaborative research globally.
                 </p>
               </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Unmanned Aerial Vehicle (UAV) Remote Sensing</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Drone-based platforms for high-resolution aerial surveys, including thermal imaging, multispectral photography, and structure-from-motion photogrammetry. UAVs enable spatial resolution and revisit frequency that bridge ground sensors and satellite platforms.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  We use UAVs for vegetation mapping, water stress assessment, thermal remote sensing of riparian systems, and landscape-scale environmental monitoring. UAV data is integrated with ground-based measurements to provide multi-scale understanding of ecohydrological processes.
+                </p>
+              </div>
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-wavesBlue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-wavesBlue" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Multi-Scale Integration</h4>
+                  <p className="text-gray-600 text-sm">
+                    UAV data bridges ground sensors and satellite observations for comprehensive monitoring
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
