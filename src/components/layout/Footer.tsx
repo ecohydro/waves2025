@@ -168,9 +168,9 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media and External Links */}
-        <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-6 mb-6 md:mb-0">
+        <div className="mt-16 pt-10 border-t border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-center py-2">
+            <div className="flex space-x-6 mb-8 md:mb-0">
               {/* Twitter */}
               <a
                 href="https://twitter.com/WavesLab"
@@ -257,9 +257,9 @@ const Footer: React.FC = () => {
 
       {/* Bottom Bar */}
       <div className="bg-gray-800 border-t border-gray-700">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <div className="mb-4 md:mb-0">
+            <div className="mb-6 md:mb-0">
               <p>© {currentYear} WAVES Research Lab. All rights reserved.</p>
             </div>
             <div className="flex space-x-6">
