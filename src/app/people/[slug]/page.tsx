@@ -30,6 +30,10 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
     notFound();
   }
 
+  // Pre-render markdown to HTML
+  const bioHtml = person.bio ? md.render(person.bio) : '';
+  const bioLongHtml = person.bioLong ? md.render(person.bioLong) : '';
+
   const formatDate = (dateString?: string) => {
     if (!dateString) return '';
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -142,7 +146,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                 {person.bio && (
                   <div
                     className="text-lg text-gray-700 leading-relaxed mb-6 prose prose-sm max-w-none"
-                    dangerouslySetInnerHTML={{ __html: md.render(person.bio) }}
+                    dangerouslySetInnerHTML={{ __html: bioHtml }}
                   />
                 )}
 
@@ -228,7 +232,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                     <CardContent className="p-8">
                       <h2 className="text-2xl font-bold text-gray-900 mb-6">Biography</h2>
                       <div className="prose prose-lg max-w-none text-gray-700">
-                        <div dangerouslySetInnerHTML={{ __html: md.render(person.bioLong) }} />
+                        <div dangerouslySetInnerHTML={{ __html: bioLongHtml }} />
                       </div>
                     </CardContent>
                   </Card>
