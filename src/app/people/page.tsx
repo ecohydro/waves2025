@@ -187,7 +187,7 @@ export default async function PeoplePage() {
       {/* Stats Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{currentMembers.length}</div>
               <div className="text-sm text-gray-600">Current Members</div>
@@ -195,10 +195,6 @@ export default async function PeoplePage() {
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{alumni.length}</div>
               <div className="text-sm text-gray-600">Alumni</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">20+</div>
-              <div className="text-sm text-gray-600">Years of Research</div>
             </div>
           </div>
         </div>
