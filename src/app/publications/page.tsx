@@ -153,7 +153,7 @@ export default async function PublicationsPage({
       <CardContent className="p-6 flex flex-col h-full">
         {/* Title */}
         <h3
-          className={`font-semibold text-gray-900 dark:text-gray-50 group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
+          className={`font-semibold text-gray-900 dark:text-white group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
         >
           <Link href={`/publications/${publication.slug.current}`} className="hover:underline">
             {publication.title}
@@ -163,7 +163,7 @@ export default async function PublicationsPage({
         {/* Authors and Journal */}
         <div className="mb-2">
           {publication.authors && publication.authors.length > 0 && (
-            <p className="text-sm text-gray-700 dark:text-gray-200">{renderAuthors(publication.authors)}</p>
+            <p className="text-sm text-gray-700 dark:text-gray-100">{renderAuthors(publication.authors)}</p>
           )}
           {publication.venue?.name && (
             <p className="text-sm text-wavesBlue font-medium mt-1.5">{publication.venue.name}</p>
@@ -203,10 +203,10 @@ export default async function PublicationsPage({
       <section className="bg-white dark:bg-slate-950 border-b">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Publications & Presentations
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
               Explore our peer-reviewed research outputs and conference presentations.
             </p>
             {/* View Toggle */}
@@ -216,7 +216,7 @@ export default async function PublicationsPage({
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     view === 'articles'
                       ? 'bg-wavesBlue text-white'
-                      : 'bg-transparent text-gray-700 dark:text-gray-200 hover:bg-white dark:bg-slate-950'
+                      : 'bg-transparent text-gray-700 dark:text-gray-100 hover:bg-white dark:bg-slate-950'
                   }`}
                 >
                   Publications
@@ -227,7 +227,7 @@ export default async function PublicationsPage({
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     view === 'presentations'
                       ? 'bg-wavesBlue text-white'
-                      : 'bg-transparent text-gray-700 dark:text-gray-200 hover:bg-white dark:bg-slate-950'
+                      : 'bg-transparent text-gray-700 dark:text-gray-100 hover:bg-white dark:bg-slate-950'
                   }`}
                 >
                   Conference Presentations & Abstracts
@@ -255,7 +255,7 @@ export default async function PublicationsPage({
                       className={`px-3 py-1.5 rounded-full text-sm font-medium border ${
                         isActive
                           ? 'bg-wavesBlue text-white border-wavesBlue'
-                          : 'bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-200 border-gray-300 hover:bg-gray-50 dark:bg-slate-900'
+                          : 'bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-100 border-gray-300 hover:bg-gray-50 dark:bg-slate-900'
                       }`}
                     >
                       {opt.label}
@@ -276,11 +276,11 @@ export default async function PublicationsPage({
               <div className="text-3xl font-bold text-wavesBlue mb-2">
                 {filteredPublications.length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Total Publications</div>
+              <div className="text-sm text-gray-600 dark:text-gray-200">Total Publications</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-wavesBlue mb-2">{coAuthorCount}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Co-authors</div>
+              <div className="text-sm text-gray-600 dark:text-gray-200">Co-authors</div>
             </div>
           </div>
         </div>
@@ -291,8 +291,8 @@ export default async function PublicationsPage({
         <section className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">Featured Publications</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Publications</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-200">
                 Highlighting our most impactful research contributions and recent breakthroughs.
               </p>
             </div>
@@ -308,8 +308,8 @@ export default async function PublicationsPage({
       <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">All Publications</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">All Publications</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-200">
               {view === 'articles'
                 ? 'Peer-reviewed publications (journal articles and conference papers) organized by year.'
                 : 'Conference presentations and abstracts organized by year.'}
@@ -319,7 +319,7 @@ export default async function PublicationsPage({
           {years.map((year) => (
             <div key={year} className="mb-16">
               <div className="sticky top-20 bg-white dark:bg-slate-950/95 backdrop-blur-sm z-10 py-4 mb-8 border-b">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-50 flex items-center">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
                   <span className="bg-wavesBlue text-white px-4 py-2 rounded-lg text-lg mr-4">
                     {year}
                   </span>

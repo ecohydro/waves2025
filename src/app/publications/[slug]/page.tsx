@@ -157,7 +157,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
               )}
             </div>
 
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6 leading-tight">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
               {publication.title}
             </h1>
 
@@ -175,7 +175,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                           {author.person.name}
                         </Link>
                       ) : (
-                        <span className="text-gray-700 dark:text-gray-200 font-medium">
+                        <span className="text-gray-700 dark:text-gray-100 font-medium">
                           {author.name || 'Unknown Author'}
                         </span>
                       )}
@@ -195,7 +195,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
 
             {/* Publication Details */}
             {publication.venue && (
-              <div className="flex flex-wrap gap-4 text-lg text-gray-600 dark:text-gray-300 mb-8">
+              <div className="flex flex-wrap gap-4 text-lg text-gray-600 dark:text-gray-200 mb-8">
                 <span className="font-medium text-wavesBlue">{publication.venue.name}</span>
                 {publication.venue.volume && <span>Vol. {publication.venue.volume}</span>}
                 {publication.venue.issue && <span>Issue {publication.venue.issue}</span>}
@@ -292,8 +292,8 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 {publication.abstract && (
                   <Card>
                     <CardContent className="p-8">
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Abstract</h2>
-                      <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-200">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Abstract</h2>
+                      <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-100">
                         <p className="leading-relaxed">{publication.abstract}</p>
                       </div>
                     </CardContent>
@@ -304,7 +304,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 {publication.keywords && publication.keywords.length > 0 && (
                   <Card>
                     <CardContent className="p-8">
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Keywords</h2>
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Keywords</h2>
                       <div className="flex flex-wrap gap-2">
                         {publication.keywords.map((keyword, index) => (
                           <span
@@ -322,7 +322,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 {/* Citation */}
                 <Card>
                   <CardContent className="p-8">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-6">Citation</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Citation</h2>
                     <div className="bg-gray-50 dark:bg-slate-900 p-6 rounded-lg">
                       <p className="text-sm text-gray-800 leading-relaxed break-words break-all">
                         {formatAuthorsForCitation()}.
@@ -345,20 +345,20 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 {/* Publication Info */}
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                       Publication Details
                     </h3>
                     <dl className="space-y-3">
                       <div>
                         <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Type</dt>
-                        <dd className="text-sm text-gray-900 dark:text-gray-50">
+                        <dd className="text-sm text-gray-900 dark:text-white">
                           {getPublicationTypeLabel(publication.publicationType)}
                         </dd>
                       </div>
 
                       <div>
                         <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Status</dt>
-                        <dd className="text-sm text-gray-900 dark:text-gray-50">
+                        <dd className="text-sm text-gray-900 dark:text-white">
                           {publication.status.charAt(0).toUpperCase() +
                             publication.status.slice(1).replace('-', ' ')}
                         </dd>
@@ -367,7 +367,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                       {publication.publishedDate && (
                         <div>
                           <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Published</dt>
-                          <dd className="text-sm text-gray-900 dark:text-gray-50">
+                          <dd className="text-sm text-gray-900 dark:text-white">
                             {formatDate(publication.publishedDate)}
                           </dd>
                         </div>
@@ -376,7 +376,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                       {publication.submittedDate && (
                         <div>
                           <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Submitted</dt>
-                          <dd className="text-sm text-gray-900 dark:text-gray-50">
+                          <dd className="text-sm text-gray-900 dark:text-white">
                             {formatDate(publication.submittedDate)}
                           </dd>
                         </div>
@@ -385,7 +385,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                       {publication.acceptedDate && (
                         <div>
                           <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Accepted</dt>
-                          <dd className="text-sm text-gray-900 dark:text-gray-50">
+                          <dd className="text-sm text-gray-900 dark:text-white">
                             {formatDate(publication.acceptedDate)}
                           </dd>
                         </div>
@@ -394,14 +394,14 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                       {publication.doi && (
                         <div>
                           <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">DOI</dt>
-                          <dd className="text-sm text-gray-900 dark:text-gray-50 break-all">{publication.doi}</dd>
+                          <dd className="text-sm text-gray-900 dark:text-white break-all">{publication.doi}</dd>
                         </div>
                       )}
 
                       {publication.venue?.publisher && (
                         <div>
                           <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Publisher</dt>
-                          <dd className="text-sm text-gray-900 dark:text-gray-50">{publication.venue.publisher}</dd>
+                          <dd className="text-sm text-gray-900 dark:text-white">{publication.venue.publisher}</dd>
                         </div>
                       )}
                     </dl>
@@ -413,7 +413,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                   (publication.metrics.citations || publication.metrics.altmetricScore) && (
                     <Card>
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">Metrics</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Metrics</h3>
                         <dl className="space-y-3">
                           {publication.metrics.citations && (
                             <div>
@@ -434,7 +434,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                           {publication.metrics.impactFactor && (
                             <div>
                               <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Impact Factor</dt>
-                              <dd className="text-lg font-semibold text-gray-900 dark:text-gray-50">
+                              <dd className="text-lg font-semibold text-gray-900 dark:text-white">
                                 {publication.metrics.impactFactor}
                               </dd>
                             </div>
@@ -442,7 +442,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                           {publication.metrics.quartile && (
                             <div>
                               <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Quartile</dt>
-                              <dd className="text-lg font-semibold text-gray-900 dark:text-gray-50">
+                              <dd className="text-lg font-semibold text-gray-900 dark:text-white">
                                 {publication.metrics.quartile}
                               </dd>
                             </div>
@@ -456,7 +456,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 {publication.links && (
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">Links</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Links</h3>
                       <div className="space-y-3">
                         {publication.links.publisher && (
                           <a
@@ -474,7 +474,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                                 <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" />
                               </svg>
                             </div>
-                            <span className="text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-gray-50">
+                            <span className="text-sm text-gray-700 dark:text-gray-100 group-hover:text-gray-900 dark:text-white">
                               Publisher
                             </span>
                           </a>
@@ -496,7 +496,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
                               </svg>
                             </div>
-                            <span className="text-sm text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-gray-50">
+                            <span className="text-sm text-gray-700 dark:text-gray-100 group-hover:text-gray-900 dark:text-white">
                               Supplementary Material
                             </span>
                           </a>

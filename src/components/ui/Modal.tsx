@@ -99,13 +99,13 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
       className={cn('flex items-center justify-between p-6 border-b border-gray-200', className)}
     >
       <div className="flex-1">
-        {title && <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">{title}</h2>}
+        {title && <h2 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h2>}
         {children}
       </div>
       {showCloseButton && onClose && (
         <button
           onClick={onClose}
-          className="ml-4 text-gray-400 hover:text-gray-600 dark:text-gray-300 transition-colors"
+          className="ml-4 text-gray-400 hover:text-gray-600 dark:text-gray-200 transition-colors"
           aria-label="Close modal"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

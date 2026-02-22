@@ -181,7 +181,7 @@ export default function Navigation() {
                   height={40}
                   className="mr-2 mt-1.5"
                 />
-                <span className="text-xl font-bold text-gray-900 dark:text-gray-50 ml-2">
+                <span className="text-xl font-bold text-gray-900 dark:text-white ml-2">
                   WAVES @ UC Santa Barbara
                 </span>
               </Link>
@@ -196,7 +196,7 @@ export default function Navigation() {
                     key={link.name}
                     href={link.href}
                     className={
-                      `text-gray-700 dark:text-gray-200 hover:text-blue-700 font-medium transition-colors` +
+                      `text-gray-700 dark:text-gray-100 hover:text-blue-700 font-medium transition-colors` +
                       (isActive ? ' text-blue-700 border-b-2 border-blue-700' : '') +
                       (isLoading ? ' opacity-50 pointer-events-none' : '')
                     }
@@ -246,7 +246,7 @@ export default function Navigation() {
                   <LoadingSpinner size="sm" />
                 ) : (
                   <svg
-                    className="h-6 w-6 text-gray-700 dark:text-gray-200"
+                    className="h-6 w-6 text-gray-700 dark:text-gray-100"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -290,7 +290,7 @@ export default function Navigation() {
               className={`self-end mb-6 p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-opacity ${!menuAnimating ? 'opacity-50 pointer-events-none' : ''}`}
             >
               <svg
-                className="h-6 w-6 text-gray-700 dark:text-gray-200"
+                className="h-6 w-6 text-gray-700 dark:text-gray-100"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"

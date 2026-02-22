@@ -45,10 +45,10 @@ export default async function EcohydrologyResearch() {
       <section className="py-16 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Dryland Ecohydrology Research
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-200 leading-relaxed">
               Our ecohydrology research examines the complex interactions between water, vegetation,
               and climate in dryland ecosystems. We investigate how plants access, use, and respond
               to water across multiple scales, from individual leaves to entire landscapes, and how
@@ -59,15 +59,15 @@ export default async function EcohydrologyResearch() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">Research Focus</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Research Focus</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   Dryland ecosystems cover over 40% of Earth's land surface and support more than 2
                   billion people. These systems are characterized by water limitation and high
                   climate variability, making them particularly vulnerable to environmental change.
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
                   Our research helps understand how these critical ecosystems function and respond
                   to changing environmental conditions, informing conservation and management
                   strategies.
@@ -77,15 +77,15 @@ export default async function EcohydrologyResearch() {
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">Methodological Approach</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Methodological Approach</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   We integrate field observations, remote sensing data, and mathematical modeling to
                   understand ecohydrological processes across scales. Our work combines detailed
                   physiological measurements with landscape-scale analysis.
                 </p>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
                   Field sites span from the Kalahari Desert to East African savannas, providing
                   insights into how dryland ecosystems function across different climatic and
                   ecological contexts.
@@ -100,10 +100,10 @@ export default async function EcohydrologyResearch() {
       <section className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-900">
         <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Key Research Areas
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600 dark:text-gray-200">
               Our ecohydrology research spans multiple interconnected areas of investigation
             </p>
           </div>
@@ -116,8 +116,8 @@ export default async function EcohydrologyResearch() {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">Water Stress Dynamics</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Water Stress Dynamics</h3>
+                <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
                   Plant physiological responses to water limitation, including stomatal regulation,
                   osmotic adjustment, and hydraulic failure mechanisms in dryland species.
                 </p>
@@ -131,8 +131,8 @@ export default async function EcohydrologyResearch() {
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">Vegetation Patterns</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Vegetation Patterns</h3>
+                <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
                   Spatial organization of vegetation in response to water availability, including
                   self-organized patterns, patch dynamics, and landscape-scale heterogeneity.
                 </p>
@@ -146,8 +146,8 @@ export default async function EcohydrologyResearch() {
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">Tree-Grass Dynamics</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Tree-Grass Dynamics</h3>
+                <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
                   Competitive and facilitative interactions between woody and herbaceous vegetation,
                   including savanna stability, encroachment processes, and coexistence mechanisms.
                 </p>
@@ -161,8 +161,8 @@ export default async function EcohydrologyResearch() {
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">Climate Variability</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Climate Variability</h3>
+                <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
                   Ecosystem responses to rainfall variability, drought events, and long-term climate
                   change, including thresholds, resilience, and adaptation mechanisms.
                 </p>
@@ -176,10 +176,10 @@ export default async function EcohydrologyResearch() {
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                   Soil-Plant Interactions
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
                   Feedbacks between vegetation and soil properties, including nutrient cycling, soil
                   moisture dynamics, and rhizosphere processes in water-limited environments.
                 </p>
@@ -193,8 +193,8 @@ export default async function EcohydrologyResearch() {
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">Ecosystem Services</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Ecosystem Services</h3>
+                <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed">
                   Quantification of ecosystem services provided by dryland systems, including carbon
                   sequestration, biodiversity support, and hydrological regulation.
                 </p>
@@ -208,10 +208,10 @@ export default async function EcohydrologyResearch() {
       <section className="py-16 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Recent Ecohydrology Publications
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600 dark:text-gray-200">
               Latest research findings in dryland ecohydrology
             </p>
           </div>
@@ -220,8 +220,8 @@ export default async function EcohydrologyResearch() {
             {publications.map((pub) => (
               <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow" key={pub._id}>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">{pub.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{pub.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
                     {(pub.authors || []).map((a, i) => (
                       <span key={i}>
                         {a.person?.name || a.name}
@@ -232,7 +232,7 @@ export default async function EcohydrologyResearch() {
                     <span className="text-wavesBlue">{pub.venue?.name || ''}</span>
                   </p>
                   {pub.abstract && (
-                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-3">
+                    <p className="text-gray-600 dark:text-gray-200 text-sm leading-relaxed line-clamp-3">
                       {pub.abstract}
                     </p>
                   )}

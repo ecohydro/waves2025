@@ -26,7 +26,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-8">Get in Touch</h2>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Get in Touch</h2>
               
               <div className="space-y-8">
                 {/* Office Location */}
@@ -43,8 +43,8 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Office Location</h3>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Office Location</h3>
+                        <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
                           University of California, Santa Barbara<br />
                           Earth Research Institute<br />
                           Santa Barbara, CA 93106
@@ -68,14 +68,14 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Email</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
                         <a
                           href="mailto:caylor@ucsb.edu"
                           className="text-wavesBlue hover:underline text-lg"
                         >
                           caylor@ucsb.edu
                         </a>
-                        <p className="text-gray-600 dark:text-gray-300 mt-1">
+                        <p className="text-gray-600 dark:text-gray-200 mt-1">
                           For research inquiries, collaborations, and general questions
                         </p>
                       </div>
@@ -97,9 +97,9 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Phone</h3>
-                        <p className="text-gray-900 dark:text-gray-50 text-lg">(805) 893-2115</p>
-                        <p className="text-gray-600 dark:text-gray-300 mt-1">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Phone</h3>
+                        <p className="text-gray-900 dark:text-white text-lg">(805) 893-2115</p>
+                        <p className="text-gray-600 dark:text-gray-200 mt-1">
                           Office hours: Monday-Friday, 9:00 AM - 5:00 PM (PST)
                         </p>
                       </div>
@@ -110,7 +110,7 @@ export default function Contact() {
 
               {/* Social & Academic Links */}
               <div className="mt-12">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-6">Connect With Us</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Connect With Us</h3>
                 <div className="flex flex-wrap gap-4">
                   <Button
                     href="https://twitter.com/WavesLab"
@@ -167,8 +167,8 @@ export default function Contact() {
             <div>
               <Card className="border-0 shadow-lg">
                 <CardHeader>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Send us a Message</h2>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Send us a Message</h2>
+                  <p className="text-gray-600 dark:text-gray-200">
                     Have a question about our research or interested in collaboration? 
                     Fill out the form below and we'll get back to you.
                   </p>
@@ -177,7 +177,7 @@ export default function Contact() {
                   <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                           First Name *
                         </label>
                         <Input
@@ -190,7 +190,7 @@ export default function Contact() {
                       </div>
                       
                       <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                           Last Name *
                         </label>
                         <Input
@@ -204,7 +204,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                         Email Address *
                       </label>
                       <Input
@@ -217,7 +217,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="organization" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label htmlFor="organization" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                         Organization/Institution
                       </label>
                       <Input
@@ -229,7 +229,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                         Subject *
                       </label>
                       <select
@@ -250,7 +250,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
                         Message *
                       </label>
                       <textarea
@@ -288,10 +288,10 @@ export default function Contact() {
       <section className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-900">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Academic Opportunities
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
               Interested in joining our research team? We welcome inquiries from 
               prospective students, postdocs, and visiting researchers.
             </p>
@@ -300,10 +300,10 @@ export default function Contact() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">Graduate Students</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Graduate Students</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   We accept graduate students through UCSB's Bren School and Geography Department. 
                   Applications are typically due in December for fall admission.
                 </p>
@@ -319,10 +319,10 @@ export default function Contact() {
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">Postdoctoral Researchers</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Postdoctoral Researchers</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   We regularly host postdoctoral researchers working on ecohydrology, 
                   remote sensing, and agricultural systems. Multiple funding opportunities available.
                 </p>
@@ -338,10 +338,10 @@ export default function Contact() {
 
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50">Visiting Researchers</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Visiting Researchers</h3>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   We welcome visiting researchers and sabbatical scholars. Our lab provides 
                   excellent computational resources and field research opportunities.
                 </p>
