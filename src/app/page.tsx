@@ -2,8 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
+import { fetchNews, fetchPublications } from '@/lib/cms/client';
 
-export default function Home() {
+export default async function Home() {
+  // Fetch recent content
+  const [newsItems, publications] = await Promise.all([
+    fetchNews().then(items => items.filter(item => item.status === 'published').slice(0, 2)),
+    fetchPublications().then(items => items.sort((a, b) => {
+      const aDate = a.publishedDate ? new Date(a.publishedDate).getTime() : 0;
+      const bDate = b.publishedDate ? new Date(b.publishedDate).getTime() : 0;
+      return bDate - aDate;
+    }).slice(0, 2))
+  ]);
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -246,41 +257,32 @@ export default function Home() {
                 </Button>
               </div>
               <div className="space-y-6">
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-2 h-2 bg-wavesBlue rounded-full mt-3"></div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          Recent field work at Mpala Research Center
-                        </h3>
-                        <p className="text-sm text-gray-500 mb-2">December 2024</p>
-                        <p className="text-gray-600 text-sm">
-                          Our team completed successful field measurements of soil moisture and
-                          vegetation response...
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-2 h-2 bg-wavesBlue rounded-full mt-3"></div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          New publication in Nature Climate Change
-                        </h3>
-                        <p className="text-sm text-gray-500 mb-2">November 2024</p>
-                        <p className="text-gray-600 text-sm">
-                          Research findings on agricultural adaptation to climate variability
-                          published...
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                {newsItems.length > 0 ? (
+                  newsItems.map((item) => (
+                    <Link key={item._id} href={`/news/${item.slug.current}`}>
+                      <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                        <CardContent className="p-6">
+                          <div className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-2 h-2 bg-wavesBlue rounded-full mt-3"></div>
+                            <div>
+                              <h3 className="font-semibold text-gray-900 mb-2">
+                                {item.title}
+                              </h3>
+                              <p className="text-sm text-gray-500 mb-2">
+                                {item.publishedAt ? new Date(item.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : 'Recent'}
+                              </p>
+                              <p className="text-gray-600 text-sm line-clamp-2">
+                                {item.excerpt || 'Read more...'}
+                              </p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-gray-600">No recent news available.</p>
+                )}
               </div>
             </div>
 
@@ -295,36 +297,39 @@ export default function Home() {
                 </Button>
               </div>
               <div className="space-y-6">
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-2 leading-snug">
-                      Climate resilience of agricultural systems in sub-Saharan Africa
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      Caylor, K., et al. (2024) •{' '}
-                      <span className="text-wavesBlue">Nature Climate Change</span>
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      Analysis of climate adaptation strategies across multiple agricultural
-                      systems...
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-2 leading-snug">
-                      Remote sensing of crop water stress using thermal imagery
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      Wang, L., et al. (2024) •{' '}
-                      <span className="text-wavesBlue">Remote Sensing of Environment</span>
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      Novel approach for early detection of water stress in agricultural crops...
-                    </p>
-                  </CardContent>
-                </Card>
+                {publications.length > 0 ? (
+                  publications.map((pub) => (
+                    <Link key={pub._id} href={`/publications/${pub.slug.current}`}>
+                      <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                        <CardContent className="p-6">
+                          <h3 className="font-semibold text-gray-900 mb-2 leading-snug line-clamp-2">
+                            {pub.title}
+                          </h3>
+                          <p className="text-sm text-gray-600 mb-3">
+                            {pub.authors && pub.authors.length > 0 && (
+                              <>
+                                {pub.authors.slice(0, 2).map((a, i) => (
+                                  <span key={i}>
+                                    {a.person?.name || a.name}
+                                    {i === 0 && pub.authors.length > 1 ? ', ' : ''}
+                                  </span>
+                                ))}
+                                {pub.authors.length > 2 && ' et al.'}
+                              </>
+                            )}
+                            {pub.publishedDate && ` (${new Date(pub.publishedDate).getFullYear()})`} •{' '}
+                            <span className="text-wavesBlue">{pub.venue?.name || 'Published'}</span>
+                          </p>
+                          <p className="text-gray-600 text-sm line-clamp-2">
+                            {pub.abstract || 'Recent publication'}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-gray-600">No recent publications available.</p>
+                )}
               </div>
             </div>
           </div>
