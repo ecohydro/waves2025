@@ -455,3 +455,70 @@ img {
 .hero-banner .cta-btn {
   color: #0077b6 !important;
 }
+
+/* ============================================
+   DARK MODE — Comprehensive Overrides
+   Uses prefers-color-scheme to flip all common
+   Tailwind utility backgrounds/text/borders.
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  /* --- Backgrounds --- */
+  .bg-white { background-color: #111827 !important; }          /* gray-900 */
+  .bg-gray-50 { background-color: #0f172a !important; }        /* slate-900 */
+  .bg-gray-100 { background-color: #1e293b !important; }       /* slate-800 */
+  .bg-gray-200 { background-color: #334155 !important; }       /* slate-700 */
+
+  /* --- Text --- */
+  .text-gray-900 { color: #f1f5f9 !important; }                /* slate-100 */
+  .text-gray-800 { color: #e2e8f0 !important; }                /* slate-200 */
+  .text-gray-700 { color: #cbd5e1 !important; }                /* slate-300 */
+  .text-gray-600 { color: #94a3b8 !important; }                /* slate-400 */
+  .text-gray-500 { color: #94a3b8 !important; }                /* slate-400 */
+  .text-gray-400 { color: #64748b !important; }                /* slate-500 */
+
+  /* --- Borders --- */
+  .border-gray-100 { border-color: #334155 !important; }       /* slate-700 */
+  .border-gray-200 { border-color: #334155 !important; }       /* slate-700 */
+  .border-gray-300 { border-color: #475569 !important; }       /* slate-600 */
+
+  /* --- Cards & Panels --- */
+  .shadow-sm, .shadow, .shadow-md, .shadow-lg, .shadow-xl {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.5), 0 1px 2px 0 rgba(0,0,0,0.4) !important;
+  }
+
+  /* --- Specific component fixes --- */
+  .prose { color: #cbd5e1 !important; }
+  .prose h1, .prose h2, .prose h3, .prose h4 { color: #f1f5f9 !important; }
+  .prose strong { color: #f1f5f9 !important; }
+  .prose a { color: #38bdf8 !important; }
+
+  /* --- Sections with white bg --- */
+  section.bg-white { background-color: #111827 !important; }
+  div.bg-white { background-color: #111827 !important; }
+
+  /* --- Hover states --- */
+  .hover\:bg-gray-50:hover { background-color: #1e293b !important; }
+  .hover\:bg-gray-100:hover { background-color: #334155 !important; }
+  
+  /* --- Ring/focus --- */
+  .ring-gray-200 { --tw-ring-color: #475569 !important; }
+  
+  /* --- Dividers --- */
+  .divide-gray-200 > * + * { border-color: #334155 !important; }
+  .border-t.border-gray-100 { border-color: #334155 !important; }
+
+  /* --- WAVES brand colors in dark mode --- */
+  .text-wavesBlue { color: #38bdf8 !important; }
+  .bg-wavesBlue { background-color: #0284c7 !important; }
+  .text-wavesDarkBlue { color: #38bdf8 !important; }
+  
+  /* --- Input fields --- */
+  input, textarea, select {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-color: #475569 !important;
+  }
+  
+  /* --- Placeholder text --- */
+  ::placeholder { color: #64748b !important; }
+}
