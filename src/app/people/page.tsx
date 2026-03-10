@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
@@ -52,7 +53,7 @@ export default async function PeoplePage() {
           {/* Profile Image */}
           <div className="relative aspect-square overflow-hidden bg-gray-100">
             {person.avatar ? (
-              <img
+              <Image
                 src={urlForImage(person.avatar)
                   .width(400)
                   .height(400)
@@ -60,6 +61,8 @@ export default async function PeoplePage() {
                   .crop('center')
                   .url()}
                 alt={person.avatar.alt || person.name}
+                width={400}
+                height={400}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             ) : (

@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, useContext } from 'react';
+import React, { useEffect, useRef, useCallback, createContext, useContext } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface ModalProps {
@@ -26,7 +26,7 @@ export interface ModalFooterProps {
   className?: string;
 }
 
-const ModalContext = createContext<{ onClose: () => void } | null>(null);
+const ModalContext = createContext<{ onClose: () => void; titleId: string; contentId: string } | null>(null);
 
 const sizeStyles = {
   sm: 'max-w-sm',
@@ -41,23 +41,67 @@ export const Modal: React.FC<ModalProps> = ({
   size = 'md',
   className,
 }) => {
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    };
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousActiveElement = useRef<HTMLElement | null>(null);
+  const titleId = 'modal-title';
+  const contentId = 'modal-content';
 
+  // Store the element that triggered the modal and handle body scroll
+  useEffect(() => {
     if (open) {
-      document.addEventListener('keydown', handleEscape);
+      previousActiveElement.current = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
+
+      // Focus the modal container after render
+      setTimeout(() => {
+        modalRef.current?.focus();
+      }, 0);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
     };
-  }, [open, onClose]);
+  }, [open]);
+
+  // Restore focus on close
+  useEffect(() => {
+    if (!open && previousActiveElement.current) {
+      previousActiveElement.current.focus();
+      previousActiveElement.current = null;
+    }
+  }, [open]);
+
+  // Keyboard handling: Escape and focus trapping
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable || document.activeElement === modalRef.current) {
+            e.preventDefault();
+            lastFocusable?.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            e.preventDefault();
+            firstFocusable?.focus();
+          }
+        }
+      }
+    },
+    [onClose],
+  );
 
   if (!open) return null;
 
@@ -68,15 +112,24 @@ export const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <ModalContext.Provider value={{ onClose }}>
+    <ModalContext.Provider value={{ onClose, titleId, contentId }}>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
       <div
         data-testid="modal-backdrop"
         className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
         onClick={handleBackdropClick}
       >
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
         <div
+          ref={modalRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+          aria-describedby={contentId}
+          tabIndex={-1}
+          onKeyDown={handleKeyDown}
           data-testid="modal-content"
-          className={cn('bg-white dark:bg-slate-950 rounded-lg shadow-xl mx-4 w-full', sizeStyles[size], className)}
+          className={cn('bg-white dark:bg-slate-950 rounded-lg shadow-xl mx-4 w-full focus:outline-none', sizeStyles[size], className)}
         >
           {children}
         </div>
@@ -93,13 +146,14 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 }) => {
   const context = useContext(ModalContext);
   const onClose = context?.onClose;
+  const titleId = context?.titleId;
 
   return (
     <div
       className={cn('flex items-center justify-between p-6 border-b border-gray-200', className)}
     >
       <div className="flex-1">
-        {title && <h2 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h2>}
+        {title && <h2 id={titleId} className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h2>}
         {children}
       </div>
       {showCloseButton && onClose && (
@@ -123,7 +177,10 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 };
 
 export const ModalContent: React.FC<ModalContentProps> = ({ children, className }) => {
-  return <div className={cn('p-6', className)}>{children}</div>;
+  const context = useContext(ModalContext);
+  const contentId = context?.contentId;
+
+  return <div id={contentId} className={cn('p-6', className)}>{children}</div>;
 };
 
 export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => {

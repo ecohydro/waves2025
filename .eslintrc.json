@@ -1,12 +1,12 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
+    "next/typescript",
+    "plugin:jsx-a11y/recommended"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@next/next/no-img-element": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off"
   }

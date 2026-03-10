@@ -47,10 +47,15 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
+        <a href="#main-content" className="skip-to-main">
+          Skip to main content
+        </a>
         <PreviewBanner isPreview={isPreview} />
         <div className={isPreview ? 'pt-16' : ''}>
           <Navigation />
-          {children}
+          <div id="main-content">
+            {children}
+          </div>
           <Footer />
         </div>
       </body>

@@ -44,7 +44,8 @@ describe('Modal', () => {
       </Modal>,
     );
 
-    fireEvent.keyDown(document, { key: 'Escape' });
+    const dialog = screen.getByRole('dialog');
+    fireEvent.keyDown(dialog, { key: 'Escape' });
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 

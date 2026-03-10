@@ -216,7 +216,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {article.tags && article.tags.length > 0 && (
                 <Card className="mt-8">
                   <CardContent className="p-8">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tags</h3>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tags</h2>
                     <div className="flex flex-wrap gap-2">
                       {article.tags.map((tag, index) => (
                         <span
@@ -235,7 +235,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {article.gallery && article.gallery.length > 0 && (
                 <Card className="mt-8">
                   <CardContent className="p-8">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Gallery</h3>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Gallery</h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       {article.gallery.map((image, index) => (
                         <div
@@ -244,7 +244,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
                         >
                           <Image
                             src={urlForImage(image).width(400).height(300).url()}
-                            alt={image.alt || `Gallery image ${index + 1}`}
+                            alt={image.alt}
                             width={400}
                             height={300}
                             className="w-full h-full object-cover"
@@ -270,7 +270,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {/* Author Info */}
               <Card className="mb-6">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Author</h3>
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Author</h2>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       {article.author.avatar ? (
@@ -312,9 +312,9 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {article.relatedPublications && article.relatedPublications.length > 0 && (
                 <Card className="mb-6">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                       Related Publications
-                    </h3>
+                    </h2>
                     <div className="space-y-3">
                       {article.relatedPublications.map((publication) => (
                         <div key={publication._id}>
@@ -340,7 +340,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {article.relatedProjects && article.relatedProjects.length > 0 && (
                 <Card className="mb-6">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Related Projects</h3>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Related Projects</h2>
                     <div className="space-y-3">
                       {article.relatedProjects.map((project) => (
                         <div key={project._id}>
@@ -362,7 +362,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {article.externalLinks && article.externalLinks.length > 0 && (
                 <Card className="mb-6">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">External Links</h3>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">External Links</h2>
                     <div className="space-y-3">
                       {article.externalLinks.map((link, index) => (
                         <a
@@ -393,7 +393,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
               {article.socialMedia && (
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Share This Article</h3>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Share This Article</h2>
                     <div className="space-y-3">
                       {article.socialMedia.twitterText && (
                         <a

@@ -34,6 +34,8 @@ export const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const inputId = props.id || `input-${Math.random().toString(36).substr(2, 9)}`;
+  const errorId = `${inputId}-error`;
+  const helperTextId = `${inputId}-helper`;
   const hasError = !!error;
   const finalVariant = hasError ? 'error' : variant;
 
@@ -59,10 +61,20 @@ export const Input: React.FC<InputProps> = ({
             {icon}
           </div>
         )}
-        <input id={inputId} className={inputStyles} disabled={disabled} {...props} />
+        <input
+          id={inputId}
+          className={inputStyles}
+          disabled={disabled}
+          aria-invalid={hasError || undefined}
+          aria-describedby={
+            hasError ? errorId : helperText ? helperTextId : undefined
+          }
+          aria-required={props.required || undefined}
+          {...props}
+        />
       </div>
-      {helperText && !hasError && <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{helperText}</p>}
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {helperText && !hasError && <p id={helperTextId} className="mt-1 text-sm text-gray-500 dark:text-gray-400">{helperText}</p>}
+      {error && <p id={errorId} className="mt-1 text-sm text-red-600" role="alert">{error}</p>}
     </div>
   );
 };

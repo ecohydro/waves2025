@@ -167,6 +167,7 @@ export default function Navigation() {
   return (
     <>
       <nav
+        aria-label="Main navigation"
         className={`w-full bg-white dark:bg-slate-950 border-b border-gray-200 sticky top-0 z-50 transform transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -279,6 +280,7 @@ export default function Navigation() {
             onClick={(e) => e.stopPropagation()}
             onKeyDown={handleKeyDown}
             role="menu"
+            tabIndex={-1}
             aria-label="Mobile menu"
           >
             <button

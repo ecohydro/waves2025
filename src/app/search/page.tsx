@@ -271,13 +271,15 @@ export default function SearchPage() {
             </form>
 
             {/* Search Stats */}
-            {hasSearched && !loading && (
-              <p className="text-sm text-gray-600 dark:text-gray-200 mb-6">
-                {results.length === 0
-                  ? `No results found for "${query}"`
-                  : `Found ${results.length} result${results.length === 1 ? '' : 's'} for "${query}"`}
-              </p>
-            )}
+            <div aria-live="polite" aria-atomic="true">
+              {hasSearched && !loading && (
+                <p className="text-sm text-gray-600 dark:text-gray-200 mb-6">
+                  {results.length === 0
+                    ? `No results found for "${query}"`
+                    : `Found ${results.length} result${results.length === 1 ? '' : 's'} for "${query}"`}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </section>
