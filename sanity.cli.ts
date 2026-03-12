@@ -7,4 +7,11 @@ import { defineCliConfig } from 'sanity/cli';
 const projectId = '6r5yojda';
 const dataset = 'production';
 
-export default defineCliConfig({ api: { projectId, dataset } });
+export default defineCliConfig({
+  api: { projectId, dataset },
+  vite: {
+    server: {
+      allowedHosts: ['kellys-macbook-pro.ocelot-codlet.ts.net'],
+    },
+  },
+});
