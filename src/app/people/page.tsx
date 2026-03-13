@@ -234,8 +234,8 @@ export default async function PeoplePage() {
 
             {/* Sections in desired order */}
             {[
-              'postdoc',
               'graduate-student',
+              'postdoc',
               'research-staff',
               'research-intern',
               'high-school-student',
