@@ -199,10 +199,6 @@ export default async function PeoplePage() {
               <div className="text-3xl font-bold text-wavesBlue mb-2">{alumni.length}</div>
               <div className="text-sm text-gray-600 dark:text-gray-200">Alumni</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">20+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-200">Years of Research</div>
-            </div>
           </div>
         </div>
       </section>
