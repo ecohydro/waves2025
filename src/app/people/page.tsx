@@ -41,7 +41,30 @@ export default async function PeoplePage() {
   }
 
   const currentMembersSorted = [...currentMembers].sort(sortByCategory);
-  const alumniSorted = [...alumni].sort(sortByCategory);
+
+  /** For alumni graduate students, extract the graduation year from education. */
+  function getGradYear(person: Person): number | null {
+    const grad = person.education?.find((e) => ['PhD', 'MS', 'MA', 'MESc', 'MESM'].includes(e.degree));
+    return grad?.year ?? null;
+  }
+
+  const alumniSorted = [...alumni].sort((a, b) => {
+    // First sort by category order
+    const ai = categoryOrder.indexOf(a.category || '');
+    const bi = categoryOrder.indexOf(b.category || '');
+    const aRank = ai === -1 ? Number.POSITIVE_INFINITY : ai;
+    const bRank = bi === -1 ? Number.POSITIVE_INFINITY : bi;
+    if (aRank !== bRank) return aRank - bRank;
+    // Within graduate-student category, sort by graduation year (most recent first)
+    if (a.category === 'graduate-student' && b.category === 'graduate-student') {
+      const aYear = getGradYear(a);
+      const bYear = getGradYear(b);
+      if (aYear !== null && bYear !== null && aYear !== bYear) return bYear - aYear;
+      if (aYear !== null && bYear === null) return -1;
+      if (aYear === null && bYear !== null) return 1;
+    }
+    return a.name.localeCompare(b.name);
+  });
 
   const renderPersonCard = (person: Person) => (
     <Card
@@ -88,11 +111,11 @@ export default async function PeoplePage() {
               {person.title && <p className="text-sm text-gray-600 dark:text-gray-200 mb-2">{person.title}</p>}
               {/* Graduation info for alumni graduate students */}
               {person.userGroup === 'alumni' && person.category === 'graduate-student' && person.education && (() => {
-                const phd = person.education.find((e) => e.degree === 'PhD');
-                if (!phd) return null;
+                const grad = person.education.find((e) => ['PhD', 'MS', 'MA', 'MESc', 'MESM'].includes(e.degree));
+                if (!grad) return null;
                 return (
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
-                    PhD {phd.year}{phd.field ? `, ${phd.field}` : ''}{phd.institution ? `, ${phd.institution}` : ''}
+                    {grad.degree} {grad.year}{grad.field ? `, ${grad.field}` : ''}{grad.institution ? `, ${grad.institution}` : ''}
                   </p>
                 );
               })()}
