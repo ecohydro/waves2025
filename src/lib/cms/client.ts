@@ -300,9 +300,12 @@ export const queries = {
     email,
     website,
     socialMedia,
+    education,
     researchInterests,
     bio,
     joinDate,
+    leaveDate,
+    currentPosition,
     isActive
   }`,
 
@@ -334,6 +337,7 @@ export const queries = {
     email,
     website,
     socialMedia,
+    education,
     researchInterests,
     bio,
     joinDate,

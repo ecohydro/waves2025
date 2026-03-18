@@ -86,6 +86,16 @@ export default async function PeoplePage() {
                 {person.name}
               </h3>
               {person.title && <p className="text-sm text-gray-600 dark:text-gray-200 mb-2">{person.title}</p>}
+              {/* Graduation info for alumni graduate students */}
+              {person.userGroup === 'alumni' && person.category === 'graduate-student' && person.education && (() => {
+                const phd = person.education.find((e) => e.degree === 'PhD');
+                if (!phd) return null;
+                return (
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                    PhD {phd.year}{phd.field ? `, ${phd.field}` : ''}{phd.institution ? `, ${phd.institution}` : ''}
+                  </p>
+                );
+              })()}
               {person.currentPosition && (
                 <p className="text-xs text-gray-500 dark:text-gray-400">{person.currentPosition}</p>
               )}
