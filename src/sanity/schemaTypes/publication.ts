@@ -92,6 +92,13 @@ export const publication = defineType({
         {
           type: 'object',
           fields: [
+            defineField({
+              name: 'person',
+              title: 'Lab Member',
+              type: 'reference',
+              to: [{ type: 'person' }],
+              description: 'Link to lab member profile (if applicable)',
+            }),
             defineField({ name: 'name', type: 'string' }),
             defineField({ name: 'isCorresponding', type: 'boolean' }),
           ],

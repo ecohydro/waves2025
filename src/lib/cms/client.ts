@@ -556,6 +556,16 @@ export const queries = {
       name,
       slug
     },
+    coAuthors[]-> {
+      _id,
+      name,
+      slug
+    },
+    relatedPeople[]-> {
+      _id,
+      name,
+      slug
+    },
     category,
     tags,
     isFeatured,
@@ -627,6 +637,47 @@ export const queries = {
     isSticky,
     socialMedia
   }`,
+
+  // Person-specific queries (for member detail pages)
+  getPublicationsByPerson: `*[_type == "publication"
+    && publicationType != "abstract"
+    && references($personId)
+  ] | order(publishedDate desc)[0...6] {
+    _id,
+    title,
+    slug,
+    publicationType,
+    authors[] {
+      person-> {
+        _id,
+        name,
+        slug
+      },
+      name,
+      isCorresponding
+    },
+    venue {
+      name,
+      shortName
+    },
+    publishedDate,
+    doi
+  }`,
+
+  getNewsByPerson: `*[_type == "news"
+    && status == "published"
+    && (author._ref == $personId
+        || $personId in coAuthors[]._ref
+        || $personId in relatedPeople[]._ref)
+  ] | order(publishedAt desc)[0...4] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    featuredImage,
+    publishedAt,
+    category
+  }`,
 };
 
 // Helper functions for fetching data
@@ -693,4 +744,15 @@ export async function fetchFeaturedNews(preview = false): Promise<News[]> {
 
 export async function fetchNewsBySlug(slug: string, preview = false): Promise<News | null> {
   return fetchData<News | null>(queries.getNewsBySlug, { slug }, preview);
+}
+
+export async function fetchPublicationsByPerson(
+  personId: string,
+  preview = false,
+): Promise<Publication[]> {
+  return fetchData<Publication[]>(queries.getPublicationsByPerson, { personId }, preview);
+}
+
+export async function fetchNewsByPerson(personId: string, preview = false): Promise<News[]> {
+  return fetchData<News[]>(queries.getNewsByPerson, { personId }, preview);
 }

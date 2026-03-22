@@ -5,7 +5,16 @@ import { notFound } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { fetchPersonBySlug, fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
+import {
+  fetchPersonBySlug,
+  fetchPeople,
+  fetchPublicationsByPerson,
+  fetchNewsByPerson,
+  urlForImage,
+  type Person,
+  type Publication,
+  type News,
+} from '@/lib/cms/client';
 
 interface PersonDetailProps {
   params: Promise<{ slug: string }>;
@@ -22,6 +31,18 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
 
   if (!person) {
     notFound();
+  }
+
+  // Fetch publications and news for this person (graceful degradation if CMS fails)
+  let publications: Publication[] = [];
+  let newsItems: News[] = [];
+  try {
+    [publications, newsItems] = await Promise.all([
+      fetchPublicationsByPerson(person._id, isPreview),
+      fetchNewsByPerson(person._id, isPreview),
+    ]);
+  } catch {
+    // Silently degrade — page renders without publications/news sections
   }
 
   const formatDate = (dateString?: string) => {
@@ -239,6 +260,113 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                       <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-100">
                         <div className="leading-relaxed" dangerouslySetInnerHTML={{ __html: renderMarkdown(person.bioLong) }} />
                       </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Recent Publications */}
+                {publications.length > 0 && (
+                  <Card>
+                    <CardContent className="p-8">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Recent Publications</h2>
+                      <div className="space-y-4">
+                        {publications.slice(0, 5).map((pub) => (
+                          <div key={pub._id} className="border-l-4 border-wavesBlue/30 pl-4">
+                            <Link
+                              href={`/publications/${pub.slug.current}`}
+                              className="text-wavesBlue hover:text-blue-800 font-medium leading-snug block"
+                            >
+                              {pub.title}
+                            </Link>
+                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                              {pub.authors?.map((author, i) => (
+                                <span key={i}>
+                                  {i > 0 && ', '}
+                                  <span className={author.person?._id === person._id ? 'font-bold' : ''}>
+                                    {author.person?.name || author.name}
+                                  </span>
+                                </span>
+                              ))}
+                            </p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                              {pub.venue?.name && <span>{pub.venue.name}</span>}
+                              {pub.venue?.name && pub.publishedDate && <span> &middot; </span>}
+                              {pub.publishedDate && <span>{new Date(pub.publishedDate).getFullYear()}</span>}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                      {publications.length > 5 && (
+                        <div className="mt-6">
+                          <Link
+                            href={`/publications?author=${person.slug.current}`}
+                            className="text-wavesBlue hover:text-blue-800 font-medium text-sm"
+                          >
+                            View all publications &rarr;
+                          </Link>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Recent News */}
+                {newsItems.length > 0 && (
+                  <Card>
+                    <CardContent className="p-8">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Recent News</h2>
+                      <div className="space-y-4">
+                        {newsItems.slice(0, 3).map((article) => (
+                          <div key={article._id} className="flex gap-4">
+                            {article.featuredImage && (
+                              <div className="flex-shrink-0">
+                                <Image
+                                  src={urlForImage(article.featuredImage).width(80).height(80).url()}
+                                  alt={article.featuredImage.alt || article.title}
+                                  width={80}
+                                  height={80}
+                                  className="rounded-lg object-cover"
+                                />
+                              </div>
+                            )}
+                            <div className="min-w-0">
+                              <Link
+                                href={`/news/${article.slug.current}`}
+                                className="text-wavesBlue hover:text-blue-800 font-medium leading-snug block"
+                              >
+                                {article.title}
+                              </Link>
+                              <div className="flex items-center gap-2 mt-1">
+                                <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-gray-300">
+                                  {article.category?.charAt(0).toUpperCase() + article.category?.slice(1).replace('-', ' ')}
+                                </span>
+                                <span className="text-xs text-gray-500 dark:text-gray-400">
+                                  {new Date(article.publishedAt).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: 'numeric',
+                                  })}
+                                </span>
+                              </div>
+                              {article.excerpt && (
+                                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 line-clamp-2">
+                                  {article.excerpt}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {newsItems.length > 3 && (
+                        <div className="mt-6">
+                          <Link
+                            href={`/news?person=${person.slug.current}`}
+                            className="text-wavesBlue hover:text-blue-800 font-medium text-sm"
+                          >
+                            View all news &rarr;
+                          </Link>
+                        </div>
+                      )}
                     </CardContent>
                   </Card>
                 )}

@@ -10,7 +10,7 @@ export const revalidate = 0;
 export default async function PublicationsPage({
   searchParams,
 }: {
-  searchParams?: { type?: string; area?: string };
+  searchParams?: { type?: string; area?: string; author?: string };
 }) {
   // Fetch data from Sanity instead of reading MDX files
   const [allPublications] = await Promise.all([fetchPublications()]);
@@ -64,6 +64,14 @@ export default async function PublicationsPage({
       }
       return false;
     });
+  }
+
+  // Filter by author if query param is present
+  const selectedAuthor = typeof searchParams?.author === 'string' ? searchParams.author : null;
+  if (selectedAuthor) {
+    filteredPublications = filteredPublications.filter((p) =>
+      p.authors?.some((a) => a.person?.slug?.current === selectedAuthor),
+    );
   }
 
   // Compute featured publications: most recent up to 4 with > 30 citations

@@ -6,14 +6,31 @@ import { fetchNews, fetchFeaturedNews, urlForImage, type News } from '@/lib/cms/
 
 export const revalidate = 10; // Revalidate every 10 seconds to pick up new images from Sanity
 
-export default async function NewsPage() {
+export default async function NewsPage({
+  searchParams,
+}: {
+  searchParams?: { person?: string };
+}) {
   // Fetch data from Sanity instead of reading MDX files
   const [allNews, featuredNews] = await Promise.all([fetchNews(), fetchFeaturedNews()]);
 
   // Sort by published date (most recent first)
-  const sortedNews = allNews.sort((a, b) => {
+  let sortedNews = allNews.sort((a, b) => {
     return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
   });
+
+  // Filter by person if query param is present
+  const selectedPerson = typeof searchParams?.person === 'string' ? searchParams.person : null;
+  if (selectedPerson) {
+    sortedNews = sortedNews.filter((article) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const a = article as any;
+      if (a.author?.slug?.current === selectedPerson) return true;
+      if (a.coAuthors?.some((c: { slug?: { current?: string } }) => c?.slug?.current === selectedPerson)) return true;
+      if (a.relatedPeople?.some((p: { slug?: { current?: string } }) => p?.slug?.current === selectedPerson)) return true;
+      return false;
+    });
+  }
 
   const recentNews = sortedNews.slice(0, 6);
 
