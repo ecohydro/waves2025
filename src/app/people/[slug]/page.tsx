@@ -380,7 +380,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                         {person.education.map((edu, index) => (
                           <div key={index} className="border-l-4 border-wavesBlue pl-4">
                             <h3 className="font-semibold text-gray-900 dark:text-white">
-                              {edu.degree} in {edu.field}
+                              {edu.degree}{edu.field ? ` in ${edu.field}` : ''}
                             </h3>
                             <p className="text-gray-600 dark:text-gray-200">{edu.institution}</p>
                             <p className="text-sm text-gray-500 dark:text-gray-400">{edu.year}</p>
