@@ -140,6 +140,14 @@ export const person = defineType({
           validation: (Rule) =>
             Rule.uri({
               scheme: ['http', 'https'],
+            }).custom((val: string | undefined) => {
+              if (!val) return true;
+              try {
+                const host = new URL(val).hostname.toLowerCase();
+                if (host === 'waveslab.org' || host === 'www.waveslab.org')
+                  return 'Please enter the actual Google Scholar URL, not a waveslab.org link';
+              } catch {}
+              return true;
             }),
         },
         {
@@ -149,6 +157,14 @@ export const person = defineType({
           validation: (Rule) =>
             Rule.uri({
               scheme: ['http', 'https'],
+            }).custom((val: string | undefined) => {
+              if (!val) return true;
+              try {
+                const host = new URL(val).hostname.toLowerCase();
+                if (host === 'waveslab.org' || host === 'www.waveslab.org')
+                  return 'Please enter the actual ResearchGate URL, not a waveslab.org link';
+              } catch {}
+              return true;
             }),
         },
         {
@@ -158,6 +174,14 @@ export const person = defineType({
           validation: (Rule) =>
             Rule.uri({
               scheme: ['http', 'https'],
+            }).custom((val: string | undefined) => {
+              if (!val) return true;
+              try {
+                const host = new URL(val).hostname.toLowerCase();
+                if (host === 'waveslab.org' || host === 'www.waveslab.org')
+                  return 'Please enter the actual LinkedIn URL, not a waveslab.org link';
+              } catch {}
+              return true;
             }),
         },
         {
@@ -165,12 +189,22 @@ export const person = defineType({
           title: 'Twitter/X Handle',
           type: 'string',
           description: 'Without @ symbol (e.g., username)',
+          validation: (Rule) =>
+            Rule.custom((val: string | undefined) => {
+              if (!val || !val.includes('waveslab.org')) return true;
+              return 'Please enter a Twitter/X handle or URL, not a waveslab.org link';
+            }),
         },
         {
           name: 'github',
           title: 'GitHub Username',
           type: 'string',
           description: 'GitHub username (without @ symbol)',
+          validation: (Rule) =>
+            Rule.custom((val: string | undefined) => {
+              if (!val || !val.includes('waveslab.org')) return true;
+              return 'Please enter a GitHub username or URL, not a waveslab.org link';
+            }),
         },
       ],
     }),

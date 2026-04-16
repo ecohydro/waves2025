@@ -66,11 +66,71 @@ export const person = defineType({
       type: 'object',
       fields: [
         { name: 'orcid', title: 'ORCID', type: 'string' },
-        { name: 'googleScholar', title: 'Google Scholar', type: 'url' },
-        { name: 'researchGate', title: 'ResearchGate', type: 'url' },
-        { name: 'linkedin', title: 'LinkedIn', type: 'url' },
-        { name: 'twitter', title: 'Twitter/X', type: 'string' },
-        { name: 'github', title: 'GitHub', type: 'string' },
+        {
+          name: 'googleScholar',
+          title: 'Google Scholar',
+          type: 'url',
+          validation: (r: any) =>
+            r.custom((val: string | undefined) => {
+              if (!val) return true;
+              try {
+                const host = new URL(val).hostname.toLowerCase();
+                if (host === 'waveslab.org' || host === 'www.waveslab.org')
+                  return 'Please enter the actual Google Scholar URL, not a waveslab.org link';
+              } catch {}
+              return true;
+            }),
+        },
+        {
+          name: 'researchGate',
+          title: 'ResearchGate',
+          type: 'url',
+          validation: (r: any) =>
+            r.custom((val: string | undefined) => {
+              if (!val) return true;
+              try {
+                const host = new URL(val).hostname.toLowerCase();
+                if (host === 'waveslab.org' || host === 'www.waveslab.org')
+                  return 'Please enter the actual ResearchGate URL, not a waveslab.org link';
+              } catch {}
+              return true;
+            }),
+        },
+        {
+          name: 'linkedin',
+          title: 'LinkedIn',
+          type: 'url',
+          validation: (r: any) =>
+            r.custom((val: string | undefined) => {
+              if (!val) return true;
+              try {
+                const host = new URL(val).hostname.toLowerCase();
+                if (host === 'waveslab.org' || host === 'www.waveslab.org')
+                  return 'Please enter the actual LinkedIn URL, not a waveslab.org link';
+              } catch {}
+              return true;
+            }),
+        },
+        {
+          name: 'twitter',
+          title: 'Twitter/X',
+          type: 'string',
+          validation: (r: any) =>
+            r.custom((val: string | undefined) => {
+              if (!val || !val.includes('waveslab.org')) return true;
+              return 'Please enter a Twitter/X handle or URL, not a waveslab.org link';
+            }),
+        },
+        {
+          name: 'github',
+          title: 'GitHub',
+          type: 'string',
+          validation: (r: any) =>
+            r.custom((val: string | undefined) => {
+              if (!val || !val.includes('waveslab.org')) return true;
+              return 'Please enter a GitHub username or URL, not a waveslab.org link';
+            }),
+        },
       ],
     }),
   ],
