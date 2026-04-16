@@ -3,6 +3,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 import { createClient } from '@sanity/client';
+import { detectAndFixWaveslabUrl } from './social-link-utils';
 
 // Load env from .env.local
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
@@ -149,11 +150,22 @@ function normalizeLinkedIn(value?: string): string | undefined {
 function computeUpdates(s: SocialMedia | undefined): Partial<SocialMedia> {
   const updates: Partial<SocialMedia> = {};
   if (!s) return updates;
-  const nextScholar = normalizeGoogleScholar(s.googleScholar);
-  const nextRG = normalizeResearchGate(s.researchGate);
-  const nextLI = normalizeLinkedIn(s.linkedin);
-  const nextGH = normalizeGithub(s.github);
-  const nextTW = normalizeTwitter(s.twitter);
+
+  // Pre-normalization: detect and fix waveslab.org hostnames before standard normalization
+  const preFixed: Partial<SocialMedia> = {};
+  for (const field of ['googleScholar', 'researchGate', 'linkedin', 'github', 'twitter'] as const) {
+    const fixed = detectAndFixWaveslabUrl(field, s[field]);
+    if (fixed) {
+      preFixed[field] = fixed;
+      console.log(`    [waveslab.org detected] ${field}: ${s[field]} → ${fixed}`);
+    }
+  }
+
+  const nextScholar = normalizeGoogleScholar(preFixed.googleScholar ?? s.googleScholar);
+  const nextRG = normalizeResearchGate(preFixed.researchGate ?? s.researchGate);
+  const nextLI = normalizeLinkedIn(preFixed.linkedin ?? s.linkedin);
+  const nextGH = normalizeGithub(preFixed.github ?? s.github);
+  const nextTW = normalizeTwitter(preFixed.twitter ?? s.twitter);
   const nextORCID = denormalizeOrcidToId(s.orcid);
 
   if (nextScholar && nextScholar !== s.googleScholar) updates.googleScholar = nextScholar;

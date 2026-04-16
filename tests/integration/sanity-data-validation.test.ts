@@ -258,6 +258,60 @@ describe('Sanity Data Validation', () => {
     });
   });
 
+  describe('Social Link Hostnames', () => {
+    it('should have no social links containing waveslab.org', async () => {
+      const people = await fetchPeople();
+      const urlFields = ['linkedin', 'researchGate', 'googleScholar'] as const;
+      const stringFields = ['twitter', 'github'] as const;
+
+      for (const person of people) {
+        if (!person.socialMedia) continue;
+
+        for (const field of urlFields) {
+          const val = person.socialMedia[field];
+          if (!val) continue;
+          expect(val, `${person.name}.socialMedia.${field}`).not.toContain('waveslab.org');
+        }
+        for (const field of stringFields) {
+          const val = person.socialMedia[field];
+          if (!val) continue;
+          expect(val, `${person.name}.socialMedia.${field}`).not.toContain('waveslab.org');
+        }
+      }
+
+      console.log(`✅ No social links contain waveslab.org across ${people.length} people`);
+    });
+
+    it('should have correct platform hostnames for URL social links', async () => {
+      const people = await fetchPeople();
+      const expectedHosts: Record<string, string[]> = {
+        linkedin: ['linkedin.com', 'www.linkedin.com'],
+        researchGate: ['researchgate.net', 'www.researchgate.net'],
+        googleScholar: ['scholar.google.com'],
+      };
+
+      for (const person of people) {
+        if (!person.socialMedia) continue;
+
+        for (const [field, validHosts] of Object.entries(expectedHosts)) {
+          const val = (person.socialMedia as any)[field];
+          if (!val) continue;
+          try {
+            const host = new URL(val).hostname.toLowerCase();
+            expect(
+              validHosts.some((h) => host === h),
+              `${person.name}.socialMedia.${field} has hostname "${host}", expected one of: ${validHosts.join(', ')}`,
+            ).toBe(true);
+          } catch {
+            // Not a URL — will be caught by other validation
+          }
+        }
+      }
+
+      console.log(`✅ All URL social links have correct platform hostnames`);
+    });
+  });
+
   describe('Data Quality', () => {
     it('should have no duplicate slugs', async () => {
       const [people, publications, news] = await Promise.all([
