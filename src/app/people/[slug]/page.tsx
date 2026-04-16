@@ -162,6 +162,20 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
 
                 {/* Contact & Social Links */}
                 <div className="flex flex-wrap gap-4">
+                  {person.cvFile?.asset?.url && (
+                    <a
+                      href={person.cvFile.asset.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:bg-slate-900 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H4zm7 1.5V8h4.5L11 3.5zM6 11a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm0 3a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1z" />
+                      </svg>
+                      CV
+                    </a>
+                  )}
+
                   {person.email && (
                     <Button
                       href={`mailto:${person.email}`}
@@ -211,7 +225,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
 
                   {person.socialMedia?.googleScholar && (
                     <a
-                      href={person.socialMedia.googleScholar}
+                      href={person.socialMedia.googleScholar.startsWith('http') ? person.socialMedia.googleScholar : `https://scholar.google.com/citations?user=${person.socialMedia.googleScholar}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium border border-gray-300 bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:bg-slate-900 focus:ring-gray-500 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"

@@ -75,6 +75,13 @@ export interface Person {
   };
   email?: string;
   website?: string;
+  cvFile?: {
+    asset: {
+      _ref: string;
+      _type: 'reference';
+      url?: string;
+    };
+  };
   socialMedia?: {
     orcid?: string;
     googleScholar?: string;
@@ -299,6 +306,7 @@ export const queries = {
     avatar,
     email,
     website,
+    cvFile{asset->{_ref,url}},
     socialMedia,
     education,
     researchInterests,
@@ -319,6 +327,7 @@ export const queries = {
     avatar,
     email,
     website,
+    cvFile{asset->{_ref,url}},
     socialMedia,
     researchInterests,
     bio,
@@ -336,6 +345,7 @@ export const queries = {
     avatar,
     email,
     website,
+    cvFile{asset->{_ref,url}},
     socialMedia,
     education,
     researchInterests,
@@ -356,6 +366,7 @@ export const queries = {
     avatar,
     email,
     website,
+    cvFile{asset->{_ref,url}},
     socialMedia,
     education,
     researchInterests,
