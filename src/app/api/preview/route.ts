@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { client } from '@/lib/cms/client';
+import { draftMode } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { previewClient } from '@/lib/cms/client';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -38,41 +40,25 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ message: 'Invalid type' }, { status: 400 });
     }
 
-    const content = await client.fetch(query, { slug });
+    // Look the document up through the preview client. The published client
+    // cannot see a draft, so checking with it would 404 exactly the documents
+    // preview exists to show.
+    const content = await previewClient.fetch(query, { slug });
 
     // If the content doesn't exist prevent preview mode from being enabled
     if (!content) {
       return NextResponse.json({ message: 'Content not found' }, { status: 404 });
     }
 
-    // Enable Preview Mode by setting the cookies
-    const response = NextResponse.redirect(new URL(redirectPath, request.url));
-    response.cookies.set('__prerender_bypass', '1', {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-    });
-    response.cookies.set('__next_preview_data', '1', {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-    });
-
-    return response;
+    // Enable draft mode through Next's own API. Setting `__prerender_bypass`
+    // by hand does not work: the name is reserved, and Next clears the cookie
+    // when its value does not match the preview id Next generated, so preview
+    // would survive only a handful of requests before pages started 404ing.
+    (await draftMode()).enable();
+    redirect(redirectPath);
   }
 
-  // If no specific content is being previewed, redirect to home with preview mode enabled
-  const response = NextResponse.redirect(new URL('/', request.url));
-  response.cookies.set('__prerender_bypass', '1', {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'none',
-  });
-  response.cookies.set('__next_preview_data', '1', {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'none',
-  });
-
-  return response;
+  // If no specific content is being previewed, redirect to home with draft mode enabled
+  (await draftMode()).enable();
+  redirect('/');
 }

@@ -1,22 +1,65 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
+import { draftMode } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchNewsBySlug, fetchNews, urlForImage, type News } from '@/lib/cms/client';
 import { parseMarkdown } from '@/lib/utils/markdown';
+import { buildMetadata, missingMetadata } from '@/lib/seo/metadata';
 
 interface NewsDetailProps {
   params: Promise<{ slug: string }>;
+}
+
+async function isPreviewRequest(): Promise<boolean> {
+  const { isEnabled } = await draftMode();
+  return isEnabled;
+}
+
+/**
+ * Per-page metadata for a news item.
+ *
+ * Values written by hand into the `seo` object in the Studio win; everything
+ * else is derived from the item, so an author never has to fill anything in
+ * for a shared link to preview correctly.
+ */
+export async function generateMetadata({ params }: NewsDetailProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await fetchNewsBySlug(slug, await isPreviewRequest());
+
+  if (!article) return missingMetadata('News item');
+
+  return buildMetadata({
+    title: article.seo?.metaTitle?.trim() || article.title,
+    description: article.seo?.metaDescription?.trim() || article.excerpt || article.content,
+    path: `/news/${article.slug.current}`,
+    canonical: article.seo?.canonicalUrl,
+    type: 'article',
+    publishedTime: article.publishedAt,
+    authors: [article.author?.name, ...(article.coAuthors || []).map((a) => a?.name)].filter(
+      (name): name is string => Boolean(name),
+    ),
+    tags: article.tags,
+    keywords: article.seo?.keywords?.length ? article.seo.keywords : article.tags,
+    twitterDescription: article.socialMedia?.twitterText,
+    image: article.featuredImage
+      ? {
+          url: urlForImage(article.featuredImage).width(1200).height(630).fit('crop').url(),
+          width: 1200,
+          height: 630,
+          alt: article.featuredImage.alt || article.title,
+        }
+      : null,
+  });
 }
 
 export default async function NewsDetail({ params }: NewsDetailProps) {
   const { slug } = await params;
 
   // Check for preview mode
-  const cookieStore = await cookies();
-  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
+  const { isEnabled: isPreview } = await draftMode();
 
   const article = await fetchNewsBySlug(slug, isPreview);
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import { cookies } from 'next/headers';
+import { draftMode } from 'next/headers';
 import './globals.css';
 import Navigation from '../components/layout/Navigation';
 import Footer from '../components/layout/Footer';
@@ -17,7 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'WAVES Lab - Water, Vegetation, and Society',
+  // Required for Next.js to resolve canonical and Open Graph URLs.
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.waveslab.org'),
+  title: {
+    default: 'WAVES Lab - Water, Vegetation, and Society',
+    template: '%s | WAVES Lab',
+  },
   description: 'Research lab focused on water, vegetation, and society at UCSB',
   icons: {
     icon: [
@@ -41,8 +46,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // Check for preview mode
-  const cookieStore = await cookies();
-  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
+  const { isEnabled: isPreview } = await draftMode();
 
   return (
     <html lang="en">

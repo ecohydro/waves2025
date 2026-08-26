@@ -1,12 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { draftMode } from 'next/headers';
+import { redirect } from 'next/navigation';
 
-export async function GET(request: NextRequest) {
-  // Exit the current user from Preview Mode
-  const response = NextResponse.redirect(new URL('/', request.url));
-
-  // Clear the preview mode cookies
-  response.cookies.delete('__prerender_bypass');
-  response.cookies.delete('__next_preview_data');
-
-  return response;
+export async function GET() {
+  // Exit the current user from draft mode
+  (await draftMode()).disable();
+  redirect('/');
 }
