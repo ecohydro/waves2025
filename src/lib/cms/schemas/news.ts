@@ -254,6 +254,30 @@ export const news = defineType({
       description: 'Additional images for this post',
     }),
     
+    // Intake Provenance
+    defineField({
+      name: 'intake',
+      title: 'Intake',
+      type: 'object',
+      description:
+        'Set automatically when this item arrives from the lab news channel in Slack. Used to keep a rerun from creating a second copy of the same update.',
+      readOnly: true,
+      fields: [
+        { name: 'source', title: 'Source', type: 'string' },
+        { name: 'slackTs', title: 'Slack Message ID', type: 'string' },
+        { name: 'slackChannel', title: 'Slack Channel', type: 'string' },
+        { name: 'slackChannelId', title: 'Slack Channel ID', type: 'string' },
+        { name: 'slackPermalink', title: 'Slack Permalink', type: 'url' },
+        { name: 'slackUserId', title: 'Slack User ID', type: 'string' },
+        { name: 'submittedByName', title: 'Submitted By', type: 'string' },
+        { name: 'capturedAt', title: 'Captured At', type: 'datetime' },
+        { name: 'lastCorrectionTs', title: 'Last Correction Applied', type: 'string' },
+      ],
+      preview: {
+        select: { title: 'submittedByName', subtitle: 'capturedAt' },
+      },
+    }),
+    
     // Publication Status
     defineField({
       name: 'status',

@@ -1,0 +1,79 @@
+[
+  {
+    "slackTs": "1786500000.000100",
+    "slackChannel": "waves-news",
+    "slackChannelId": "C0NEWS",
+    "slackPermalink": "https://ecohydrology.slack.com/archives/C0NEWS/p1786500000000100",
+    "slackUserId": "U555",
+    "submittedByName": "Bryn Morgan",
+    "authorEmail": "brynmorgan@ucsb.edu",
+    "title": "Sap flow sensors installed at Sedgwick Reserve",
+    "excerpt": "Twelve sap flow sensors are now logging on blue oaks at Sedgwick Reserve.",
+    "content": "Twelve sap flow sensors are now logging continuously on blue oaks at Sedgwick Reserve, part of a season-long campaign to relate transpiration to soil moisture drawdown across the hillslope. The array will run through the end of the dry season.",
+    "category": "research",
+    "tags": [
+      "Sedgwick",
+      "sap flow"
+    ],
+    "relatedPeople": [
+      "Kelly K. Caylor",
+      "Ada Lovelace"
+    ],
+    "image": {
+      "url": "https://files.slack.com/files-pri/T1-F1/photo.jpg",
+      "alt": "Sap flow sensor taped to a blue oak trunk"
+    },
+    "externalLinks": [
+      {
+        "title": "Sedgwick Reserve",
+        "url": "https://sedgwick.nrs.ucsb.edu"
+      }
+    ]
+  },
+  {
+    "slackTs": "1700000000.000001",
+    "submittedByName": "Bryn Morgan",
+    "authorEmail": "brynmorgan@ucsb.edu",
+    "title": "An update that was already drafted last run",
+    "excerpt": "Should be skipped as a duplicate.",
+    "content": "This message already produced a draft news document, so a rerun must not create a second one."
+  },
+  {
+    "slackTs": "1786500000.000300",
+    "submittedByName": "A Visiting Collaborator",
+    "authorName": "Ada Lovelace",
+    "title": "A talk by a visitor who has no person page",
+    "excerpt": "Should be rejected because the author cannot be resolved.",
+    "content": "The author here is not a lab member, so there is no person document to attribute the item to and the script should say so rather than guess."
+  },
+  {
+    "slackTs": "1786500000.000400",
+    "submittedByName": "Bryn Morgan",
+    "authorEmail": "brynmorgan@ucsb.edu",
+    "title": "Photo with no alt text and an unreachable file",
+    "excerpt": "The photo should be held back, the item should still be drafted.",
+    "content": "This item carries a photo that nobody wrote alt text for, so the image is held back while the rest of the item is still drafted for review.",
+    "image": {
+      "url": "https://unauthorized.slack.com/files-pri/T1-F2/photo.jpg"
+    }
+  },
+  {
+    "slackTs": "1700000000.000001",
+    "correctionTs": "1786600000.000900",
+    "submittedByName": "Bryn Morgan",
+    "authorEmail": "brynmorgan@ucsb.edu",
+    "title": "An update that was already drafted last run",
+    "excerpt": "Should be skipped as a duplicate.",
+    "content": "This message already produced a draft news document, so a rerun must not create a second one.",
+    "category": "lab-news"
+  },
+  {
+    "slackTs": "1650000000.000001",
+    "correctionTs": "1786600000.001000",
+    "submittedByName": "Bryn Morgan",
+    "authorEmail": "brynmorgan@ucsb.edu",
+    "title": "A correction to something already published",
+    "excerpt": "Should be reported as needing a Studio edit.",
+    "content": "This message already produced a published news item, so the intake must not touch it and must tell Kelly instead."
+  }
+]

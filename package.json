@@ -73,6 +73,8 @@
     "ss:debug-link": "tsx src/scripts/semantic-scholar/debug-link-publication.ts",
     "ss:backfill-abstracts": "tsx src/scripts/semantic-scholar/backfill-abstracts-from-s2.ts",
     "ss:upsert-new": "tsx src/scripts/semantic-scholar/upsert-new-publications-from-s2.ts",
+    "news:intake": "node scripts/news-intake.mjs",
+    "news:review": "node scripts/news-review.mjs",
     "migrate:publications:conference-abstracts": "tsx src/scripts/migrations/reclassify-and-enrich-conference-abstracts.ts",
     "migrate:publications:publish-abstracts": "tsx src/scripts/migrations/publish-abstracts.ts",
     "cms:normalize-person-refs": "tsx src/scripts/cms/normalize-person-references.ts",
@@ -90,7 +92,9 @@
     "postdocs:update:dry": "tsx scripts/update-postdoc-leave-and-position.ts --dry-run",
     "cms:fix-person-social-urls": "tsx scripts/fix-person-social-urls.ts",
     "cms:backfill-person-category": "tsx scripts/backfill-person-category.ts",
-    "cms:backfill-publication-areas": "tsx src/scripts/cms/backfill-publication-areas-from-csv.ts"
+    "cms:backfill-publication-areas": "tsx src/scripts/cms/backfill-publication-areas-from-csv.ts",
+    "cms:sync-areas": "node src/scripts/cms/sync-publication-areas.mjs",
+    "cms:areas-report": "node src/scripts/cms/sync-publication-areas.mjs --suggest --json area-sync-report.json"
   },
   "dependencies": {
     "@sanity/client": "^7.6.0",
