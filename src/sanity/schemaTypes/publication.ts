@@ -143,14 +143,18 @@ export const publication = defineType({
     defineField({
       name: 'researchAreas',
       title: 'Research Areas',
+      // Titles are display labels; values are the stored tags. 'Sensors' is stored
+      // and shown as 'Environmental Sensing'. Keep this list in step with
+      // CANONICAL_AREAS and AREA_LABELS in src/lib/cms/research-areas.mjs.
       type: 'array',
       of: [{ type: 'string' }],
       options: {
         layout: 'tags',
         list: [
           { title: 'Ecohydrology', value: 'Ecohydrology' },
-          { title: 'Sensors', value: 'Sensors' },
+          { title: 'Environmental Sensing', value: 'Sensors' },
           { title: 'Coupled Natural-Human Systems', value: 'Coupled Natural-Human Systems' },
+          { title: 'Misc', value: 'Misc' },
         ],
       },
     }),

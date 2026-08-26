@@ -2,7 +2,7 @@
 
 import { createClient } from '@sanity/client';
 
-type Pub = {
+export type Pub = {
   _id: string;
   publicationType?: string;
   venue?: { name?: string };
@@ -15,7 +15,7 @@ type Pub = {
   category?: string;
 };
 
-function decideCategory(
+export function decideCategory(
   p: Pub,
 ): 'journal' | 'conference-proceedings' | 'conference-abstract' | 'preprint' | 'other' | 'unknown' {
   const ssTypes = (p.semanticScholar?.publicationTypes || []).map((s) => s.toLowerCase());

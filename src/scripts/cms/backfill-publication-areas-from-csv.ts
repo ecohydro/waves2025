@@ -1,3 +1,16 @@
+/**
+ * DEPRECATED. Superseded by src/scripts/cms/sync-publication-areas.mjs
+ * (`npm run cms:sync-areas`), which does the same reconciliation but is
+ * additive, has a dry-run default, reports what it could not match, and does
+ * not need tsx.
+ *
+ * Two problems kept this version from being safe to re-run:
+ *   - it looked for `Publications-Table.csv`, but Numbers exports the sheet as
+ *     `Publications-Table 1.csv`, so every run failed on ENOENT;
+ *   - it `set` researchAreas wholesale, discarding any tag curated in Studio.
+ *
+ * Kept only for reference. Prefer the new script.
+ */
 import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
@@ -32,7 +45,10 @@ function normalizeAreas(input?: string): string[] {
 }
 
 async function main() {
-  const csvPath = path.resolve(process.cwd(), 'csv_files/CV/Publications-Table.csv');
+  console.warn(
+    '[deprecated] Use `npm run cms:sync-areas` instead - it is additive and has a dry-run default.',
+  );
+  const csvPath = path.resolve(process.cwd(), 'csv_files/CV/Publications-Table 1.csv');
   const csv = fs.readFileSync(csvPath, 'utf8');
   const parsed = Papa.parse<CsvRow>(csv, { header: true });
   const rows = parsed.data;
