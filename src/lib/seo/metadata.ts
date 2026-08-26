@@ -77,6 +77,20 @@ export function trimForMeta(text: string, max = 160): string {
   return `${base.replace(/[\s,;:.]+$/, '')}…`;
 }
 
+/**
+ * Drop the site name when a title already carries it.
+ *
+ * Historic `seo.metaTitle` values in the Studio were generated with
+ * " - WAVES Research Lab" baked in. The root layout now appends the site
+ * name through a title template, so leaving the stored suffix in place
+ * renders it twice ("… - WAVES Research Lab | WAVES Lab").
+ */
+export function stripBrandSuffix(title: string): string {
+  return String(title || '')
+    .replace(/\s*[-–—|]\s*WAVES(\s+Research)?\s+Lab\s*$/i, '')
+    .trim();
+}
+
 export function absoluteUrl(path = '/'): string {
   if (/^https?:\/\//i.test(path)) return path;
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
@@ -89,6 +103,7 @@ function isWide(image: MetaImage): boolean {
 
 export function buildMetadata(input: BuildMetadataInput): Metadata {
   const image = input.image || DEFAULT_OG_IMAGE;
+  const title = stripBrandSuffix(input.title) || input.title;
   const description = trimForMeta(input.description);
   const url = input.canonical?.trim() || absoluteUrl(input.path);
   const images = [
@@ -96,12 +111,12 @@ export function buildMetadata(input: BuildMetadataInput): Metadata {
       url: absoluteUrl(image.url),
       width: image.width,
       height: image.height,
-      alt: image.alt || input.title,
+      alt: image.alt || title,
     },
   ];
 
   const common = {
-    title: input.title,
+    title,
     description,
     url,
     siteName: SITE_NAME,
@@ -124,7 +139,7 @@ export function buildMetadata(input: BuildMetadataInput): Metadata {
         : { ...common, type: 'website' as const };
 
   return {
-    title: input.title,
+    title,
     description,
     keywords: input.keywords?.length ? input.keywords : undefined,
     authors: input.authors?.length ? input.authors.map((name) => ({ name })) : undefined,
@@ -132,7 +147,7 @@ export function buildMetadata(input: BuildMetadataInput): Metadata {
     openGraph,
     twitter: {
       card: isWide(image) ? 'summary_large_image' : 'summary',
-      title: input.title,
+      title,
       description: input.twitterDescription?.trim() || description,
       images: [absoluteUrl(image.url)],
     },

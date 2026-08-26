@@ -7,7 +7,7 @@ import { fetchNews, fetchPublications } from '@/lib/cms/client';
 import { buildMetadata } from '@/lib/seo/metadata';
 
 export const metadata = buildMetadata({
-  title: 'Water, Vegetation, and Society',
+  title: 'WAVES Lab - Water, Vegetation, and Society',
   description:
     'The WAVES Lab at UC Santa Barbara studies the couplings between surface hydrology, vegetation dynamics, and ecosystem processes in drylands, from leaf-level measurements to whole water cycles.',
   path: '/',
