@@ -8,7 +8,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./tests/setup.ts'],
     // Exclude integration tests and external directories
-    exclude: ['**/integration/**', '**/node_modules/**', '**/dist/**', '**/.next/**'],
+    exclude: ['**/integration/**', '**/node_modules/**', '**/dist/**', '**/.next/**', '**/_to_delete/**'],
     // Include integration tests only when explicitly requested
     include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
