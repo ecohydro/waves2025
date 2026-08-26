@@ -2,6 +2,15 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
 import { fetchNews, type News } from '@/lib/cms/client';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'News Archive',
+  description:
+    'The complete archive of WAVES Lab announcements, field updates, and research news.',
+  path: '/news/archive',
+});
+
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 

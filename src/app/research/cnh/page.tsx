@@ -4,6 +4,15 @@ import { Button } from '@/components/ui/Button';
 import { fetchPublications, type Publication } from '@/lib/cms/client';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Coupled Natural-Human Systems',
+  description:
+    'Resolving social-environmental system dynamics in subsistence agriculture and developing sustainable water management strategies.',
+  path: '/research/cnh',
+});
+
 export default async function CNHResearch() {
   const publications = (await fetchPublications())
     .filter(
@@ -322,7 +331,7 @@ export default async function CNHResearch() {
               size="lg"
               className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
-              Sensors & Measurements
+              Environmental Sensing
             </Button>
           </div>
         </div>

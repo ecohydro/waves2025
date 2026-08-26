@@ -4,6 +4,15 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 import { fetchNews, fetchPublications } from '@/lib/cms/client';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Water, Vegetation, and Society',
+  description:
+    'The WAVES Lab at UC Santa Barbara studies the couplings between surface hydrology, vegetation dynamics, and ecosystem processes in drylands, from leaf-level measurements to whole water cycles.',
+  path: '/',
+});
+
 export default async function Home() {
   // Fetch recent content
   const [newsItems, publications] = await Promise.all([
@@ -206,7 +215,7 @@ export default async function Home() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-wavesBlue transition-colors">Sensors, Measurements, and Software</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-wavesBlue transition-colors">Environmental Sensing</h3>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-200 leading-relaxed">

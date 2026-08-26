@@ -1,3 +1,12 @@
+
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Terms of Use',
+  description:
+    'The terms that apply to using the WAVES Lab site and its content.',
+  path: '/terms',
+});
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">

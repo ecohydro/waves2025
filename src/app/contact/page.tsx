@@ -3,6 +3,15 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Contact',
+  description:
+    'Get in touch with the WAVES Lab about research collaborations, academic opportunities, or general inquiries.',
+  path: '/contact',
+});
+
 export default function Contact() {
   return (
     <main className="min-h-screen">

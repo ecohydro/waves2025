@@ -4,6 +4,15 @@ import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'People',
+  description:
+    'The interdisciplinary team of researchers, students, and staff advancing our understanding of water, vegetation, and society, along with the alumni who built it.',
+  path: '/people',
+});
+
 // Keep this page dynamic so new Sanity content appears without a full rebuild.
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;

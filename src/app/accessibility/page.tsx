@@ -1,3 +1,12 @@
+
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Accessibility',
+  description:
+    'How the WAVES Lab site works with assistive technology, and how to report a barrier.',
+  path: '/accessibility',
+});
 export default function AccessibilityPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">

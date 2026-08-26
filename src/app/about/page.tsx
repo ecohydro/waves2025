@@ -3,6 +3,15 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'About',
+  description:
+    'The Water, Vegetation, and Society Lab conducts interdisciplinary research on water resources, agricultural sustainability, and environmental systems in dryland landscapes.',
+  path: '/about',
+});
+
 export default function About() {
   return (
     <main className="min-h-screen">

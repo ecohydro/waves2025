@@ -5,6 +5,15 @@ import { Card as CardBase } from '@/components/ui/Card';
 import { fetchPublications, type Publication } from '@/lib/cms/client';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Ecohydrology',
+  description:
+    'Understanding patterns and processes in dryland landscapes, from leaf-level processes to ecosystem-wide water cycles.',
+  path: '/research/ecohydrology',
+});
+
 export default async function EcohydrologyResearch() {
   const publications = (await fetchPublications())
     .filter(
@@ -272,7 +281,7 @@ export default async function EcohydrologyResearch() {
               size="lg"
               className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
-              Sensors & Measurements
+              Environmental Sensing
             </Button>
           </div>
         </div>

@@ -3,6 +3,15 @@ import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchPublications, type Publication } from '@/lib/cms/client';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Publications',
+  description:
+    'Peer-reviewed articles, preprints, conference papers, and abstracts from the WAVES Lab at UC Santa Barbara.',
+  path: '/publications',
+});
+
 // Always render this page dynamically so Sanity updates are reflected immediately
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -30,6 +39,7 @@ export default async function PublicationsPage({
       'cnh': 'Coupled Natural-Human Systems',
       'coupled-natural-human-systems': 'Coupled Natural-Human Systems',
       'coupled natural-human systems': 'Coupled Natural-Human Systems',
+      'misc': 'Misc',
     };
     const mapped = areaMap[v];
     return mapped || null;
@@ -249,7 +259,8 @@ export default async function PublicationsPage({
                 { label: 'All', value: '' },
                 { label: 'Ecohydrology', value: 'ecohydrology' },
                 { label: 'Coupled Natural-Human Systems', value: 'cnh' },
-                { label: 'Sensors', value: 'sensors' },
+                { label: 'Environmental Sensing', value: 'sensors' },
+                { label: 'Misc', value: 'misc' },
               ].map((opt) => {
                 const href = opt.value
                   ? `/publications?${view === 'presentations' ? 'type=presentations&' : ''}area=${opt.value}`

@@ -4,6 +4,15 @@ import { Button } from '@/components/ui/Button';
 import { fetchPublications, type Publication } from '@/lib/cms/client';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Environmental Sensing',
+  description:
+    'Novel approaches that illuminate ecohydrological patterns and processes through advanced remote sensing, open-source software, and environmental monitoring technologies.',
+  path: '/research/sensors',
+});
+
 export default async function SensorsResearch() {
   const publications = (await fetchPublications())
     .filter(
@@ -30,7 +39,7 @@ export default async function SensorsResearch() {
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Sensors, Measurements, and Software
+            Environmental Sensing
           </h1>
           <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
             Developing novel approaches that illuminate ecohydrological patterns and processes
@@ -47,7 +56,7 @@ export default async function SensorsResearch() {
               Environmental Sensing Research
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-200 leading-relaxed">
-              Our sensors research focuses on creating innovative measurement techniques, developing
+              Our environmental sensing research focuses on creating innovative measurement techniques, developing
               open-source software tools, and advancing environmental monitoring capabilities. We
               design and deploy sensor networks, develop remote sensing applications, and create
               analytical tools that enable new scientific discoveries.
@@ -102,7 +111,7 @@ export default async function SensorsResearch() {
               Key Research Areas
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-200">
-              Our sensors research spans multiple interconnected areas of technology development
+              Our environmental sensing research spans multiple interconnected areas of technology development
             </p>
           </div>
 
@@ -299,7 +308,7 @@ export default async function SensorsResearch() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Recent Sensors Publications
+              Recent Environmental Sensing Publications
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-200">
               Latest research in environmental sensing and measurement technologies
@@ -333,7 +342,7 @@ export default async function SensorsResearch() {
 
           <div className="text-center">
             <Button href="/publications?area=sensors" variant="outline" size="lg">
-              View All Sensors Publications
+              View All Environmental Sensing Publications
             </Button>
           </div>
         </div>
@@ -344,8 +353,8 @@ export default async function SensorsResearch() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Explore Our Research</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Learn more about our other research themes and discover how sensors and measurements
-            connect with ecohydrology and human systems research.
+            Learn more about our other research themes and discover how environmental sensing
+            connects with ecohydrology and human systems research.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

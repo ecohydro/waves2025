@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
@@ -23,7 +23,7 @@ interface SearchResult {
   shortDescription?: string;
 }
 
-export default function SearchPage() {
+function SearchPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [query, setQuery] = useState(searchParams.get('q') || '');
@@ -399,6 +399,31 @@ export default function SearchPage() {
               </p>
             </div>
           )}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+/**
+ * `useSearchParams` bails out of static prerendering unless it sits under a
+ * Suspense boundary, so the page shell renders while the params resolve.
+ */
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<SearchFallback />}>
+      <SearchPageContent />
+    </Suspense>
+  );
+}
+
+function SearchFallback() {
+  return (
+    <main className="min-h-screen">
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Search</h1>
+          <p className="mt-4 text-gray-500 dark:text-gray-400">Loading search…</p>
         </div>
       </section>
     </main>

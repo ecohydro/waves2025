@@ -1,3 +1,12 @@
+
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Privacy Policy',
+  description:
+    'What the WAVES Lab site collects, why, and what happens to it.',
+  path: '/privacy',
+});
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">

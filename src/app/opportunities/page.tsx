@@ -1,5 +1,14 @@
 import { Button } from '@/components/ui/Button';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Opportunities',
+  description:
+    'The WAVES Lab regularly welcomes undergraduate researchers, graduate students, postdoctoral scholars, and collaborators working at the intersection of water, vegetation, and society.',
+  path: '/opportunities',
+});
+
 export default function OpportunitiesPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">

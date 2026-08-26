@@ -4,6 +4,15 @@ import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchNews, fetchFeaturedNews, urlForImage, type News } from '@/lib/cms/client';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'News',
+  description:
+    'Research findings, fieldwork updates, publications, and lab announcements from the WAVES Research Team.',
+  path: '/news',
+});
+
 export const revalidate = 10; // Revalidate every 10 seconds to pick up new images from Sanity
 
 export default async function NewsPage({

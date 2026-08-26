@@ -2,7 +2,7 @@ import { renderMarkdown } from "@/lib/render-markdown";
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
+import { draftMode } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import {
@@ -15,17 +15,49 @@ import {
   type Publication,
   type News,
 } from '@/lib/cms/client';
+import type { Metadata } from 'next';
+import { buildMetadata, missingMetadata } from '@/lib/seo/metadata';
 
 interface PersonDetailProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateMetadata({ params }: PersonDetailProps): Promise<Metadata> {
+  const { slug } = await params;
+  const { isEnabled: isPreview } = await draftMode();
+  const person = await fetchPersonBySlug(slug, isPreview);
+
+  if (!person) return missingMetadata('Person');
+
+  const role = [person.title, person.currentPosition].filter(Boolean).join(', ');
+
+  return buildMetadata({
+    title: person.seo?.metaTitle?.trim() || person.name,
+    description:
+      person.seo?.metaDescription?.trim() ||
+      person.bio ||
+      `${person.name}${role ? `, ${role},` : ''} in the WAVES Lab at UC Santa Barbara.`,
+    path: `/people/${person.slug.current}`,
+    canonical: person.seo?.canonicalUrl,
+    type: 'profile',
+    image: person.avatar
+      ? {
+          url: urlForImage(person.avatar).width(1200).height(1200).fit('crop').url(),
+          width: 1200,
+          height: 1200,
+          alt: person.avatar.alt || person.name,
+        }
+      : null,
+    keywords: person.seo?.keywords?.length ? person.seo.keywords : person.researchInterests,
+  });
+}
+
+
 export default async function PersonDetail({ params }: PersonDetailProps) {
   const { slug } = await params;
 
   // Check for preview mode
-  const cookieStore = await cookies();
-  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
+  const { isEnabled: isPreview } = await draftMode();
 
   const person = await fetchPersonBySlug(slug, isPreview);
 

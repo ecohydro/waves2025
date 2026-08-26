@@ -3,6 +3,15 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Research',
+  description:
+    'Interdisciplinary research across three themes, addressing challenges in water resources, agricultural sustainability, and environmental systems.',
+  path: '/research',
+});
+
 export default function Research() {
   return (
     <main className="min-h-screen">
@@ -199,7 +208,7 @@ export default function Research() {
               </div>
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  Sensors, Measurements, and Software
+                  Environmental Sensing
                 </h3>
                 <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-6">
                   Developing novel approaches that illuminate ecohydrological patterns and 
@@ -230,7 +239,7 @@ export default function Research() {
                   </ul>
                 </div>
                 <Button href="/research/sensors" variant="outline">
-                  Explore Sensors Research
+                  Explore Environmental Sensing Research
                 </Button>
               </div>
             </div>

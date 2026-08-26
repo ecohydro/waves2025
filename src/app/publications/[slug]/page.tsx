@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
+import { draftMode } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import PublicationBadges from '@/components/publications/Badges';
@@ -11,17 +11,59 @@ import {
   urlForImage,
   type Publication,
 } from '@/lib/cms/client';
+import type { Metadata } from 'next';
+import { buildMetadata, missingMetadata } from '@/lib/seo/metadata';
 
 interface PublicationDetailProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateMetadata({ params }: PublicationDetailProps): Promise<Metadata> {
+  const { slug } = await params;
+  const { isEnabled: isPreview } = await draftMode();
+  const publication = await fetchPublicationBySlug(slug, isPreview);
+
+  if (!publication) return missingMetadata('Publication');
+
+  const authors = (publication.authors || [])
+    .map((a) => a.person?.name || a.name)
+    .filter((name): name is string => Boolean(name));
+  const year = publication.publishedDate
+    ? new Date(publication.publishedDate).getFullYear()
+    : undefined;
+  // Falls back to a citation line when a record carries no abstract, which is
+  // still more useful in a preview than the site-wide description.
+  const citation = [
+    authors.slice(0, 3).join(', ') + (authors.length > 3 ? ' and others' : ''),
+    publication.venue?.name,
+    year ? String(year) : undefined,
+  ]
+    .filter(Boolean)
+    .join(' · ');
+
+  return buildMetadata({
+    title: publication.seo?.metaTitle?.trim() || publication.title,
+    description:
+      publication.seo?.metaDescription?.trim() ||
+      publication.abstract ||
+      citation ||
+      'A publication from the WAVES Lab.',
+    path: `/publications/${publication.slug.current}`,
+    canonical: publication.seo?.canonicalUrl,
+    type: 'article',
+    publishedTime: publication.publishedDate,
+    authors,
+    tags: publication.researchAreas,
+    keywords: publication.seo?.keywords?.length ? publication.seo.keywords : publication.keywords,
+  });
+}
+
+
 export default async function PublicationDetail({ params }: PublicationDetailProps) {
   const { slug } = await params;
 
   // Check for preview mode
-  const cookieStore = await cookies();
-  const isPreview = cookieStore.has('__prerender_bypass') && cookieStore.has('__next_preview_data');
+  const { isEnabled: isPreview } = await draftMode();
 
   const publication = await fetchPublicationBySlug(slug, isPreview);
 

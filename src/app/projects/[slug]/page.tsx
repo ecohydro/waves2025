@@ -3,10 +3,44 @@ import { notFound } from 'next/navigation';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchProjectBySlug } from '@/lib/cms/client';
+import type { Metadata } from 'next';
+import { urlForImage } from '@/lib/cms/client';
+import { buildMetadata, missingMetadata } from '@/lib/seo/metadata';
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
 }
+
+export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await fetchProjectBySlug(slug);
+
+  if (!project) return missingMetadata('Project');
+
+  return buildMetadata({
+    title: project.seo?.metaTitle?.trim() || project.title,
+    description:
+      project.seo?.metaDescription?.trim() ||
+      project.shortDescription ||
+      project.description ||
+      'A research project from the WAVES Lab.',
+    path: `/projects/${project.slug.current}`,
+    canonical: project.seo?.canonicalUrl,
+    type: 'article',
+    publishedTime: project.startDate,
+    tags: project.tags?.length ? project.tags : project.researchAreas,
+    keywords: project.seo?.keywords,
+    image: project.featuredImage
+      ? {
+          url: urlForImage(project.featuredImage).width(1200).height(630).fit('crop').url(),
+          width: 1200,
+          height: 630,
+          alt: project.featuredImage.alt || project.title,
+        }
+      : null,
+  });
+}
+
 
 function formatDate(date?: string) {
   if (!date) return null;

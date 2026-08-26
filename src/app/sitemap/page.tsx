@@ -1,5 +1,14 @@
 import Link from 'next/link';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Site Map',
+  description:
+    'Every major section of the WAVES Lab site in one list.',
+  path: '/sitemap',
+});
+
 const sections: Array<{ title: string; links: Array<{ href: string; label: string }> }> = [
   {
     title: 'Main',
@@ -18,7 +27,7 @@ const sections: Array<{ title: string; links: Array<{ href: string; label: strin
       { href: '/research', label: 'Research' },
       { href: '/research/ecohydrology', label: 'Ecohydrology' },
       { href: '/research/cnh', label: 'Coupled Natural-Human Systems' },
-      { href: '/research/sensors', label: 'Sensors and Measurements' },
+      { href: '/research/sensors', label: 'Environmental Sensing' },
     ],
   },
   {

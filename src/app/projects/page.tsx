@@ -3,6 +3,15 @@ import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchProjects, type Project } from '@/lib/cms/client';
 
+import { buildMetadata } from '@/lib/seo/metadata';
+
+export const metadata = buildMetadata({
+  title: 'Research Projects',
+  description:
+    'Current and past projects across ecohydrology, coupled natural-human systems, and environmental sensing.',
+  path: '/projects',
+});
+
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 

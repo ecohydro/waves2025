@@ -103,6 +103,12 @@ export interface Person {
   leaveDate?: string;
   currentPosition?: string;
   isActive: boolean;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string[];
+    canonicalUrl?: string;
+  };
 }
 
 export interface Publication {
@@ -177,6 +183,12 @@ export interface Publication {
     | 'preprint';
   isFeatured: boolean;
   isOpenAccess: boolean;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string[];
+    canonicalUrl?: string;
+  };
 }
 
 export interface Project {
@@ -234,6 +246,12 @@ export interface Project {
   methods?: string[];
   isFeatured: boolean;
   isPublic: boolean;
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string[];
+    canonicalUrl?: string;
+  };
 }
 
 export interface News {
@@ -290,6 +308,12 @@ export interface News {
     twitterText?: string;
     linkedinText?: string;
     hashtags?: string[];
+  };
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string[];
+    canonicalUrl?: string;
   };
 }
 
@@ -375,7 +399,8 @@ export const queries = {
     joinDate,
     leaveDate,
     currentPosition,
-    isActive
+    isActive,
+    seo
   }`,
 
   // Publications queries
@@ -466,7 +491,8 @@ export const queries = {
     metrics,
     status,
     isFeatured,
-    isOpenAccess
+    isOpenAccess,
+    seo
   }`,
 
   // Projects queries
@@ -551,7 +577,8 @@ export const queries = {
     technologies,
     methods,
     isFeatured,
-    isPublic
+    isPublic,
+    seo
   }`,
 
   // News queries
@@ -646,7 +673,8 @@ export const queries = {
     status,
     isFeatured,
     isSticky,
-    socialMedia
+    socialMedia,
+    seo
   }`,
 
   // Person-specific queries (for member detail pages)

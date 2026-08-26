@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
                   href="/research/sensors"
                   className="text-gray-300 hover:text-wavesLightBlue transition-colors"
                 >
-                  Sensors & Measurements
+                  Environmental Sensing
                 </Link>
               </li>
               <li>
