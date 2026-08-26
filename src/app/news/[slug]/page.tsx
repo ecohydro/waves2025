@@ -520,6 +520,13 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
   );
 }
 
+/**
+ * Known slugs are prerendered at build time; anything published afterwards is
+ * rendered on demand and cached. Without this, a news item published in the
+ * Studio 404s until the next deploy, because the miss is cached indefinitely.
+ */
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   // Don't generate static params for preview content
   const news = await fetchNews(false);
