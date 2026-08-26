@@ -136,3 +136,13 @@ storybook-static/
 .turbo/
 
 .env
+
+# Legacy static export / build output (not part of the Next.js app)
+/dist/
+
+# Local scratch and pending-deletion working dirs
+/_to_delete/
+/backups/
+publication-area-proposals.json
+area-sync-report.json
+.fuse_hidden*
