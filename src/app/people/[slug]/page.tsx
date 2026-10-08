@@ -16,6 +16,7 @@ import {
   type News,
 } from '@/lib/cms/client';
 import type { Metadata } from 'next';
+import { imageAlt } from '@/lib/cms/image-alt.mjs';
 import { buildMetadata, missingMetadata } from '@/lib/seo/metadata';
 
 interface PersonDetailProps {
@@ -368,7 +369,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                               <div className="flex-shrink-0">
                                 <Image
                                   src={urlForImage(article.featuredImage).width(80).height(80).url()}
-                                  alt={article.featuredImage.alt || article.title}
+                                  alt={imageAlt(article.featuredImage, article.title)}
                                   width={80}
                                   height={80}
                                   className="rounded-lg object-cover"

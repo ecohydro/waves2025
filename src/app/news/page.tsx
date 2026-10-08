@@ -1,8 +1,10 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchNews, fetchFeaturedNews, urlForImage, type News } from '@/lib/cms/client';
+import { imageAlt } from '@/lib/cms/image-alt.mjs';
 
 import { buildMetadata } from '@/lib/seo/metadata';
 
@@ -121,7 +123,7 @@ export default async function NewsPage({
               {article.featuredImage ? (
                 <Image
                   src={urlForImage(article.featuredImage).width(600).height(400).url()}
-                  alt={article.featuredImage.alt || article.title}
+                  alt={imageAlt(article.featuredImage, article.title)}
                   width={600}
                   height={400}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

@@ -6,6 +6,7 @@ import { draftMode } from 'next/headers';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { fetchNewsBySlug, fetchNews, urlForImage, type News } from '@/lib/cms/client';
+import { imageAlt } from '@/lib/cms/image-alt.mjs';
 import { parseMarkdown } from '@/lib/utils/markdown';
 import { buildMetadata, missingMetadata } from '@/lib/seo/metadata';
 
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: NewsDetailProps): Promise<Met
           url: urlForImage(article.featuredImage).width(1200).height(630).fit('crop').url(),
           width: 1200,
           height: 630,
-          alt: article.featuredImage.alt || article.title,
+          alt: imageAlt(article.featuredImage, article.title),
         }
       : null,
   });
@@ -216,7 +217,7 @@ export default async function NewsDetail({ params }: NewsDetailProps) {
             <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={urlForImage(article.featuredImage).width(1200).height(675).url()}
-                alt={article.featuredImage.alt || article.title}
+                alt={imageAlt(article.featuredImage, article.title)}
                 width={1200}
                 height={675}
                 className="w-full h-full object-cover"

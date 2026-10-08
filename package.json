@@ -75,6 +75,7 @@
     "ss:upsert-new": "tsx src/scripts/semantic-scholar/upsert-new-publications-from-s2.ts",
     "news:intake": "node scripts/news-intake.mjs",
     "news:review": "node scripts/news-review.mjs",
+    "cleanup": "bash scripts/cleanup-sandbox-leftovers.sh",
     "migrate:publications:conference-abstracts": "tsx src/scripts/migrations/reclassify-and-enrich-conference-abstracts.ts",
     "migrate:publications:publish-abstracts": "tsx src/scripts/migrations/publish-abstracts.ts",
     "cms:normalize-person-refs": "tsx src/scripts/cms/normalize-person-references.ts",

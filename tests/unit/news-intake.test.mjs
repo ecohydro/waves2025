@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { defaultImageAlt } from '../../src/lib/cms/image-alt.mjs';
 
 import {
   buildCorrectionPatch,
@@ -154,10 +155,10 @@ describe('validating a drafted item', () => {
     expect(result.warnings.join(' ')).toContain('fieldwork');
   });
 
-  it('holds back a photo that has no alt text', () => {
+  it('keeps a photo that has no alt text and gives it the general default', () => {
     const result = validateItem({ ...BASE_ITEM, image: { url: 'https://files.slack.com/x.jpg' } });
     expect(result.ok).toBe(true);
-    expect(result.value.image).toBeUndefined();
+    expect(result.value.image.alt).toBe(defaultImageAlt(result.value.title));
     expect(result.warnings.join(' ')).toContain('alt text');
   });
 
@@ -372,9 +373,10 @@ describe('review: edits, publishing, discarding', () => {
     expect(readyToPublish(draft).ok).toBe(true);
     expect(readyToPublish({ ...draft, author: undefined }).missing).toContain('author');
     expect(readyToPublish({ ...draft, excerpt: '' }).missing).toContain('excerpt');
+    // A missing alt no longer blocks publishing: the intake fills the general default.
     expect(
-      readyToPublish({ ...draft, featuredImage: { asset: { _ref: 'image-1' } } }).missing,
-    ).toContain('alt text on the featured image');
+      readyToPublish({ ...draft, featuredImage: { asset: { _ref: 'image-1' } } }).ok,
+    ).toBe(true);
   });
 
   it('publishes by moving the id out of drafts and setting the status field', () => {

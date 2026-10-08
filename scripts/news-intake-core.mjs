@@ -12,6 +12,8 @@
  * The runner that talks to Slack and Sanity is `news-intake.mjs`.
  */
 
+import { defaultImageAlt } from '../src/lib/cms/image-alt.mjs';
+
 /* -------------------------------------------------------------------------- */
 /* Shape of the data                                                          */
 /* -------------------------------------------------------------------------- */
@@ -268,9 +270,14 @@ export function validateItem(item, now = new Date()) {
 
   let image;
   if (item && item.image && (item.image.path || item.image.url)) {
-    const alt = String(item.image.alt || '').trim();
-    if (!alt) warnings.push('photo held back: the schema requires alt text and none was drafted');
-    else image = { ...item.image, alt };
+    let alt = String(item.image.alt || '').trim();
+    if (!alt) {
+      alt = defaultImageAlt(title);
+      warnings.push(
+        'no alt text was drafted for the photo; using the general default, which Kelly can replace in the Studio',
+      );
+    }
+    image = { ...item.image, alt };
   }
 
   const rawLinks = (item && item.externalLinks) || [];
@@ -339,7 +346,7 @@ export function buildNewsDocument(args) {
     doc.featuredImage = {
       _type: 'image',
       asset: { _type: 'reference', _ref: imageAssetId },
-      alt: normalized.image.alt,
+      alt: (normalized.image.alt || '').trim() || defaultImageAlt(doc.title),
       caption: normalized.image.caption || undefined,
       credit: normalized.image.credit || item.submittedByName || undefined,
     };
@@ -562,7 +569,6 @@ export function readyToPublish(doc) {
   if (!doc.publishedAt || Number.isNaN(Date.parse(doc.publishedAt))) missing.push('publishedAt');
   if (!doc.author || !doc.author._ref) missing.push('author');
   if (!doc.category || !NEWS_CATEGORIES.includes(doc.category)) missing.push('category');
-  if (doc.featuredImage && !doc.featuredImage.alt) missing.push('alt text on the featured image');
   return { ok: missing.length === 0, missing };
 }
 
