@@ -1,3 +1,4 @@
+import styles from './Footer.module.css';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,9 +7,9 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className={styles.footer}>
       {/* Main Footer Content */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className={`${styles.content} container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="lg:col-span-2">
@@ -18,7 +19,7 @@ const Footer: React.FC = () => {
                 alt="WAVES Lab Logo"
                 width={40}
                 height={40}
-                className="mr-3 mt-1.5"
+                className={`${styles.logo} mr-3 mt-1.5`}
               />
               <span className="text-2xl font-bold">WAVES Research Lab</span>
             </div>
@@ -94,10 +95,10 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/projects"
+                  href="/research"
                   className="text-gray-300 hover:text-wavesLightBlue transition-colors"
                 >
-                  Research Projects
+                  Research
                 </Link>
               </li>
               <li>
@@ -113,7 +114,7 @@ const Footer: React.FC = () => {
                   href="/opportunities"
                   className="text-gray-300 hover:text-wavesLightBlue transition-colors"
                 >
-                  Opportunities
+                  Join the Lab
                 </Link>
               </li>
               <li>
@@ -225,7 +226,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* University and Partner Links */}
-            <div className="flex items-center space-x-8">
+            <div className="flex flex-wrap justify-center gap-6">
               <a
                 href="https://www.ucsb.edu"
                 target="_blank"
@@ -260,9 +261,9 @@ const Footer: React.FC = () => {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <div className="mb-6 md:mb-0">
-              <p>© {currentYear} WAVES Research Lab. All rights reserved.</p>
+              <p className={styles.copyright}>© {currentYear} WAVES Research Lab. All rights reserved.</p>
             </div>
-            <div className="flex space-x-6">
+            <div className="flex flex-wrap justify-center gap-6">
               <Link href="/privacy" className="hover:text-wavesLightBlue transition-colors">
                 Privacy Policy
               </Link>

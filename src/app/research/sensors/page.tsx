@@ -319,7 +319,7 @@ export default async function SensorsResearch() {
             {publications.map((pub) => (
               <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow" key={pub._id}>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{pub.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2"><Link href={`/publications/${pub.slug.current}`} className="underline underline-offset-4">{pub.title}</Link></h3>
                   <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
                     {(pub.authors || []).map((a, i) => (
                       <span key={i}>
@@ -352,7 +352,7 @@ export default async function SensorsResearch() {
       <section className="py-16 lg:py-24 bg-wavesBlue">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Explore Our Research</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
             Learn more about our other research themes and discover how environmental sensing
             connects with ecohydrology and human systems research.
           </p>

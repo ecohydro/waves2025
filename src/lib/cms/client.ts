@@ -585,6 +585,7 @@ export const queries = {
   getAllNews: `*[_type == "news" && status == "published"] | order(publishedAt desc) {
     _id,
     title,
+    status,
     slug,
     excerpt,
     featuredImage,

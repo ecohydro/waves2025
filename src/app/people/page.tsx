@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { fetchPeople, urlForImage, type Person } from '@/lib/cms/client';
 
 import { buildMetadata } from '@/lib/seo/metadata';
+import styles from './PeopleCards.module.css';
 
 export const metadata = buildMetadata({
   title: 'People',
@@ -81,7 +82,7 @@ export default async function PeoplePage() {
       className="group hover:shadow-lg transition-all duration-300 overflow-hidden"
     >
       <CardContent className="p-0">
-        <Link href={`/people/${person.slug.current}`} className="block">
+        <Link href={`/people/${person.slug.current}`} className={styles.profileLink}>
           {/* Profile Image */}
           <div className="relative aspect-square overflow-hidden bg-gray-100">
             {person.avatar ? (
@@ -160,56 +161,59 @@ export default async function PeoplePage() {
                 {person.bio}
               </p>
             )}
-
-            {/* Social Links */}
-            {person.socialMedia && (
-              <div className="flex justify-center gap-3 mt-4 pt-4 border-t border-gray-100">
-                {person.email && (
-                  <a
-                    href={`mailto:${person.email}`}
-                    className="text-gray-400 hover:text-wavesBlue transition-colors"
-                    title="Email"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                  </a>
-                )}
-                {person.website && (
-                  <a
-                    href={person.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-wavesBlue transition-colors"
-                    title="Website"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fillRule="evenodd"
-                        d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                )}
-                {person.socialMedia.orcid && (
-                  <a
-                    href={`https://orcid.org/${person.socialMedia.orcid}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-600 transition-colors"
-                    title="ORCID"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.972-1.303 3.972-3.722 0-2.359-1.613-3.722-3.972-3.722h-2.297z" />
-                    </svg>
-                  </a>
-                )}
-              </div>
-            )}
           </div>
         </Link>
+
+        {/* Social links are separate destinations from the profile. */}
+        {(person.email || person.website || person.socialMedia?.orcid) && (
+          <div className={styles.socialLinks}>
+            {person.email && (
+              <a
+                href={`mailto:${person.email}`}
+                className={styles.socialLink}
+                aria-label={`Email ${person.name}`}
+                title={`Email ${person.name}`}
+              >
+                <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </a>
+            )}
+            {person.website && (
+              <a
+                href={person.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label={`${person.name}’s website`}
+                title={`${person.name}’s website`}
+              >
+                <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fillRule="evenodd"
+                    d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            )}
+            {person.socialMedia?.orcid && (
+              <a
+                href={`https://orcid.org/${person.socialMedia.orcid}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label={`${person.name}’s ORCID profile`}
+                title={`${person.name}’s ORCID profile`}
+              >
+                <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.525 0-.946-.422-.946-.947 0-.525.421-.947.946-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.972-1.303 3.972-3.722 0-2.359-1.613-3.722-3.972-3.722h-2.297z" />
+                </svg>
+              </a>
+            )}
+          </div>
+        )}
       </CardContent>
     </Card>
   );
@@ -307,23 +311,23 @@ export default async function PeoplePage() {
       )}
 
       {/* Join Our Team CTA */}
-      <section className="py-16 bg-wavesBlue">
+      <section className="py-16 bg-blue-900">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Interested in Joining Our Research?
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             We're always looking for passionate researchers to join our interdisciplinary team.
             Explore opportunities for undergraduate research, graduate studies, and postdoctoral
             positions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="/contact"
+              href="/opportunities"
               variant="outline"
               className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-gray-50 dark:bg-slate-900"
             >
-              Contact Us
+              Join the Lab
             </Button>
             <Button
               href="/research"

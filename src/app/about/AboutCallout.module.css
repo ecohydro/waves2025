@@ -1,0 +1,19 @@
+.callout { padding: 4rem 0; background: #023e8a; color: #fff; }
+.callout h2, .callout p { color: #fff; }
+.callout .primary, .callout .secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+.callout .primary { background: #fff; color: #023e8a; }
+.callout .primary:hover { background: #dbeafe; color: #023e8a; }
+.callout .secondary { background: #023e8a; color: #fff; }
+.callout .secondary:hover { background: #012b60; color: #fff; }
+.callout a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (min-width: 1024px) { .callout { padding: 6rem 0; } }

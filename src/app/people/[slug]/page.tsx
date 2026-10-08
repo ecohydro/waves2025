@@ -558,7 +558,7 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
                             rel="noopener noreferrer"
                             className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:bg-slate-900 transition-colors group"
                           >
-                            <div className="w-8 h-8 bg-teal-600 rounded flex items-center justify-center">
+                            <div className="w-8 h-8 bg-teal-700 rounded flex items-center justify-center">
                               <span className="text-white font-bold text-xs">RG</span>
                             </div>
                             <span className="text-sm text-gray-700 dark:text-gray-100 group-hover:text-gray-900 dark:text-white">

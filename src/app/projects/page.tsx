@@ -61,15 +61,13 @@ function statusClass(status: Project['status']) {
 
 export default async function ProjectsPage() {
   let projects: Project[] = [];
+  let unavailable = false;
 
   try {
     projects = await fetchProjects();
-  } catch (error) {
-    console.error('Error fetching projects:', error);
+  } catch {
+    unavailable = true;
   }
-
-  const featuredProjects = projects.filter((project) => project.isFeatured);
-  const activeProjects = projects.filter((project) => project.status === 'active');
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
@@ -87,36 +85,24 @@ export default async function ProjectsPage() {
         </div>
       </section>
 
-      <section className="py-10 bg-white dark:bg-slate-950">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-1">{projects.length}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-200">Total Projects</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-1">{activeProjects.length}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-200">Active Projects</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-1">
-                {featuredProjects.length}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-200">Featured Projects</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-16">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {projects.length === 0 ? (
             <Card>
               <CardContent className="p-8 text-center">
-                <p className="text-gray-600 dark:text-gray-200 mb-4">No public projects are available right now.</p>
+                <p className="text-gray-600 dark:text-gray-200 mb-4">
+                  {unavailable
+                    ? 'Project details are temporarily unavailable. Please try again later, or explore our research themes and publications.'
+                    : 'Explore the questions, methods, and findings behind our work through our research themes and publications.'}
+                </p>
                 <Button href="/research" variant="outline">
-                  View Research Themes
+                  Explore research themes
                 </Button>
+                <div className="mt-4">
+                  <Button href="/publications" variant="outline">
+                    Browse publications
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ) : (
@@ -141,7 +127,14 @@ export default async function ProjectsPage() {
                         ) : null}
                       </div>
 
-                      <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{project.title}</h2>
+                      <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                        <Link
+                          href={`/projects/${project.slug.current}`}
+                          className="underline underline-offset-4"
+                        >
+                          {project.title}
+                        </Link>
+                      </h2>
                       <p className="text-gray-600 dark:text-gray-200 mb-4 line-clamp-3">
                         {project.shortDescription || 'No summary available.'}
                       </p>
@@ -165,13 +158,6 @@ export default async function ProjectsPage() {
                           ))}
                         </div>
                       )}
-
-                      <Link
-                        href={`/projects/${project.slug.current}`}
-                        className="text-wavesBlue hover:text-blue-800 font-medium"
-                      >
-                        View project details
-                      </Link>
                     </CardContent>
                   </Card>
                 );

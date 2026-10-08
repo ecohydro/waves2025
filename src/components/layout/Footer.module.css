@@ -1,0 +1,10 @@
+.footer { background: #111827; color: #fff; }
+.footer h3 { color: #fff; }
+.footer a { color: #d1d5db; }
+.footer a:hover { color: #90e0ef; text-decoration: underline; }
+.footer a:focus-visible { color: #fff; outline: 3px solid #90e0ef; outline-offset: 4px; }
+.logo { border-radius: 0.5rem; flex-shrink: 0; }
+
+.footer .content { padding-top: 4rem; padding-bottom: 4rem; }
+
+.footer .copyright { color: #d1d5db; }

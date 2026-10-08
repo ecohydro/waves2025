@@ -326,6 +326,12 @@ a:focus-visible {
   }
 }
 
+/* Inline prose links must remain recognizable without color or hover. */
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 /* DOI and link styling */
 .doi-link,
 .external-link {
@@ -527,7 +533,6 @@ img {
   .text-gray-700 { color: #cbd5e1 !important; }                /* slate-300 */
   .text-gray-600 { color: #94a3b8 !important; }                /* slate-400 */
   .text-gray-500 { color: #94a3b8 !important; }                /* slate-400 */
-  .text-gray-400 { color: #64748b !important; }                /* slate-500 */
 
   /* --- Borders --- */
   .border-gray-100 { border-color: #334155 !important; }       /* slate-700 */
@@ -562,7 +567,6 @@ img {
 
   /* --- WAVES brand colors in dark mode --- */
   .text-wavesBlue { color: #38bdf8 !important; }
-  .bg-wavesBlue { background-color: #0284c7 !important; }
   .text-wavesDarkBlue { color: #38bdf8 !important; }
   
   /* --- Input fields --- */

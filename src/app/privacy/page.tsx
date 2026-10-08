@@ -1,10 +1,8 @@
-
 import { buildMetadata } from '@/lib/seo/metadata';
 
 export const metadata = buildMetadata({
   title: 'Privacy Policy',
-  description:
-    'What the WAVES Lab site collects, why, and what happens to it.',
+  description: 'What the WAVES Lab site collects, why, and what happens to it.',
   path: '/privacy',
 });
 export default function PrivacyPage() {
@@ -22,6 +20,35 @@ export default function PrivacyPage() {
             <p>
               Contact us through the lab email listed on the Contact page if you need a correction,
               removal, or have privacy-related questions.
+            </p>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white pt-4">General contact messages</h2>
+            <p>When you send a general contact message, we use your name, email address, topic, and message to respond. These messages are processed and stored by Formspree and delivered to the lab, using the same service described below. Information is sent when you choose “Send message.” Please omit sensitive personal information that is not needed for your inquiry.</p>
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white pt-4">
+              Recruitment inquiries
+            </h2>
+            <p>
+              When you send a recruitment inquiry, we use your name, email, research interests,
+              program preference, intended start date, and any optional information you provide to
+              consider research fit and respond to you. This is separate from applying for admission
+              to UC Santa Barbara.
+            </p>
+            <p>
+              Submissions are processed and stored by Formspree and delivered to the lab. Formspree
+              also processes technical information, such as your IP address and browser details, to
+              operate the service and prevent spam. Read{' '}
+              <a
+                href="https://formspree.io/legal/privacy-policy/"
+                className="text-blue-700 dark:text-blue-300 underline underline-offset-4"
+              >
+                Formspree’s privacy policy
+              </a>{' '}
+              for details. The form accepts an optional CV or profile link, not file uploads. Please
+              omit sensitive personal information unrelated to your research inquiry.
+            </p>
+            <p>
+              Reviewing your inquiry on this site does not send it. Information is sent to Formspree
+              only when you choose “Send inquiry.” To request correction or deletion of an inquiry
+              held by the lab, contact caylor@ucsb.edu.
             </p>
           </div>
         </div>

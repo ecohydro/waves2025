@@ -1,3 +1,4 @@
+import filterStyles from './PublicationFilters.module.css';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -25,8 +26,10 @@ export default async function PublicationsPage({
   const [allPublications] = await Promise.all([fetchPublications()]);
 
   // Determine current view from query params
-  const view: 'articles' | 'presentations' =
-    searchParams?.type === 'presentations' ? 'presentations' : 'articles';
+  const view =
+    searchParams?.type === 'presentations'
+      ? 'presentations'
+      : 'articles';
 
   // Normalize area filter from query params
   const normalizeArea = (input: string): string | null => {
@@ -34,12 +37,12 @@ export default async function PublicationsPage({
     if (!v) return null;
     // Map URL-friendly keys to display names
     const areaMap: Record<string, string> = {
-      'ecohydrology': 'Ecohydrology',
-      'sensors': 'Sensors',
-      'cnh': 'Coupled Natural-Human Systems',
+      ecohydrology: 'Ecohydrology',
+      sensors: 'Sensors',
+      cnh: 'Coupled Natural-Human Systems',
       'coupled-natural-human-systems': 'Coupled Natural-Human Systems',
       'coupled natural-human systems': 'Coupled Natural-Human Systems',
-      'misc': 'Misc',
+      misc: 'Misc',
     };
     const mapped = areaMap[v];
     return mapped || null;
@@ -51,6 +54,7 @@ export default async function PublicationsPage({
   // Filter based on selected view
   let filteredPublications = allPublications.filter((p) => {
     if (view === 'articles') {
+      if (p.publicationType === 'preprint' || p.publicationType === 'abstract') return false;
       // Default: peer-reviewed publications (journal articles + conference papers)
       return (
         p.publicationType === 'journal-article' ||
@@ -84,9 +88,9 @@ export default async function PublicationsPage({
     );
   }
 
-  // Compute featured publications: most recent up to 4 with > 30 citations
+  // Editorial selections may include recent work before citations accumulate.
   const featuredPublications = filteredPublications
-    .filter((p) => (p.metrics?.citations ?? 0) > 30)
+    .filter((p) => p.isFeatured)
     .sort((a, b) => {
       const aTime = a.publishedDate ? new Date(a.publishedDate).getTime() : 0;
       const bTime = b.publishedDate ? new Date(b.publishedDate).getTime() : 0;
@@ -113,27 +117,34 @@ export default async function PublicationsPage({
     return Number(b) - Number(a);
   });
 
-  // Unique authors across filtered publications
-  const uniqueAuthors = new Set<string>();
-  for (const publication of filteredPublications) {
-    if (!publication.authors) continue;
-    for (const author of publication.authors) {
-      const name = author?.person?.name || author?.name || 'Unknown Author';
-      uniqueAuthors.add(name);
-    }
+  function filterHref(change: { type?: string; area?: string }) {
+    const params = new URLSearchParams();
+    const type = change.type ?? view;
+    const area = change.area ?? selectedAreaRaw;
+    if (type !== 'articles') params.set('type', type);
+    if (area) params.set('area', area);
+    if (selectedAuthor) params.set('author', selectedAuthor);
+    const query = params.toString();
+    return `/publications${query ? `?${query}` : ''}`;
   }
-
-  // Compute co-author count as unique authors minus 1 (primary author), floored at 0
-  const coAuthorCount = Math.max(0, uniqueAuthors.size - 1);
+  const authorName =
+    allPublications
+      .flatMap((p) => p.authors || [])
+      .find((a) => a.person?.slug?.current === selectedAuthor)?.person?.name || selectedAuthor;
+  const areaLabel = selectedArea === 'Sensors' ? 'Environmental Sensing' : selectedArea;
+  const viewLabel =
+    view === 'presentations'
+        ? 'Conference presentations and abstracts'
+        : 'Journal articles and conference papers';
 
   const renderAuthors = (authors: Publication['authors']) => {
     if (!authors || authors.length === 0) return null;
 
     const parts = authors.map((author, index) => {
       const displayName = author.person?.name || author.name || 'Unknown Author';
-      const slug = author.person && (author.person as any).slug?.current;
+      const slug = author.person?.slug?.current;
       const element = slug ? (
-        <Link key={`${slug}-${index}`} href={`/people/${slug}`} className="hover:underline">
+        <Link key={`${slug}-${index}`} href={`/people/${slug}`} className="underline underline-offset-2">
           {displayName}
         </Link>
       ) : (
@@ -150,70 +161,73 @@ export default async function PublicationsPage({
     return <>{parts}</>;
   };
 
-  const formatCitation = (publication: Publication) => {
-    const authors = publication.authors;
-    const title = publication.title ? `"${publication.title}"` : '';
-    const venue = publication.venue?.name || '';
-    const year = publication.publishedDate ? new Date(publication.publishedDate).getFullYear() : '';
-    const doi = publication.doi ? `doi:${publication.doi}` : '';
+  const renderPublicationCard = (publication: Publication, featured = false) => {
+    const Heading = featured ? 'h3' : 'h4';
+    return (
+      <Card
+        key={publication._id}
+        className={`group hover:shadow-lg transition-all duration-300 h-full ${featured ? 'border-wavesBlue/30' : ''}`}
+      >
+        <CardContent className="p-6 flex flex-col h-full">
+          {/* Title */}
+          <Heading
+            className={`font-semibold text-gray-900 dark:text-white group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
+          >
+            <Link href={`/publications/${publication.slug.current}`} className="hover:underline">
+              {publication.title}
+            </Link>
+          </Heading>
 
-    const authorText = (authors || [])
-      .map((a) => a.person?.name || a.name || 'Unknown Author')
-      .join(', ');
-    return `${authorText}. ${title} ${venue} (${year}). ${doi}`.replace(/\s+/g, ' ').trim();
+          {/* Authors and Journal */}
+          <div className="mb-2">
+            {publication.authors && publication.authors.length > 0 && (
+              <p className="text-sm text-gray-700 dark:text-gray-100">
+                {renderAuthors(publication.authors)}
+              </p>
+            )}
+            {publication.venue?.name && (
+              <p className="text-sm text-wavesBlue font-medium mt-1.5">{publication.venue.name}</p>
+            )}
+          </div>
+
+          <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
+            {publication.publicationType === 'preprint'
+              ? 'Preprint · not peer reviewed'
+              : publication.publicationType === 'abstract' ||
+                  publication.category === 'conference-abstract'
+                ? 'Conference abstract'
+                : publication.publicationType === 'conference-paper' ||
+                    publication.category === 'conference-proceedings'
+                  ? 'Conference paper'
+                  : 'Journal article'}
+          </p>
+          {/* Spacer to push footer to bottom */}
+          <div className="mt-2 flex-1" />
+
+          {/* Badges removed on list page for performance and to avoid third-party overlays */}
+
+          {/* Footer actions */}
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <Button href={`/publications/${publication.slug.current}`} variant="outline" size="sm">
+              View Details
+            </Button>
+
+            {publication.doi && (
+              <a
+                href={`https://doi.org/${publication.doi}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block max-w-full break-all px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
+                title={`doi:${publication.doi}`}
+              >
+                {`doi:${publication.doi}`}
+              </a>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    );
   };
-
-  const renderPublicationCard = (publication: Publication, featured = false) => (
-    <Card
-      key={publication._id}
-      className={`group hover:shadow-lg transition-all duration-300 h-full ${featured ? 'border-wavesBlue/30' : ''}`}
-    >
-      <CardContent className="p-6 flex flex-col h-full">
-        {/* Title */}
-        <h3
-          className={`font-semibold text-gray-900 dark:text-white group-hover:text-wavesBlue transition-colors leading-snug mb-2 ${featured ? 'text-lg' : 'text-base'}`}
-        >
-          <Link href={`/publications/${publication.slug.current}`} className="hover:underline">
-            {publication.title}
-          </Link>
-        </h3>
-
-        {/* Authors and Journal */}
-        <div className="mb-2">
-          {publication.authors && publication.authors.length > 0 && (
-            <p className="text-sm text-gray-700 dark:text-gray-100">{renderAuthors(publication.authors)}</p>
-          )}
-          {publication.venue?.name && (
-            <p className="text-sm text-wavesBlue font-medium mt-1.5">{publication.venue.name}</p>
-          )}
-        </div>
-
-        {/* Spacer to push footer to bottom */}
-        <div className="mt-2 flex-1" />
-
-        {/* Badges removed on list page for performance and to avoid third-party overlays */}
-
-        {/* Footer actions */}
-        <div className="flex items-center justify-between gap-2 flex-wrap">
-          <Button href={`/publications/${publication.slug.current}`} variant="outline" size="sm">
-            View Details
-          </Button>
-
-          {publication.doi && (
-            <a
-              href={`https://doi.org/${publication.doi}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block max-w-full break-all px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors"
-              title={`doi:${publication.doi}`}
-            >
-              {`doi:${publication.doi}`}
-            </a>
-          )}
-        </div>
-      </CardContent>
-    </Card>
-  );
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-slate-900">
@@ -225,94 +239,77 @@ export default async function PublicationsPage({
               Publications & Presentations
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
-              Explore our peer-reviewed research outputs and conference presentations.
+              Explore journal articles, conference papers, and conference abstracts from
+              WAVES.
             </p>
-            {/* View Toggle */}
-            <div className="mt-6 inline-flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
-              <Link href="/publications" className="no-underline">
-                <button
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    view === 'articles'
-                      ? 'bg-wavesBlue text-white'
-                      : 'bg-transparent text-gray-700 dark:text-gray-100 hover:bg-white dark:bg-slate-950'
-                  }`}
-                >
-                  Publications
-                </button>
-              </Link>
-              <Link href="/publications?type=presentations" className="no-underline">
-                <button
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    view === 'presentations'
-                      ? 'bg-wavesBlue text-white'
-                      : 'bg-transparent text-gray-700 dark:text-gray-100 hover:bg-white dark:bg-slate-950'
-                  }`}
-                >
-                  Conference Presentations & Abstracts
-                </button>
-              </Link>
-            </div>
-
-            {/* Research Area Filter */}
-            <div className="mt-6 mb-2 flex flex-wrap gap-2 justify-center">
+            <nav aria-label="Publication type" className="mt-6 flex flex-wrap justify-center gap-2">
               {[
-                { label: 'All', value: '' },
-                { label: 'Ecohydrology', value: 'ecohydrology' },
-                { label: 'Coupled Natural-Human Systems', value: 'cnh' },
-                { label: 'Environmental Sensing', value: 'sensors' },
-                { label: 'Misc', value: 'misc' },
-              ].map((opt) => {
-                const href = opt.value
-                  ? `/publications?${view === 'presentations' ? 'type=presentations&' : ''}area=${opt.value}`
-                  : `/publications${view === 'presentations' ? '?type=presentations' : ''}`;
-                const isActive =
-                  (opt.value === '' && !selectedAreaRaw) ||
-                  (opt.value !== '' && selectedAreaRaw === opt.value);
-                return (
-                  <Link href={href} key={opt.value || 'all'} className="no-underline">
-                    <button
-                      className={`px-3 py-1.5 rounded-full text-sm font-medium border ${
-                        isActive
-                          ? 'bg-wavesBlue text-white border-wavesBlue'
-                          : 'bg-white dark:bg-slate-950 text-gray-700 dark:text-gray-100 border-gray-300 hover:bg-gray-50 dark:bg-slate-900'
-                      }`}
-                    >
-                      {opt.label}
-                    </button>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white dark:bg-slate-950">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">
-                {filteredPublications.length}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-200">Total Publications</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-wavesBlue mb-2">{coAuthorCount}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-200">Co-authors</div>
-            </div>
+                { value: 'articles', label: 'Publications' },
+                { value: 'presentations', label: 'Conference Presentations & Abstracts' },
+              ].map((option) => (
+                <Link
+                  key={option.value}
+                  href={filterHref({ type: option.value })}
+                  aria-current={view === option.value ? 'true' : undefined}
+                  className={filterStyles.filter}
+                >
+                  {option.label}
+                </Link>
+              ))}
+            </nav>
+            <nav aria-label="Research area" className="mt-6 flex flex-wrap gap-2 justify-center">
+              {[
+                { label: 'All research areas', value: '', area: null },
+                { label: 'Ecohydrology', value: 'ecohydrology', area: 'Ecohydrology' },
+                {
+                  label: 'Coupled Natural-Human Systems',
+                  value: 'cnh',
+                  area: 'Coupled Natural-Human Systems',
+                },
+                { label: 'Environmental Sensing', value: 'sensors', area: 'Sensors' },
+                { label: 'Other research', value: 'misc', area: 'Misc' },
+              ].map((option) => (
+                <Link
+                  key={option.value}
+                  href={filterHref({ area: option.value })}
+                  aria-current={selectedArea === option.area ? 'true' : undefined}
+                  className={`${filterStyles.filter} ${filterStyles.area}`}
+                >
+                  {option.label}
+                </Link>
+              ))}
+            </nav>
+            <p className="mt-6 text-gray-700 dark:text-gray-100">
+              Showing: {viewLabel}
+              {areaLabel ? ` · ${areaLabel}` : ''}
+              {authorName ? ` · Author: ${authorName}` : ''}.
+            </p>
+            {(selectedAreaRaw || selectedAuthor || view !== 'articles') && (
+              <Link
+                href="/publications"
+                className="mt-3 inline-block text-blue-700 dark:text-blue-300 underline underline-offset-4"
+              >
+                Clear all filters
+              </Link>
+            )}
           </div>
         </div>
       </section>
 
       {/* Featured Publications */}
       {featuredPublications.length > 0 && (
-        <section className="py-16">
+        <section aria-labelledby="featured-publications-heading" className="py-16">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Publications</h2>
+              <h2
+                id="featured-publications-heading"
+                className="text-3xl font-bold text-gray-900 dark:text-white mb-4"
+              >
+                Featured Publications
+              </h2>
               <p className="text-lg text-gray-600 dark:text-gray-200">
-                Highlighting our most impactful research contributions and recent breakthroughs.
+                Selected research from the lab. Read each record for authors, publication details,
+                and available resources.
               </p>
             </div>
 
@@ -327,17 +324,28 @@ export default async function PublicationsPage({
       <section className="py-16 bg-white dark:bg-slate-950">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">All Publications</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-200">
-              {view === 'articles'
-                ? 'Peer-reviewed publications (journal articles and conference papers) organized by year.'
-                : 'Conference presentations and abstracts organized by year.'}
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              All Publications
+            </h2>
+            <p
+              role="status"
+              aria-atomic="true"
+              className="text-lg text-gray-600 dark:text-gray-200"
+            >
+              {viewLabel} organized by year. {filteredPublications.length} matching record
+              {filteredPublications.length === 1 ? '' : 's'}.
             </p>
           </div>
 
+          {years.length === 0 && (
+            <p className="text-gray-700 dark:text-gray-100">
+              No publications match these filters. Try another research area or clear all filters
+              above.
+            </p>
+          )}
           {years.map((year) => (
             <div key={year} className="mb-16">
-              <div className="sticky top-20 bg-white dark:bg-slate-950/95 backdrop-blur-sm z-10 py-4 mb-8 border-b">
+              <div className="py-4 mb-8 border-b">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
                   <span className="bg-wavesBlue text-white px-4 py-2 rounded-lg text-lg mr-4">
                     {year}
@@ -358,7 +366,7 @@ export default async function PublicationsPage({
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-wavesBlue">
+      <section className="py-16 bg-blue-900">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Explore Our Research</h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">

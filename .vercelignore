@@ -1,0 +1,12 @@
+# Local archives, exports, and private working data are not deployment inputs.
+legacy/
+dist/
+backups/
+csv_files/
+_to_delete/
+.env*
+*.log
+*.tsbuildinfo
+coverage/
+test-results/
+playwright-report/

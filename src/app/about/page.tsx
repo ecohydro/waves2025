@@ -1,3 +1,4 @@
+import styles from './AboutCallout.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
@@ -238,7 +239,7 @@ export default function About() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-wavesBlue">
+      <section className={styles.callout}>
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Join Our Research Community
@@ -248,22 +249,18 @@ export default function About() {
             graduate studies? Learn more about joining our interdisciplinary team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            <Link
               href="/people"
-              variant="outline"
-              size="lg"
-              className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-blue-50"
+              className={styles.primary}
             >
               Meet Our Team
-            </Button>
-            <Button
-              href="/contact"
-              variant="ghost"
-              size="lg"
-              className="text-white border-white hover:bg-white dark:bg-slate-950/10"
+            </Link>
+            <Link
+              href="/opportunities"
+              className={styles.secondary}
             >
-              Contact Us
-            </Button>
+              Join the Lab
+            </Link>
           </div>
         </div>
       </section>

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
-import { Input } from '@/components/ui/Input';
+import ContactForm from '@/components/contact/ContactForm';
+import { contactFormId } from '@/lib/forms/formspree';
 
 import { buildMetadata } from '@/lib/seo/metadata';
 
@@ -13,6 +14,8 @@ export const metadata = buildMetadata({
 });
 
 export default function Contact() {
+  const recruitmentFormId = contactFormId(undefined, process.env.FORMSPREE_RECRUITMENT_FORM_ID);
+  const formId = contactFormId(process.env.FORMSPREE_CONTACT_FORM_ID, recruitmentFormId);
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -183,109 +186,10 @@ export default function Contact() {
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
-                          First Name *
-                        </label>
-                        <Input
-                          id="firstName"
-                          name="firstName"
-                          type="text"
-                          required
-                          placeholder="Your first name"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
-                          Last Name *
-                        </label>
-                        <Input
-                          id="lastName"
-                          name="lastName"
-                          type="text"
-                          required
-                          placeholder="Your last name"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
-                        Email Address *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="organization" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
-                        Organization/Institution
-                      </label>
-                      <Input
-                        id="organization"
-                        name="organization"
-                        type="text"
-                        placeholder="Your organization or institution"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
-                        Subject *
-                      </label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-wavesBlue focus:border-wavesBlue"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="research-collaboration">Research Collaboration</option>
-                        <option value="graduate-opportunities">Graduate Student Opportunities</option>
-                        <option value="postdoc-opportunities">Postdoctoral Opportunities</option>
-                        <option value="visiting-researcher">Visiting Researcher</option>
-                        <option value="media-inquiry">Media Inquiry</option>
-                        <option value="general-question">General Question</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-100 mb-2">
-                        Message *
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={6}
-                        required
-                        placeholder="Please provide details about your inquiry..."
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-wavesBlue focus:border-wavesBlue resize-vertical"
-                      />
-                    </div>
-
-                    <div className="pt-4">
-                      <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full bg-wavesBlue hover:bg-blue-700"
-                      >
-                        Send Message
-                      </Button>
-                      
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center">
-                        * Required fields. We typically respond within 2-3 business days.
-                      </p>
-                    </div>
-                  </form>
+                  <p className="mb-6 text-gray-700 dark:text-gray-100">
+                    Interested in joining WAVES? <a href="/opportunities#inquiry" className="text-blue-700 dark:text-blue-300 underline underline-offset-4">Use our recruitment inquiry</a> to discuss research fit and your timeline.
+                  </p>
+                  <ContactForm formId={formId} messageFieldName={formId === recruitmentFormId ? 'interests' : 'message'} />
                 </CardContent>
               </Card>
             </div>
@@ -314,10 +218,10 @@ export default function Contact() {
               <CardContent>
                 <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   We accept graduate students through UCSB's Bren School and Geography Department. 
-                  Applications are typically due in December for fall admission.
+                  See our recruiting page for program routes, funding guidance, and official admissions links.
                 </p>
                 <Button
-                  href="https://bren.ucsb.edu/academics/phd-program"
+                  href="/opportunities"
                   variant="outline"
                   size="sm"
                 >
@@ -333,10 +237,10 @@ export default function Contact() {
               <CardContent>
                 <p className="text-gray-600 dark:text-gray-200 leading-relaxed mb-4">
                   We regularly host postdoctoral researchers working on ecohydrology, 
-                  remote sensing, and agricultural systems. Multiple funding opportunities available.
+                  remote sensing, and agricultural systems. Contact us to discuss research fit and potential funding routes.
                 </p>
                 <Button
-                  href="mailto:caylor@ucsb.edu?subject=Postdoctoral Opportunities"
+                  href="/opportunities#postdoctoral"
                   variant="outline"
                   size="sm"
                 >

@@ -1,0 +1,2 @@
+# Findings
+Live browser on 2026-09-18 showed CTA bg-blue-800 and bg-black/[0.65] overlay both computed rgba(0,0,0,0), despite classes in the DOM. This reproduces the user's screenshot. Root cause of omitted utility CSS is not conclusively established. Scoped CSS compiles explicit contrast styles without those utility dependencies. Remove brightness 1.25. White on worst-case 34% white composited image has approximately 7.3:1 contrast; white/navy pills exceed 10:1.

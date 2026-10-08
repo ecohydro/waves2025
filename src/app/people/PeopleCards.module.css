@@ -1,0 +1,60 @@
+.profileLink {
+  display: block;
+  border-radius: 0.25rem;
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 1.5rem;
+  padding: 1rem 0 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.socialLink {
+  display: inline-flex;
+  flex: 0 0 44px;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: #4b5563;
+  border-radius: 0.25rem;
+}
+
+.socialLink:hover {
+  color: #023e8a;
+  background-color: #f3f4f6;
+}
+
+.profileLink:focus-visible,
+.socialLink:focus-visible {
+  outline: 3px solid #0077b6;
+  outline-offset: 2px;
+}
+
+.profileLink:focus-visible {
+  outline-offset: -3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .socialLinks {
+    border-color: #334155;
+  }
+
+  .socialLink {
+    color: #cbd5e1;
+  }
+
+  .socialLink:hover {
+    color: #7dd3fc;
+    background-color: #1e293b;
+  }
+
+  .profileLink:focus-visible,
+  .socialLink:focus-visible {
+    outline-color: #7dd3fc;
+  }
+}

@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/Card';
 import { fetchNews, type News } from '@/lib/cms/client';
@@ -14,16 +15,19 @@ export const metadata = buildMetadata({
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-export default async function NewsArchivePage() {
+export default async function NewsArchivePage({ searchParams }: { searchParams?: { category?: string } }) {
   let news: News[] = [];
+  let unavailable = false;
+  const category = typeof searchParams?.category === 'string' ? searchParams.category : '';
 
   try {
     news = await fetchNews();
   } catch (error) {
+    unavailable = true;
     console.error('Error fetching news archive:', error);
   }
 
-  const sorted = [...news].sort((a, b) => {
+  const sorted = news.filter((item) => !category || item.category === category).sort((a, b) => {
     return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
   });
 
@@ -35,15 +39,19 @@ export default async function NewsArchivePage() {
           <p className="text-lg text-gray-600 dark:text-gray-200">
             Complete archive of lab announcements, field updates, and research news.
           </p>
+          {category && <p className="mt-4 text-gray-900 dark:text-white">Category: <span className="capitalize">{category.replace(/-/g, ' ')}</span>.{' '}
+            <Link href="/news/archive" className="underline text-blue-700 dark:text-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">All lab news</Link>
+          </p>}
         </div>
       </section>
 
       <section className="py-14">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {!unavailable && <p className="mb-6 text-gray-700 dark:text-gray-200">{sorted.length} article{sorted.length === 1 ? '' : 's'}{category ? ' in this category' : ''}</p>}
           {sorted.length === 0 ? (
             <Card>
               <CardContent className="p-8 text-gray-600 dark:text-gray-200">
-                No archived news is available right now.
+                {unavailable ? 'We could not load the news archive. Please try again later.' : category ? 'No articles match this category. Choose All lab news to browse the complete archive.' : 'No archived news is available right now.'}
               </CardContent>
             </Card>
           ) : (

@@ -297,7 +297,9 @@ export default async function NewsPage({
                         {getCategoryLabel(category)}
                       </div>
                       <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-wavesBlue transition-colors mb-2">
-                        {getCategoryLabel(category)}
+                        <Link href={`/news/archive?category=${encodeURIComponent(category)}`} className="text-blue-700 dark:text-blue-300 underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                          {getCategoryLabel(category)} news
+                        </Link>
                       </h3>
                       <p className="text-sm text-gray-500 dark:text-gray-400">
                         {categoryCount} article{categoryCount !== 1 ? 's' : ''}
@@ -311,28 +313,27 @@ export default async function NewsPage({
         </section>
       )}
 
-      {/* Newsletter Signup CTA */}
-      <section className="py-16 bg-wavesBlue">
+      {/* Research discovery CTA */}
+      <section className="py-16 bg-blue-900">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Stay Updated with Our Research</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Explore the Research Behind the News</h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Get the latest news and updates from our research lab delivered directly to your inbox.
-            Be the first to know about new publications, field work, and research breakthroughs.
+            Explore our research themes and read the publications behind our findings.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="/contact"
+              href="/research"
               variant="outline"
               className="bg-white dark:bg-slate-950 text-wavesBlue border-white hover:bg-gray-50 dark:bg-slate-900"
             >
-              Contact Us
+              Explore Research
             </Button>
             <Button
-              href="/people"
+              href="/publications"
               variant="outline"
               className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
-              Meet Our Team
+              Browse Publications
             </Button>
           </div>
         </div>

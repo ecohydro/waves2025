@@ -146,3 +146,4 @@ storybook-static/
 publication-area-proposals.json
 area-sync-report.json
 .fuse_hidden*
+__pycache__/

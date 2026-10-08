@@ -57,7 +57,7 @@ export default async function RootLayout({
         <PreviewBanner isPreview={isPreview} />
         <div className={isPreview ? 'pt-16' : ''}>
           <Navigation />
-          <div id="main-content">
+          <div id="main-content" tabIndex={-1}>
             {children}
           </div>
           <Footer />

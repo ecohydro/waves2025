@@ -16,16 +16,28 @@ export default function Research() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden bg-wavesBlue">
-        <div className="absolute inset-0 bg-gradient-to-b from-wavesBlue to-blue-700" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+      <section aria-labelledby="research-heading" className="bg-wavesDarkBlue text-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <p className="text-sm font-semibold uppercase tracking-widest text-blue-100 mb-4">
+            Water, vegetation, and society
+          </p>
+          <h1 id="research-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Research Themes
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-            Interdisciplinary research addressing critical challenges in 
-            water resources, agricultural sustainability, and environmental systems
+          <p className="text-xl md:text-2xl text-white max-w-3xl leading-relaxed">
+            Exploring how water, ecosystems, and people interact through field
+            observations, environmental sensing, and modeling.
           </p>
+        </div>
+        <div className="relative w-full aspect-[2/1] sm:aspect-[3/1] lg:aspect-[4/1] overflow-hidden">
+          <Image
+            src="/images/site/dryland_ecohydrology.jpg"
+            alt="People and livestock gather along a shallow river in a dry landscape dotted with trees."
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
         </div>
       </section>
 

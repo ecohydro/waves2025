@@ -1,0 +1,62 @@
+/* Critical hero contrast is independent of the photograph and utility generation. */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.66);
+}
+
+.affiliation {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.affiliation:hover,
+.affiliation:focus-visible {
+  color: #fff;
+  text-decoration-thickness: 2px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.primary {
+  color: #023e8a;
+  background: #fff;
+}
+
+.primary:hover {
+  color: #023e8a;
+  background: #dbeafe;
+  text-decoration: none;
+}
+
+.secondary {
+  color: #fff;
+  background: #023e8a;
+}
+
+.secondary:hover {
+  color: #fff;
+  background: #012b60;
+  text-decoration: none;
+}
+
+.cta:focus-visible,
+.affiliation:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}

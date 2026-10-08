@@ -1,3 +1,4 @@
+import heroStyles from './HomeHero.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
@@ -13,38 +14,42 @@ export const metadata = buildMetadata({
   path: '/',
 });
 
+export const revalidate = 10;
+
 export default async function Home() {
-  // Fetch recent content
-  const [newsItems, publications] = await Promise.all([
-    fetchNews().then(items => items.filter(item => item.status === 'published').slice(0, 2)),
-    fetchPublications().then(items => items.sort((a, b) => {
-      const aDate = a.publishedDate ? new Date(a.publishedDate).getTime() : 0;
-      const bDate = b.publishedDate ? new Date(b.publishedDate).getTime() : 0;
-      return bDate - aDate;
-    }).slice(0, 2))
+  // These requests are independent: a failed news request must not hide research.
+  const [newsResult, publicationsResult] = await Promise.allSettled([
+    fetchNews(),
+    fetchPublications(),
   ]);
+  // getAllNews already selects published records, ordered newest first.
+  const newsItems = newsResult.status === 'fulfilled' ? newsResult.value.slice(0, 2) : [];
+  const publications = publicationsResult.status === 'fulfilled'
+    ? [...publicationsResult.value].sort((a, b) =>
+        (Date.parse(b.publishedDate) || 0) - (Date.parse(a.publishedDate) || 0)).slice(0, 2)
+    : [];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[420px] md:h-[520px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-[420px] md:min-h-[520px] lg:min-h-[600px] py-16 flex items-center justify-center overflow-hidden">
         <Image
           src="/images/site/home-banner.jpg"
-          alt="WAVES Banner"
+          alt=""
           fill
-          className="object-cover object-center z-0 brightness-[1.25]"
+          className="object-cover object-center z-0"
+          sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-black/30 z-10" />
-        <div className="relative z-20 flex flex-col items-center justify-center text-center w-full px-4 hero-banner">
-          <div className="absolute left-1/2 -translate-x-1/2 w-full px-4" style={{ top: '20%' }}>
+        <div aria-hidden="true" className={heroStyles.overlay} />
+        <div className="relative z-20 flex flex-col items-center justify-center text-center w-full px-4">
+          <div className="w-full px-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] mb-4">
               Water, Vegetation, & Society
             </h1>
           </div>
           <div
             className="flex flex-col items-center justify-center w-full"
-            style={{ marginTop: 'calc(20% + 3.5rem)' }}
           >
             <p className="text-lg md:text-2xl text-white font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)] mb-4 max-w-2xl">
               Understanding the couplings between surface hydrology, vegetation dynamics, and
@@ -55,7 +60,7 @@ export default async function Home() {
                 href="http://bren.ucsb.edu/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline hover:opacity-80 transition inline-flex items-center"
+                className={heroStyles.affiliation}
               >
                 Bren School{' '}
                 <svg
@@ -78,7 +83,7 @@ export default async function Home() {
                 href="http://geog.ucsb.edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline hover:opacity-80 transition inline-flex items-center"
+                className={heroStyles.affiliation}
               >
                 Dept. of Geography{' '}
                 <svg
@@ -101,7 +106,7 @@ export default async function Home() {
                 href="http://eri.ucsb.edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline hover:opacity-80 transition inline-flex items-center"
+                className={heroStyles.affiliation}
               >
                 Earth Research Institute{' '}
                 <svg
@@ -124,7 +129,7 @@ export default async function Home() {
                 href="http://www.ucsb.edu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white no-underline hover:opacity-80 transition inline-flex items-center"
+                className={heroStyles.affiliation}
               >
                 UCSB{' '}
                 <svg
@@ -143,28 +148,10 @@ export default async function Home() {
                 </svg>
               </a>
             </p>
-            <Link
-              href="/news"
-              className="cta-btn inline-flex items-center px-6 py-3 border-2 border-wavesBlue bg-white dark:bg-slate-950 text-wavesBlue font-semibold rounded-lg hover:bg-blue-50 hover:scale-105 transition shadow-lg text-lg group drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] outline-none focus:ring-4 focus:ring-wavesBlue"
-              style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
-            >
-              <span className="mr-2">
-                <svg
-                  className="inline w-5 h-5 align-text-bottom"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h7l2 2h5a2 2 0 012 2v10a2 2 0 01-2 2z"
-                  />
-                </svg>
-              </span>
-              Latest News
-            </Link>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/research" className={`${heroStyles.cta} ${heroStyles.primary}`}>Explore Research</Link>
+              <Link href="/opportunities" className={`${heroStyles.cta} ${heroStyles.secondary}`}>Join the Lab</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -262,20 +249,20 @@ export default async function Home() {
               <div className="flex items-center justify-between mb-8">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">Latest News</h2>
                 <Button href="/news" variant="outline">
-                  View All
+                  All lab news
                 </Button>
               </div>
               <div className="space-y-6">
                 {newsItems.length > 0 ? (
                   newsItems.map((item) => (
-                    <Link key={item._id} href={`/news/${item.slug.current}`}>
+                    <div key={item._id}>
                       <Card className="hover:shadow-md transition-shadow cursor-pointer">
                         <CardContent className="p-6">
                           <div className="flex items-start gap-4">
                             <div className="flex-shrink-0 w-2 h-2 bg-wavesBlue rounded-full mt-3"></div>
                             <div>
                               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                                {item.title}
+                                <Link href={`/news/${item.slug.current}`} className="underline underline-offset-4">{item.title}</Link>
                               </h3>
                               <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                                 {item.publishedAt ? new Date(item.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : 'Recent'}
@@ -287,10 +274,10 @@ export default async function Home() {
                           </div>
                         </CardContent>
                       </Card>
-                    </Link>
+                    </div>
                   ))
                 ) : (
-                  <p className="text-gray-600 dark:text-gray-200">No recent news available.</p>
+                  <p className="text-gray-600 dark:text-gray-200">{newsResult.status === 'rejected' ? 'News updates are temporarily unavailable. Please try the news archive or return later.' : 'No news stories are listed here yet. Explore our research and publications below.'}</p>
                 )}
               </div>
             </div>
@@ -302,17 +289,17 @@ export default async function Home() {
                   Recent Publications
                 </h2>
                 <Button href="/publications" variant="outline">
-                  View All
+                  All publications
                 </Button>
               </div>
               <div className="space-y-6">
                 {publications.length > 0 ? (
                   publications.map((pub) => (
-                    <Link key={pub._id} href={`/publications/${pub.slug.current}`}>
+                    <div key={pub._id}>
                       <Card className="hover:shadow-md transition-shadow cursor-pointer">
                         <CardContent className="p-6">
                           <h3 className="font-semibold text-gray-900 dark:text-white mb-2 leading-snug line-clamp-2">
-                            {pub.title}
+                            <Link href={`/publications/${pub.slug.current}`} className="underline underline-offset-4">{pub.title}</Link>
                           </h3>
                           <p className="text-sm text-gray-600 dark:text-gray-200 mb-3">
                             {pub.authors && pub.authors.length > 0 && (
@@ -334,10 +321,10 @@ export default async function Home() {
                           </p>
                         </CardContent>
                       </Card>
-                    </Link>
+                    </div>
                   ))
                 ) : (
-                  <p className="text-gray-600 dark:text-gray-200">No recent publications available.</p>
+                  <p className="text-gray-600 dark:text-gray-200">{publicationsResult.status === 'rejected' ? 'Publication updates are temporarily unavailable. Please try the publication archive or return later.' : 'No publications are listed here yet.'}</p>
                 )}
               </div>
             </div>
@@ -346,7 +333,7 @@ export default async function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 lg:py-24 bg-wavesBlue">
+      <section className="py-16 lg:py-24 bg-blue-900">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Join Our Research Community
@@ -365,12 +352,12 @@ export default async function Home() {
               Meet Our Team
             </Button>
             <Button
-              href="/contact"
+              href="/opportunities"
               variant="ghost"
               size="lg"
               className="text-white border-white hover:bg-white dark:bg-slate-950/10"
             >
-              Contact Us
+              Join the Lab
             </Button>
           </div>
         </div>
