@@ -2,6 +2,10 @@
 
 Next.js 14 + TypeScript site for WAVES Lab content, backed by Sanity CMS data.
 
+## Site standards
+
+Read [AGENTS.md](AGENTS.md) for contributor/agent workflow and the [WAVES Site Constitution](.specify/memory/constitution.md) for brand, voice, content integrity, recruiting, accessibility, and technical requirements. These standards apply to new and changed work; they do not certify the existing site's conformance. The [September 2026 site review](docs/content/site-review-2026-09-16.md) records findings and a prioritized improvement backlog.
+
 ## Current Status (February 20, 2026)
 
 - Build, lint, and type-check pass locally.
