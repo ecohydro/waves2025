@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
 import { buildMetadata } from '@/lib/seo/metadata';
 
@@ -259,52 +258,13 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Research Impact */}
-      <section className="py-16 lg:py-24">
-        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">Research Impact</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-200">
-              Our research contributes to global understanding of dryland systems and informs 
-              sustainable development practices worldwide.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-wavesBlue mb-2">200+</div>
-                  <div className="text-gray-600 dark:text-gray-200">Publications</div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-200 text-center">
-                  Peer-reviewed articles in leading journals across multiple disciplines
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="text-3xl font-bold text-wavesBlue mb-2">15+</div>
-                  <div className="text-gray-600 dark:text-gray-200">Countries</div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-200 text-center">
-                  Research collaborations spanning Africa, North America, and beyond
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="py-16 lg:py-24 bg-wavesBlue">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Collaborate With Us
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white mb-8 max-w-3xl mx-auto">
             Interested in research collaboration, joining our team, or learning more 
             about our work? We welcome partnerships and inquiries.
           </p>
