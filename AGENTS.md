@@ -2,6 +2,10 @@
 
 This file applies to the entire repository. Before changing content, design, or code, read the [WAVES Site Constitution](.specify/memory/constitution.md). It is the canonical source for brand, voice, scientific integrity, recruiting, accessibility, and engineering standards. Do not treat the current implementation as proof that it meets those standards.
 
+## Current state and open work
+
+Read [docs/OPEN_WORK.md](docs/OPEN_WORK.md) at the start of a session. It records what is unfinished, decisions already made that should not be reopened, and how the site ships (`main` deploys to production through the Vercel GitHub integration). Update it when any of those change.
+
 ## Working agreement
 
 - Follow the user's current task and preserve unrelated work. Inspect `git status` before editing; concurrent edits may be present. Never revert, overwrite, or commit someone else's changes as part of your task.
