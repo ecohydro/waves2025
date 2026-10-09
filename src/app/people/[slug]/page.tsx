@@ -579,6 +579,10 @@ export default async function PersonDetail({ params }: PersonDetailProps) {
   );
 }
 
+// Refresh person data from Sanity at most once a minute, matching news/[slug].
+// Without this, edits to a person only appear after the next deploy.
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   // Don't generate static params for preview content
   const people = await fetchPeople(false);
