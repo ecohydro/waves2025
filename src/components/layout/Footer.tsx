@@ -2,6 +2,7 @@ import styles from './Footer.module.css';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SENSOR_DASHBOARD_URL } from '@/lib/site-links';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -124,6 +125,14 @@ const Footer: React.FC = () => {
                 >
                   Contact Us
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={SENSOR_DASHBOARD_URL}
+                  className="text-gray-300 hover:text-wavesLightBlue transition-colors"
+                >
+                  Sensor Data Dashboard
+                </a>
               </li>
             </ul>
           </div>
