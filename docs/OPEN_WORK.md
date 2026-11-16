@@ -4,7 +4,7 @@ The one place to look for what is unfinished, what was decided, and how the
 site ships. Update it whenever one of these changes. Spec folders under
 `specs/` hold the detail for each feature; this file holds the summary.
 
-Last updated: 2026-10-08.
+Last updated: 2026-11-16.
 
 ## How the site ships
 
@@ -39,6 +39,13 @@ WCAG conformance claim should be made until they are.
 3. **Dark-mode browser audit.** Feature 016 ran Lighthouse in dark mobile and
    fixed two shared overrides. A human pass over the pages in dark mode has
    not been done.
+
+4. **Sensor data dashboard link (PR #13).** `sensors.waveslab.org` has a CNAME
+   in the Vercel DNS zone pointing at the dashboard Shadman Amin hosts on
+   Render. The PR adds links from `/research/sensors` and the footer. Merge
+   it only after the custom domain is verified on Render and the subdomain
+   loads over HTTPS. Planned follow-up: move the service to a paid,
+   lab-owned Render account.
 
 Older specs with open tasks, predating the accessibility branch:
 
