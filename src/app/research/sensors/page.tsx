@@ -5,6 +5,7 @@ import { fetchPublications, type Publication } from '@/lib/cms/client';
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 
 import { buildMetadata } from '@/lib/seo/metadata';
+import { SENSOR_DASHBOARD_URL } from '@/lib/site-links';
 
 export const metadata = buildMetadata({
   title: 'Environmental Sensing',
@@ -300,6 +301,27 @@ export default async function SensorsResearch() {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Sensor Data Dashboard */}
+      <section className="py-16 lg:py-24 border-t border-gray-200 dark:border-slate-700">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Sensor Data Dashboard
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-200 mb-8">
+            Readings from three weather stations at the Dangermond Preserve are charted on our
+            sensor data dashboard, including air temperature, humidity, solar radiation, pressure,
+            and wind. The dashboard was built by{' '}
+            <Link href="/people/shadman-amin" className="underline underline-offset-4">
+              Shadman Amin
+            </Link>
+            .
+          </p>
+          <Button href={SENSOR_DASHBOARD_URL} size="lg">
+            Open the sensor data dashboard
+          </Button>
         </div>
       </section>
 
